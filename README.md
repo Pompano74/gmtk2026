@@ -5,7 +5,7 @@ visual studio code : https://code.visualstudio.com/download?_exp_download=fb315f
 
 
 Godot 4.7.1-stable : https://godotengine.org/download/archive/
-<img width="1224" height="102" alt="image" src="https://github.com/user-attachments/assets/c962476d-c32c-4de4-8d64-6edefb7789c1" />
+<img width="1906" height="619" alt="image" src="https://github.com/user-attachments/assets/a31e887a-aab4-4279-9a42-8408f565fda5" />
 
 
 Fmod 2.03.06 : https://www.fmod.com/download#fmodstudio
