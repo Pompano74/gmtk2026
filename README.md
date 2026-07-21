@@ -24,7 +24,7 @@ Fmod 2.03.06 : https://www.fmod.com/download#fmodstudio
 <img width="1152" height="706" alt="Untitled" src="https://github.com/user-attachments/assets/9c7b7bc5-9ef0-4b7d-b993-9f0a42eda2a1" />
 
 
-5. cloner (Pompano74/godot_fmod_apprentissage).
+5. cloner (Pompano74/gmtk2026).
 <img width="628" height="464" alt="image" src="https://github.com/user-attachments/assets/67a31fab-ae9c-4f25-a64a-514d455f623e" />
 
 
