@@ -21,6 +21,7 @@ config/icon="res://assets/placeholders/icon_blue.svg"
 [autoload]
 
 FmodManager="*uid://cds10pm7hwn3p"
+TempoGlobalScript="*uid://bpbdjbvs17cyt"
 
 [display]
 
