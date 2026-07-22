@@ -129,7 +129,7 @@ texture = ExtResource("1_npt2f")
 scenes/1/scene = ExtResource("2_ykxrt")
 
 [sub_resource type="TileSet" id="TileSet_v00hk"]
-tile_size = Vector2i(64, 64)
+tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_ykxrt")
 sources/2 = SubResource("TileSetScenesCollectionSource_vjnni")
 
