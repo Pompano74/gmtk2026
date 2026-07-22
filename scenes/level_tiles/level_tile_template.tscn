@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dk76ra6tefaae"]
 
 [ext_resource type="Script" uid="uid://b2i1d8r1jfi58" path="res://script/level_tiles/level_tile_template.gd" id="1_fx4mi"]
-[ext_resource type="Texture2D" uid="uid://ciuxyaoktugh5" path="res://icon.svg" id="2_ykd5s"]
+[ext_resource type="Texture2D" uid="uid://ciuxyaoktugh5" path="res://assets/placeholders/icon_blue.svg" id="2_ykd5s"]
 [ext_resource type="Script" uid="uid://cwryqwwws0wmv" path="res://script/level_tiles/tile_sprite.gd" id="3_ykd5s"]
 
 [node name="LevelTileTemplate" type="Node2D" unique_id=2140134289]

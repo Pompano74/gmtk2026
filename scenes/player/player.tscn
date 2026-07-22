@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ch8ojui22ve4n"]
+
+[ext_resource type="Texture2D" uid="uid://ciuxyaoktugh5" path="res://assets/placeholders/icon_blue.svg" id="1_8afob"]
+[ext_resource type="Script" uid="uid://bcy7ei35qshf3" path="res://script/player/player.gd" id="1_dovo2"]
+[ext_resource type="PackedScene" uid="uid://bfn6jfulmp2e7" path="res://scenes/player/player_bullet.tscn" id="4_lvxji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
+size = Vector2(32, 32)
+
+[node name="Player" type="CharacterBody2D" unique_id=1805821953]
+script = ExtResource("1_dovo2")
+bullet_scene = ExtResource("4_lvxji")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=885346133]
+texture_filter = 1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_8afob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586598473]
+shape = SubResource("RectangleShape2D_dovo2")
+
+[node name="up" type="RayCast2D" parent="." unique_id=1372675347]
+position = Vector2(0, -16)
+rotation = 6.2831855
+target_position = Vector2(0, -16)
+hit_from_inside = true
+
+[node name="down" type="RayCast2D" parent="." unique_id=530900214]
+position = Vector2(0, 16)
+target_position = Vector2(0, 16)
+hit_from_inside = true
+
+[node name="left" type="RayCast2D" parent="." unique_id=515452296]
+position = Vector2(-16, 0)
+rotation = 1.5707964
+target_position = Vector2(0, 16)
+hit_from_inside = true
+
+[node name="right" type="RayCast2D" parent="." unique_id=182105213]
+position = Vector2(16, 0)
+rotation = -4.712389
+target_position = Vector2(0, -16)
+hit_from_inside = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1945438465]
+zoom = Vector2(2.25, 2.25)
