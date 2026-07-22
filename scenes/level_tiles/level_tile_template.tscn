@@ -1,16 +1,40 @@
 [gd_scene format=3 uid="uid://dk76ra6tefaae"]
 
 [ext_resource type="Script" uid="uid://b2i1d8r1jfi58" path="res://script/level_tiles/level_tile_template.gd" id="1_fx4mi"]
+[ext_resource type="Texture2D" uid="uid://cvklyhy7kagmy" path="res://assets/sprites/placeholder_32x32_tile.png" id="2_ox2gh"]
 [ext_resource type="Texture2D" uid="uid://ciuxyaoktugh5" path="res://icon.svg" id="2_ykd5s"]
 [ext_resource type="Script" uid="uid://cwryqwwws0wmv" path="res://script/level_tiles/tile_sprite.gd" id="3_ykd5s"]
 
 [node name="LevelTileTemplate" type="Node2D" unique_id=2140134289]
-scale = Vector2(0.5, 0.5)
 script = ExtResource("1_fx4mi")
-tile_sprite = ExtResource("2_ykd5s")
+tile_sprite = ExtResource("2_ox2gh")
+tile_layout = 3
 
 [node name="TileSprite" type="Sprite2D" parent="." unique_id=518674836]
-texture = ExtResource("2_ykd5s")
+texture = ExtResource("2_ox2gh")
 script = ExtResource("3_ykd5s")
 
 [node name="MovementArrows" type="Node2D" parent="." unique_id=625117789]
+
+[node name="UpIndicator" type="Sprite2D" parent="MovementArrows" unique_id=764114470]
+visible = false
+position = Vector2(0, -32)
+texture = ExtResource("2_ykd5s")
+
+[node name="RightIndicator" type="Sprite2D" parent="MovementArrows" unique_id=831377108]
+visible = false
+position = Vector2(64, 0)
+rotation = 1.5707964
+texture = ExtResource("2_ykd5s")
+
+[node name="DownIndicator" type="Sprite2D" parent="MovementArrows" unique_id=1899417485]
+visible = false
+position = Vector2(0, 64)
+rotation = 3.1415927
+texture = ExtResource("2_ykd5s")
+
+[node name="LeftIndicator" type="Sprite2D" parent="MovementArrows" unique_id=1229980934]
+visible = false
+position = Vector2(-64, 0)
+rotation = 4.712389
+texture = ExtResource("2_ykd5s")
