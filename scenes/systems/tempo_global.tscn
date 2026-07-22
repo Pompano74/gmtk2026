@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d0dcoogboxps"]
+
+[node name="Node" type="Node" unique_id=1480582950]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=59978025]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/metronome.bank"]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1390208007]
+event_name = "event:/metronome"
+event_guid = "{08e25bc7-6e3f-42ed-966b-e64427f4c53b}"
+autoplay = true
