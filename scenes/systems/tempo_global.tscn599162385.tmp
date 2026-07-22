@@ -11,3 +11,4 @@ bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://asse
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1390208007]
 event_name = "event:/metronome"
 event_guid = "{08e25bc7-6e3f-42ed-966b-e64427f4c53b}"
+auto_release = true
