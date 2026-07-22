@@ -37,6 +37,7 @@ folder_colors={
 "res://addons/": "gray",
 "res://assets/": "red",
 "res://scenes/": "yellow",
+"res://script/": "green",
 "res://scripts/": "green"
 }
 
