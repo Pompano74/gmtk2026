@@ -21,6 +21,7 @@ enum tile_layout_list { STRAIGHT, CORNER, T, CROSS, END }
 	set(new_layout):
 		tile_layout = new_layout
 		update_available_directions()
+		update_available_direction_indicators()
 
 @export var draw_direction_indicators := false:
 	set(new_draw_indicators):
@@ -52,10 +53,38 @@ func decrement_rotation_index() -> void:
 	update_available_directions()
 
 func update_available_directions() -> void:
+	available_directions.resize(4)
 	match tile_layout:
+		
 		tile_layout_list.CROSS:
-			available_directions.resize(4)
 			available_directions.fill(true)
+		
+		tile_layout_list.STRAIGHT:
+			if rotation_index % 2 == 0:
+				available_directions = [false, true, false, true]
+			else:
+				available_directions = [true, false, true, false]
+		
+		tile_layout_list.END:
+			available_directions.fill(false)
+			available_directions.insert(rotation_index, true)
+		
+		tile_layout_list.T:
+			available_directions.fill(true)
+			available_directions.insert(rotation_index, false)
+		
+		tile_layout_list.CORNER:
+			if rotation_index == 0:
+				available_directions = [true, true, false, false]
+			elif rotation_index == 1:
+				available_directions = [false, true, true, false]
+			elif rotation_index == 2:
+				available_directions = [false, false, true, true]
+			elif rotation_index == 3:
+				available_directions = [true, false, false, true]
+	
+	if draw_direction_indicators:
+		update_available_direction_indicators()
 
 func update_available_direction_indicators() -> void:
 	available_directions_indicators = [
