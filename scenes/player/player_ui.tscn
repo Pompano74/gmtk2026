@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bigyx51eoknt4"]
+
+[ext_resource type="Texture2D" uid="uid://dapxnxhser80o" path="res://assets/placeholders/icon_green.svg" id="1_32d7b"]
+
+[node name="player_ui" type="Control" unique_id=1579424744]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -96.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="IconGreen" type="Sprite2D" parent="." unique_id=1755844214]
+modulate = Color(1, 0.3529412, 0, 0.09803922)
+position = Vector2(240, 264)
+scale = Vector2(0.37499988, 0.3749999)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen2" type="Sprite2D" parent="." unique_id=689542842]
+position = Vector2(4.0000095, 284)
+scale = Vector2(0.06249984, 0.062499985)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen3" type="Sprite2D" parent="." unique_id=2119499431]
+position = Vector2(4.000002, 4.000002)
+scale = Vector2(0.06249996, 0.06249997)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen4" type="Sprite2D" parent="." unique_id=134284502]
+position = Vector2(476.00003, 284)
+scale = Vector2(0.06249998, 0.062499985)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen7" type="Sprite2D" parent="." unique_id=1618260637]
+modulate = Color(1, 0.3529412, 0, 0.09803922)
+position = Vector2(280, 272)
+scale = Vector2(0.24999993, 0.24999994)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen8" type="Sprite2D" parent="." unique_id=1470664685]
+modulate = Color(1, 0.3529412, 0, 0.09803922)
+position = Vector2(200, 272)
+scale = Vector2(0.24999993, 0.24999994)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen9" type="Sprite2D" parent="." unique_id=1972901357]
+modulate = Color(1, 0.3529412, 0, 0.09803922)
+position = Vector2(168.00002, 272)
+scale = Vector2(0.24999993, 0.24999994)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen10" type="Sprite2D" parent="." unique_id=414163048]
+modulate = Color(1, 0.3529412, 0, 0.09803922)
+position = Vector2(136.00002, 272)
+scale = Vector2(0.24999993, 0.24999994)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen11" type="Sprite2D" parent="." unique_id=1581071035]
+modulate = Color(1, 0.3529412, 0, 0.09803922)
+position = Vector2(312, 272)
+scale = Vector2(0.24999993, 0.24999994)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen12" type="Sprite2D" parent="." unique_id=2047217991]
+modulate = Color(1, 0.3529412, 0, 0.09803922)
+position = Vector2(344.00003, 272)
+scale = Vector2(0.24999993, 0.24999994)
+texture = ExtResource("1_32d7b")
+
+[node name="IconGreen5" type="Sprite2D" parent="." unique_id=1960250003]
+position = Vector2(476, 4.000002)
+scale = Vector2(0.062499743, 0.06249997)
+texture = ExtResource("1_32d7b")
