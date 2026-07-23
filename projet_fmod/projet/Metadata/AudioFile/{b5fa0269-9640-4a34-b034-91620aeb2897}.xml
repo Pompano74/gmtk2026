@@ -4,9 +4,6 @@
 		<property name="assetPath">
 			<value>track 3/3 punk ish 1-Aphex twin type beats.wav</value>
 		</property>
-		<property name="isStreaming">
-			<value>true</value>
-		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>
