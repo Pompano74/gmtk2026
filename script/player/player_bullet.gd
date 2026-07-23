@@ -14,9 +14,7 @@ func _process(delta: float) -> void:
 	
 func _move(bullet_dir: Vector2):
 	if life_span == 0:
-		print("bullet_dead")
 		queue_free()
 	else:
-		print("bullet_move")
 		global_position += bullet_dir * tile_size
 		life_span = life_span - 1
