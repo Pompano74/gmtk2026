@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{d02da326-dd87-4ebb-8723-88a1cf8e5822}">
+		<property name="name">
+			<value>YOUMISSED</value>
+		</property>
+		<relationship name="folder">
+			<destination>{07373b96-aff9-494c-b263-842f8b9c432d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{afd578bb-4679-4047-a55d-05f1e7f14c67}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{afd578bb-4679-4047-a55d-05f1e7f14c67}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>8</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

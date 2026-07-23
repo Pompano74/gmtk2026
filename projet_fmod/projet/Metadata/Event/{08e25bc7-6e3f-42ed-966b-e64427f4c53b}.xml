@@ -79,7 +79,13 @@
 	</object>
 	<object class="SingleSound" id="{06e66877-1a69-4434-9f6b-95d4d20824a9}">
 		<property name="length">
-			<value>0.0015192743764172335</value>
+			<value>0.46875</value>
+		</property>
+		<property name="looping">
+			<value>true</value>
+		</property>
+		<property name="playCount">
+			<value>1</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{6a3c5b65-358a-4536-94b9-bf15737484ed}</destination>
