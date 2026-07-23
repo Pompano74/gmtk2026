@@ -1,16 +1,20 @@
 extends Node2D
 
 const tile_size: Vector2 = Vector2(32, 32)
-var move_time: float = 1.0
+var move_time: float = TempoGlobal.beat_inital_value
 var dir: Vector2 = Vector2(0, 1)
 var life_span: int = 4
+var on_twos: bool = true
 
-func _process(delta: float) -> void:
-	if move_time <= 0:
+func _ready() -> void:
+	TempoGlobal.beat_signal.connect(on_beat_called)
+
+func on_beat_called():
+	if on_twos == true:
 		_move(dir)
-		move_time = 1.0
-	else:
-		move_time = move_time - delta
+		on_twos = false
+	elif on_twos == false:
+		on_twos = true
 	
 func _move(bullet_dir: Vector2):
 	if life_span == 0:
