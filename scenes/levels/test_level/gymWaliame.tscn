@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cdjf8csf6p8yn" path="res://assets/sprites/placeholders/world_tileset.png" id="1_75ufw"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_v560l"]
 [ext_resource type="PackedScene" uid="uid://bfn6jfulmp2e7" path="res://scenes/player/player_bullet.tscn" id="3_agwv7"]
+[ext_resource type="PackedScene" uid="uid://dk76ra6tefaae" path="res://scenes/level_tiles/level_tile_template.tscn" id="4_v560l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qeahj"]
 texture = ExtResource("1_75ufw")
@@ -149,3 +150,6 @@ position = Vector2(16, 16)
 
 [node name="PlayerBullet" parent="." unique_id=1246404053 instance=ExtResource("3_agwv7")]
 position = Vector2(16, 48)
+
+[node name="LevelTileTemplate" parent="." unique_id=2140134289 instance=ExtResource("4_v560l")]
+position = Vector2(48, 16)
