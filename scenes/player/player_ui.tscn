@@ -1,88 +1,18 @@
 [gd_scene format=3 uid="uid://bigyx51eoknt4"]
 
-[ext_resource type="Texture2D" uid="uid://dapxnxhser80o" path="res://assets/placeholders/icon_green.svg" id="1_32d7b"]
 [ext_resource type="Script" uid="uid://dbd1omaeefwo8" path="res://script/player/player_ui.gd" id="1_m6sn8"]
+[ext_resource type="Texture2D" uid="uid://s6wh516u4ffn" path="res://assets/sprites/ScreenArtUI_V8.png" id="3_fatww"]
 
 [node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right", "beat_middle")]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -96.0
-offset_bottom = -36.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_m6sn8")
-beat_left = [NodePath("beat_left1"), NodePath("beat_left2"), NodePath("beat_left3")]
-beat_right = [NodePath("beat_right1"), NodePath("beat_right2"), NodePath("beat_right3")]
-beat_middle = NodePath("beat_middle")
+beat_left = [NodePath(""), NodePath(""), NodePath("")]
+beat_right = [NodePath(""), NodePath(""), NodePath("")]
+beat_middle = NodePath("")
 
-[node name="beat_middle" type="Sprite2D" parent="." unique_id=1755844214]
-modulate = Color(1, 0.3529412, 0, 0.09803922)
-position = Vector2(240, 264)
-scale = Vector2(0.37499988, 0.3749999)
-texture = ExtResource("1_32d7b")
-
-[node name="beat_right1" type="Sprite2D" parent="." unique_id=1618260637]
-modulate = Color(1, 0.3529412, 0, 0.09803922)
-position = Vector2(280, 272)
-scale = Vector2(0.24999993, 0.24999994)
-texture = ExtResource("1_32d7b")
-
-[node name="beat_right2" type="Sprite2D" parent="." unique_id=1581071035]
-modulate = Color(1, 0.3529412, 0, 0.09803922)
-position = Vector2(312, 272)
-scale = Vector2(0.24999993, 0.24999994)
-texture = ExtResource("1_32d7b")
-
-[node name="beat_right3" type="Sprite2D" parent="." unique_id=2047217991]
-modulate = Color(1, 0.3529412, 0, 0.09803922)
-position = Vector2(344.00003, 272)
-scale = Vector2(0.24999993, 0.24999994)
-texture = ExtResource("1_32d7b")
-
-[node name="beat_left1" type="Sprite2D" parent="." unique_id=1470664685]
-modulate = Color(1, 0.3529412, 0, 0.09803922)
-position = Vector2(200, 272)
-scale = Vector2(0.24999993, 0.24999994)
-texture = ExtResource("1_32d7b")
-
-[node name="beat_left2" type="Sprite2D" parent="." unique_id=1972901357]
-modulate = Color(1, 0.3529412, 0, 0.09803922)
-position = Vector2(168.00002, 272)
-scale = Vector2(0.24999993, 0.24999994)
-texture = ExtResource("1_32d7b")
-
-[node name="beat_left3" type="Sprite2D" parent="." unique_id=414163048]
-modulate = Color(1, 0.3529412, 0, 0.09803922)
-position = Vector2(136.00002, 272)
-scale = Vector2(0.24999993, 0.24999994)
-texture = ExtResource("1_32d7b")
-
-[node name="ui_stuff" type="Node2D" parent="." unique_id=1224184994]
-
-[node name="corner_bottom_left" type="Sprite2D" parent="ui_stuff" unique_id=689542842]
-position = Vector2(4.0000095, 284)
-scale = Vector2(0.06249984, 0.062499985)
-texture = ExtResource("1_32d7b")
-
-[node name="corner_upper_left" type="Sprite2D" parent="ui_stuff" unique_id=2119499431]
-position = Vector2(4.000002, 4.000002)
-scale = Vector2(0.06249996, 0.06249997)
-texture = ExtResource("1_32d7b")
-
-[node name="corner_bottom_right" type="Sprite2D" parent="ui_stuff" unique_id=134284502]
-position = Vector2(476.00003, 284)
-scale = Vector2(0.06249998, 0.062499985)
-texture = ExtResource("1_32d7b")
-
-[node name="corner_upper_right" type="Sprite2D" parent="ui_stuff" unique_id=1960250003]
-position = Vector2(476, 4.000002)
-scale = Vector2(0.062499743, 0.06249997)
-texture = ExtResource("1_32d7b")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=820278526]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_fatww")

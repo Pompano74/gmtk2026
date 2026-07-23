@@ -11,13 +11,12 @@ config_version=5
 [Fmod]
 
 General/banks_path="res://assets/FMOD/banks/Desktop"
-General/should_load_by_name=true
-DSP/dsp_buffer_size=256
 "Software Format/raw_speaker_count"=2
 
 [application]
 
 config/name="gmtk2026"
+run/main_scene="uid://csibf38tdx7bi"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/placeholders/icon_blue.svg"
 
@@ -117,4 +116,5 @@ pause_game={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
