@@ -24,13 +24,8 @@ func _process(delta: float) -> void:
 	pass
 	
 func _beat():
-<<<<<<< HEAD
 	print("beat")
-=======
 	beat_signal.emit()
 	metronom.play()
 func _on_timer_timeout() -> void:
 	_beat()
-	
-	
->>>>>>> 8b2cfabffb5e2f28d280f4c3cba1a18102e75f71
