@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cld2h8pp87aro" path="res://script/level_grids/level_grid_template.gd" id="2_gaoov"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="3_cks8l"]
 [ext_resource type="PackedScene" uid="uid://3086uwlemvco" path="res://scenes/level_tiles/player_spawn_tile.tscn" id="4_ixjn1"]
+[ext_resource type="Script" uid="uid://ilwxgqjc7kbj" path="res://script/system/level_music_manager.gd" id="6_6yq7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gaoov"]
 texture = ExtResource("1_76kxg")
@@ -182,3 +183,18 @@ script = ExtResource("2_gaoov")
 
 [node name="PlayerSpawnTile" parent="TileMapLayer" unique_id=787001746 instance=ExtResource("4_ixjn1")]
 position = Vector2(112, 16)
+
+[node name="MusicManager" type="Node" parent="." unique_id=1575283334 node_paths=PackedStringArray("music")]
+script = ExtResource("6_6yq7g")
+music = NodePath("FmodEventEmitter2D")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="MusicManager" unique_id=1728525007]
+event_name = "event:/track1"
+event_guid = "{cafc9354-6bba-4047-9a1e-c278cf892852}"
+volume = 0.25
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="MusicManager" unique_id=2084850516]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
