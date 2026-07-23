@@ -8,9 +8,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(32, 32)
 
-[node name="Player" type="CharacterBody2D" unique_id=1805821953]
+[node name="Player" type="CharacterBody2D" unique_id=1805821953 node_paths=PackedStringArray("player_action")]
 script = ExtResource("1_dovo2")
 bullet_scene = ExtResource("4_lvxji")
+player_action = NodePath("player_action")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1707515665]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=885346133]
 texture_filter = 1
@@ -52,8 +56,6 @@ offset_top = -144.0
 offset_right = 240.0
 offset_bottom = 144.0
 
-[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1943224875]
-
 [node name="player_action" type="FmodEventEmitter2D" parent="." unique_id=201022238]
 event_name = "event:/player action"
 event_guid = "{2584fcb6-bc8d-4183-b8d0-992cd0bbab48}"
@@ -65,5 +67,4 @@ fmod_parameters/YOUMISSED/variant_type = 2
 "fmod_parameters/player action/labels" = PackedStringArray("move", "shoot")
 "fmod_parameters/player action/variant_type" = 4
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1707515665]
-bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
+[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1943224875]
