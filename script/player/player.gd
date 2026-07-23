@@ -174,4 +174,4 @@ func _shoot(dir:Vector2):
 	bullet.add_to_group("bullets")
 
 func _getSurroundTileInfo():
-	pass
+	$up.get_collider()

@@ -457,7 +457,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>0.5</value>
+			<value>16</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{c834ea31-1c86-415d-a577-af3a185e8dd5}</destination>
@@ -580,6 +580,7 @@
 	<object class="MixerBusEffectChain" id="{91eb2c0b-2d7f-4712-9305-0fd41dc7807a}">
 		<relationship name="effects">
 			<destination>{7996d13c-432a-4f13-afd0-e2213d977df2}</destination>
+			<destination>{1f802f9f-6d6a-4ae4-b8c5-ea4ec4637bf5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b62a308d-fd0f-4510-9eed-27b847946b4a}" />
@@ -666,6 +667,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{7996d13c-432a-4f13-afd0-e2213d977df2}" />
+	<object class="GainEffect" id="{1f802f9f-6d6a-4ae4-b8c5-ea4ec4637bf5}" />
 	<object class="AutomationPoint" id="{118a9738-243b-476f-99d1-303140f4215b}">
 		<property name="position">
 			<value>0</value>
