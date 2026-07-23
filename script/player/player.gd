@@ -10,7 +10,7 @@ const tile_size: Vector2 = Vector2(32, 32)
 @onready var player_action: FmodEventEmitter2D = $player_action
 
 #beat_system_for_player
-var buffer_value: float = 0.18
+var buffer_value: float = 0.18 #Buffer value used to determine the window in which the player can press a button
 var buffer_min: float
 var buffer_max: float
 var beat_inital_value
@@ -25,6 +25,8 @@ func _ready() -> void:
 	music = TempoGlobal.music
 
 func on_beat_called() -> void:
+	#should create a function to retrieve information (for instance current tile type)
+	_getSurroundTileInfo()
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -165,3 +167,6 @@ func _shoot(dir:Vector2):
 	bullet.global_position = position + (dir * 32)
 	bullet.dir = dir
 	bullet.add_to_group("bullets")
+
+func _getSurroundTileInfo():
+	pass

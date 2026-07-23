@@ -4,7 +4,7 @@ class_name LevelTile
 
 enum tile_layout_list { STRAIGHT, CORNER, T, CROSS, END }
 
-@export var tile_sprite : Texture2D:
+@export var tile_sprite : Texture2D: #lets the user set an image for the tile image
 	set(sprite):
 		tile_sprite = sprite
 		var sprite_ref = $TileSprite

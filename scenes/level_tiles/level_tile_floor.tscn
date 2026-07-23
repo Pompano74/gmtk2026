@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://tahgyhbnbpmg"]
+
+[ext_resource type="Script" uid="uid://b2i1d8r1jfi58" path="res://script/level_tiles/level_tile_template.gd" id="1_j8qsx"]
+
+[node name="LevelTile" type="Node2D" unique_id=704521005]
+script = ExtResource("1_j8qsx")
+metadata/_custom_type_script = "uid://b2i1d8r1jfi58"
