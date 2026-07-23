@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bftbk8urv1bbs"]
+
+[ext_resource type="Script" uid="uid://dsjfpudj1v373" path="res://script/level_grids/grid_coord_tracker.gd" id="1_5n5gp"]
+
+[node name="GridCoordTracker" type="Node" unique_id=312814823]
+script = ExtResource("1_5n5gp")

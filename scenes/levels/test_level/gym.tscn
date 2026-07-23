@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://csibf38tdx7bi"]
 
+[ext_resource type="Script" uid="uid://ilwxgqjc7kbj" path="res://script/system/level_music_manager.gd" id="1_bhdoh"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="1_i130d"]
 [ext_resource type="Texture2D" uid="uid://cdjf8csf6p8yn" path="res://assets/sprites/placeholders/world_tileset.png" id="2_slxod"]
 [ext_resource type="PackedScene" uid="uid://bfn6jfulmp2e7" path="res://scenes/player/player_bullet.tscn" id="3_qeahj"]
@@ -137,7 +138,9 @@ texture = ExtResource("2_slxod")
 [sub_resource type="TileSet" id="TileSet_mfd2r"]
 sources/0 = SubResource("TileSetAtlasSource_qeahj")
 
-[node name="gym" type="Node2D" unique_id=1596905799]
+[node name="gym" type="Node2D" unique_id=1596905799 node_paths=PackedStringArray("music")]
+script = ExtResource("1_bhdoh")
+music = NodePath("music")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1564353499]
 tile_set = SubResource("TileSet_mfd2r")
@@ -149,3 +152,26 @@ position = Vector2(16, 16)
 
 [node name="PlayerBullet" parent="." unique_id=1246404053 instance=ExtResource("3_qeahj")]
 position = Vector2(16, 48)
+
+[node name="PlayerBullet2" parent="." unique_id=1278265912 instance=ExtResource("3_qeahj")]
+position = Vector2(80, -48)
+
+[node name="PlayerBullet3" parent="." unique_id=1230349024 instance=ExtResource("3_qeahj")]
+position = Vector2(144, -112)
+
+[node name="PlayerBullet4" parent="." unique_id=515222150 instance=ExtResource("3_qeahj")]
+position = Vector2(192, 0)
+
+[node name="PlayerBullet5" parent="." unique_id=745532350 instance=ExtResource("3_qeahj")]
+position = Vector2(240, -96)
+
+[node name="metronom" type="FmodEventEmitter2D" parent="." unique_id=115968845]
+event_name = "event:/track metronome"
+event_guid = "{8f235c18-32b4-4107-b784-84fc31cefde9}"
+
+[node name="music" type="FmodEventEmitter2D" parent="." unique_id=1756338329]
+event_name = "event:/track1"
+event_guid = "{cafc9354-6bba-4047-9a1e-c278cf892852}"
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2

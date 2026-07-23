@@ -11,6 +11,9 @@ config_version=5
 [Fmod]
 
 General/banks_path="res://assets/FMOD/banks/Desktop"
+General/should_load_by_name=true
+DSP/dsp_buffer_size=256
+"Software Format/raw_speaker_count"=2
 
 [application]
 
