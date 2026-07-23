@@ -112,9 +112,6 @@
 		<property name="start">
 			<value>1</value>
 		</property>
-		<property name="looping">
-			<value>true</value>
-		</property>
 		<relationship name="audioFile">
 			<destination>{73c0a5a4-ae86-4994-9e37-4ccd8a429e3b}</destination>
 		</relationship>
@@ -131,9 +128,6 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{d809e5fb-85d4-422c-80d0-248f9170f7f0}">
-		<property name="looping">
-			<value>true</value>
-		</property>
 		<relationship name="audioFile">
 			<destination>{dac8a2f8-0ab6-4059-b27d-3290d30cc513}</destination>
 		</relationship>
