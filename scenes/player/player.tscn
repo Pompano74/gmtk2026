@@ -51,10 +51,8 @@ hit_from_inside = true
 zoom = Vector2(2.25, 2.25)
 
 [node name="player_ui" parent="." unique_id=1579424744 instance=ExtResource("4_p47bc")]
-offset_left = -240.0
-offset_top = -144.0
-offset_right = 240.0
-offset_bottom = 144.0
+offset_top = -6.0
+offset_bottom = -6.0
 
 [node name="player_action" type="FmodEventEmitter2D" parent="." unique_id=201022238]
 event_name = "event:/player action"

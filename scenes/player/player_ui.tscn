@@ -2,20 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://dapxnxhser80o" path="res://assets/placeholders/icon_green.svg" id="1_32d7b"]
 [ext_resource type="Script" uid="uid://dbd1omaeefwo8" path="res://script/player/player_ui.gd" id="1_m6sn8"]
+[ext_resource type="Texture2D" uid="uid://s6wh516u4ffn" path="res://assets/sprites/ScreenArtUI_V8.png" id="3_fatww"]
 
 [node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right", "beat_middle")]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -96.0
-offset_bottom = -36.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_m6sn8")
@@ -86,3 +77,7 @@ texture = ExtResource("1_32d7b")
 position = Vector2(476, 4.000002)
 scale = Vector2(0.062499743, 0.06249997)
 texture = ExtResource("1_32d7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=820278526]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_fatww")
