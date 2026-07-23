@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://6awh6ts5vvs1"]
+
+[ext_resource type="Script" uid="uid://dbq0s65c0bwrx" path="res://script/enemies/base_enemy.gd" id="1_lkvl6"]
+[ext_resource type="Texture2D" uid="uid://yg22u44vv4hg" path="res://assets/placeholders/icon_red.svg" id="1_qf3h2"]
+[ext_resource type="PackedScene" uid="uid://bftbk8urv1bbs" path="res://scenes/systems/grid_coord_tracker.tscn" id="2_lkvl6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n763p"]
+size = Vector2(32, 32)
+
+[node name="BaseEnemy" type="Node2D" unique_id=1418937433]
+script = ExtResource("1_lkvl6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1638563704]
+modulate = Color(0.8750001, 0.25, 1, 1)
+self_modulate = Color(0.8745098, 0.2509804, 1, 1)
+texture_filter = 1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_qf3h2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=149471250]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1392167859]
+shape = SubResource("RectangleShape2D_n763p")
+
+[node name="GridCoordTracker" parent="." unique_id=312814823 instance=ExtResource("2_lkvl6")]

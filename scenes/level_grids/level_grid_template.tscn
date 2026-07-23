@@ -1,8 +1,12 @@
-[gd_scene format=4 uid="uid://dt8peqm0xmbbd"]
+[gd_scene format=3 uid="uid://dt8peqm0xmbbd"]
 
 [ext_resource type="Texture2D" uid="uid://qkrp6lovbjw4" path="res://assets/sprites/Tileset_V04.png" id="1_76kxg"]
+[ext_resource type="Script" uid="uid://c6nwdgbobyr3a" path="res://script/system/level_manager.gd" id="1_ilkoo"]
 [ext_resource type="Script" uid="uid://cld2h8pp87aro" path="res://script/level_grids/level_grid_template.gd" id="2_gaoov"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="3_cks8l"]
+[ext_resource type="Texture2D" uid="uid://cueco5cujhvpb" path="res://assets/sprites/Tileset_3der_V01.png" id="4_e4q0u"]
+[ext_resource type="PackedScene" uid="uid://3086uwlemvco" path="res://scenes/level_tiles/player_spawn_tile.tscn" id="4_ixjn1"]
+[ext_resource type="Script" uid="uid://ilwxgqjc7kbj" path="res://script/system/level_music_manager.gd" id="6_6yq7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gaoov"]
 texture = ExtResource("1_76kxg")
@@ -160,17 +164,193 @@ texture_region_size = Vector2i(32, 32)
 9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 9:5/0/custom_data_0 = true
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bn28r"]
+texture = ExtResource("4_e4q0u")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/custom_data_0 = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/custom_data_0 = true
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0/custom_data_0 = true
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0/custom_data_0 = true
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:0/0/custom_data_0 = true
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:0/0/custom_data_0 = true
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:1/0/custom_data_0 = true
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:1/0/custom_data_0 = true
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:1/0/custom_data_0 = true
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0/custom_data_0 = true
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0/custom_data_0 = true
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0/custom_data_0 = true
+3:2/0 = 0
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0/custom_data_0 = true
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:2/0/custom_data_0 = true
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:2/0/custom_data_0 = true
+7:2/0 = 0
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:2/0/custom_data_0 = true
+9:2/0 = 0
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:2/0/custom_data_0 = true
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0/custom_data_0 = true
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:3/0/custom_data_0 = true
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0/custom_data_0 = true
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:3/0/custom_data_0 = true
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:3/0/custom_data_0 = true
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:3/0/custom_data_0 = true
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:4/0/custom_data_0 = true
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:4/0/custom_data_0 = true
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:4/0/custom_data_0 = true
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:4/0/custom_data_0 = true
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:4/0/custom_data_0 = true
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:4/0/custom_data_0 = true
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:4/0/custom_data_0 = true
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:4/0/custom_data_0 = true
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:4/0/custom_data_0 = true
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:4/0/custom_data_0 = true
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:5/0/custom_data_0 = true
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:5/0/custom_data_0 = true
+2:5/0 = 0
+2:5/0/custom_data_0 = true
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:5/0/custom_data_0 = true
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:5/0/custom_data_0 = true
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:5/0/custom_data_0 = true
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:5/0/custom_data_0 = true
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:5/0/custom_data_0 = true
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:5/0/custom_data_0 = true
+9:5/0 = 0
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:5/0/custom_data_0 = true
+
 [sub_resource type="TileSet" id="TileSet_v00hk"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 custom_data_layer_0/name = "is_solid"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_gaoov")
+sources/1 = SubResource("TileSetAtlasSource_bn28r")
 
-[node name="TileMapLayer" type="TileMapLayer" unique_id=1452209589]
-tile_map_data = PackedByteArray("AAAAAAAAAAADAAMAAAABAAAAAAADAAMAAAACAAAAAAADAAMAAAAEAAAAAAADAAMAAAAAAAEAAAADAAMAAAABAAEAAAAEAAIAAFACAAEAAAADAAMAAAADAAEAAAADAAMAAAAEAAEAAAADAAMAAAAFAAEAAAAHAAQAAFAFAAAAAAAGAAMAAFAFAAIAAAAHAAQAAFAEAAIAAAADAAMAAAADAAIAAAADAAMAAAACAAIAAAADAAMAAAABAAIAAAAHAAQAAGAAAAIAAAADAAMAAAAAAAMAAAAIAAEAAFABAAMAAAAIAAAAAFACAAMAAAADAAMAAAADAAMAAAAFAAMAADAEAAMAAAADAAMAAAAFAAMAAAAHAAQAAFAAAAQAAAADAAMAAAABAAQAAAAGAAIAADACAAQAAAAHAAQAADADAAQAAAAGAAIAAFAEAAQAAAADAAMAAAAFAAQAAAAFAAMAAAAFAAUAAAADAAMAAAAEAAUAAAADAAMAAAADAAUAAAADAAMAAAACAAUAAAADAAMAAAABAAUAAAADAAMAAAAAAAUAAAADAAMAAAAGAAAAAAAFAAMAAGAGAAEAAAADAAMAAAAGAAIAAAADAAMAAAAGAAMAAAADAAMAAAAGAAQAAAADAAMAAAAGAAUAAAADAAMAAAADAAAAAAADAAMAAAA=")
+[node name="LevelManager" type="Node2D" unique_id=1574904214 node_paths=PackedStringArray("tilemap", "player_spawn")]
+script = ExtResource("1_ilkoo")
+tilemap = NodePath("TileMapLayer")
+player_scene = ExtResource("3_cks8l")
+player_spawn = NodePath("TileMapLayer/PlayerSpawnTile")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1452209589]
 tile_set = SubResource("TileSet_v00hk")
 script = ExtResource("2_gaoov")
 
-[node name="Player" parent="." unique_id=1805821953 instance=ExtResource("3_cks8l")]
+[node name="PlayerSpawnTile" parent="TileMapLayer" unique_id=787001746 instance=ExtResource("4_ixjn1")]
 position = Vector2(16, 16)
+
+[node name="MusicManager" type="Node" parent="." unique_id=1575283334 node_paths=PackedStringArray("music")]
+script = ExtResource("6_6yq7g")
+music = NodePath("FmodEventEmitter2D")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="MusicManager" unique_id=1728525007]
+event_name = "event:/track1"
+event_guid = "{cafc9354-6bba-4047-9a1e-c278cf892852}"
+volume = 0.25
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="MusicManager" unique_id=2084850516]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
