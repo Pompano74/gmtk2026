@@ -6,8 +6,8 @@ signal beat_signal
 @export var bpm: float = 120.0
 var beat_inital_value: float
 var beat_timer: float
-
 @onready var timer: Timer = $Timer
+var beat_streak: int = 0
 
 
 func _ready() -> void:

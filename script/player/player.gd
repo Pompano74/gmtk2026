@@ -30,6 +30,7 @@ func on_beat_called() -> void:
 func _physics_process(delta: float) -> void:
 	
 	beat_timer = timer.get_time_left()
+	TempoGlobal.beat_streak = beat_streak
 	
 	#movement
 	if Input.is_action_just_pressed("move_up") and !$up.is_colliding():

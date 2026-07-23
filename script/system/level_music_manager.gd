@@ -2,7 +2,7 @@ extends Node
 
 var banks:= Array()
 @export var music: FmodEventEmitter2D = null
-@export var metronome: FmodEventEmitter2D = null
+var music_playing: bool = false
 
 func _ready() -> void:
 	
@@ -10,5 +10,9 @@ func _ready() -> void:
 	TempoGlobal.beat_signal.connect(on_beat_called)
 
 func on_beat_called():
-	music.play()
-	metronome.play()
+	music.set_parameter("combo chain", TempoGlobal.beat_streak)
+	if music_playing == false:
+		music.play()
+		music_playing = true
+	else:
+		pass

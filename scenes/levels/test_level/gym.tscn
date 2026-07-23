@@ -138,10 +138,9 @@ texture = ExtResource("2_slxod")
 [sub_resource type="TileSet" id="TileSet_mfd2r"]
 sources/0 = SubResource("TileSetAtlasSource_qeahj")
 
-[node name="gym" type="Node2D" unique_id=1596905799 node_paths=PackedStringArray("music", "metronome")]
+[node name="gym" type="Node2D" unique_id=1596905799 node_paths=PackedStringArray("music")]
 script = ExtResource("1_bhdoh")
 music = NodePath("music")
-metronome = NodePath("metronom")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1036606710]
 bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/metronome.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
@@ -175,7 +174,3 @@ event_guid = "{cafc9354-6bba-4047-9a1e-c278cf892852}"
 "fmod_parameters/combo chain/id" = 3414661205676469846
 "fmod_parameters/combo chain" = 0
 "fmod_parameters/combo chain/variant_type" = 2
-
-[node name="metronom" type="FmodEventEmitter2D" parent="." unique_id=1112988599]
-event_name = "event:/track metronome"
-event_guid = "{8f235c18-32b4-4107-b784-84fc31cefde9}"
