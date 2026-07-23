@@ -165,13 +165,17 @@ position = Vector2(192, 0)
 [node name="PlayerBullet5" parent="." unique_id=745532350 instance=ExtResource("3_qeahj")]
 position = Vector2(240, -96)
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=612933340]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/metronome.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
+
 [node name="metronom" type="FmodEventEmitter2D" parent="." unique_id=115968845]
 event_name = "event:/track metronome"
 event_guid = "{8f235c18-32b4-4107-b784-84fc31cefde9}"
+allow_fadeout = false
 
 [node name="music" type="FmodEventEmitter2D" parent="." unique_id=1756338329]
-event_name = "event:/track1"
-event_guid = "{cafc9354-6bba-4047-9a1e-c278cf892852}"
+event_name = "event:/track1MP3"
+event_guid = "{c0385985-f4de-4978-97c3-92aca34ecbd1}"
 "fmod_parameters/combo chain/id" = 3414661205676469846
 "fmod_parameters/combo chain" = 0
 "fmod_parameters/combo chain/variant_type" = 2

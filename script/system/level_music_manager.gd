@@ -6,12 +6,11 @@ var banks := Array()
 var music_started: bool = false
 
 func _ready() -> void:
-	banks.append(FmodServer.load_bank("res://assets/FMOD/banks/Desktop/Master.strings.bank", FmodServer.FMOD_STUDIO_LOAD_BANK_NORMAL))
-	banks.append(FmodServer.load_bank("res://assets/FMOD/banks/Desktop/Master.bank", FmodServer.FMOD_STUDIO_LOAD_BANK_NORMAL))
-	banks.append(FmodServer.load_bank("res://assets/FMOD/banks/Desktop/tracks.bank", FmodServer.FMOD_STUDIO_LOAD_BANK_NORMAL))
-	banks.append(FmodServer.load_bank("res://assets/FMOD/banks/Desktop/metronome.bank", FmodServer.FMOD_STUDIO_LOAD_BANK_NORMAL))
-	#music = FmodServer.create_event_instance("event:/track1")
-	print(music)
+	#banks.append(FmodServer.load_bank("res://assets/FMOD/banks/Desktop/Master.strings.bank", FmodServer.FMOD_STUDIO_LOAD_BANK_NORMAL))
+	#banks.append(FmodServer.load_bank("res://assets/FMOD/banks/Desktop/Master.bank", FmodServer.FMOD_STUDIO_LOAD_BANK_NORMAL))
+	#banks.append(FmodServer.load_bank("res://assets/FMOD/banks/Desktop/tracks.bank", FmodServer.FMOD_STUDIO_LOAD_BANK_NORMAL))
+	#banks.append(FmodServer.load_bank("res://assets/FMOD/banks/Desktop/metronome.bank", FmodServer.FMOD_STUDIO_LOAD_BANK_NORMAL))
+	#print(music)
 	
 	TempoGlobal.beat_signal.connect(on_beat_called)
 
