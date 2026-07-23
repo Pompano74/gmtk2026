@@ -6,8 +6,21 @@
 script = ExtResource("1_muea5")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=59978025]
-bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/metronome.bank"]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/metronome.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1390208007]
+[node name="metronom" type="FmodEventEmitter2D" parent="." unique_id=1390208007]
 event_name = "event:/metronome"
 event_guid = "{08e25bc7-6e3f-42ed-966b-e64427f4c53b}"
+
+[node name="music" type="FmodEventEmitter2D" parent="." unique_id=334108110]
+event_name = "event:/track1"
+event_guid = "{cafc9354-6bba-4047-9a1e-c278cf892852}"
+autoplay = true
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+
+[node name="Timer" type="Timer" parent="." unique_id=53055920]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

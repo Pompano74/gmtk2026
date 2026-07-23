@@ -3,23 +3,34 @@ extends Node
 
 signal beat_signal
 
-@export var bpm: float = 120
+@export var bpm: float = 120.0
 var beat_timer: float
-@onready var sound: FmodEventEmitter2D = $FmodEventEmitter2D
+var beat_inital_value: float
+@onready var metronom: FmodEventEmitter2D = $metronom
+@onready var music: FmodEventEmitter2D = $music
+@onready var music_started: bool = false
+@onready var timer: Timer = $Timer
 
 
 
 
 func _ready() -> void:
-	beat_timer = 1 / (bpm / 60)
+	_beat()
+	beat_inital_value = 1.0 / (bpm / 60.0)
+	beat_timer = beat_inital_value
+	timer.wait_time = beat_inital_value
 
 func _process(delta: float) -> void:
+	pass
 	
-	if beat_timer <= 0.0:
-		_beat()
-		sound.play()
-		beat_timer = 1 / (bpm / 60)
-	else:
-		beat_timer = beat_timer - delta
 func _beat():
+<<<<<<< HEAD
 	print("beat")
+=======
+	beat_signal.emit()
+	metronom.play()
+func _on_timer_timeout() -> void:
+	_beat()
+	
+	
+>>>>>>> 8b2cfabffb5e2f28d280f4c3cba1a18102e75f71
