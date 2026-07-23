@@ -36,24 +36,24 @@ func _physics_process(delta: float) -> void:
 	
 	#movement
 	if Input.is_action_just_pressed("move_up") and !$up.is_colliding():
-		_move(Vector2(0, -1))
-	elif Input.is_action_just_pressed("move_down") and !$up.is_colliding():
-		_move(Vector2(0, 1))
-	elif Input.is_action_just_pressed("move_left") and !$up.is_colliding():
-		_move(Vector2(-1, 0))
-	elif Input.is_action_just_pressed("move_right") and !$up.is_colliding():
-		_move(Vector2(1, 0))
 		buffer_min = TempoGlobal.beat_inital_value - buffer_value
 		buffer_max = TempoGlobal.beat_inital_value + buffer_value
+		print("buffer_min:"," ",buffer_min)
+		print("buffer_max:"," ",buffer_max)
 		if beat_timer > buffer_min and  beat_timer < buffer_max:
-			player_action.set_parameter("Parameter 1", "move")
+			player_action.set_parameter("player action", "move")
 			player_action.play()
 			_move(Vector2(0, -1))
+			print("yeah")
+			print("time it:"," ",beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
+				print(beat_timer)
 				pass
 		else:
+			print("time it:"," ",beat_timer)
+			print("missed")
 			if beat_streak > 0:
 				beat_streak -= 2
 	elif Input.is_action_just_pressed("move_down") and !$down.is_colliding():
@@ -62,14 +62,15 @@ func _physics_process(delta: float) -> void:
 		if beat_timer > buffer_min and  beat_timer < buffer_max:
 			player_action.set_parameter("Parameter 1", "move")
 			player_action.play()
-			_move(Vector2(0, 1))
-			print(TempoGlobal.beat_timer)
+			_move(Vector2(0, 0))
+			print(beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
+				print(beat_timer)
 				pass
 		else:
-			print(TempoGlobal.beat_timer)
+			print(beat_timer)
 			if beat_streak > 0:
 				beat_streak -= 2
 	elif Input.is_action_just_pressed("move_left") and !$left.is_colliding():
@@ -79,9 +80,11 @@ func _physics_process(delta: float) -> void:
 			player_action.set_parameter("Parameter 1", "move")
 			player_action.play()
 			_move(Vector2(-1, 0))
+			print(beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
+				print(beat_timer)
 				pass
 		else:
 			if beat_streak > 0:
@@ -93,11 +96,13 @@ func _physics_process(delta: float) -> void:
 			player_action.set_parameter("Parameter 1", "move")
 			player_action.play()
 			_move(Vector2(1, 0))
+			print(beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
 				pass
 		else:
+			print(beat_timer)
 			if beat_streak > 0:
 				beat_streak -= 2
 	
