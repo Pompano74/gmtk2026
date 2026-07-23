@@ -57,7 +57,6 @@ offset_bottom = 144.0
 [node name="player_action" type="FmodEventEmitter2D" parent="." unique_id=201022238]
 event_name = "event:/player action"
 event_guid = "{2584fcb6-bc8d-4183-b8d0-992cd0bbab48}"
-auto_release = true
 fmod_parameters/YOUMISSED/id = 1639130881498081622
 fmod_parameters/YOUMISSED = 0
 fmod_parameters/YOUMISSED/variant_type = 2
