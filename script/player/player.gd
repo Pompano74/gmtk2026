@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 const tile_size: Vector2 = Vector2(32, 32)
 
+@onready var coord_tracker: GridCoordTracker = $GridCoordTracker
+
 #sounds
 @export var player_action: FmodEventEmitter2D
 
