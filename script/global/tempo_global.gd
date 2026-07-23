@@ -13,6 +13,9 @@ var beat_timer: float
 var beat_streak: int = 0
 var streak_multiplayier: int = 1
 
+#block le spam in buffer zone
+var pressed_late: bool = false
+
 #coutdown system
 var coutdown_value: int = 20
 
@@ -28,30 +31,32 @@ func _process(delta: float) -> void:
 		pass
 
 func _beat_failed():
-	if coutdown_value != 0:
-		coutdown_value -= 1
-	else:
+	print("missed")
+	coutdown_value -= 1
+	if coutdown_value < 1:
 		coutdown_value = 0
 
 func _beat():
+	print("normal")
 	#signal for other scripts
 	beat_signal.emit()
 	
 	#beat value update
-	print("-----------------------------------")
+	print("--------------global-------------")
 	print("coutdown:",coutdown_value)
 	print("beat_streak:", beat_streak)
 	print("streak_multiplayier:", streak_multiplayier)
 	print("-----------------------------------")
-	if coutdown_value != 0:
-		coutdown_value -= 1
-	else:
+	
+	coutdown_value -= 1
+	if coutdown_value < 1:
 		coutdown_value = 0
 	
 func _beat_win():
-	if coutdown_value != 20:
-		coutdown_value += 1
-	elif coutdown_value > 20:
+	
+	print("win")
+	coutdown_value += 1
+	if coutdown_value > 20:
 		coutdown_value = 20
 
 func _on_timer_timeout() -> void:

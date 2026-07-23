@@ -31,8 +31,7 @@ func _ready() -> void:
 func on_beat_called() -> void:
 	#should create a function to retrieve information (for instance current tile type)
 	_getSurroundTileInfo()
-
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	
 	beat_timer = timer.get_time_left()
 	TempoGlobal.beat_streak = beat_streak
@@ -105,7 +104,8 @@ func _physics_process(delta: float) -> void:
 			TempoGlobal._beat_failed()
 	elif Input.is_action_just_pressed("shoot_right") and !$up.is_colliding() and action_check == false:
 		action_check = true
-		if beat_timer > buffer_min or beat_timer < buffer_max:
+		
+		if beat_timer >= buffer_min or beat_timer <= buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
 			_shoot(Vector2(1, 0))
