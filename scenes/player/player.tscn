@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bcy7ei35qshf3" path="res://script/player/player.gd" id="1_dovo2"]
 [ext_resource type="PackedScene" uid="uid://bfn6jfulmp2e7" path="res://scenes/player/player_bullet.tscn" id="4_lvxji"]
 [ext_resource type="PackedScene" uid="uid://bigyx51eoknt4" path="res://scenes/player/player_ui.tscn" id="4_p47bc"]
+[ext_resource type="Script" uid="uid://dsjfpudj1v373" path="res://script/level_grids/grid_coord_tracker.gd" id="5_p47bc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(32, 32)
@@ -67,3 +68,7 @@ fmod_parameters/YOUMISSED/variant_type = 2
 "fmod_parameters/player action/variant_type" = 4
 
 [node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1943224875]
+
+[node name="GridCoordTracker" type="Node" parent="." unique_id=15007792]
+script = ExtResource("5_p47bc")
+metadata/_custom_type_script = "uid://dsjfpudj1v373"
