@@ -18,6 +18,9 @@ var timer
 var beat_timer
 var beat_streak: int = 0
 
+#player value
+var action_check: bool = false
+
 func _ready() -> void:
 	TempoGlobal.beat_signal.connect(on_beat_called)
 	timer = TempoGlobal.timer
@@ -36,140 +39,122 @@ func _physics_process(delta: float) -> void:
 	TempoGlobal.beat_streak = beat_streak
 	
 	#movement
-	if Input.is_action_just_pressed("move_up") and !$up.is_colliding():
+	if Input.is_action_just_pressed("move_up") and !$up.is_colliding() and action_check == false:
+		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			_move(Vector2(0, -1))
-			print("yeah")
-			print("time it:"," ",beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
 				print(beat_timer)
 				pass
 		else:
-			print("time it:"," ",beat_timer)
-			print("missed")
 			if beat_streak > 0:
 				beat_streak -= 2
-	elif Input.is_action_just_pressed("move_down") and !$down.is_colliding():
+	elif Input.is_action_just_pressed("move_down") and !$down.is_colliding() and action_check == false:
+		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			_move(Vector2(0, 1))
-			print("yeah")
-			print("time it:"," ",beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
 				print(beat_timer)
 				pass
 		else:
-			print("time it:"," ",beat_timer)
-			print("missed")
 			if beat_streak > 0:
 				beat_streak -= 2
-	elif Input.is_action_just_pressed("move_left") and !$left.is_colliding():
+	elif Input.is_action_just_pressed("move_left") and !$left.is_colliding() and action_check == false:
+		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			_move(Vector2(-1, 0))
-			print("yeah")
-			print("time it:"," ",beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
 				print(beat_timer)
 				pass
 		else:
-			print("time it:"," ",beat_timer)
-			print("missed")
 			if beat_streak > 0:
 				beat_streak -= 2
-	elif Input.is_action_just_pressed("move_right") and !$right.is_colliding():
+	elif Input.is_action_just_pressed("move_right") and !$right.is_colliding() and action_check == false:
+		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			_move(Vector2(1, 0))
-			print("yeah")
-			print("time it:"," ",beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
 				print(beat_timer)
 				pass
 		else:
-			print("time it:"," ",beat_timer)
-			print("missed")
 			if beat_streak > 0:
 				beat_streak -= 2
 	
 	#shooting
-	if Input.is_action_just_pressed("shoot_up") and !$up.is_colliding():
+	if Input.is_action_just_pressed("shoot_up") and !$up.is_colliding() and action_check == false:
+		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
 			_shoot(Vector2(0, -1))
-			print("yeah")
-			print("time it:"," ",beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
 				pass
 		else:
-			print("time it:"," ",beat_timer)
-			print("missed")
 			if beat_streak > 0:
 				beat_streak -= 2
-	elif Input.is_action_just_pressed("shoot_down") and !$up.is_colliding():
+	elif Input.is_action_just_pressed("shoot_down") and !$up.is_colliding() and action_check == false:
+		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
 			_shoot(Vector2(0, 1))
-			print("yeah")
-			print("time it:"," ",beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
 				pass
 		else:
-			print("time it:"," ",beat_timer)
-			print("missed")
 			if beat_streak > 0:
 				beat_streak -= 2
-	elif Input.is_action_just_pressed("shoot_left") and !$up.is_colliding():
+	elif Input.is_action_just_pressed("shoot_left") and !$up.is_colliding() and action_check == false:
+		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
 			_shoot(Vector2(-1, 0))
-			print("yeah")
-			print("time it:"," ",beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
 				pass
 		else:
-			print("time it:"," ",beat_timer)
-			print("missed")
 			if beat_streak > 0:
 				beat_streak -= 2
-	elif Input.is_action_just_pressed("shoot_right") and !$up.is_colliding():
+	elif Input.is_action_just_pressed("shoot_right") and !$up.is_colliding() and action_check == false:
+		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
 			_shoot(Vector2(1, 0))
-			print("yeah")
-			print("time it:"," ",beat_timer)
 			if beat_streak < 7:
 				beat_streak += 1
 			else:
 				pass
 		else:
-			print("time it:"," ",beat_timer)
-			print("missed")
 			if beat_streak > 0:
 				beat_streak -= 2
+	
+	#block spam in the buffer zone
+	if action_check == true and beat_timer >= buffer_max and beat_timer <= buffer_min:
+		action_check = false
+		
+		
 
 func _move(dir: Vector2):
 	global_position += dir * tile_size
