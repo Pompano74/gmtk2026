@@ -138,8 +138,9 @@ texture = ExtResource("2_slxod")
 [sub_resource type="TileSet" id="TileSet_mfd2r"]
 sources/0 = SubResource("TileSetAtlasSource_qeahj")
 
-[node name="gym" type="Node2D" unique_id=1596905799]
+[node name="gym" type="Node2D" unique_id=1596905799 node_paths=PackedStringArray("music")]
 script = ExtResource("1_bhdoh")
+music = NodePath("music")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1564353499]
 tile_set = SubResource("TileSet_mfd2r")
@@ -165,8 +166,8 @@ position = Vector2(192, 0)
 position = Vector2(240, -96)
 
 [node name="metronom" type="FmodEventEmitter2D" parent="." unique_id=115968845]
-event_name = "event:/metronome"
-event_guid = "{08e25bc7-6e3f-42ed-966b-e64427f4c53b}"
+event_name = "event:/track metronome"
+event_guid = "{8f235c18-32b4-4107-b784-84fc31cefde9}"
 
 [node name="music" type="FmodEventEmitter2D" parent="." unique_id=1756338329]
 event_name = "event:/track1"

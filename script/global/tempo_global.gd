@@ -34,4 +34,5 @@ func _beat():
 	
 	
 func _on_timer_timeout() -> void:
+	print("BEAT")
 	_beat()
