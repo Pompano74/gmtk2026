@@ -23,7 +23,7 @@
 			<destination>{69e89c2b-cb1a-48f0-bd26-a60d54d0399b}</destination>
 		</relationship>
 		<relationship name="markerTracks">
-			<destination>{db35eb56-d0c9-486c-89d8-64537f68adf8}</destination>
+			<destination>{89630099-40ef-40e1-96ef-81cc4e1c7ac2}</destination>
 		</relationship>
 		<relationship name="groupTracks">
 			<destination>{97afad18-31b6-47f6-84ea-49ac50e80b3a}</destination>
@@ -67,7 +67,7 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{69e89c2b-cb1a-48f0-bd26-a60d54d0399b}" />
-	<object class="MarkerTrack" id="{db35eb56-d0c9-486c-89d8-64537f68adf8}" />
+	<object class="MarkerTrack" id="{89630099-40ef-40e1-96ef-81cc4e1c7ac2}" />
 	<object class="GroupTrack" id="{97afad18-31b6-47f6-84ea-49ac50e80b3a}">
 		<relationship name="automationTracks">
 			<destination>{ef0ba76b-eac2-4d52-b19b-ded439275ae7}</destination>
@@ -463,7 +463,7 @@
 			<destination>{c834ea31-1c86-415d-a577-af3a185e8dd5}</destination>
 		</relationship>
 		<relationship name="markerTrack">
-			<destination>{db35eb56-d0c9-486c-89d8-64537f68adf8}</destination>
+			<destination>{89630099-40ef-40e1-96ef-81cc4e1c7ac2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{db83de2f-f0ee-4bd0-92c6-33f6bf507008}">
