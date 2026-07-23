@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{0cd409f3-c26c-4d9f-9938-9453585d516b}">
+		<property name="name">
+			<value>increment ball move</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9135df2c-820c-4c26-af60-97ad8697ec33}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0273024d-c3be-49e5-b29b-60bf6f24b14e}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0273024d-c3be-49e5-b29b-60bf6f24b14e}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>5</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

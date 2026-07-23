@@ -24,6 +24,7 @@
 		</relationship>
 		<relationship name="markerTracks">
 			<destination>{0405f16b-1a63-43d6-9296-30a5ac2f66c3}</destination>
+			<destination>{36500589-f44c-44c4-ba66-7c6ba85165e6}</destination>
 		</relationship>
 		<relationship name="groupTracks">
 			<destination>{88501890-ccef-4fad-b56a-a9d6cae0f013}</destination>
@@ -68,6 +69,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{c1217866-055e-4353-b888-84b68724d822}" />
 	<object class="MarkerTrack" id="{0405f16b-1a63-43d6-9296-30a5ac2f66c3}" />
+	<object class="MarkerTrack" id="{36500589-f44c-44c4-ba66-7c6ba85165e6}" />
 	<object class="GroupTrack" id="{88501890-ccef-4fad-b56a-a9d6cae0f013}">
 		<relationship name="automationTracks">
 			<destination>{88bfe9b5-1e42-4e5d-a567-c5a7b4d32fad}</destination>
@@ -132,7 +134,12 @@
 			<destination>{31a36947-f49a-4a4d-b90e-9e9370afc85c}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{913cc15e-f458-40d1-bcff-641e700ca597}" />
+	<object class="Timeline" id="{913cc15e-f458-40d1-bcff-641e700ca597}">
+		<relationship name="markers">
+			<destination>{915fd87f-c957-49ad-a843-13023e8fa37a}</destination>
+			<destination>{1972620f-5e65-498e-870b-6903f22bb832}</destination>
+		</relationship>
+	</object>
 	<object class="ParameterProxy" id="{10b84764-b15f-49b3-be1b-8dbb47a46a1f}">
 		<relationship name="preset">
 			<destination>{a9830c54-4387-42ee-b2ae-e2fcda2e18d1}</destination>
@@ -329,6 +336,31 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{17eb8a2b-5bee-43d4-9949-17ce720e2b99}</destination>
+		</relationship>
+	</object>
+	<object class="TempoMarker" id="{915fd87f-c957-49ad-a843-13023e8fa37a}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{913cc15e-f458-40d1-bcff-641e700ca597}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{0405f16b-1a63-43d6-9296-30a5ac2f66c3}</destination>
+		</relationship>
+	</object>
+	<object class="LoopRegion" id="{1972620f-5e65-498e-870b-6903f22bb832}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>10</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{913cc15e-f458-40d1-bcff-641e700ca597}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{36500589-f44c-44c4-ba66-7c6ba85165e6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{4aed26ce-d48e-4d2c-bf22-b7c52f4fc73b}">
