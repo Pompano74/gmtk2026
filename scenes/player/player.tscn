@@ -57,10 +57,14 @@ offset_bottom = 144.0
 [node name="player_action" type="FmodEventEmitter2D" parent="." unique_id=201022238]
 event_name = "event:/player action"
 event_guid = "{2584fcb6-bc8d-4183-b8d0-992cd0bbab48}"
-"fmod_parameters/Parameter 1/id" = 3026149045964357792
-"fmod_parameters/Parameter 1" = "move"
-"fmod_parameters/Parameter 1/labels" = PackedStringArray("move", "shoot")
-"fmod_parameters/Parameter 1/variant_type" = 4
+auto_release = true
+fmod_parameters/YOUMISSED/id = 1639130881498081622
+fmod_parameters/YOUMISSED = 0
+fmod_parameters/YOUMISSED/variant_type = 2
+"fmod_parameters/player action/id" = 3026149045964357792
+"fmod_parameters/player action" = "move"
+"fmod_parameters/player action/labels" = PackedStringArray("move", "shoot")
+"fmod_parameters/player action/variant_type" = 4
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1707515665]
 bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
