@@ -8,7 +8,6 @@ const is_solid = "is_solid"
 
 func _ready() -> void:
 	setup_grid()
-	show_path()
 
 func setup_grid():
 	astargrid.region = get_used_rect()
