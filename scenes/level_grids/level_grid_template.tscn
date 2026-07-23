@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://dt8peqm0xmbbd"]
 
 [ext_resource type="Texture2D" uid="uid://qkrp6lovbjw4" path="res://assets/sprites/Tileset_V04.png" id="1_76kxg"]
+[ext_resource type="Script" uid="uid://c6nwdgbobyr3a" path="res://script/system/level_manager.gd" id="1_ilkoo"]
 [ext_resource type="Script" uid="uid://cld2h8pp87aro" path="res://script/level_grids/level_grid_template.gd" id="2_gaoov"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="3_cks8l"]
+[ext_resource type="PackedScene" uid="uid://3086uwlemvco" path="res://scenes/level_tiles/player_spawn_tile.tscn" id="4_ixjn1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gaoov"]
 texture = ExtResource("1_76kxg")
@@ -167,10 +169,16 @@ custom_data_layer_0/name = "is_solid"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_gaoov")
 
-[node name="TileMapLayer" type="TileMapLayer" unique_id=1452209589]
+[node name="LevelManager" type="Node2D" unique_id=1574904214 node_paths=PackedStringArray("tilemap", "player_spawn")]
+script = ExtResource("1_ilkoo")
+tilemap = NodePath("TileMapLayer")
+player_scene = ExtResource("3_cks8l")
+player_spawn = NodePath("TileMapLayer/PlayerSpawnTile")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1452209589]
 tile_map_data = PackedByteArray("AAAAAAAAAAADAAMAAAABAAAAAAADAAMAAAACAAAAAAADAAMAAAAEAAAAAAADAAMAAAAAAAEAAAADAAMAAAABAAEAAAAEAAIAAFACAAEAAAADAAMAAAADAAEAAAADAAMAAAAEAAEAAAADAAMAAAAFAAEAAAAHAAQAAFAFAAAAAAAGAAMAAFAFAAIAAAAHAAQAAFAEAAIAAAADAAMAAAADAAIAAAADAAMAAAACAAIAAAADAAMAAAABAAIAAAAHAAQAAGAAAAIAAAADAAMAAAAAAAMAAAAIAAEAAFABAAMAAAAIAAAAAFACAAMAAAADAAMAAAADAAMAAAAFAAMAADAEAAMAAAADAAMAAAAFAAMAAAAHAAQAAFAAAAQAAAADAAMAAAABAAQAAAAGAAIAADACAAQAAAAHAAQAADADAAQAAAAGAAIAAFAEAAQAAAADAAMAAAAFAAQAAAAFAAMAAAAFAAUAAAADAAMAAAAEAAUAAAADAAMAAAADAAUAAAADAAMAAAACAAUAAAADAAMAAAABAAUAAAADAAMAAAAAAAUAAAADAAMAAAAGAAAAAAAFAAMAAGAGAAEAAAADAAMAAAAGAAIAAAADAAMAAAAGAAMAAAADAAMAAAAGAAQAAAADAAMAAAAGAAUAAAADAAMAAAADAAAAAAADAAMAAAA=")
 tile_set = SubResource("TileSet_v00hk")
 script = ExtResource("2_gaoov")
 
-[node name="Player" parent="." unique_id=1805821953 instance=ExtResource("3_cks8l")]
-position = Vector2(16, 16)
+[node name="PlayerSpawnTile" parent="TileMapLayer" unique_id=787001746 instance=ExtResource("4_ixjn1")]
+position = Vector2(112, 16)

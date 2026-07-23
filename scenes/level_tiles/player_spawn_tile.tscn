@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://3086uwlemvco"]
+
+[ext_resource type="Texture2D" uid="uid://cvklyhy7kagmy" path="res://assets/sprites/placeholders/placeholder_32x32_tile.png" id="1_8buwo"]
+[ext_resource type="Script" uid="uid://bfpkxiok1tr08" path="res://script/level_tiles/player_spawn_tile.gd" id="1_46qht"]
+[ext_resource type="PackedScene" uid="uid://bftbk8urv1bbs" path="res://scenes/systems/grid_coord_tracker.tscn" id="3_a5jts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pft8"]
+size = Vector2(32, 32)
+
+[node name="PlayerSpawnTile" type="Node2D" unique_id=787001746]
+script = ExtResource("1_46qht")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=820875010]
+texture = ExtResource("1_8buwo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1482933193]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1255159277]
+shape = SubResource("RectangleShape2D_8pft8")
+
+[node name="GridCoordTracker" parent="." unique_id=312814823 instance=ExtResource("3_a5jts")]
