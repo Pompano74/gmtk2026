@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 @export var bullet_scene: PackedScene
 
-signal shoot_dir
-
 const tile_size: Vector2 = Vector2(32, 32)
 
 #sounds
@@ -31,7 +29,6 @@ func _ready() -> void:
 func on_beat_called() -> void:
 	#should create a function to retrieve information (for instance current tile type)
 	_getSurroundTileInfo()
-	pass
 
 func _physics_process(delta: float) -> void:
 	
@@ -45,56 +42,36 @@ func _physics_process(delta: float) -> void:
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			_move(Vector2(0, -1))
-			if beat_streak < 7:
-				beat_streak += 1
-			else:
-				print(beat_timer)
-				pass
+			TempoGlobal._beat_win()
 		else:
-			if beat_streak > 0:
-				beat_streak -= 2
+			TempoGlobal._beat_failed()
 	elif Input.is_action_just_pressed("move_down") and !$down.is_colliding() and action_check == false:
 		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			_move(Vector2(0, 1))
-			if beat_streak < 7:
-				beat_streak += 1
-			else:
-				print(beat_timer)
-				pass
+			TempoGlobal._beat_win()
 		else:
-			if beat_streak > 0:
-				beat_streak -= 2
+			TempoGlobal._beat_failed()
 	elif Input.is_action_just_pressed("move_left") and !$left.is_colliding() and action_check == false:
 		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			_move(Vector2(-1, 0))
-			if beat_streak < 7:
-				beat_streak += 1
-			else:
-				print(beat_timer)
-				pass
+			TempoGlobal._beat_win()
 		else:
-			if beat_streak > 0:
-				beat_streak -= 2
+			TempoGlobal._beat_failed()
 	elif Input.is_action_just_pressed("move_right") and !$right.is_colliding() and action_check == false:
 		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			_move(Vector2(1, 0))
-			if beat_streak < 7:
-				beat_streak += 1
-			else:
-				print(beat_timer)
-				pass
+			TempoGlobal._beat_win()
 		else:
-			if beat_streak > 0:
-				beat_streak -= 2
+			TempoGlobal._beat_failed()
 	
 	#shooting
 	if Input.is_action_just_pressed("shoot_up") and !$up.is_colliding() and action_check == false:
@@ -103,52 +80,36 @@ func _physics_process(delta: float) -> void:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
 			_shoot(Vector2(0, -1))
-			if beat_streak < 7:
-				beat_streak += 1
-			else:
-				pass
+			TempoGlobal._beat_win()
 		else:
-			if beat_streak > 0:
-				beat_streak -= 2
+			TempoGlobal._beat_failed()
 	elif Input.is_action_just_pressed("shoot_down") and !$up.is_colliding() and action_check == false:
 		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
 			_shoot(Vector2(0, 1))
-			if beat_streak < 7:
-				beat_streak += 1
-			else:
-				pass
+			TempoGlobal._beat_win()
 		else:
-			if beat_streak > 0:
-				beat_streak -= 2
+			TempoGlobal._beat_failed()
 	elif Input.is_action_just_pressed("shoot_left") and !$up.is_colliding() and action_check == false:
 		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
 			_shoot(Vector2(-1, 0))
-			if beat_streak < 7:
-				beat_streak += 1
-			else:
-				pass
+			TempoGlobal._beat_win()
 		else:
-			if beat_streak > 0:
-				beat_streak -= 2
+			TempoGlobal._beat_failed()
 	elif Input.is_action_just_pressed("shoot_right") and !$up.is_colliding() and action_check == false:
 		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
 			_shoot(Vector2(1, 0))
-			if beat_streak < 7:
-				beat_streak += 1
-			else:
-				pass
+			TempoGlobal._beat_win()
 		else:
-			if beat_streak > 0:
-				beat_streak -= 2
+			TempoGlobal._beat_failed()
 	
 	#block spam in the buffer zone
 	if action_check == true and beat_timer >= buffer_max and beat_timer <= buffer_min:

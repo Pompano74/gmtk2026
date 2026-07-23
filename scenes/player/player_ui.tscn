@@ -2,17 +2,150 @@
 
 [ext_resource type="Script" uid="uid://dbd1omaeefwo8" path="res://script/player/player_ui.gd" id="1_m6sn8"]
 [ext_resource type="Texture2D" uid="uid://s6wh516u4ffn" path="res://assets/sprites/ScreenArtUI_V8.png" id="3_fatww"]
+[ext_resource type="Texture2D" uid="uid://cqhlfp0hdwgv6" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers21.png" id="3_ol2i8"]
+[ext_resource type="Texture2D" uid="uid://cgojdu3j68cg" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers20.png" id="4_6e82x"]
+[ext_resource type="Texture2D" uid="uid://dphwlay01u66d" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers19.png" id="5_pxt7d"]
+[ext_resource type="Texture2D" uid="uid://dnhjgw7p8koe" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers18.png" id="6_x77c0"]
+[ext_resource type="Texture2D" uid="uid://c6unpavk27c3" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers17.png" id="7_g8wtg"]
+[ext_resource type="Texture2D" uid="uid://66c215uv3gie" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers16.png" id="8_m4isb"]
+[ext_resource type="Texture2D" uid="uid://rg5ojivkvua5" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers15.png" id="9_dgw8n"]
+[ext_resource type="Texture2D" uid="uid://ie7x8cyg1jxe" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers14.png" id="10_k6ane"]
+[ext_resource type="Texture2D" uid="uid://c71cpw16n0di0" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers13.png" id="11_hpbow"]
+[ext_resource type="Texture2D" uid="uid://cholp4aaqoevi" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers12.png" id="12_iesq7"]
+[ext_resource type="Texture2D" uid="uid://twdspdas6rfj" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers11.png" id="13_seyr6"]
+[ext_resource type="Texture2D" uid="uid://cmiea0tgiddka" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers10.png" id="14_vfoko"]
+[ext_resource type="Texture2D" uid="uid://c1odpxxhi17u4" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers9.png" id="15_neeow"]
+[ext_resource type="Texture2D" uid="uid://dpdcjpqbpui20" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers8.png" id="16_b61eg"]
+[ext_resource type="Texture2D" uid="uid://bb13ecdlwxkse" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers7.png" id="17_u4dm8"]
+[ext_resource type="Texture2D" uid="uid://recym0blkcs7" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers6.png" id="18_5be0o"]
+[ext_resource type="Texture2D" uid="uid://bsx4tchmus7oq" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers5.png" id="19_dvmsw"]
+[ext_resource type="Texture2D" uid="uid://dewn1ollamp24" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers4.png" id="20_swgnu"]
+[ext_resource type="Texture2D" uid="uid://2xwcxltw56r1" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers3.png" id="21_rne0d"]
+[ext_resource type="Texture2D" uid="uid://k40ou4px5h25" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers2.png" id="22_x28st"]
+[ext_resource type="Texture2D" uid="uid://w0txdv4stj3b" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers1.png" id="23_uryry"]
+[ext_resource type="Texture2D" uid="uid://dvmxnyp0no3og" path="res://assets/sprites/ui_Sprites/Sequencer/Sequencer_Anim1.png" id="24_m4isb"]
+[ext_resource type="Texture2D" uid="uid://dytc6kgpdn6dj" path="res://assets/sprites/ui_Sprites/Sequencer/Sequencer_Anim_With_Beats2.png" id="25_dgw8n"]
+[ext_resource type="Texture2D" uid="uid://cfes05to6j1oo" path="res://assets/sprites/ui_Sprites/Sequencer/Sequencer_Anim_With_Beats3.png" id="26_k6ane"]
+[ext_resource type="Texture2D" uid="uid://brp8q8i0pcktd" path="res://assets/sprites/ui_Sprites/Sequencer/Sequencer_Anim_With_Beats4.png" id="27_hpbow"]
+[ext_resource type="Texture2D" uid="uid://dy67rhr6xi52r" path="res://assets/sprites/ui_Sprites/Sequencer/Sequencer_Anim_With_Beats5.png" id="28_iesq7"]
 
-[node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right", "beat_middle")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6sn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ol2i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6e82x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pxt7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x77c0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g8wtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m4isb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dgw8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k6ane")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hpbow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iesq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_seyr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vfoko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_neeow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_b61eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_u4dm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5be0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dvmsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_swgnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rne0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_x28st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_uryry")
+}],
+"loop": 1,
+"name": &"coutdown",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mfd2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_m4isb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_dgw8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_k6ane")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hpbow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_iesq7")
+}],
+"loop": 1,
+"name": &"sequencer",
+"speed": 5.0
+}]
+
+[node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right")]
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_m6sn8")
-beat_left = [NodePath(""), NodePath(""), NodePath("")]
-beat_right = [NodePath(""), NodePath(""), NodePath("")]
-beat_middle = NodePath("")
+beat_left = [null, null, null]
+beat_right = [null, null, null]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=820278526]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_fatww")
+
+[node name="coutdown" type="AnimatedSprite2D" parent="." unique_id=1666394046]
+position = Vector2(0, -64)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_m6sn8")
+animation = &"coutdown"
+frame_progress = 0.11310055
+
+[node name="beats" type="AnimatedSprite2D" parent="." unique_id=1779368613]
+position = Vector2(-51.000004, 122)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_mfd2r")
+animation = &"sequencer"
+frame = 1
