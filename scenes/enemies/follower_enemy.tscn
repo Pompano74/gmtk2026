@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://boxq3k1d4a5bh"]
+
+[ext_resource type="PackedScene" uid="uid://6awh6ts5vvs1" path="res://scenes/enemies/base_enemy.tscn" id="1_clc2j"]
+
+[node name="BaseEnemy" unique_id=1418937433 instance=ExtResource("1_clc2j")]
+script = null

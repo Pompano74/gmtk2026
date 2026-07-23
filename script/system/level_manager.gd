@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var tilemap: TileMapLayer
+@export var tilemap: LevelTileMap
 
 @export var player_scene: PackedScene
 @export var player_spawn: Node2D
