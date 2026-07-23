@@ -1,0 +1,28 @@
+extends TileMapLayer
+
+var astargrid = AStarGrid2D.new()
+const main_layer = 0
+const main_source = 0
+const path_taken_atlas_coords = Vector2i(4,1)
+const is_solid = "is_solid"
+
+func _ready() -> void:
+	setup_grid()
+	show_path()
+
+func setup_grid():
+	astargrid.region = get_used_rect()
+	astargrid.cell_size = Vector2i(32, 32)
+	astargrid.default_compute_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
+	astargrid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
+	astargrid.update()
+	for cell in get_used_cells():
+		astargrid.set_point_solid(cell, is_cell_solid(cell))
+
+func show_path():
+	var path_taken = astargrid.get_id_path(Vector2i(0,0), Vector2i(6,1))
+	for cell in path_taken:
+		set_cell(cell, main_source, path_taken_atlas_coords)
+
+func is_cell_solid(cell_to_check: Vector2i) -> bool:
+	return get_cell_tile_data(cell_to_check).get_custom_data(is_solid)
