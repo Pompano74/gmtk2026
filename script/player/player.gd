@@ -6,16 +6,22 @@ signal shoot_dir
 
 const tile_size: Vector2 = Vector2(32, 32)
 
+func _ready() -> void:
+	TempoGlobal.beat_signal.connect(on_beat_called)
+
+func on_beat_called() -> void:
+	pass
+
 func _physics_process(delta: float) -> void:
 	
 	#movement
 	if Input.is_action_just_pressed("move_up") and !$up.is_colliding():
 		_move(Vector2(0, -1))
-	elif Input.is_action_just_pressed("move_down") and !$up.is_colliding():
+	elif Input.is_action_just_pressed("move_down") and !$down.is_colliding():
 		_move(Vector2(0, 1))
-	elif Input.is_action_just_pressed("move_left") and !$up.is_colliding():
+	elif Input.is_action_just_pressed("move_left") and !$left.is_colliding():
 		_move(Vector2(-1, 0))
-	elif Input.is_action_just_pressed("move_right") and !$up.is_colliding():
+	elif Input.is_action_just_pressed("move_right") and !$right.is_colliding():
 		_move(Vector2(1, 0))
 	
 	#shooting

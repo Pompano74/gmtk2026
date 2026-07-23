@@ -22,4 +22,5 @@ func _process(delta: float) -> void:
 	else:
 		beat_timer = beat_timer - delta
 func _beat():
+	beat_signal.emit()
 	print("beat")
