@@ -13,11 +13,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if can_player_interact_by_landing_on_tile:
 			on_player_enters_tile(player)
 			return
-	if body.is_in_group("PlayerBullet"):
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("PlayerBullet"):
 		if can_player_interact_by_shooting_tile:
-			on_player_bullet_enters_tile(body)
+			on_player_bullet_enters_tile(area)
 			return
-	var enemy = body as BaseEnemy
+	var enemy = area.owner as BaseEnemy
 	if is_instance_valid(enemy):
 		if can_enemy_interact_by_landing_on_tile:
 			on_enemy_enters_tile(enemy)
