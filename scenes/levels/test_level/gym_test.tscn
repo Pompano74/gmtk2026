@@ -346,3 +346,9 @@ bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://asse
 
 [node name="music" type="FmodEventEmitter2D" parent="." unique_id=1372389400]
 event_guid = "{00000030-0030-0000-3000-00002e000000}"
+
+[node name="test_tag1" type="Node" parent="." unique_id=45948379 groups=["target_objectif"]]
+
+[node name="test_tag2" type="Node" parent="." unique_id=1292306951 groups=["target_objectif"]]
+
+[node name="test_tag3" type="Node" parent="." unique_id=921216182 groups=["target_objectif"]]

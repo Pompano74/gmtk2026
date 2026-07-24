@@ -22,6 +22,12 @@ var pressed_late: bool = false
 #coutdown system
 var coutdown_value: int = 20
 
+
+#game objective
+var target_array: Array
+
+
+
 func _ready() -> void:
 
 	beat_inital_value = 1.0 / (bpm / 60.0)
@@ -41,14 +47,13 @@ func _beat_failed():
 	coutdown_value -= 1
 	if coutdown_value < 1:
 		coutdown_value = 0
-
 func _beat():
+	target_update(null)
 	#beet incremantion of 1-4
 	if beat_nbr < 4:
 		beat_nbr += 1
 	else:
 		beat_nbr = 1
-	print("beat_nbr:", beat_nbr)
 	
 	#signal for other scripts
 	beat_signal.emit()
@@ -69,9 +74,12 @@ func _beat_win():
 	if beat_streak > 15:
 		beat_streak = 15 
 		coutdown_value += 2
-	
 func _on_timer_timeout() -> void:
 	_beat()
-
 func _on_combo_timer_timeout() -> void:
 	beat_streak = 0
+
+func target_update(target: Node2D):
+	if target != null:
+		target_array.append(target)
+	print(target_array)

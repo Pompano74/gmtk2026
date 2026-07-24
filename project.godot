@@ -25,10 +25,6 @@ config/icon="res://assets/placeholders/icon_blue.svg"
 FmodManager="*uid://cds10pm7hwn3p"
 TempoGlobal="*uid://d0dcoogboxps"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/stretch/mode="canvas_items"
