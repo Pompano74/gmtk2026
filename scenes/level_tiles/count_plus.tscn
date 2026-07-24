@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://dgtc10uqpl46b"]
 
 [node name="CountPlus" type="Node2D" unique_id=1759244862]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=844776237]
