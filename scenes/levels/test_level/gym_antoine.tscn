@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_r8dwr"]
 [ext_resource type="PackedScene" uid="uid://bnw6wwwfirb2d" path="res://scenes/level_tiles/count_plus.tscn" id="2_h50gv"]
 [ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="3_0epch"]
+[ext_resource type="PackedScene" uid="uid://cupv06oj0c16e" path="res://scenes/level_tiles/glitch_tile.tscn" id="4_xip7k"]
 
 [node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_r8dwr")]
 
@@ -61,3 +62,9 @@ plus_value = 1
 [node name="count_plus6" parent="TileMapLayer" index="10" unique_id=1195976615 instance=ExtResource("2_h50gv")]
 position = Vector2(-112, 48)
 plus_value = 1
+
+[node name="glitch_tile" parent="TileMapLayer" index="11" unique_id=636087188 instance=ExtResource("4_xip7k")]
+position = Vector2(16, 208)
+
+[node name="glitch_tile2" parent="TileMapLayer" index="12" unique_id=83175544 instance=ExtResource("4_xip7k")]
+position = Vector2(80, 144)
