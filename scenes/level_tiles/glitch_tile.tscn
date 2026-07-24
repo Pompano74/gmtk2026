@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cupv06oj0c16e"]
+
+[ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_4e34e"]
+[ext_resource type="Script" uid="uid://b3fxa628743wq" path="res://script/level_tiles/glitch_tile.gd" id="2_c6fk1"]
+[ext_resource type="Texture2D" uid="uid://bbq6bvjd2pa77" path="res://assets/sprites/enemies_Sprites/Corrupted_Tile1.png" id="2_dx3xv"]
+[ext_resource type="Texture2D" uid="uid://cx6v07tflmgn1" path="res://assets/sprites/enemies_Sprites/Corrupted_Tile2.png" id="3_c6fk1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4e34e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dx3xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c6fk1")
+}],
+"loop": 1,
+"name": &"glitch animation",
+"speed": 5.0
+}]
+
+[node name="glitch_tile" unique_id=50867544 instance=ExtResource("1_4e34e")]
+script = ExtResource("2_c6fk1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=1262022274]
+sprite_frames = SubResource("SpriteFrames_4e34e")
+animation = &"glitch animation"
+frame_progress = 0.7067425
+
+[node name="Sprite2D" parent="." index="1" unique_id=384902394]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)

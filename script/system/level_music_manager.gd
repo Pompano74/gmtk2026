@@ -14,5 +14,7 @@ func on_beat_called():
 	if music_playing == false:
 		music.play()
 		music_playing = true
+		await get_tree().create_timer(TempoGlobal.beat_inital_value * 5).timeout
+		music.set_parameter("bootup", 1)
 	else:
 		pass

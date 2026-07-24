@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://q3tufos2vjit"]
+
+[ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_mbl4m"]
+[ext_resource type="Script" uid="uid://dc0ld6cgcar0g" path="res://script/enemies/immobile_target.gd" id="2_hcv15"]
+
+[node name="immobile_target" unique_id=50867544 groups=["target_objectif"] instance=ExtResource("1_mbl4m")]
+script = ExtResource("2_hcv15")
+
+[node name="Sprite2D" parent="." index="0" unique_id=384902394]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)

@@ -20,7 +20,7 @@ var beat_timer
 var beat_streak: int = 0
 
 #player value
-var player_direction
+@onready var player_direction = $up
 
 
 var action_check: bool = false:
@@ -67,14 +67,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	#SHOOT
 	if Input.is_action_just_pressed("shoot_up"):
+		player_direction = $right
 		_shoot(Vector2(0, -1))
 	if Input.is_action_just_pressed("shoot_down"):
+		player_direction = $right
 		_shoot(Vector2(0, 1))
 	if Input.is_action_just_pressed("shoot_left"):
+		player_direction = $right
 		_shoot(Vector2(-1, 0))
 	if Input.is_action_just_pressed("shoot_right"):
+		player_direction = $right
 		_shoot(Vector2(1, 0))
-	
 
 func _move(dir: Vector2):
 	if !player_direction.is_colliding() and action_check == false:
@@ -97,11 +100,12 @@ func _shoot(dir:Vector2):
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
-			_shoot(Vector2(0, -1))
+			_shoot(dir)
 			var bullet = bullet_scene.instantiate()
+			bullet.dir = dir
+			bullet.ray_dir = player_direction
 			add_sibling(bullet)
 			bullet.global_position = position + (dir * 32)
-			bullet.dir = dir
 			bullet.add_to_group("bullets")
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
@@ -112,4 +116,5 @@ func _shoot(dir:Vector2):
 	
 
 func _getSurroundTileInfo():
-	$up.get_collider()
+	if player_direction.get_collider() !=null:
+		print(player_direction.get_collider())

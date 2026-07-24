@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hugk6afqaxkj"
+path="res://.godot/imported/bullet hit nothing 5.wav-bc37f07c9d815c6e545a3b73826a7db1.sample"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/player bullet interactions/bullet hit nothing/bullet hit nothing 5.wav"
+dest_files=["res://.godot/imported/bullet hit nothing 5.wav-bc37f07c9d815c6e545a3b73826a7db1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
