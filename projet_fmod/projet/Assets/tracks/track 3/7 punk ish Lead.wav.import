@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ddw5bwecjed6i"
+path="res://.godot/imported/7 punk ish Lead.wav-bfd18ac1d169f9cbc0a149437ee71dc8.sample"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/tracks/track 3/7 punk ish Lead.wav"
+dest_files=["res://.godot/imported/7 punk ish Lead.wav-bfd18ac1d169f9cbc0a149437ee71dc8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

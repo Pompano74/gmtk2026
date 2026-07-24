@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cs6qx1r1wseu"
+path="res://.godot/imported/countdownOS bootfx.wav-6422a2a36fb2d4f57eab55467bd3a635.sample"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/tracks/general track assets/countdownOS bootfx.wav"
+dest_files=["res://.godot/imported/countdownOS bootfx.wav-6422a2a36fb2d4f57eab55467bd3a635.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bigyx51eoknt4"]
 
 [ext_resource type="Script" uid="uid://dbd1omaeefwo8" path="res://script/player/player_ui.gd" id="1_m6sn8"]
-[ext_resource type="Texture2D" uid="uid://s6wh516u4ffn" path="res://assets/sprites/ScreenArtUI_V8.png" id="3_fatww"]
+[ext_resource type="Texture2D" uid="uid://0mcq8srn1pqd" path="res://assets/sprites/ui_Sprites/UI_Indiv_Background.png" id="2_bpel8"]
 [ext_resource type="Texture2D" uid="uid://cqhlfp0hdwgv6" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers21.png" id="3_ol2i8"]
 [ext_resource type="Texture2D" uid="uid://cgojdu3j68cg" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers20.png" id="4_6e82x"]
 [ext_resource type="Texture2D" uid="uid://dphwlay01u66d" path="res://assets/sprites/ui_Sprites/Healthbar/Barre_Vie_With_Numbers19.png" id="5_pxt7d"]
@@ -28,6 +28,34 @@
 [ext_resource type="Texture2D" uid="uid://cfes05to6j1oo" path="res://assets/sprites/ui_Sprites/Sequencer/Sequencer_Anim_With_Beats3.png" id="26_k6ane"]
 [ext_resource type="Texture2D" uid="uid://brp8q8i0pcktd" path="res://assets/sprites/ui_Sprites/Sequencer/Sequencer_Anim_With_Beats4.png" id="27_hpbow"]
 [ext_resource type="Texture2D" uid="uid://dy67rhr6xi52r" path="res://assets/sprites/ui_Sprites/Sequencer/Sequencer_Anim_With_Beats5.png" id="28_iesq7"]
+[ext_resource type="Texture2D" uid="uid://crf7jtgdqnnd1" path="res://assets/sprites/ui_Sprites/Keys/W_key1.png" id="29_mxajy"]
+[ext_resource type="Texture2D" uid="uid://blh028kb7026r" path="res://assets/sprites/ui_Sprites/Keys/W_key2.png" id="30_cbyn0"]
+[ext_resource type="Texture2D" uid="uid://brt3kf8j1c1u1" path="res://assets/sprites/ui_Sprites/Keys/A_key1.png" id="31_hpt0l"]
+[ext_resource type="Texture2D" uid="uid://swipxrht2qmj" path="res://assets/sprites/ui_Sprites/Keys/A_key2.png" id="32_n2era"]
+[ext_resource type="Texture2D" uid="uid://csttmiry20t7o" path="res://assets/sprites/ui_Sprites/Keys/S_key1.png" id="33_cly0r"]
+[ext_resource type="Texture2D" uid="uid://cvbfsl1km5agh" path="res://assets/sprites/ui_Sprites/Keys/S_key2.png" id="34_kbkmt"]
+[ext_resource type="Texture2D" uid="uid://bxx7aqygtuvoq" path="res://assets/sprites/ui_Sprites/Keys/D_key1.png" id="35_6fvk5"]
+[ext_resource type="Texture2D" uid="uid://be23i7nelbown" path="res://assets/sprites/ui_Sprites/Keys/D_key2.png" id="36_1h0yj"]
+[ext_resource type="Texture2D" uid="uid://8a1mygr64ua0" path="res://assets/sprites/ui_Sprites/Keys/Up_key1.png" id="37_w55d3"]
+[ext_resource type="Texture2D" uid="uid://bfqu3g47rth07" path="res://assets/sprites/ui_Sprites/Keys/Up_key2.png" id="38_c0rfb"]
+[ext_resource type="Texture2D" uid="uid://dcd34hli4pvgf" path="res://assets/sprites/ui_Sprites/Keys/Left_key1.png" id="39_eb26a"]
+[ext_resource type="Texture2D" uid="uid://ba8rleqgviwrb" path="res://assets/sprites/ui_Sprites/Keys/Left_key2.png" id="40_frsas"]
+[ext_resource type="Texture2D" uid="uid://fjx7qfuq33v" path="res://assets/sprites/ui_Sprites/Keys/Down_key1.png" id="41_jjtdx"]
+[ext_resource type="Texture2D" uid="uid://cpx38dbwvem5d" path="res://assets/sprites/ui_Sprites/Keys/Down_key2.png" id="42_65a06"]
+[ext_resource type="Texture2D" uid="uid://ov7u68234luh" path="res://assets/sprites/ui_Sprites/Keys/Right_key1.png" id="43_gn0xx"]
+[ext_resource type="Texture2D" uid="uid://b5sp4x13yoxby" path="res://assets/sprites/ui_Sprites/Keys/Right_key2.png" id="44_1cpv3"]
+[ext_resource type="Texture2D" uid="uid://cu6u3tg1ujqk4" path="res://assets/sprites/ui_Sprites/Pausing_Bar/Pausing_Anim1.png" id="45_6bufg"]
+[ext_resource type="Texture2D" uid="uid://boywogtme3jdq" path="res://assets/sprites/ui_Sprites/Pausing_Bar/Pausing_Anim2.png" id="46_f0qk1"]
+[ext_resource type="Texture2D" uid="uid://dvfbslxgm7lh5" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim1.png" id="47_yfxy6"]
+[ext_resource type="Texture2D" uid="uid://da4be83733y5k" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim2.png" id="48_g5kmk"]
+[ext_resource type="Texture2D" uid="uid://gukldljs6w7s" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim3.png" id="49_2uhf5"]
+[ext_resource type="Texture2D" uid="uid://bm3vwri2dl6p1" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim4.png" id="50_30i6o"]
+[ext_resource type="Texture2D" uid="uid://bk41qx2fbfrcj" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim5.png" id="51_4qnp6"]
+[ext_resource type="Texture2D" uid="uid://dbqrwwtw7mr67" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim6.png" id="52_emgiu"]
+[ext_resource type="Texture2D" uid="uid://cs6ri6tralaw0" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim7.png" id="53_ojo7c"]
+[ext_resource type="Texture2D" uid="uid://bur1hqj847kch" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim8.png" id="54_fh566"]
+[ext_resource type="Texture2D" uid="uid://ba6pbx6n5xbtl" path="res://assets/sprites/ui_Sprites/UI_Bits.png" id="55_t6veo"]
+[ext_resource type="Texture2D" uid="uid://csu18q6weybg" path="res://assets/sprites/ui_Sprites/UI_Skull.png" id="56_3bco6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m6sn8"]
 animations = [{
@@ -123,6 +151,164 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ov0la"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_mxajy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_cbyn0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fguc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_hpt0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_n2era")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iadmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_cly0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_kbkmt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fc23l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_6fvk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1h0yj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgoia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_w55d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_c0rfb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q88i0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_eb26a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_frsas")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgql8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_jjtdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_65a06")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ojjf3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_gn0xx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_1cpv3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1fw64"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_6bufg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_f0qk1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ace5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_yfxy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_g5kmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_2uhf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_30i6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_4qnp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_emgiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ojo7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_fh566")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right")]
 layout_mode = 3
 anchors_preset = 0
@@ -132,20 +318,84 @@ script = ExtResource("1_m6sn8")
 beat_left = [null, null, null]
 beat_right = [null, null, null]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=820278526]
+[node name="UI_Background" type="Sprite2D" parent="." unique_id=80195207]
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_fatww")
+texture = ExtResource("2_bpel8")
 
 [node name="coutdown" type="AnimatedSprite2D" parent="." unique_id=1666394046]
-position = Vector2(0, -64)
+position = Vector2(-0.6, -64.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_m6sn8")
 animation = &"coutdown"
 frame_progress = 0.11310055
 
 [node name="beats" type="AnimatedSprite2D" parent="." unique_id=1779368613]
-position = Vector2(-51.000004, 122)
+position = Vector2(-51, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_mfd2r")
 animation = &"sequencer"
 frame = 1
+
+[node name="WASD_Keys" type="Node2D" parent="." unique_id=1544788014]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=1164414413]
+position = Vector2(-189.3, 84.3)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_ov0la")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=391724035]
+position = Vector2(-222.335, 121.5)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_fguc3")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=1535326835]
+position = Vector2(-189.3, 121.5)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_iadmu")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=2010697494]
+position = Vector2(-156.305, 121.5)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_fc23l")
+
+[node name="ARROWS_Keys" type="Node2D" parent="." unique_id=78642432]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=1587747614]
+position = Vector2(188.1, 84.3)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_jgoia")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=2046886079]
+position = Vector2(155.1, 121.5)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_q88i0")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=922251081]
+position = Vector2(188.1, 121.5)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_qgql8")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=1093121466]
+position = Vector2(221.1, 121.5)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_ojjf3")
+
+[node name="UI_Pausing" type="AnimatedSprite2D" parent="." unique_id=134335259]
+position = Vector2(88.2, 121.5)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_1fw64")
+
+[node name="UI_Exist_Button" type="AnimatedSprite2D" parent="." unique_id=547134085]
+position = Vector2(-207.25, 34.8)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_ace5p")
+
+[node name="UI_Background_Bits" type="Sprite2D" parent="." unique_id=921896834]
+position = Vector2(-0.6, -69)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("55_t6veo")
+
+[node name="UI_Background_Skull" type="Sprite2D" parent="." unique_id=572679752]
+position = Vector2(198.6, 23.4)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("56_3bco6")

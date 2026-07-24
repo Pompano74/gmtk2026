@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="DataFile" id="{9e7a57a2-8ccf-4de4-af45-d4174ec3e0d0}">
+		<property name="assetPath">
+			<value>tracks/track5/#1.wav.import</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{80b09167-6ad3-484e-a758-4ebde1ceb7b9}</destination>
+		</relationship>
+	</object>
+</objects>
