@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="ParameterPreset" id="{7f5988c9-ca92-4d15-8053-e2b3ad50d28c}">
 		<property name="name">
-			<value>death sound</value>
+			<value>player condition</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9135df2c-820c-4c26-af60-97ad8697ec33}</destination>
@@ -16,11 +16,12 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>3</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>alive</value>
 			<value>dead</value>
+			<value>success</value>
 		</property>
 		<property name="isGlobal">
 			<value>true</value>
