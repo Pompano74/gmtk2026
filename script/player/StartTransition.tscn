@@ -77,7 +77,7 @@ loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Label:label_settings:font_color:r")
+tracks/0/path = NodePath("AnimationPivotPoint/Label:label_settings:font_color:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -88,7 +88,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Label:label_settings:font_color:g")
+tracks/1/path = NodePath("AnimationPivotPoint/Label:label_settings:font_color:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -99,7 +99,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Node2D/Label:label_settings:font_color:b")
+tracks/2/path = NodePath("AnimationPivotPoint/Label:label_settings:font_color:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -110,7 +110,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Node2D/Label:label_settings:font_color:a")
+tracks/3/path = NodePath("AnimationPivotPoint/Label:label_settings:font_color:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -127,16 +127,16 @@ _data = {
 [node name="FadeScreen" type="Node2D" unique_id=687498793]
 script = ExtResource("1_comxu")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1380066588]
+[node name="AnimationPivotPoint" type="Node2D" parent="." unique_id=1380066588]
 position = Vector2(0, 648)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=835286549]
+[node name="Sprite2D" type="Sprite2D" parent="AnimationPivotPoint" unique_id=835286549]
 material = SubResource("CanvasItemMaterial_c0w0k")
 position = Vector2(1.9073486e-06, -7.9999943)
 scale = Vector2(9.5, 6.0000005)
 texture = ExtResource("1_kdcs8")
 
-[node name="Label" type="Label" parent="Node2D" unique_id=1506450943]
+[node name="Label" type="Label" parent="AnimationPivotPoint" unique_id=1506450943]
 offset_left = -80.0
 offset_top = 40.0
 offset_right = 315.0
@@ -146,7 +146,7 @@ label_settings = SubResource("LabelSettings_45ngr")
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2135156268]
-root_node = NodePath("../Node2D")
+root_node = NodePath("../AnimationPivotPoint")
 libraries/ = SubResource("AnimationLibrary_veigf")
 autoplay = &"Lerp"
 

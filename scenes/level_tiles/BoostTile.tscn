@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bba0t1vpp2sy0"]
+
+[ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_xnbe8"]
+[ext_resource type="Script" uid="uid://ba0r36tgx3vs5" path="res://script/level_tiles/boost_tile.gd" id="2_em0tm"]
+
+[node name="BaseInteractionTile" unique_id=50867544 instance=ExtResource("1_xnbe8")]
+script = ExtResource("2_em0tm")
