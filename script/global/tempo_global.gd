@@ -1,6 +1,10 @@
 extends Node
 
 
+
+#===============================================================================================#
+#==========================================variable=============================================#
+#===============================================================================================#
 signal beat_signal
 
 #tempo
@@ -20,16 +24,18 @@ var beat_nbr: int = 0
 var pressed_late: bool = false
 
 #coutdown system
+var coutdown_is_paused: bool = false
 var coutdown_value: int = 20
 
-
 #game objective
-var target_array: Array
-
-
+var total_target: int = 0
+var current_target: int = 0
+#===============================================================================================#
+#==========================================variable=============================================#
+#===============================================================================================#
 
 func _ready() -> void:
-
+	 #set beat tempo
 	beat_inital_value = 1.0 / (bpm / 60.0)
 	beat_timer = beat_inital_value
 	timer.wait_time = beat_inital_value
@@ -40,6 +46,7 @@ func _process(delta: float) -> void:
 		#print("failed")
 		pass
 
+#beat functions
 func _beat_failed():
 	
 	beat_streak = 0
@@ -48,38 +55,45 @@ func _beat_failed():
 	if coutdown_value < 1:
 		coutdown_value = 0
 func _beat():
-	target_update(null)
+	#win loose condition
+	if current_target == 0:
+		level_win()
+	if coutdown_value == 0:
+		level_failed()
+	
 	#beet incremantion of 1-4
 	if beat_nbr < 4:
 		beat_nbr += 1
 	else:
 		beat_nbr = 1
 	
-	#signal for other scripts
-	beat_signal.emit()
-	
+	#beat_streak
 	if beat_streak >= 15:
 		infinite_mode = true
 	else:
 		infinite_mode = false
-		
+	
+	#coutdown
 	coutdown_value -= 1
 	if coutdown_value < 1:
 		coutdown_value = 0
+		
+	#emit signal for other scripts
+	beat_signal.emit()
 func _beat_win():
-	print("win")
-	
 	combo_timer.start()
 	beat_streak += 1
 	if beat_streak > 15:
 		beat_streak = 15 
 		coutdown_value += 2
 func _on_timer_timeout() -> void:
-	_beat()
+	if coutdown_is_paused == false:
+		_beat()
 func _on_combo_timer_timeout() -> void:
 	beat_streak = 0
 
-func target_update(target: Node2D):
-	if target != null:
-		target_array.append(target)
-	print(target_array)
+#win and loose call (called in _beat() when reach 0 of coutdown or current target
+func level_win():
+	print("WIN LEVEL")
+func level_failed():
+	print("FAILED LEVEL")

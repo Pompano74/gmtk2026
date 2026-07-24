@@ -7,15 +7,17 @@ extends Control
 @onready var coutdown: AnimatedSprite2D = $coutdown
 @onready var beats: AnimatedSprite2D = $beats
 var beat_int_loop: int = 0
+@onready var target_count: Label = $target_count
 
 
 func _ready() -> void:
 	TempoGlobal.beat_signal.connect(on_beat_called)
+	target_count.text = str(TempoGlobal.current_target) + "/" + str(TempoGlobal.total_target)
 	beats.frame = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	target_count.text = str(TempoGlobal.current_target) + "/" + str(TempoGlobal.total_target)
 
 func on_beat_called():
 	coutdown.frame = TempoGlobal.coutdown_value

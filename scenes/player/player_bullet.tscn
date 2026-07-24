@@ -10,6 +10,17 @@ size = Vector2(16, 16)
 z_index = 1
 script = ExtResource("1_2kcj1")
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=913899837]
+bank_paths = ["res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
+
+[node name="bullet_sound" type="FmodEventEmitter2D" parent="." unique_id=1659330285]
+event_name = "event:/shoot movement"
+event_guid = "{0eb68af1-d621-4b72-841b-2a7959a8b88d}"
+"fmod_parameters/increment ball move/id" = 1900033767421280527
+"fmod_parameters/increment ball move" = "ball move"
+"fmod_parameters/increment ball move/labels" = PackedStringArray("ball stay", "ball move")
+"fmod_parameters/increment ball move/variant_type" = 4
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=366234091]
 modulate = Color(1, 0, 0, 1)
 self_modulate = Color(1, 0, 0, 1)
@@ -19,26 +30,35 @@ texture = ExtResource("1_altju")
 
 [node name="up" type="RayCast2D" parent="." unique_id=1658409316]
 position = Vector2(0, -16)
-rotation = 6.2831855
-target_position = Vector2(0, -16)
+rotation = 3.1415927
+target_position = Vector2(0, 16)
+collision_mask = 3
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="down" type="RayCast2D" parent="." unique_id=1751690482]
 position = Vector2(0, 16)
-target_position = Vector2(0, 16)
+rotation = 3.1415927
+target_position = Vector2(0, -16)
+collision_mask = 3
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="left" type="RayCast2D" parent="." unique_id=1752043987]
 position = Vector2(-16, 0)
-rotation = 1.5707964
-target_position = Vector2(0, 16)
+rotation = -3.1415927
+target_position = Vector2(16, 0)
+collision_mask = 3
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="right" type="RayCast2D" parent="." unique_id=1740677168]
 position = Vector2(16, 0)
-rotation = -4.712389
-target_position = Vector2(0, -16)
+rotation = -3.1415927
+target_position = Vector2(-16, 0)
+collision_mask = 3
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1901436370 groups=["PlayerBullet"]]
 collision_layer = 2
@@ -48,4 +68,3 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_mfd2r")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

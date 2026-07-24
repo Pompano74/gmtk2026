@@ -1,21 +1,21 @@
 extends InteractionTile
-#TempoGlobal
 
-@export var plus_value: int = 1
+
 
 func _ready() -> void:
-	plus_value += 1
 	destroy_on_interaction = true
 	can_enemy_interact_by_landing_on_tile = true
 	can_player_interact_by_landing_on_tile = true
 	can_player_interact_by_shooting_tile = true
 	
 func on_player_enters_tile(player: PlayerCharacter) -> void:
-	TempoGlobal.coutdown_value += plus_value
+	TempoGlobal._beat_failed()
+	TempoGlobal.current_target -= 1
 	super(player)
 
 func on_player_bullet_enters_tile(bullet: Node2D) -> void:
-	TempoGlobal.coutdown_value += plus_value
+	print("hit target")
+	TempoGlobal.current_target -= 1
 	bullet.get_parent().bullet_hit()
 	super(bullet)
 

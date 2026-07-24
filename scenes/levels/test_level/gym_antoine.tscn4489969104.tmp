@@ -1,0 +1,29 @@
+[gd_scene format=4 uid="uid://l6cmky5fgo5j"]
+
+[ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_r8dwr"]
+[ext_resource type="PackedScene" uid="uid://bnw6wwwfirb2d" path="res://scenes/level_tiles/count_plus.tscn" id="2_h50gv"]
+
+[node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_r8dwr")]
+
+[node name="Music" parent="." index="1" unique_id=18373094]
+volume = 2.0
+fmod_parameters/bootup/id = -3685586378038700787
+fmod_parameters/bootup = 0
+fmod_parameters/bootup/variant_type = 2
+"fmod_parameters/player condition/id" = -2119143983761922850
+"fmod_parameters/player condition" = "alive"
+"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
+"fmod_parameters/player condition/variant_type" = 4
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+fmod_parameters/reboot/id = 7082025585143961158
+fmod_parameters/reboot = "off"
+fmod_parameters/reboot/labels = PackedStringArray("off", "on")
+fmod_parameters/reboot/variant_type = 4
+
+[node name="TileMapLayer" parent="." index="2" unique_id=1452209589]
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAMAAAABAAAAAAADAAMAAAACAAAAAAADAAMAAAADAAAAAAADAAMAAAADAAEAAAADAAMAAAACAAEAAAADAAMAAAABAAEAAAADAAMAAAAAAAEAAAADAAMAAAAAAP//AAADAAMAAAD/////AAADAAMAAAD//wAAAAADAAMAAAD//wEAAAADAAMAAAD+/wEAAAADAAMAAAD+/wAAAAADAAMAAAD+////AAADAAMAAAABAP//AAADAAMAAAACAP//AAADAAMAAAADAP//AAADAAMAAAADAP7/AAADAAMAAAACAP7/AAADAAMAAAABAP7/AAADAAMAAAAAAP7/AAADAAMAAAD///7/AAADAAMAAAD+//7/AAADAAMAAAD+/wIAAAADAAMAAAD//wIAAAADAAMAAAAAAAIAAAADAAMAAAABAAIAAAADAAMAAAACAAIAAAADAAMAAAADAAIAAAADAAMAAAAAAAMAAQADAAUAAAD//wMAAQADAAUAAAD+/wMAAQADAAUAAAD9/wMAAQADAAUAAAD9/wIAAQADAAUAAAD9/wEAAQADAAUAAAD9/wAAAQADAAUAAAD9////AQADAAUAAAD9//7/AQADAAUAAAD9//3/AQADAAUAAAD+//3/AQADAAUAAAD///3/AQADAAUAAAAAAP3/AQADAAUAAAABAP3/AQADAAUAAAACAP3/AQADAAUAAAADAP3/AQADAAUAAAAEAP3/AQADAAUAAAAEAP7/AQADAAUAAAAEAP//AQADAAUAAAAEAAAAAQADAAUAAAAEAAEAAQADAAUAAAAEAAIAAQADAAUAAAAEAAMAAQADAAUAAAADAAMAAQADAAUAAAACAAMAAQADAAUAAAABAAMAAQADAAUAAAA=")
+
+[node name="BaseInteractionTile" parent="." index="4" unique_id=50867544 instance=ExtResource("2_h50gv")]
+position = Vector2(80, 16)
