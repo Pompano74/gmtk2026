@@ -17,6 +17,7 @@ var timer : Timer
 func _ready() -> void:
 	TempoGlobal.beat_signal.connect(on_beat_called)
 	timer = TempoGlobal.timer
+	coord_tracker.is_blocking_pathfinding = true
 
 func on_beat_called() -> void:
 	pass

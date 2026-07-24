@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://s7ptb2dfrovw"
+path="res://.godot/imported/bullet move 5.wav-92a95939821adc9f9949f53e4cc285ae.sample"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/player bullet interactions/bullet move/bullet move 5.wav"
+dest_files=["res://.godot/imported/bullet move 5.wav-92a95939821adc9f9949f53e4cc285ae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

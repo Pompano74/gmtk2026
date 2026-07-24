@@ -16,11 +16,14 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>5</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>ball stay</value>
 			<value>ball move</value>
+			<value>ball hit enemy</value>
+			<value>ball hit wall</value>
+			<value>ball hit nothing</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>

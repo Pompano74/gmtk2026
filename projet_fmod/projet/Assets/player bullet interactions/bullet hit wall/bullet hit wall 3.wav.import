@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b5purage87ihw"
+path="res://.godot/imported/bullet hit wall 3.wav-2a5ee04cc4260a1457985013bf8aab18.sample"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/player bullet interactions/bullet hit wall/bullet hit wall 3.wav"
+dest_files=["res://.godot/imported/bullet hit wall 3.wav-2a5ee04cc4260a1457985013bf8aab18.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

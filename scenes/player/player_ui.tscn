@@ -310,6 +310,7 @@ animations = [{
 }]
 
 [node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right")]
+z_index = 50
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4
