@@ -20,6 +20,9 @@ var beat_timer
 var beat_streak: int = 0
 
 #player value
+var player_direction
+
+
 var action_check: bool = false:
 	set(button_pressed):
 		action_check = button_pressed
@@ -50,12 +53,16 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	#MOVEMENT
 	if event.is_action_pressed("move_up"):
+		player_direction = $up
 		_move(Vector2(0, -1))
 	elif event.is_action_pressed("move_down"):
+		player_direction = $down
 		_move(Vector2(0, 1))
 	elif event.is_action_pressed("move_left"):
+		player_direction = $left
 		_move(Vector2(-1, 0))
 	elif event.is_action_pressed("move_right"):
+		player_direction = $right
 		_move(Vector2(1, 0))
 	
 	#SHOOT
@@ -70,7 +77,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 
 func _move(dir: Vector2):
-	if !$up.is_colliding() and action_check == false:
+	if !player_direction.is_colliding() and action_check == false:
 		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "move")
@@ -85,7 +92,7 @@ func _move(dir: Vector2):
 			TempoGlobal._beat_failed()
 	
 func _shoot(dir:Vector2):
-	if !$up.is_colliding() and action_check == false:
+	if !player_direction.is_colliding() and action_check == false:
 		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
