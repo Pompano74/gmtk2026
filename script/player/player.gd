@@ -79,6 +79,8 @@ func _move(dir: Vector2):
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
 		else:
+			player_action.set_parameter("player action", "miss")
+			player_action.play()
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_failed()
 	
@@ -97,6 +99,7 @@ func _shoot(dir:Vector2):
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
 		else:
+			player_action.set_parameter("player action", "miss")
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_failed()
 	
