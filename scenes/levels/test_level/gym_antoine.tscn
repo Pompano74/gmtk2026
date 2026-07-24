@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://l6cmky5fgo5j"]
+
+[ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_r8dwr"]
+
+[node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_r8dwr")]
+
+[node name="Music" parent="." index="1" unique_id=18373094]
+volume = 1.0
