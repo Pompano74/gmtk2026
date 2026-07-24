@@ -6,6 +6,7 @@ signal beat_signal
 #tempo
 @export var bpm: float = 120.0
 @onready var timer: Timer = $Timer
+@onready var combo_timer: Timer = $combo_timer
 
 #beat system
 var beat_inital_value: float
@@ -24,6 +25,7 @@ func _ready() -> void:
 	beat_inital_value = 1.0 / (bpm / 60.0)
 	beat_timer = beat_inital_value
 	timer.wait_time = beat_inital_value
+	combo_timer.wait_time = beat_inital_value + beat_inital_value / 10
 
 func _process(delta: float) -> void:
 	if coutdown_value <= 0:
@@ -32,32 +34,39 @@ func _process(delta: float) -> void:
 
 func _beat_failed():
 	print("missed")
+	beat_streak = 0
+	
 	coutdown_value -= 1
 	if coutdown_value < 1:
 		coutdown_value = 0
 
 func _beat():
-	print("normal")
 	#signal for other scripts
 	beat_signal.emit()
 	
-	#beat value update
-	print("--------------global-------------")
-	print("coutdown:",coutdown_value)
-	print("beat_streak:", beat_streak)
-	print("streak_multiplayier:", streak_multiplayier)
-	print("-----------------------------------")
+	
 	
 	coutdown_value -= 1
 	if coutdown_value < 1:
 		coutdown_value = 0
 	
-func _beat_win():
+	print(beat_streak)
 	
+func _beat_win():
 	print("win")
+	
+	combo_timer.start()
+	beat_streak += 1
+	if beat_streak > 15:
+		beat_streak = 15 
+	
+	
 	coutdown_value += 1
 	if coutdown_value > 20:
 		coutdown_value = 20
 
 func _on_timer_timeout() -> void:
 	_beat()
+
+func _on_combo_timer_timeout() -> void:
+	beat_streak = 0
