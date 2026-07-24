@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dauyxvtd4an6p"
-path="res://.godot/imported/3 punk ish 1-Aphex twin type beats.wav-69163d3c4a33c41ad195c01076fd46b8.sample"
+path="res://.godot/imported/3 punk ish 1-Aphex twin type beats.wav-16d9e07881fb5b34940180c09da6dd5b.sample"
 
 [deps]
 
-source_file="res://projet_fmod/projet/Assets/track 3/3 punk ish 1-Aphex twin type beats.wav"
-dest_files=["res://.godot/imported/3 punk ish 1-Aphex twin type beats.wav-69163d3c4a33c41ad195c01076fd46b8.sample"]
+source_file="res://projet_fmod/projet/Assets/tracks/track 3/3 punk ish 1-Aphex twin type beats.wav"
+dest_files=["res://.godot/imported/3 punk ish 1-Aphex twin type beats.wav-16d9e07881fb5b34940180c09da6dd5b.sample"]
 
 [params]
 

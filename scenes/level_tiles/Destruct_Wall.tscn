@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dincefexwc6q5"]
+
+[ext_resource type="Script" uid="uid://b52ka5bhp481f" path="res://script/enemies/destruct_wall.gd" id="1_68y4h"]
+[ext_resource type="Texture2D" uid="uid://ciuxyaoktugh5" path="res://assets/placeholders/icon_blue.svg" id="1_cm8ci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov0la"]
+size = Vector2(32, 39)
+
+[node name="DestructWall" type="Node2D" unique_id=1713538203 groups=["destruct_wall"]]
+script = ExtResource("1_68y4h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=885883254]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_cm8ci")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=710554241]
+position = Vector2(0, -7)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_cm8ci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1307288277]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1237412855]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_ov0la")

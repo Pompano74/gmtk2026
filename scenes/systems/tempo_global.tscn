@@ -9,4 +9,7 @@ script = ExtResource("1_muea5")
 process_callback = 0
 autostart = true
 
+[node name="combo_timer" type="Timer" parent="." unique_id=716029263]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="combo_timer" to="." method="_on_combo_timer_timeout"]

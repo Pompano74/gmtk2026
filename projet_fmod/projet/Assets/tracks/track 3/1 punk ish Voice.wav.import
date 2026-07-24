@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bngrtrwhh6b23"
-path="res://.godot/imported/1 punk ish Voice.wav-e762fe3382cfed0e8ccf853ce6033593.sample"
+path="res://.godot/imported/1 punk ish Voice.wav-6697bd2f7dad4f4b1be5635b58ecbb01.sample"
 
 [deps]
 
-source_file="res://projet_fmod/projet/Assets/track 3/1 punk ish Voice.wav"
-dest_files=["res://.godot/imported/1 punk ish Voice.wav-e762fe3382cfed0e8ccf853ce6033593.sample"]
+source_file="res://projet_fmod/projet/Assets/tracks/track 3/1 punk ish Voice.wav"
+dest_files=["res://.godot/imported/1 punk ish Voice.wav-6697bd2f7dad4f4b1be5635b58ecbb01.sample"]
 
 [params]
 

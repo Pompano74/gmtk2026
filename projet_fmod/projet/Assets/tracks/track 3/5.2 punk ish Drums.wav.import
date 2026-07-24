@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c7m4w35q80nm0"
-path="res://.godot/imported/5.2 punk ish Drums.wav-34a397749acf1b71599bb5e2429bfe6e.sample"
+path="res://.godot/imported/5.2 punk ish Drums.wav-816273bc5a554b5e0d1f5c90758249ab.sample"
 
 [deps]
 
-source_file="res://projet_fmod/projet/Assets/track 3/5.2 punk ish Drums.wav"
-dest_files=["res://.godot/imported/5.2 punk ish Drums.wav-34a397749acf1b71599bb5e2429bfe6e.sample"]
+source_file="res://projet_fmod/projet/Assets/tracks/track 3/5.2 punk ish Drums.wav"
+dest_files=["res://.godot/imported/5.2 punk ish Drums.wav-816273bc5a554b5e0d1f5c90758249ab.sample"]
 
 [params]
 

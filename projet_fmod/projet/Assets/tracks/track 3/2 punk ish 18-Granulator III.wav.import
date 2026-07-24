@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dsd3gyh3q0wtc"
-path="res://.godot/imported/2 punk ish 18-Granulator III.wav-260be4ab11fccb6d14c7484ff461ccf0.sample"
+path="res://.godot/imported/2 punk ish 18-Granulator III.wav-d128d290a74d95cdb85506fc56d63ee2.sample"
 
 [deps]
 
-source_file="res://projet_fmod/projet/Assets/track 3/2 punk ish 18-Granulator III.wav"
-dest_files=["res://.godot/imported/2 punk ish 18-Granulator III.wav-260be4ab11fccb6d14c7484ff461ccf0.sample"]
+source_file="res://projet_fmod/projet/Assets/tracks/track 3/2 punk ish 18-Granulator III.wav"
+dest_files=["res://.godot/imported/2 punk ish 18-Granulator III.wav-d128d290a74d95cdb85506fc56d63ee2.sample"]
 
 [params]
 
