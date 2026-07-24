@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{ecdcb4e4-9a10-4f89-aaab-509add2aefae}">
 		<property name="assetPath">
-			<value>track 3/1 punk ish Voice.wav</value>
+			<value>tracks/track 3/1 punk ish Voice.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
