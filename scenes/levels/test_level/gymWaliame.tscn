@@ -415,3 +415,6 @@ position = Vector2(112, 16)
 
 [node name="TargetTile2" parent="." unique_id=2063140908 instance=ExtResource("6_sbmbd")]
 position = Vector2(16, 112)
+
+[node name="TargetTile3" parent="." unique_id=906012237 instance=ExtResource("6_sbmbd")]
+position = Vector2(80, 48)
