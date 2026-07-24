@@ -12,7 +12,9 @@ signal beat_signal
 var beat_inital_value: float
 var beat_timer: float
 var beat_streak: int = 0
-var streak_multiplayier: int = 1
+var streak_addition: int = 1
+var infinite_mode: bool = false
+var beat_nbr: int = 0
 
 #block le spam in buffer zone
 var pressed_late: bool = false
@@ -41,16 +43,26 @@ func _beat_failed():
 		coutdown_value = 0
 
 func _beat():
+	#beet incremantion of 1-4
+	if beat_nbr < 4:
+		beat_nbr += 1
+	else:
+		beat_nbr = 1
+	print("beat_nbr:", beat_nbr)
+	
 	#signal for other scripts
 	beat_signal.emit()
 	
-	
-	
-	coutdown_value -= 1
+	if beat_streak >= 15:
+		infinite_mode = true
+	else:
+		infinite_mode = false
+		
+	coutdown_value -= 2
 	if coutdown_value < 1:
 		coutdown_value = 0
 	
-	print(beat_streak)
+	print("coutdown:", coutdown_value)
 	
 func _beat_win():
 	print("win")
@@ -59,11 +71,16 @@ func _beat_win():
 	beat_streak += 1
 	if beat_streak > 15:
 		beat_streak = 15 
+		coutdown_value += 2
 	
-	
-	coutdown_value += 1
+	if beat_nbr == 4 or beat_nbr == 3 and beat_streak >= 7 and beat_streak < 15:
+		coutdown_value += 2
+	else:
+		coutdown_value += 1
 	if coutdown_value > 20:
 		coutdown_value = 20
+	
+	
 
 func _on_timer_timeout() -> void:
 	_beat()
