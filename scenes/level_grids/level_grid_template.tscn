@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cueco5cujhvpb" path="res://assets/sprites/Tileset_3der_V01.png" id="4_e4q0u"]
 [ext_resource type="PackedScene" uid="uid://3086uwlemvco" path="res://scenes/level_tiles/player_spawn_tile.tscn" id="4_ixjn1"]
 [ext_resource type="Script" uid="uid://ilwxgqjc7kbj" path="res://script/system/level_music_manager.gd" id="6_6yq7g"]
+[ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="7_bn28r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gaoov"]
 texture = ExtResource("1_76kxg")
@@ -333,6 +334,14 @@ tilemap = NodePath("TileMapLayer")
 player_scene = ExtResource("3_cks8l")
 player_spawn = NodePath("TileMapLayer/PlayerSpawnTile")
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=495366207]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
+
+[node name="Music" type="FmodEventEmitter2D" parent="." unique_id=18373094]
+event_name = "event:/track1"
+event_guid = "{bdaef4de-a77c-418e-8624-feb31732a654}"
+volume = 0.25
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1452209589]
 tile_set = SubResource("TileSet_v00hk")
 script = ExtResource("2_gaoov")
@@ -340,6 +349,10 @@ script = ExtResource("2_gaoov")
 [node name="PlayerSpawnTile" parent="TileMapLayer" unique_id=787001746 instance=ExtResource("4_ixjn1")]
 position = Vector2(16, 16)
 
+[node name="BaseInteractionTile" parent="TileMapLayer" unique_id=50867544 instance=ExtResource("7_bn28r")]
+position = Vector2(144, 16)
+can_player_interact_by_landing_on_tile = true
+
 [node name="MusicManager" type="Node" parent="." unique_id=1575283334 node_paths=PackedStringArray("music")]
 script = ExtResource("6_6yq7g")
-music = NodePath("")
+music = NodePath("../Music")
