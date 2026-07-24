@@ -14,10 +14,11 @@ func spawn_player() -> void:
 		#var spawn_tracker_ref = get_child_of_class(player_spawn, "GridCoordTracker") as GridCoordTracker
 		var spawn_tracker_ref := player_spawn.get_node_or_null("GridCoordTracker") as GridCoordTracker
 		if spawn_tracker_ref:
-			var player_ref: CharacterBody2D = player_scene.instantiate()
+			var player_ref: PlayerCharacter = player_scene.instantiate()
 			add_sibling(player_ref)
 			player_ref.reparent(tilemap)
 			player_ref.position = spawn_tracker_ref.grid_coord_to_local_pos()
+			tilemap.player = player_ref
 
 #func get_child_of_class(checked_node: Node, child_class: String) -> Node:
 	#for child in checked_node.get_children():
