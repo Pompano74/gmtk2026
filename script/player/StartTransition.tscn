@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://cnnv42dd04u78"]
+
+[ext_resource type="Script" uid="uid://dabix5mhoapfq" path="res://script/UI/start_transition.gd" id="1_comxu"]
+[ext_resource type="Texture2D" uid="uid://cvklyhy7kagmy" path="res://assets/sprites/placeholders/placeholder_32x32_tile.png" id="1_kdcs8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c0w0k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_45ngr"]
+font_size = 12
+font_color = Color(1, 1, 1, 0.9996519)
+
+[sub_resource type="Animation" id="Animation_kklpc"]
+resource_name = "BlinkTextSlow"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_qlo65"]
+resource_name = "Lerp"
+length = 1.15
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, -0.24999999, 0, 0.25, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0),
+"points": PackedFloat32Array(200, -0.25, 0, 0.25, 0, 0, -0.13333333, 172.89655, 0, 0, 0, -0.19999999, 146.31403, 0.03333336, 9.601765, 0, -0.23333335, 81.756485, 7.843971e-05, 0.09363711, 0, -0.107910156, 32.749165, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.7, 1, 1.15)
+}
+
+[sub_resource type="Animation" id="Animation_0yfwv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(648, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_veigf"]
+_data = {
+&"BlinkTextSlow": SubResource("Animation_kklpc"),
+&"Lerp": SubResource("Animation_qlo65"),
+&"RESET": SubResource("Animation_0yfwv")
+}
+
+[sub_resource type="Animation" id="Animation_comxu"]
+resource_name = "BlinkText"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Label:label_settings:font_color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.1, 0, 0.1, 0, 1, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Label:label_settings:font_color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.1, 0, 0.1, 0, 1, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Label:label_settings:font_color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.1, 0, 0.1, 0, 1, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Label:label_settings:font_color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.39215687, -0.1, 0, 0.1, 0, 1, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kklpc"]
+_data = {
+&"BlinkText": SubResource("Animation_comxu")
+}
+
+[node name="FadeScreen" type="Node2D" unique_id=687498793]
+script = ExtResource("1_comxu")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1380066588]
+position = Vector2(0, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=835286549]
+material = SubResource("CanvasItemMaterial_c0w0k")
+position = Vector2(1.9073486e-06, -7.9999943)
+scale = Vector2(9.5, 6.0000005)
+texture = ExtResource("1_kdcs8")
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1506450943]
+offset_left = -80.0
+offset_top = 40.0
+offset_right = 315.0
+offset_bottom = 88.0
+text = "Press any key to continue"
+label_settings = SubResource("LabelSettings_45ngr")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2135156268]
+root_node = NodePath("../Node2D")
+libraries/ = SubResource("AnimationLibrary_veigf")
+autoplay = &"Lerp"
+
+[node name="TextAnimation" type="AnimationPlayer" parent="." unique_id=704722715]
+libraries/ = SubResource("AnimationLibrary_kklpc")
+autoplay = &"BlinkText"
