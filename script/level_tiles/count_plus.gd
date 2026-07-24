@@ -9,9 +9,11 @@ func _ready() -> void:
 	
 func on_player_enters_tile(player: PlayerCharacter) -> void:
 	TempoGlobal.coutdown_value += plus_value
+	print("p_cooldown +")
 
 func on_player_bullet_enters_tile(bullet: Node2D) -> void:
 	TempoGlobal.coutdown_value += plus_value
+	print("b_cooldown +")
 
 func on_enemy_enters_tile(enemy: BaseEnemy) -> void:
-	pass
+	print("enemy_destroyed")

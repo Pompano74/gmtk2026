@@ -10,3 +10,6 @@ plus_value = 0
 [node name="Sprite2D" parent="." index="0" unique_id=384902394]
 modulate = Color(1, 1, 0, 1)
 self_modulate = Color(1, 1, 0, 1)
+can_player_interact_by_landing_on_tile = true
+can_player_interact_by_shooting_tile = true
+can_enemy_interact_by_landing_on_tile = true
