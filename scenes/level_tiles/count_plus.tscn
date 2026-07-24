@@ -3,13 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_0fsf0"]
 [ext_resource type="Script" uid="uid://bqwuqw338bu8s" path="res://script/level_tiles/count_plus.gd" id="2_mxnnt"]
 
-[node name="BaseInteractionTile" unique_id=50867544 instance=ExtResource("1_0fsf0")]
+[node name="count_plus" unique_id=50867544 instance=ExtResource("1_0fsf0")]
 script = ExtResource("2_mxnnt")
 plus_value = 0
 
 [node name="Sprite2D" parent="." index="0" unique_id=384902394]
 modulate = Color(1, 1, 0, 1)
 self_modulate = Color(1, 1, 0, 1)
-can_player_interact_by_landing_on_tile = true
-can_player_interact_by_shooting_tile = true
 can_enemy_interact_by_landing_on_tile = true

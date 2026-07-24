@@ -1,8 +1,70 @@
-[gd_scene format=3 uid="uid://l6cmky5fgo5j"]
+[gd_scene format=4 uid="uid://l6cmky5fgo5j"]
 
 [ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_r8dwr"]
+[ext_resource type="PackedScene" uid="uid://bnw6wwwfirb2d" path="res://scenes/level_tiles/count_plus.tscn" id="2_h50gv"]
+[ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="3_0epch"]
+[ext_resource type="PackedScene" uid="uid://cupv06oj0c16e" path="res://scenes/level_tiles/glitch_tile.tscn" id="4_xip7k"]
 
 [node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_r8dwr")]
 
 [node name="Music" parent="." index="1" unique_id=18373094]
-volume = 1.0
+volume = 2.5
+fmod_parameters/bootup/id = -3685586378038700787
+fmod_parameters/bootup = 0
+fmod_parameters/bootup/variant_type = 2
+"fmod_parameters/player condition/id" = -2119143983761922850
+"fmod_parameters/player condition" = "alive"
+"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
+"fmod_parameters/player condition/variant_type" = 4
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+fmod_parameters/reboot/id = 7082025585143961158
+fmod_parameters/reboot = "off"
+fmod_parameters/reboot/labels = PackedStringArray("off", "on")
+fmod_parameters/reboot/variant_type = 4
+
+[node name="TileMapLayer" parent="." index="2" unique_id=1452209589]
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAMAAAABAAAAAAADAAMAAAACAAAAAAADAAMAAAADAAAAAAADAAMAAAADAAEAAQADAAMAAAACAAEAAQADAAMAAAABAAEAAQADAAMAAAAAAAEAAQADAAMAAAAAAP//AAADAAMAAAD/////AAADAAMAAAD//wAAAAADAAMAAAD//wEAAQADAAMAAAD+/wEAAQADAAMAAAD+/wAAAAADAAMAAAD+////AAADAAMAAAABAP//AAADAAMAAAACAP//AAADAAMAAAADAP//AAADAAMAAAADAP7/AAADAAMAAAACAP7/AAADAAMAAAABAP7/AAADAAMAAAAAAP7/AAADAAMAAAD///7/AAADAAMAAAD+//7/AAADAAMAAAD+/wIAAQADAAMAAAD//wIAAQADAAMAAAAAAAIAAQADAAMAAAABAAIAAQADAAMAAAACAAIAAQADAAMAAAADAAIAAQADAAMAAAAAAAMAAQADAAMAAAD//wMAAQADAAMAAAD+/wMAAQADAAMAAAD9/wMAAQADAAMAAAD9/wIAAQADAAMAAAD9/wEAAQADAAMAAAD9/wAAAQADAAUAAAD9////AQADAAUAAAD9//7/AQADAAUAAAD9//3/AQADAAUAAAD+//3/AQADAAUAAAD///3/AQADAAUAAAAAAP3/AQADAAUAAAABAP3/AQADAAUAAAACAP3/AQADAAUAAAADAP3/AQADAAUAAAAEAP3/AQADAAUAAAAEAP7/AQADAAUAAAAEAP//AQADAAUAAAAEAAAAAQADAAUAAAAEAAEAAQADAAMAAAAEAAIAAQADAAMAAAAEAAMAAQADAAMAAAADAAMAAQADAAMAAAACAAMAAQADAAMAAAABAAMAAQADAAMAAAD6/wEAAQADAAMAAAD6/wIAAQADAAMAAAD6/wMAAQADAAMAAAD6/wQAAQADAAMAAAD6/wUAAQADAAMAAAD7/wEAAQADAAMAAAD7/wIAAQADAAMAAAD7/wMAAQADAAMAAAD7/wQAAQADAAMAAAD7/wUAAQADAAMAAAD8/wEAAQADAAMAAAD8/wIAAQADAAMAAAD8/wMAAQADAAMAAAD8/wQAAQADAAMAAAD8/wUAAQADAAMAAAD9/wQAAQADAAMAAAD9/wUAAQADAAMAAAD+/wQAAQADAAMAAAD+/wUAAQADAAMAAAD//wQAAQADAAMAAAD//wUAAQADAAMAAAAAAAQAAQADAAMAAAAAAAUAAQADAAMAAAABAAQAAQADAAMAAAABAAUAAQADAAMAAAACAAQAAQADAAMAAAACAAUAAQADAAMAAAADAAQAAQADAAMAAAADAAUAAQADAAMAAAAEAAQAAQADAAMAAAAEAAUAAQADAAMAAAAFAAEAAQADAAMAAAAFAAIAAQADAAMAAAAFAAMAAQADAAMAAAAFAAQAAQADAAMAAAAFAAUAAQADAAMAAAAGAAEAAQADAAMAAAAGAAIAAQADAAMAAAAGAAMAAQADAAMAAAAGAAQAAQADAAMAAAAGAAUAAQADAAMAAAAHAAEAAQADAAMAAAAHAAIAAQADAAMAAAAHAAMAAQADAAMAAAAHAAQAAQADAAMAAAAHAAUAAQADAAMAAAAIAAEAAQADAAMAAAAIAAIAAQADAAMAAAAIAAMAAQADAAMAAAAIAAQAAQADAAMAAAAIAAUAAQADAAMAAAD6/wYAAQADAAMAAAD7/wYAAQADAAMAAAD8/wYAAQADAAMAAAD9/wYAAQADAAMAAAD+/wYAAQADAAMAAAD//wYAAQADAAMAAAAAAAYAAQADAAMAAAABAAYAAQADAAMAAAACAAYAAQADAAMAAAADAAYAAQADAAMAAAAEAAYAAQADAAMAAAAFAAYAAQADAAMAAAAGAAYAAQADAAMAAAAHAAYAAQADAAMAAAAIAAYAAQADAAMAAAD6/wcAAQADAAMAAAD7/wcAAQADAAMAAAD8/wcAAQADAAMAAAD9/wcAAQADAAMAAAD+/wcAAQADAAMAAAD//wcAAQADAAMAAAAAAAcAAQADAAMAAAABAAcAAQADAAMAAAACAAcAAQADAAMAAAADAAcAAQADAAMAAAAEAAcAAQADAAMAAAAFAAcAAQADAAMAAAAGAAcAAQADAAMAAAAHAAcAAQADAAMAAAAIAAcAAQADAAMAAAD5/wAAAQADAAUAAAD6/wAAAQADAAUAAAD7/wAAAQADAAUAAAD8/wAAAQADAAUAAAD5/wEAAQADAAUAAAD5/wIAAQADAAUAAAD5/wMAAQADAAUAAAD5/wQAAQADAAUAAAD5/wUAAQADAAUAAAD5/wYAAQADAAUAAAD5/wcAAQADAAUAAAD5/wgAAQADAAUAAAD6/wgAAQADAAUAAAD7/wgAAQADAAUAAAD8/wgAAQADAAUAAAD9/wgAAQADAAUAAAD+/wgAAQADAAUAAAD//wgAAQADAAUAAAAAAAgAAQADAAUAAAABAAgAAQADAAUAAAACAAgAAQADAAUAAAADAAgAAQADAAUAAAAEAAgAAQADAAUAAAAFAAgAAQADAAUAAAAGAAgAAQADAAUAAAAHAAgAAQADAAUAAAAIAAgAAQADAAUAAAAJAAgAAQADAAUAAAAJAAAAAQADAAUAAAAJAAEAAQADAAUAAAAJAAIAAQADAAUAAAAJAAMAAQADAAUAAAAJAAQAAQADAAUAAAAJAAUAAQADAAUAAAAJAAYAAQADAAUAAAAJAAcAAQADAAUAAAAFAAAAAQADAAUAAAAGAAAAAQADAAUAAAAHAAAAAQADAAUAAAAIAAAAAQADAAUAAAA=")
+
+[node name="immobile_target" parent="TileMapLayer" index="1" unique_id=50867544 instance=ExtResource("3_0epch")]
+position = Vector2(-112, 112)
+
+[node name="immobile_target4" parent="TileMapLayer" index="2" unique_id=878304509 instance=ExtResource("3_0epch")]
+position = Vector2(112, 112)
+
+[node name="immobile_target2" parent="TileMapLayer" index="3" unique_id=1036275185 instance=ExtResource("3_0epch")]
+position = Vector2(-112, 176)
+
+[node name="immobile_target3" parent="TileMapLayer" index="4" unique_id=1084570783 instance=ExtResource("3_0epch")]
+position = Vector2(-48, 208)
+
+[node name="count_plus" parent="TileMapLayer" index="5" unique_id=336807211 instance=ExtResource("2_h50gv")]
+position = Vector2(208, 144)
+plus_value = 1
+
+[node name="count_plus2" parent="TileMapLayer" index="6" unique_id=662031026 instance=ExtResource("2_h50gv")]
+position = Vector2(208, 208)
+plus_value = 1
+
+[node name="count_plus3" parent="TileMapLayer" index="7" unique_id=573631818 instance=ExtResource("2_h50gv")]
+position = Vector2(176, 80)
+plus_value = 1
+
+[node name="count_plus4" parent="TileMapLayer" index="8" unique_id=679830788 instance=ExtResource("2_h50gv")]
+position = Vector2(80, 176)
+plus_value = 1
+
+[node name="count_plus5" parent="TileMapLayer" index="9" unique_id=751922107 instance=ExtResource("2_h50gv")]
+position = Vector2(-144, 144)
+plus_value = 1
+
+[node name="count_plus6" parent="TileMapLayer" index="10" unique_id=1195976615 instance=ExtResource("2_h50gv")]
+position = Vector2(-112, 48)
+plus_value = 1
+
+[node name="glitch_tile" parent="TileMapLayer" index="11" unique_id=636087188 instance=ExtResource("4_xip7k")]
+position = Vector2(16, 208)
+
+[node name="glitch_tile2" parent="TileMapLayer" index="12" unique_id=83175544 instance=ExtResource("4_xip7k")]
+position = Vector2(80, 144)

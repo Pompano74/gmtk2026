@@ -6,7 +6,11 @@ extends Node2D
 @export var player_spawn: Node2D
 
 func _ready() -> void:
-	await get_tree().create_timer(0.5).timeout
+	for x in get_tree().get_nodes_in_group("target_objectif"):
+		TempoGlobal.total_target += 1
+		TempoGlobal.current_target += 1
+
+	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 	spawn_player()
 
 func spawn_player() -> void:

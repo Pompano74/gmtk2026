@@ -1,7 +1,7 @@
 extends InteractionTile
 #TempoGlobal
 
-@export var plus_value: int = 0
+@export var plus_value: int = 1
 
 func _ready() -> void:
 	plus_value += 1
@@ -16,6 +16,7 @@ func on_player_enters_tile(player: PlayerCharacter) -> void:
 
 func on_player_bullet_enters_tile(bullet: Node2D) -> void:
 	TempoGlobal.coutdown_value += plus_value
+	bullet.get_parent().bullet_hit()
 	super(bullet)
 
 func on_enemy_enters_tile(enemy: BaseEnemy) -> void:
