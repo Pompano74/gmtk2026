@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 		pass
 
 func _beat_failed():
-	print("missed")
+	
 	beat_streak = 0
 	
 	coutdown_value -= 1
@@ -58,12 +58,9 @@ func _beat():
 	else:
 		infinite_mode = false
 		
-	coutdown_value -= 2
+	coutdown_value -= 1
 	if coutdown_value < 1:
 		coutdown_value = 0
-	
-	print("coutdown:", coutdown_value)
-	
 func _beat_win():
 	print("win")
 	
@@ -73,15 +70,6 @@ func _beat_win():
 		beat_streak = 15 
 		coutdown_value += 2
 	
-	if beat_nbr == 4 or beat_nbr == 3 and beat_streak >= 7 and beat_streak < 15:
-		coutdown_value += 2
-	else:
-		coutdown_value += 1
-	if coutdown_value > 20:
-		coutdown_value = 20
-	
-	
-
 func _on_timer_timeout() -> void:
 	_beat()
 
