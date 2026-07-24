@@ -7,6 +7,7 @@
 size = Vector2(32, 32)
 
 [node name="TargetTile" type="Node2D" unique_id=1079493711 groups=["TargetTile"]]
+z_index = 1
 script = ExtResource("1_ua6wc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1183489323]

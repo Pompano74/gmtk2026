@@ -7,8 +7,10 @@
 size = Vector2(28, 28)
 
 [node name="ExplosionTile" type="Node2D" unique_id=1246404053 groups=["PlayerBullet"]]
-z_index = 1
 script = ExtResource("1_id07v")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=2107340465]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=366234091]
 self_modulate = Color(0.8598962, 0.080120854, 0, 1)
@@ -22,6 +24,17 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=648807588]
 shape = SubResource("RectangleShape2D_mfd2r")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=94514675]
+event_name = "event:/player action"
+event_guid = "{2584fcb6-bc8d-4183-b8d0-992cd0bbab48}"
+fmod_parameters/YOUMISSED/id = 1639130881498081622
+fmod_parameters/YOUMISSED = 0
+fmod_parameters/YOUMISSED/variant_type = 2
+"fmod_parameters/player action/id" = 3026149045964357792
+"fmod_parameters/player action" = "move"
+"fmod_parameters/player action/labels" = PackedStringArray("move", "shoot")
+"fmod_parameters/player action/variant_type" = 4
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

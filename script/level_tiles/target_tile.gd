@@ -26,7 +26,7 @@ func _initialize_node2d_array() -> void:
 	explosion_grid.append($Explosion_UC)
 	explosion_grid.append($Explosion_UR)
 
-func _explode() -> void:
+func _explode() -> void: #Spawns explosions at the right position
 	print("functionCalled")
 	for i in range(8):
 		var explosion_instance = EXPLOSION_TILE.instantiate()
