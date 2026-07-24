@@ -333,6 +333,14 @@ tilemap = NodePath("TileMapLayer")
 player_scene = ExtResource("3_cks8l")
 player_spawn = NodePath("TileMapLayer/PlayerSpawnTile")
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=495366207]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
+
+[node name="Music" type="FmodEventEmitter2D" parent="." unique_id=18373094]
+event_name = "event:/track1"
+event_guid = "{bdaef4de-a77c-418e-8624-feb31732a654}"
+volume = 0.25
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1452209589]
 tile_set = SubResource("TileSet_v00hk")
 script = ExtResource("2_gaoov")
@@ -342,15 +350,4 @@ position = Vector2(16, 16)
 
 [node name="MusicManager" type="Node" parent="." unique_id=1575283334 node_paths=PackedStringArray("music")]
 script = ExtResource("6_6yq7g")
-music = NodePath("FmodEventEmitter2D")
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="MusicManager" unique_id=1728525007]
-event_name = "event:/track1"
-event_guid = "{cafc9354-6bba-4047-9a1e-c278cf892852}"
-volume = 0.25
-"fmod_parameters/combo chain/id" = 3414661205676469846
-"fmod_parameters/combo chain" = 0
-"fmod_parameters/combo chain/variant_type" = 2
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="MusicManager" unique_id=2084850516]
-bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
+music = NodePath("../Music")

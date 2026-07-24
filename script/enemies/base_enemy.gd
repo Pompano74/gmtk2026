@@ -1,8 +1,9 @@
 extends Node2D
 class_name BaseEnemy
 
-@export var tilemap : LevelTileMap
-@onready var coord_tracker : GridCoordTracker = $GridCoordTracker
+@export var tilemap: LevelTileMap
+@onready var coord_tracker: GridCoordTracker = $GridCoordTracker
+var current_path: Array[Vector2i]
 
 var timer : Timer
 
