@@ -30,6 +30,9 @@ var coutdown_value: int = 20
 #game objective
 var total_target: int = 0
 var current_target: int = 0
+
+const level_select = preload("uid://c0y1in3yfpic1")
+
 #===============================================================================================#
 #==========================================variable=============================================#
 #===============================================================================================#
@@ -94,6 +97,7 @@ func _on_combo_timer_timeout() -> void:
 
 #win and loose call (called in _beat() when reach 0 of coutdown or current target
 func level_win():
-	print("WIN LEVEL")
+	await get_tree().create_timer(beat_inital_value * 4).timeout
+	get_tree().change_scene_to_packed(level_select)
 func level_failed():
 	print("FAILED LEVEL")
