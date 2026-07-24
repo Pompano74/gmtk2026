@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bliya3rmnd6ri"]
+
+[ext_resource type="Script" uid="uid://dijisg86rc7eu" path="res://script/level_tiles/target_tile.gd" id="1_ua6wc"]
+[ext_resource type="Texture2D" uid="uid://cvklyhy7kagmy" path="res://assets/sprites/placeholders/placeholder_32x32_tile.png" id="2_maw6t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26v2m"]
+size = Vector2(32, 32)
+
+[node name="TargetTile" type="Node2D" unique_id=1079493711 groups=["TargetTile"]]
+z_index = 1
+script = ExtResource("1_ua6wc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1183489323]
+texture = ExtResource("2_maw6t")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1287910347 groups=["TargetTile"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=112992538]
+shape = SubResource("RectangleShape2D_26v2m")
+
+[node name="Explosion_L" type="Node2D" parent="." unique_id=369676569]
+position = Vector2(-32, 0)
+
+[node name="Explosion_BL" type="Node2D" parent="." unique_id=1160899204]
+position = Vector2(-32, 32)
+
+[node name="Explosion_BC" type="Node2D" parent="." unique_id=764011226]
+position = Vector2(0, 32)
+
+[node name="Explosion_BR" type="Node2D" parent="." unique_id=536600187]
+position = Vector2(32, 32)
+
+[node name="Explosion_R" type="Node2D" parent="." unique_id=315263137]
+position = Vector2(32, 0)
+
+[node name="Explosion_UR" type="Node2D" parent="." unique_id=1260138755]
+position = Vector2(32, -32)
+
+[node name="Explosion_UC" type="Node2D" parent="." unique_id=907752144]
+position = Vector2(0, -32)
+
+[node name="Explosion_UL" type="Node2D" parent="." unique_id=1896314083]
+position = Vector2(-32, -32)
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
