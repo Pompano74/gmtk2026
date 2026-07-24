@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dne71m1wn56lx"]
+
+[ext_resource type="Script" uid="uid://j351rao3mxd6" path="res://script/level_tiles/explosion_tile.gd" id="1_id07v"]
+[ext_resource type="Texture2D" uid="uid://yg22u44vv4hg" path="res://assets/placeholders/icon_red.svg" id="2_hibtr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfd2r"]
+size = Vector2(28, 28)
+
+[node name="ExplosionTile" type="Node2D" unique_id=1246404053 groups=["PlayerBullet"]]
+script = ExtResource("1_id07v")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=2107340465]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=366234091]
+self_modulate = Color(0.8598962, 0.080120854, 0, 1)
+texture_filter = 1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_hibtr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1901436370]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=648807588]
+shape = SubResource("RectangleShape2D_mfd2r")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=94514675]
+event_name = "event:/player action"
+event_guid = "{2584fcb6-bc8d-4183-b8d0-992cd0bbab48}"
+fmod_parameters/YOUMISSED/id = 1639130881498081622
+fmod_parameters/YOUMISSED = 0
+fmod_parameters/YOUMISSED/variant_type = 2
+"fmod_parameters/player action/id" = 3026149045964357792
+"fmod_parameters/player action" = "move"
+"fmod_parameters/player action/labels" = PackedStringArray("move", "shoot")
+"fmod_parameters/player action/variant_type" = 4
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

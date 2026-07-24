@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://yg22u44vv4hg" path="res://assets/placeholders/icon_red.svg" id="1_altju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfd2r"]
-size = Vector2(32, 32)
+size = Vector2(28, 28)
 
-[node name="PlayerBullet" type="Node2D" unique_id=1246404053]
+[node name="PlayerBullet" type="Node2D" unique_id=1246404053 groups=["PlayerBullet"]]
+z_index = 1
 script = ExtResource("1_2kcj1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=366234091]
@@ -39,7 +40,12 @@ rotation = -4.712389
 target_position = Vector2(0, -16)
 hit_from_inside = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1901436370]
+[node name="Area2D" type="Area2D" parent="." unique_id=1901436370 groups=["PlayerBullet"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=648807588]
 shape = SubResource("RectangleShape2D_mfd2r")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

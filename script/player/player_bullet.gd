@@ -22,3 +22,14 @@ func _move(bullet_dir: Vector2):
 	else:
 		global_position += bullet_dir * tile_size
 		life_span = life_span - 1
+
+
+
+
+
+
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+	#if (area.is_in_group("TargetTile")):
+		#var areaParent = area.get_parent()
+		#areaParent.queue_free()
+		#queue_free()
