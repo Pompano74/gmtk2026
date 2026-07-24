@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://ilwxgqjc7kbj" path="res://script/system/level_music_manager.gd" id="1_agwv7"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_v560l"]
 [ext_resource type="Texture2D" uid="uid://cueco5cujhvpb" path="res://assets/sprites/Tileset_3der_V01.png" id="3_sbmbd"]
-[ext_resource type="PackedScene" uid="uid://bliya3rmnd6ri" path="res://scenes/level_tiles/target_tile.tscn" id="6_sbmbd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qeahj"]
 texture = ExtResource("1_75ufw")
@@ -385,9 +384,8 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_qeahj")
 sources/1 = SubResource("TileSetAtlasSource_gtfpt")
 
-[node name="gym" type="Node2D" unique_id=1596905799 node_paths=PackedStringArray("music")]
+[node name="gym" type="Node2D" unique_id=1596905799]
 script = ExtResource("1_agwv7")
-music = NodePath("")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1564353499]
 texture_filter = 1
@@ -398,12 +396,3 @@ layer_0/tile_data = PackedInt32Array(0, 196609, 3, 1, 196609, 3, 2, 196609, 3, -
 
 [node name="Player" parent="." unique_id=1805821953 instance=ExtResource("2_v560l")]
 position = Vector2(16, 16)
-
-[node name="TargetTile" parent="." unique_id=1079493711 instance=ExtResource("6_sbmbd")]
-position = Vector2(112, 16)
-
-[node name="TargetTile2" parent="." unique_id=2063140908 instance=ExtResource("6_sbmbd")]
-position = Vector2(16, 112)
-
-[node name="TargetTile3" parent="." unique_id=906012237 instance=ExtResource("6_sbmbd")]
-position = Vector2(80, 48)

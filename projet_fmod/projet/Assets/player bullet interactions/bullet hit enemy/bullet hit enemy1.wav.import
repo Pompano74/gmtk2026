@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3ueo0x1ihxbl"
+path="res://.godot/imported/bullet hit enemy1.wav-976ddc1d1bee6683ed071752905de02e.sample"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/player bullet interactions/bullet hit enemy/bullet hit enemy1.wav"
+dest_files=["res://.godot/imported/bullet hit enemy1.wav-976ddc1d1bee6683ed071752905de02e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
