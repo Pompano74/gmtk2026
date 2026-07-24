@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{b5fa0269-9640-4a34-b034-91620aeb2897}">
 		<property name="assetPath">
-			<value>track 3/3 punk ish 1-Aphex twin type beats.wav</value>
+			<value>tracks/track 3/3 punk ish 1-Aphex twin type beats.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{1bceaf71-58d3-417f-a3ae-59868b50cdb3}">
+		<property name="name">
+			<value>reboot</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9135df2c-820c-4c26-af60-97ad8697ec33}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1b3b4e06-a83a-4404-b982-23cfa4d904b8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1b3b4e06-a83a-4404-b982-23cfa4d904b8}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>off</value>
+			<value>on</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

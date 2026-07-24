@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{51d4deda-6d32-43e2-83f6-cb13dcb20f0a}">
 		<property name="assetPath">
-			<value>track 3/2 punk ish 18-Granulator III.wav</value>
+			<value>tracks/track 3/2 punk ish 18-Granulator III.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
