@@ -1,5 +1,12 @@
-[gd_scene format=3 uid="uid://dgtc10uqpl46b"]
+[gd_scene format=3 uid="uid://bnw6wwwfirb2d"]
 
-[node name="CountPlus" type="Node2D" unique_id=1759244862]
+[ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_0fsf0"]
+[ext_resource type="Script" uid="uid://bqwuqw338bu8s" path="res://script/level_tiles/count_plus.gd" id="2_mxnnt"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=844776237]
+[node name="BaseInteractionTile" unique_id=50867544 instance=ExtResource("1_0fsf0")]
+script = ExtResource("2_mxnnt")
+plus_value = 0
+
+[node name="Sprite2D" parent="." index="0" unique_id=384902394]
+modulate = Color(1, 1, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
