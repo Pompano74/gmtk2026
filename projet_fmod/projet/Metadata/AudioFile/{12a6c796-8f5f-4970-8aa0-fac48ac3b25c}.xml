@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{dac8a2f8-0ab6-4059-b27d-3290d30cc513}">
+	<object class="AudioFile" id="{12a6c796-8f5f-4970-8aa0-fac48ac3b25c}">
 		<property name="assetPath">
-			<value>stepV2.wav</value>
+			<value>shoot player v7.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
