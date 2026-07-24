@@ -7,7 +7,7 @@
 [node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_r8dwr")]
 
 [node name="Music" parent="." index="1" unique_id=18373094]
-volume = 1.0
+volume = 2.5
 fmod_parameters/bootup/id = -3685586378038700787
 fmod_parameters/bootup = 0
 fmod_parameters/bootup/variant_type = 2
