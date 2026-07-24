@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c5cuyqkakuis3"]
+
+[ext_resource type="Texture2D" uid="uid://cvklyhy7kagmy" path="res://assets/sprites/placeholders/placeholder_32x32_tile.png" id="1_6grjb"]
+[ext_resource type="Script" uid="uid://bftteqajsnp81" path="res://script/level_tiles/base_interaction_tile.gd" id="1_tuptp"]
+[ext_resource type="PackedScene" uid="uid://bftbk8urv1bbs" path="res://scenes/systems/grid_coord_tracker.tscn" id="2_tgphl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pft8"]
+size = Vector2(32, 32)
+
+[node name="BaseInteractionTile" type="Node2D" unique_id=50867544]
+script = ExtResource("1_tuptp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=384902394]
+texture = ExtResource("1_6grjb")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1261708708]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1675323789]
+shape = SubResource("RectangleShape2D_8pft8")
+
+[node name="GridCoordTracker" parent="." unique_id=312814823 instance=ExtResource("2_tgphl")]
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
