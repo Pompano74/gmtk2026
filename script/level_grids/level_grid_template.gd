@@ -16,7 +16,7 @@ func _ready() -> void:
 func on_beat_called() -> void:
 	update_dynamic_coords()
 	update_pathfinding()
-	print(dynamic_blocked_coords)
+	#print(dynamic_blocked_coords)
 
 func setup_grid():
 	astargrid.region = get_used_rect()

@@ -23,6 +23,8 @@ func spawn_player() -> void:
 			player_ref.reparent(tilemap)
 			player_ref.position = spawn_tracker_ref.grid_coord_to_local_pos()
 			tilemap.player = player_ref
+			player_ref.coord_tracker.tilemap = tilemap
+			player_ref.coord_tracker.update_grid_coord()
 
 #func get_child_of_class(checked_node: Node, child_class: String) -> Node:
 	#for child in checked_node.get_children():

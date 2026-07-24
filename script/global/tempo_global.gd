@@ -59,10 +59,10 @@ func _beat_failed():
 		coutdown_value = 0
 func _beat():
 	#win loose condition
-	if current_target == 0:
-		level_win()
-	if coutdown_value == 0:
-		level_failed()
+	#if current_target == 0:
+		#level_win()
+	#if coutdown_value == 0:
+		#level_failed()
 	
 	#beet incremantion of 1-4
 	if beat_nbr < 4:
@@ -96,8 +96,8 @@ func _on_combo_timer_timeout() -> void:
 	beat_streak = 0
 
 #win and loose call (called in _beat() when reach 0 of coutdown or current target
-func level_win():
-	await get_tree().create_timer(beat_inital_value * 4).timeout
-	get_tree().change_scene_to_packed(level_select)
-func level_failed():
-	print("FAILED LEVEL")
+#func level_win():
+	#await get_tree().create_timer(beat_inital_value * 4).timeout
+	#get_tree().change_scene_to_packed(level_select)
+#func level_failed():
+	#print("FAILED LEVEL")
