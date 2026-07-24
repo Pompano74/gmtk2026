@@ -360,6 +360,3 @@ music = NodePath("../Music")
 
 [node name="BaseInteractionTile" parent="." unique_id=1125445401 instance=ExtResource("9_jkfvk")]
 position = Vector2(144, 80)
-can_player_interact_by_landing_on_tile = true
-can_player_interact_by_shooting_tile = true
-can_enemy_interact_by_landing_on_tile = true
