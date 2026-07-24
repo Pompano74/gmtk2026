@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://rr1njibts6a1" path="res://assets/sprites/Tileset_3der_V02.png" id="1_20pi8"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_mwhj0"]
+[ext_resource type="PackedScene" uid="uid://dincefexwc6q5" path="res://scenes/level_tiles/Destruct_Wall.tscn" id="3_mwhj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6ct7"]
 texture = ExtResource("1_20pi8")
@@ -680,3 +681,6 @@ volume = 0.5
 "fmod_parameters/death sound" = "alive"
 "fmod_parameters/death sound/labels" = PackedStringArray("alive", "dead")
 "fmod_parameters/death sound/variant_type" = 4
+
+[node name="DestructWall" parent="." unique_id=1713538203 instance=ExtResource("3_mwhj0")]
+position = Vector2(-48, 16)

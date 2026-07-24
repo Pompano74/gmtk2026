@@ -48,6 +48,7 @@ folder_colors={
 
 PlayerBullet=""
 TargetTile=""
+destruct_wall=""
 
 [input]
 

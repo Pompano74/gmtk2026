@@ -23,9 +23,11 @@ func _move(bullet_dir: Vector2):
 		global_position += bullet_dir * tile_size
 		life_span = life_span - 1
 
-
-
-
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("remove health")
+	if body.is_in_group("destruct_wall"):
+		body._remove_health()
+		queue_free() # Replace with function body.
 
 
 #func _on_area_2d_area_entered(area: Area2D) -> void:
