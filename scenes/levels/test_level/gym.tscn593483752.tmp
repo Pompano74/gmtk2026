@@ -420,11 +420,7 @@ position = Vector2(240, -96)
 [node name="music" type="FmodEventEmitter2D" parent="." unique_id=372982900]
 event_name = "event:/track1"
 event_guid = "{cafc9354-6bba-4047-9a1e-c278cf892852}"
-volume = 0.75
+volume = 0.5
 "fmod_parameters/combo chain/id" = 3414661205676469846
 "fmod_parameters/combo chain" = 0
 "fmod_parameters/combo chain/variant_type" = 2
-"fmod_parameters/death sound/id" = -2119143983761922850
-"fmod_parameters/death sound" = "alive"
-"fmod_parameters/death sound/labels" = PackedStringArray("alive", "dead")
-"fmod_parameters/death sound/variant_type" = 4
