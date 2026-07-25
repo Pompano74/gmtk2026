@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bxpic71gnhh8o" path="res://assets/sprites_only_final/Player/Player_20-17_Health_2.png" id="11_ioxgp"]
 [ext_resource type="Texture2D" uid="uid://bjwop1mwoo617" path="res://assets/sprites_only_final/Player/Player_4-1_Health_2.png" id="12_cnsyf"]
 [ext_resource type="Texture2D" uid="uid://idxray12kprk" path="res://assets/sprites_only_final/Player/Player_8-5_Health_2.png" id="13_007i1"]
+[ext_resource type="Texture2D" uid="uid://eequvw86djm" path="res://assets/sprites_only_final/Player/Player_Death.png" id="14_kvlxm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_75vfm"]
 animations = [{
@@ -97,6 +98,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"(2)Beat8-5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_kvlxm")
+}],
+"loop": 1,
+"name": &"Death",
 "speed": 5.0
 }]
 
@@ -267,8 +276,7 @@ texture = ExtResource("1_8afob")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246623880]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_75vfm")
-animation = &"(1)Beat12-9"
-frame_progress = 0.20091037
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586598473]
 shape = SubResource("RectangleShape2D_dovo2")

@@ -97,6 +97,9 @@ func on_beat_called() -> void:
 			animated_sprite_2d.play("(1)Beat4-1")
 		else:
 			animated_sprite_2d.play("(2)Beat4-1")
+	elif (countdown_value <= 0):
+		animated_sprite_2d.play("Death")
+
 
 func _physics_process(delta: float) -> void:
 	beat_timer = timer.get_time_left()
@@ -182,6 +185,19 @@ func _shoot(dir:Vector2):
 			bullet.dir = dir
 			bullet.ray_dir = player_direction
 			add_sibling(bullet)
+			#bullet sprite animation direction
+			if (dir == (Vector2(0, -1))):
+				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
+				bullet_sprite.play("Up")
+			if (dir == (Vector2(0, 1))):
+				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
+				bullet_sprite.play("Down")
+			if (dir == (Vector2(-1, 0))):
+				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
+				bullet_sprite.play("Left")
+			if (dir == (Vector2(1, 0))):
+				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
+				bullet_sprite.play("Right")
 			bullet.global_position = position + (dir * 32)
 			bullet.add_to_group("bullets")
 			await get_tree().create_timer(0.1).timeout

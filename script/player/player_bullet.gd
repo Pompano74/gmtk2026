@@ -13,6 +13,8 @@ var on_twos: bool = true
 @onready var down: RayCast2D = $down
 @onready var left: RayCast2D = $left
 @onready var right: RayCast2D = $right
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 var ray_dir
 
 #sound
