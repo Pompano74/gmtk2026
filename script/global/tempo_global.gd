@@ -31,7 +31,8 @@ var coutdown_value: int = 20
 var total_target: int = 0
 var current_target: int = 0
 
-@export var level_select: PackedScene
+@export var level_select_win: String
+@export var level_select_lose: String
 var level_is_switching: bool = true
 var level_is_restarting: bool = true 
 var can_beat: bool = false
@@ -62,15 +63,18 @@ func _ready() -> void:
 	combo_timer.wait_time = beat_inital_value + beat_inital_value / 10
 
 func _process(delta: float) -> void:
+	
+	if get_tree().get_first_node_in_group("player") !=null:
+		ui.global_position = get_tree().get_first_node_in_group("player").global_position
+	
 	if coutdown_value <= 0:
 		#print("failed")
 		pass
 	if Input.is_anything_pressed() and can_transition == true:
-		get_tree().change_scene_to_packed(level_select)
+		get_tree().change_scene_to_file(level_select_win)
 #beat functions
 func _beat_failed():
 	
-			
 	beat_streak = 0
 func _beat():
 	#win loose condition
@@ -80,7 +84,13 @@ func _beat():
 		if coutdown_value == 0:
 			level_failed()
 	
-		#beet incremantion of 1-4
+		
+		#coutdown
+		coutdown_value -= 1
+		if coutdown_value < 1:
+			coutdown_value = 0
+		
+	#beet incremantion of 1-4
 		if beat_nbr < 4:
 			beat_nbr += 1
 		else:
@@ -92,13 +102,6 @@ func _beat():
 		else:
 			infinite_mode = false
 
-		#coutdown
-		coutdown_value -= 1
-		if coutdown_value < 1:
-			coutdown_value = 0
-	else:
-		infinite_mode = true
-			
 	#emit signal for other scripts
 	beat_signal.emit()
 func _beat_win():
@@ -133,5 +136,5 @@ func level_failed():
 		#espace transition
 		await get_tree().create_timer(beat_inital_value * 4.5).timeout
 		coutdown_value = 20
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file(level_select_lose)
 		print("FAILED LEVEL")

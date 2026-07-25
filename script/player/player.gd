@@ -11,7 +11,7 @@ const tile_size: Vector2 = Vector2(32, 32)
 @export var player_action: FmodEventEmitter2D
 
 #beat_system_for_player
-var buffer_value: float = 0.15 #Buffer value used to determine the window in which the player can press a button
+var buffer_value: float = 0.14 #Buffer value used to determine the window in which the player can press a button
 var buffer_min: float
 var buffer_max: float
 var beat_inital_value
@@ -30,6 +30,7 @@ var action_check: bool = false:
 			action_check = false
 
 func _ready() -> void:
+	set_process_input(true)
 	TempoGlobal.ui.global_position = global_position
 	
 	TempoGlobal.beat_signal.connect(on_beat_called)
@@ -51,7 +52,7 @@ func _physics_process(delta: float) -> void:
 		action_check = false
 		#print(beat_timer)
 		
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if TempoGlobal.level_is_restarting == false and TempoGlobal.level_is_switching == false:
 		#MOVEMENT
 		if event.is_action_pressed("move_up"):

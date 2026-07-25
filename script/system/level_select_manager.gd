@@ -6,6 +6,7 @@ extends Node2D
 @export var player_spawn: Node2D
 
 func _ready() -> void:
+	TempoGlobal.coutdown_value = 20
 	TempoGlobal.can_transition = false
 	TempoGlobal.ui.visible = true
 	TempoGlobal.ui_label.visible = false
@@ -32,6 +33,8 @@ func _ready() -> void:
 	TempoGlobal.timer.start()
 	TempoGlobal.can_beat = true
 
+
+
 #func spawn_player() -> void:
 	#if player_spawn:
 		##var spawn_tracker_ref = get_child_of_class(player_spawn, "GridCoordTracker") as GridCoordTracker
@@ -45,7 +48,6 @@ func _ready() -> void:
 				#tilemap.player = player_ref
 			#else:
 				#pass
-
 #func get_child_of_class(checked_node: Node, child_class: String) -> Node:
 	#for child in checked_node.get_children():
 		#if child.is_class(child_class):

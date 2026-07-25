@@ -1,12 +1,14 @@
 extends InteractionTile
 #TempoGlobal
 
-@export var plus_value: int = 1
+@export_range(1, 4) var plus_value: int = 1
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
+	animated_sprite_2d.frame = plus_value - 1
+	
 	plus_value += 1
 	destroy_on_interaction = true
-	can_enemy_interact_by_landing_on_tile = true
 	can_player_interact_by_landing_on_tile = true
 	can_player_interact_by_shooting_tile = true
 	

@@ -40,5 +40,5 @@ func on_tile_interacted() -> void:
 		can_player_interact_by_landing_on_tile = false
 		can_player_interact_by_shooting_tile = false
 		can_enemy_interact_by_landing_on_tile = false
-		await get_tree().create_timer(TempoGlobal.beat_inital_value * 2).timeout
+		await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 		queue_free()

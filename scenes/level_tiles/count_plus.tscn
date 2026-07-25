@@ -2,12 +2,44 @@
 
 [ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_0fsf0"]
 [ext_resource type="Script" uid="uid://bqwuqw338bu8s" path="res://script/level_tiles/count_plus.gd" id="2_mxnnt"]
+[ext_resource type="Texture2D" uid="uid://b3vg1b8vn84p6" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Plus_1_Tile_.png" id="3_oahih"]
+[ext_resource type="Texture2D" uid="uid://gpiyijd5ugpx" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Plus_2_Tile_.png" id="4_fklab"]
+[ext_resource type="Texture2D" uid="uid://glb2c37f06vo" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Plus_3_Tile_.png" id="5_dre1w"]
+[ext_resource type="Texture2D" uid="uid://cod542hj1fykn" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Plus_4_Tile_.png" id="6_o48g6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxnnt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oahih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fklab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dre1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o48g6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="count_plus" unique_id=50867544 instance=ExtResource("1_0fsf0")]
 script = ExtResource("2_mxnnt")
 plus_value = 0
+can_player_interact_by_landing_on_tile = true
+can_player_interact_by_shooting_tile = true
+destroy_on_interaction = false
 
-[node name="Sprite2D" parent="." index="0" unique_id=384902394]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=129272335]
 modulate = Color(1, 1, 0, 1)
-self_modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_mxnnt")
+
+[node name="Sprite2D" parent="." index="1" unique_id=384902394]
+modulate = Color(1, 1, 0, 0)
+self_modulate = Color(1, 1, 0, 0)
 can_enemy_interact_by_landing_on_tile = true
