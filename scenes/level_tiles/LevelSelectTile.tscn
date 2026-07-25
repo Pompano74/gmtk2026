@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c183128kiodn2"]
+
+[ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_x1knp"]
+[ext_resource type="Script" uid="uid://d0y5r1kwrfayj" path="res://script/level_tiles/level_select_tile.gd" id="2_cdg1k"]
+
+[node name="BaseInteractionTile" unique_id=50867544 instance=ExtResource("1_x1knp")]
+script = ExtResource("2_cdg1k")
+count_down_max = 3
+can_player_interact_by_landing_on_tile = true
+destroy_on_interaction = false
+
+[connection signal="area_shape_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_shape_exited"]
+[connection signal="body_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_exited"]
