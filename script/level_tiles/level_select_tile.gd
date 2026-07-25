@@ -32,6 +32,7 @@ func _on_beat():
 func on_player_enters_tile(player: PlayerCharacter) -> void:
 	start_countdown = true 
 	player_ref = player
+	super(player)
 
 
 

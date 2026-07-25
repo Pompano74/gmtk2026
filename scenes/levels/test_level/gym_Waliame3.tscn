@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bnw6wwwfirb2d" path="res://scenes/level_tiles/count_plus.tscn" id="3_xcpob"]
 [ext_resource type="PackedScene" uid="uid://cupv06oj0c16e" path="res://scenes/level_tiles/glitch_tile.tscn" id="4_nbgwq"]
 [ext_resource type="PackedScene" uid="uid://c183128kiodn2" path="res://scenes/level_tiles/LevelSelectTile.tscn" id="5_g7b0r"]
+[ext_resource type="PackedScene" uid="uid://bba0t1vpp2sy0" path="res://scenes/level_tiles/BoostTile.tscn" id="6_xcpob"]
 
 [node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_3c4ys")]
 
@@ -72,3 +73,12 @@ position = Vector2(80, 144)
 
 [node name="BaseInteractionTile" parent="." index="4" unique_id=925136285 instance=ExtResource("5_g7b0r")]
 position = Vector2(80, 16)
+
+[node name="BaseInteractionTile2" parent="." index="5" unique_id=1721192903 instance=ExtResource("6_xcpob")]
+position = Vector2(-80, 48)
+
+[node name="BaseInteractionTile3" parent="." index="6" unique_id=1447377524 instance=ExtResource("6_xcpob")]
+position = Vector2(48, 112)
+
+[node name="BaseInteractionTile4" parent="." index="7" unique_id=1553581081 instance=ExtResource("6_xcpob")]
+position = Vector2(48, 80)
