@@ -54,6 +54,7 @@ hit_from_inside = true
 zoom = Vector2(2.25, 2.25)
 
 [node name="player_ui" parent="." unique_id=1579424744 instance=ExtResource("4_p47bc")]
+visible = false
 offset_top = -6.0
 offset_bottom = -6.0
 
@@ -68,6 +69,9 @@ fmod_parameters/YOUMISSED/variant_type = 2
 "fmod_parameters/player action" = "move"
 "fmod_parameters/player action/labels" = PackedStringArray("move", "shoot")
 "fmod_parameters/player action/variant_type" = 4
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
 
 [node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1943224875]
 

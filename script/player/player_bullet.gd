@@ -24,6 +24,7 @@ func _ready() -> void:
 
 func on_beat_called():
 	
+	
 	#apply bullet direction
 	if dir == Vector2(0 , -1):
 		ray_dir = up
@@ -36,6 +37,8 @@ func on_beat_called():
 	
 	#check if bullet it wall
 	if dir != null:
+		if ray_dir.get_collider().name != null:
+			print(ray_dir.get_collider().name == "Area2D")
 		if ray_dir.is_colliding() and ray_dir.get_collider().name == "Area2D":
 			#mettre comportement dans la tuile
 			#call function of comportement dans la tuile, ICI

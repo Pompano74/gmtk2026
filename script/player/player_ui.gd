@@ -11,6 +11,7 @@ var beat_int_loop: int = 0
 
 
 func _ready() -> void:
+	coutdown.frame = 20
 	TempoGlobal.beat_signal.connect(on_beat_called)
 	target_count.text = str(TempoGlobal.current_target) + "/" + str(TempoGlobal.total_target)
 	beats.frame = 0
