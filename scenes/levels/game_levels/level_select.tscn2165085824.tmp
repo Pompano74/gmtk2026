@@ -530,8 +530,8 @@ sources/1 = SubResource("TileSetAtlasSource_bn28r")
 sources/2 = SubResource("TileSetAtlasSource_e4q0u")
 
 [node name="level_select" unique_id=1574904214 node_paths=PackedStringArray("spawn_array", "layer_array") instance=ExtResource("1_mxehx")]
-spawn_array = [NodePath("level_progress/spawn_1"), NodePath("level_progress/spawn_2"), NodePath("level_progress/spawn_3"), NodePath("level_progress/spawn_4"), NodePath("level_progress/spawn_5")]
-layer_array = [NodePath("level_progress/layer_1"), NodePath("level_progress/layer_2"), NodePath("level_progress/layer_3"), NodePath("level_progress/layer_4"), NodePath("level_progress/layer_5")]
+spawn_array = [NodePath("level_progress/spawn_1")]
+layer_array = [NodePath("level_progress/layer_1")]
 
 [node name="Music" parent="." index="1" unique_id=18373094]
 volume = 1.0
@@ -577,41 +577,7 @@ position = Vector2(-256, 272)
 [node name="level_progress" type="Node2D" parent="." index="5" unique_id=1987441763]
 
 [node name="spawn_1" type="Node2D" parent="level_progress" index="0" unique_id=1568247923]
-position = Vector2(16, -16)
 
 [node name="layer_1" type="TileMapLayer" parent="level_progress" index="1" unique_id=998223163]
-position = Vector2(-384, 80)
-tile_set = SubResource("TileSet_v00hk")
-script = ExtResource("7_f7sih")
-
-[node name="spawn_2" type="Node2D" parent="level_progress" index="2" unique_id=2079011701]
-position = Vector2(-360, 80)
-
-[node name="layer_2" type="TileMapLayer" parent="level_progress" index="3" unique_id=560759404]
-position = Vector2(-384, 80)
-tile_set = SubResource("TileSet_v00hk")
-script = ExtResource("7_f7sih")
-
-[node name="spawn_3" type="Node2D" parent="level_progress" index="4" unique_id=1327515458]
-position = Vector2(-360, 80)
-
-[node name="layer_3" type="TileMapLayer" parent="level_progress" index="5" unique_id=441246099]
-position = Vector2(-384, 80)
-tile_set = SubResource("TileSet_v00hk")
-script = ExtResource("7_f7sih")
-
-[node name="spawn_4" type="Node2D" parent="level_progress" index="6" unique_id=653092007]
-position = Vector2(-360, 80)
-
-[node name="layer_4" type="TileMapLayer" parent="level_progress" index="7" unique_id=883829566]
-position = Vector2(-384, 80)
-tile_set = SubResource("TileSet_v00hk")
-script = ExtResource("7_f7sih")
-
-[node name="spawn_5" type="Node2D" parent="level_progress" index="8" unique_id=395061294]
-position = Vector2(-360, 80)
-
-[node name="layer_5" type="TileMapLayer" parent="level_progress" index="9" unique_id=1394202474]
-position = Vector2(-384, 80)
 tile_set = SubResource("TileSet_v00hk")
 script = ExtResource("7_f7sih")
