@@ -6,8 +6,9 @@
 
 [node name="level_select_tile" unique_id=50867544 instance=ExtResource("1_58ms5")]
 script = ExtResource("2_fkhga")
-scene_to_go = null
+scene_to_go = ""
 can_player_interact_by_landing_on_tile = true
+can_player_interact_by_shooting_tile = true
 destroy_on_interaction = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=384902394]

@@ -2,10 +2,35 @@ extends Node2D
 
 @export var tilemap: LevelTileMap
 
-@export var player_scene: PackedScene
-@export var player_spawn: Node2D
+
+
+@export var level_select_win: String = "res://scenes/levels/game_levels/level_select.tscn"
+@export var level_select_lose: String
+@export var int_level: int = 0
+
+
+@export var spawn_array: Array[Node2D]
+@export var layer_array: Array[LevelTileMap]
+@onready var layer_1: LevelTileMap = $level_progress/layer_1
+
+@onready var player: PlayerCharacter = $Player
 
 func _ready() -> void:
+	TempoGlobal.int_level = int_level
+	
+	if spawn_array != null and layer_array != null:
+		for x in spawn_array.size():
+			if spawn_array[TempoGlobal.game_progress] !=null:
+				TempoGlobal.ui.global_position = spawn_array[TempoGlobal.game_progress].global_position
+				player.global_position = spawn_array[TempoGlobal.game_progress].global_position
+				layer_array[TempoGlobal.game_progress].visible = true
+			else:
+				TempoGlobal.ui.global_position = spawn_array[spawn_array.size()].global_position
+				player.global_position = spawn_array[spawn_array.size()].global_position
+	
+	TempoGlobal.level_select_win = level_select_win
+	TempoGlobal.level_select_lose = level_select_lose
+	TempoGlobal.coutdown_value = 20
 	TempoGlobal.can_transition = false
 	TempoGlobal.ui.visible = true
 	TempoGlobal.ui_label.visible = false

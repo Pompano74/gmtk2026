@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dhmub2lw5e8v7" path="res://script/global/tempo_global.gd" id="1_muea5"]
 [ext_resource type="Texture2D" uid="uid://s6wh516u4ffn" path="res://assets/sprites/ScreenArtUI_V8.png" id="2_cn63s"]
-[ext_resource type="PackedScene" uid="uid://c0y1in3yfpic1" path="res://scenes/levels/Level_LvlSelector.tscn" id="2_vtalf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn63s"]
 bg_color = Color(0, 0, 0, 1)
@@ -10,7 +9,7 @@ corner_detail = 1
 
 [node name="Node" type="Node" unique_id=1480582950]
 script = ExtResource("1_muea5")
-level_select = ExtResource("2_vtalf")
+level_select_win = "res://scenes/levels/game_levels/level_select.tscn"
 
 [node name="Timer" type="Timer" parent="." unique_id=53055920]
 process_callback = 0
@@ -21,9 +20,22 @@ autostart = true
 [node name="Control" type="Control" parent="." unique_id=1634257988]
 z_index = 105
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="black" type="Panel" parent="Control" unique_id=1825166205]
+layout_mode = 0
+offset_left = -1232.0
+offset_top = -696.0
+offset_right = 1200.0
+offset_bottom = 704.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cn63s")
 
 [node name="ScreenArtUiV8" type="Sprite2D" parent="Control" unique_id=1747160033]
 position = Vector2(0, -6)
@@ -54,7 +66,7 @@ offset_left = -99.0
 offset_top = -27.0
 offset_right = 99.0
 offset_bottom = 22.0
-text = "destroy all virus"
+text = "loading . . ."
 horizontal_alignment = 1
 vertical_alignment = 1
 

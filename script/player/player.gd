@@ -11,13 +11,20 @@ const tile_size: Vector2 = Vector2(32, 32)
 @export var player_action: FmodEventEmitter2D
 
 #beat_system_for_player
-var buffer_value: float = 0.15 #Buffer value used to determine the window in which the player can press a button
+var buffer_value: float = 0.14 #Buffer value used to determine the window in which the player can press a button
 var buffer_min: float
 var buffer_max: float
 var beat_inital_value
 var timer
 var beat_timer: float = 0.0
 var beat_streak: int = 0
+var check_next_beat_skipped: bool = false
+var idle_check: bool = false:
+	set(new_idle):
+		if idle_check != new_idle:
+			if new_idle:
+				TempoGlobal.player_skipped_beat.emit()
+		idle_check = new_idle
 
 #player value
 @onready var player_direction = $up
@@ -28,8 +35,11 @@ var action_check: bool = false:
 		action_check = button_pressed
 		if action_check and beat_timer >= buffer_max and beat_timer <= buffer_min:
 			action_check = false
+		if action_check:
+			check_next_beat_skipped = false
 
 func _ready() -> void:
+	set_process_input(true)
 	TempoGlobal.ui.global_position = global_position
 	
 	TempoGlobal.beat_signal.connect(on_beat_called)
@@ -42,6 +52,10 @@ func on_beat_called() -> void:
 	TempoGlobal.ui.global_position = global_position
 	#should create a function to retrieve information (for instance current tile type)
 	_getSurroundTileInfo()
+	if check_next_beat_skipped and !action_check:
+		idle_check = true
+		idle_check = false
+	check_next_beat_skipped = true
 
 func _physics_process(delta: float) -> void:
 	beat_timer = timer.get_time_left()
@@ -50,8 +64,8 @@ func _physics_process(delta: float) -> void:
 	if action_check == true and beat_timer >= buffer_max and beat_timer <= buffer_min:
 		action_check = false
 		#print(beat_timer)
-		
-func _unhandled_input(event: InputEvent) -> void:
+
+func _input(event: InputEvent) -> void:
 	if TempoGlobal.level_is_restarting == false and TempoGlobal.level_is_switching == false:
 		#MOVEMENT
 		if event.is_action_pressed("move_up"):

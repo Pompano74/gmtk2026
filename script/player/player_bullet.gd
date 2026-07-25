@@ -3,7 +3,7 @@ extends Node2D
 const tile_size: Vector2 = Vector2(32, 32)
 var move_time: float = TempoGlobal.beat_inital_value
 var dir: Vector2
-var life_span: int = 100
+var life_span: int = 5
 var on_twos: bool = true
 
 
@@ -17,7 +17,6 @@ var ray_dir
 #sound
 @onready var bullet_sound: FmodEventEmitter2D = $bullet_sound
 
-var can_move: bool = true
 
 
 func _ready() -> void:
@@ -48,14 +47,8 @@ func on_beat_called():
 		else:
 			pass
 	
-	
-	#movement on twos
-	if on_twos == true:
-		_move(dir)
-		bullet_sound.play()
-		on_twos = false
-	elif on_twos == false:
-		on_twos = true
+	_move(dir)
+	bullet_sound.play()
 		
 
 func _move(bullet_dir: Vector2):
@@ -92,7 +85,9 @@ func bullet_death():
 func bullet_hit():
 	print("hit")
 	
+	
 	#behavior
+	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 	$Sprite2D.visible = false
 	$Area2D.monitoring = false
 	$Area2D.monitorable = false
