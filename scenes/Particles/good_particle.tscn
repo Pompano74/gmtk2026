@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dhhuh2bpx0yja"]
+
+[ext_resource type="Texture2D" uid="uid://ddqiqt760isbs" path="res://assets/sprites/player_Sprites/Player_Hover_Good.png" id="1_s3j8a"]
+
+[sub_resource type="Curve" id="Curve_s3j8a"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0.0053050406, 2.6666565), 0.0, 0.0, 0, 0, Vector2(1, -10.6666565), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_j6ek3"]
+_data = [Vector2(0, 0.49358976), 0.0, 0.0, 0, 0, Vector2(0.0053050406, 1), 0.0, 0.0, 0, 0, Vector2(0.13527851, 0.5), 0.0, 0.0, 0, 0, Vector2(0.25464192, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_mg06b"]
+offsets = PackedFloat32Array(0, 0.74358976)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="missParticle" type="Node2D" unique_id=403171505]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=170696556]
+z_index = 155
+position = Vector2(0, -16)
+amount = 1
+texture = ExtResource("1_s3j8a")
+local_coords = true
+direction = Vector2(0, 0)
+spread = 153.0
+gravity = Vector2(0, -150)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+linear_accel_min = 5.0
+linear_accel_max = 10.0
+linear_accel_curve = SubResource("Curve_s3j8a")
+radial_accel_min = -8.21
+radial_accel_max = 8.21
+scale_amount_max = 1.1
+scale_amount_curve = SubResource("Curve_j6ek3")
+color_ramp = SubResource("Gradient_mg06b")
+hue_variation_max = 1.0

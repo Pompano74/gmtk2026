@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dx88efir4cmin"]
+
+[ext_resource type="Texture2D" uid="uid://l86ajuesiqgu" path="res://assets/sprites/player_Sprites/Player_Hover_Miss.png" id="1_pt3to"]
+
+[sub_resource type="Curve" id="Curve_cjhwk"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0.0053050406, 2.6666565), 0.0, 0.0, 0, 0, Vector2(1, -10.6666565), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_pt3to"]
+_data = [Vector2(0, 0.49358976), 0.0, 0.0, 0, 0, Vector2(0.0053050406, 1), 0.0, 0.0, 0, 0, Vector2(0.13527851, 0.5), 0.0, 0.0, 0, 0, Vector2(0.25464192, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_wjeie"]
+offsets = PackedFloat32Array(0, 0.74358976)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="missParticle" type="Node2D" unique_id=403171505]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1829611903]
+z_index = 155
+position = Vector2(0, -16)
+amount = 1
+texture = ExtResource("1_pt3to")
+local_coords = true
+direction = Vector2(0, 0)
+spread = 153.0
+gravity = Vector2(0, -150)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+linear_accel_min = 5.0
+linear_accel_max = 10.0
+linear_accel_curve = SubResource("Curve_cjhwk")
+radial_accel_min = -8.21
+radial_accel_max = 8.21
+scale_amount_max = 1.1
+scale_amount_curve = SubResource("Curve_pt3to")
+color_ramp = SubResource("Gradient_wjeie")
+hue_variation_max = 1.0
