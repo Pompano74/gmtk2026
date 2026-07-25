@@ -25,6 +25,7 @@ func _ready() -> void:
 				layer_array[TempoGlobal.game_progress].visible = true
 				if TempoGlobal.game_progress != 0:
 					layer_array[TempoGlobal.game_progress - 1].visible = false
+					layer_array[TempoGlobal.game_progress - 1].collision_enabled = false
 			else:
 				TempoGlobal.ui.global_position = spawn_array[spawn_array.size()].global_position
 				player.global_position = spawn_array[spawn_array.size()].global_position

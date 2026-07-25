@@ -532,8 +532,8 @@ sources/1 = SubResource("TileSetAtlasSource_f7sih")
 sources/2 = SubResource("TileSetAtlasSource_3xkvs")
 
 [node name="level_select" unique_id=1574904214 node_paths=PackedStringArray("spawn_array", "layer_array") instance=ExtResource("1_mxehx")]
-spawn_array = [NodePath("level_progress/spawn_1"), NodePath("level_progress/spawn_2"), NodePath("level_progress/spawn_3"), NodePath("level_progress/spawn_4"), NodePath("level_progress/spawn_5")]
-layer_array = [NodePath("level_progress/layer_1"), null, null, null, null]
+spawn_array = [NodePath("level_progress/spawn_1"), NodePath("level_progress/spawn_2"), NodePath("level_progress/spawn_3"), NodePath("level_progress/spawn_4"), NodePath("level_progress/spawn_5"), NodePath("level_progress/spawn_6"), NodePath("level_progress/spawn_7"), NodePath("level_progress/spawn_8"), NodePath("level_progress/spawn_9"), NodePath("level_progress/spawn_10"), NodePath("level_progress/spawn_11"), NodePath("level_progress/spawn_12"), NodePath("level_progress/spawn_13")]
+layer_array = [NodePath("level_progress/layer_1"), NodePath("level_progress/layer_2"), NodePath("level_progress/layer_3"), NodePath("level_progress/layer_4"), NodePath("level_progress/layer_5"), NodePath("level_progress/layer_6"), NodePath("level_progress/layer_7"), NodePath("level_progress/layer_8"), NodePath("level_progress/layer_9"), NodePath("level_progress/layer_10"), NodePath("level_progress/layer_11"), NodePath("level_progress/layer_12"), NodePath("level_progress/layer_13")]
 
 [node name="Music" parent="." index="1" unique_id=18373094]
 volume = 1.0
