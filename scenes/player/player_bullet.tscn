@@ -2,6 +2,45 @@
 
 [ext_resource type="Script" uid="uid://co8m0iml26y32" path="res://script/player/player_bullet.gd" id="1_2kcj1"]
 [ext_resource type="Texture2D" uid="uid://yg22u44vv4hg" path="res://assets/placeholders/icon_red.svg" id="1_altju"]
+[ext_resource type="Texture2D" uid="uid://dg85cn4iwk5sb" path="res://assets/sprites_only_final/Player/Player_Shoot_Down_Dir.png" id="2_nv0me"]
+[ext_resource type="Texture2D" uid="uid://dlhtruq8fx5rp" path="res://assets/sprites_only_final/Player/Player_Shoot_Left_Dir.png" id="3_mmhpf"]
+[ext_resource type="Texture2D" uid="uid://dspb7xrljrcct" path="res://assets/sprites_only_final/Player/Player_Shoot_Right_Dir.png" id="4_xyxnp"]
+[ext_resource type="Texture2D" uid="uid://car4no6kpf0wo" path="res://assets/sprites_only_final/Player/Player_Shoot_Up_Dir.png" id="5_t2tun"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45ngr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nv0me")
+}],
+"loop": 1,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mmhpf")
+}],
+"loop": 1,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xyxnp")
+}],
+"loop": 1,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_t2tun")
+}],
+"loop": 1,
+"name": &"Up",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfd2r"]
 size = Vector2(16, 16)
@@ -21,8 +60,12 @@ event_guid = "{0eb68af1-d621-4b72-841b-2a7959a8b88d}"
 "fmod_parameters/increment ball move/labels" = PackedStringArray("ball stay", "ball move")
 "fmod_parameters/increment ball move/variant_type" = 4
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=454532861]
+sprite_frames = SubResource("SpriteFrames_45ngr")
+animation = &"Down"
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=366234091]
-modulate = Color(1, 0, 0, 1)
+modulate = Color(1, 0, 0, 0)
 self_modulate = Color(1, 0, 0, 1)
 texture_filter = 1
 scale = Vector2(0.25, 0.25)

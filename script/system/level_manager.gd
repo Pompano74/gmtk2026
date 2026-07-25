@@ -17,14 +17,19 @@ extends Node2D
 
 func _ready() -> void:
 	
+	print("AAAAAAAAA", TempoGlobal.game_progress)
+	TempoGlobal.int_level = int_level
+	print("AAAAAAAAA", TempoGlobal.int_level)
+	
 	if spawn_array != null and layer_array != null:
 		for x in spawn_array.size():
 			if spawn_array[TempoGlobal.game_progress] !=null:
 				TempoGlobal.ui.global_position = spawn_array[TempoGlobal.game_progress].global_position
 				player.global_position = spawn_array[TempoGlobal.game_progress].global_position
 				layer_array[TempoGlobal.game_progress].visible = true
+				layer_array[TempoGlobal.game_progress].collision_enabled = true
 				if TempoGlobal.game_progress != 0:
-					layer_array[TempoGlobal.game_progress - 1].visible = false
+					layer_array[TempoGlobal.game_progress - 1].visible = true
 					layer_array[TempoGlobal.game_progress - 1].collision_enabled = false
 			else:
 				TempoGlobal.ui.global_position = spawn_array[spawn_array.size()].global_position
