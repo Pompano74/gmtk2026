@@ -1398,7 +1398,7 @@
 			<value>1</value>
 		</property>
 		<property name="fftSize">
-			<value>256</value>
+			<value>1420</value>
 		</property>
 		<relationship name="automators">
 			<destination>{fddd6e19-10cc-430e-8139-8522e5c9b033}</destination>
