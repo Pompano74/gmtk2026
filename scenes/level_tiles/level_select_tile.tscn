@@ -2,10 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_58ms5"]
 [ext_resource type="Script" uid="uid://uujp2l44avhx" path="res://scenes/level_tiles/level_select_tileV2.gd" id="2_fkhga"]
+[ext_resource type="Texture2D" uid="uid://cipondjh5od6i" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Play-Continue_Block.png" id="3_3l43s"]
 
 [node name="level_select_tile" unique_id=50867544 instance=ExtResource("1_58ms5")]
 script = ExtResource("2_fkhga")
-can_player_interact_by_landing_on_tile = null
-can_player_interact_by_shooting_tile = null
-can_enemy_interact_by_landing_on_tile = null
-destroy_on_interaction = null
+scene_to_go = null
+can_player_interact_by_landing_on_tile = true
+destroy_on_interaction = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=384902394]
+texture = ExtResource("3_3l43s")
+offset = Vector2(0, -4)
+can_player_interact_by_landing_on_tile = true
+destroy_on_interaction = false

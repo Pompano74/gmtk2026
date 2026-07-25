@@ -31,7 +31,7 @@ var coutdown_value: int = 20
 var total_target: int = 0
 var current_target: int = 0
 
-const level_select = preload("uid://c0y1in3yfpic1")
+@export var level_select: PackedScene
 var level_is_switching: bool = true
 var level_is_restarting: bool = true 
 var can_beat: bool = false
@@ -42,6 +42,7 @@ var can_transition: bool = false
 @onready var ui_label: Label = $Control/Label
 @onready var label_start: Label = $Control/label_start
 @onready var label_reset: Label = $Control/label_reset
+@onready var label_lvl_select_start: Label = $Control/label_lvl_select_start
 
 
 #===============================================================================================#
@@ -53,6 +54,7 @@ func _ready() -> void:
 	ui_label.visible = false
 	label_start.visible = true
 	label_reset.visible = false
+	label_lvl_select_start.visible = false
 	 #set beat tempo
 	beat_inital_value = 1.0 / (bpm / 60.0)
 	beat_timer = beat_inital_value
@@ -113,8 +115,8 @@ func _on_combo_timer_timeout() -> void:
 #win and loose call (called in _beat() when reach 0 of coutdown or current target
 func level_win():
 	if level_is_switching == false:
-		timer.stop()
 		level_is_switching = true
+		timer.stop()
 		ui.visible = true
 		ui_label.visible = true
 		await get_tree().create_timer(0.5).timeout

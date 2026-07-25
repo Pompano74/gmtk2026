@@ -5,6 +5,8 @@
 
 [node name="immobile_target" unique_id=50867544 groups=["target_objectif"] instance=ExtResource("1_mbl4m")]
 script = ExtResource("2_hcv15")
+can_player_interact_by_landing_on_tile = true
+destroy_on_interaction = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=384902394]
 modulate = Color(1, 0, 0, 1)

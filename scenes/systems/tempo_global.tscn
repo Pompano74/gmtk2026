@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhmub2lw5e8v7" path="res://script/global/tempo_global.gd" id="1_muea5"]
 [ext_resource type="Texture2D" uid="uid://s6wh516u4ffn" path="res://assets/sprites/ScreenArtUI_V8.png" id="2_cn63s"]
+[ext_resource type="PackedScene" uid="uid://c0y1in3yfpic1" path="res://scenes/levels/Level_LvlSelector.tscn" id="2_vtalf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn63s"]
 bg_color = Color(0, 0, 0, 1)
@@ -9,6 +10,7 @@ corner_detail = 1
 
 [node name="Node" type="Node" unique_id=1480582950]
 script = ExtResource("1_muea5")
+level_select = ExtResource("2_vtalf")
 
 [node name="Timer" type="Timer" parent="." unique_id=53055920]
 process_callback = 0
@@ -17,7 +19,6 @@ autostart = true
 [node name="combo_timer" type="Timer" parent="." unique_id=716029263]
 
 [node name="Control" type="Control" parent="." unique_id=1634257988]
-visible = false
 z_index = 105
 layout_mode = 3
 anchors_preset = 0
@@ -43,7 +44,7 @@ offset_left = -99.0
 offset_top = -27.0
 offset_right = 99.0
 offset_bottom = 22.0
-text = "press any key to continue"
+text = "press any key to breach"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -64,6 +65,16 @@ offset_top = -27.0
 offset_right = 99.0
 offset_bottom = 22.0
 text = "reseting the breach"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label_lvl_select_start" type="Label" parent="Control" unique_id=2094961670]
+layout_mode = 0
+offset_left = -99.0
+offset_top = -27.0
+offset_right = 99.0
+offset_bottom = 22.0
+text = "breaching"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,9 +1,16 @@
-[gd_scene format=3 uid="uid://c0y1in3yfpic1"]
+[gd_scene format=4 uid="uid://c0y1in3yfpic1"]
 
 [ext_resource type="Texture2D" uid="uid://b5aak3r1t5rd0" path="res://assets/sprites/Tileset_3der_V06.png" id="1_bylnk"]
 [ext_resource type="Script" uid="uid://cbac5iby8d3sg" path="res://script/system/level_select_manager.gd" id="1_y23ir"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_sondv"]
 [ext_resource type="Script" uid="uid://ilwxgqjc7kbj" path="res://script/system/level_music_manager.gd" id="2_y23ir"]
+[ext_resource type="PackedScene" uid="uid://dn63pngnt6o0q" path="res://scenes/level_tiles/level_select_tile.tscn" id="5_bbb4i"]
+[ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="6_f1dx1"]
+[ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="7_heufa"]
+[ext_resource type="PackedScene" uid="uid://bnw6wwwfirb2d" path="res://scenes/level_tiles/count_plus.tscn" id="8_evs1o"]
+[ext_resource type="PackedScene" uid="uid://cupv06oj0c16e" path="res://scenes/level_tiles/glitch_tile.tscn" id="9_necd2"]
+[ext_resource type="PackedScene" uid="uid://bba0t1vpp2sy0" path="res://scenes/level_tiles/BoostTile.tscn" id="10_47isy"]
+[ext_resource type="PackedScene" uid="uid://c032ipnc11wae" path="res://scenes/level_tiles/descructible_wall.tscn" id="11_mcq55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sondv"]
 texture = ExtResource("1_bylnk")
@@ -574,12 +581,57 @@ texture_region_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sondv")
 
+[sub_resource type="PackedScene" id="PackedScene_fu3ag"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("LevelManager", "player_scene", "FmodBankLoader", "Music", "volume", "fmod_parameters/bootup/id", "fmod_parameters/bootup", "fmod_parameters/bootup/variant_type", "fmod_parameters/player condition/id", "fmod_parameters/player condition", "fmod_parameters/player condition/labels", "fmod_parameters/player condition/variant_type", "fmod_parameters/combo chain/id", "fmod_parameters/combo chain", "fmod_parameters/combo chain/variant_type", "fmod_parameters/reboot/id", "fmod_parameters/reboot", "fmod_parameters/reboot/labels", "fmod_parameters/reboot/variant_type", "fmod_parameters/difficulty slider/id", "fmod_parameters/difficulty slider", "fmod_parameters/difficulty slider/labels", "fmod_parameters/difficulty slider/variant_type", "fmod_parameters/next level/id", "fmod_parameters/next level", "fmod_parameters/next level/labels", "fmod_parameters/next level/variant_type", "TileMapLayer", "tile_map_data", "PlayerSpawnTile", "immobile_target4", "position", "count_plus", "plus_value", "count_plus2", "count_plus3", "count_plus4", "count_plus5", "count_plus6", "glitch_tile", "glitch_tile2", "BaseInteractionTile6", "rotation", "BaseInteractionTile7", "BaseInteractionTile8", "BaseInteractionTile9", "Descructible_Wall", "Descructible_Wall2", "Descructible_Wall3", "MusicManager", "Player"),
+"node_count": 20,
+"node_ids": PackedInt32Array(1574904214, 18373094, 1452209589, 878304509, 336807211, 662031026, 573631818, 679830788, 751922107, 1195976615, 636087188, 83175544, 1628562142, 580558132, 965793381, 1008521239, 50867544, 986502951, 1727808483, 1805821953),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 1, 1, 1, 0, 0, 0, 2147483647, 524291, -1, 23, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 12, 10, 13, 11, 14, 5, 15, 12, 16, 13, 17, 14, 18, 9, 19, 15, 20, 16, 21, 17, 22, 9, 23, 18, 24, 13, 25, 14, 26, 9, 0, 0, 0, 2147483647, 786459, -1, 1, 28, 19, 0, 2, 0, 2147483647, 524318, 20, 1, 31, 21, 0, 2, 0, 2147483647, 786464, 22, 2, 31, 23, 33, 24, 0, 2, 0, 2147483647, 1048610, 22, 2, 31, 25, 33, 24, 0, 2, 0, 2147483647, 1310755, 22, 2, 31, 26, 33, 24, 0, 2, 0, 2147483647, 1572900, 22, 2, 31, 27, 33, 24, 0, 2, 0, 2147483647, 1835045, 22, 2, 31, 28, 33, 24, 0, 2, 0, 2147483647, 2097190, 22, 2, 31, 29, 33, 24, 0, 2, 0, 2147483647, 2359335, 30, 1, 31, 31, 0, 2, 0, 2147483647, 2621480, 30, 1, 31, 32, 0, 2, 0, 2147483647, 2883625, 33, 2, 31, 34, 42, 35, 0, 2, 0, 2147483647, 3145771, 33, 1, 31, 36, 0, 2, 0, 2147483647, 3407916, 33, 2, 31, 37, 42, 38, 0, 2, 0, 2147483647, 3670061, 33, 2, 31, 39, 42, 40, 0, 2, 0, 2147483647, 3932206, 41, 1, 31, 42, 0, 2, 0, 2147483647, 4194351, 41, 1, 31, 43, 0, 2, 0, 2147483647, 4456496, 41, 1, 31, 44, 0, 0, 0, 2147483647, 1310770, 45, 1, 31, 46, 0),
+"variants": [ExtResource("6_f1dx1"), null, 2.5, -3685586378038700787, 0.0, 2, -2119143983761922850, "alive", PackedStringArray("alive", "dead", "success"), 4, 3414661205676469846, 0, 7082025585143961158, "off", PackedStringArray("off", "on"), -8424130764865637537, "120BPM", PackedStringArray("80BPM", "85BPM", "90BPM", "95BPM", "100BPM", "105BPM", "110BPM", "115BPM", "120BPM", "125BPM", "130BPM", "135BPM", "140BPM"), 8289033740778483916, PackedByteArray("AAAAAAAAAAADAAMAAAABAAAAAAADAAMAAAACAAAAAAADAAMAAAADAAAAAAADAAMAAAADAAEAAQADAAMAAAACAAEAAQADAAMAAAABAAEAAQADAAMAAAAAAAEAAQADAAMAAAAAAP//AAADAAMAAAD/////AAADAAMAAAD//wAAAAADAAMAAAD//wEAAQADAAMAAAD+/wEAAQADAAMAAAD+/wAAAAADAAMAAAD+////AAADAAMAAAABAP//AAADAAMAAAACAP//AAADAAMAAAADAP//AAADAAMAAAADAP7/AAADAAMAAAACAP7/AAADAAMAAAABAP7/AAADAAMAAAAAAP7/AAADAAMAAAD///7/AAADAAMAAAD+//7/AAADAAMAAAD+/wIAAQADAAMAAAD//wIAAQADAAMAAAAAAAIAAQADAAMAAAABAAIAAQADAAMAAAACAAIAAQADAAMAAAADAAIAAQADAAMAAAAAAAMAAQADAAMAAAD//wMAAQADAAMAAAD+/wMAAQADAAMAAAD9/wMAAQADAAMAAAD9/wIAAQADAAMAAAD9/wEAAQADAAMAAAD9/wAAAQADAAUAAAD9////AQADAAUAAAD9//7/AQADAAUAAAD9//3/AQADAAUAAAD+//3/AQADAAUAAAD///3/AQADAAUAAAAAAP3/AQADAAUAAAABAP3/AQADAAUAAAACAP3/AQADAAUAAAADAP3/AQADAAUAAAAEAP3/AQADAAUAAAAEAP7/AQADAAUAAAAEAP//AQADAAUAAAAEAAAAAQADAAUAAAAEAAEAAQADAAMAAAAEAAIAAQADAAMAAAAEAAMAAQADAAMAAAADAAMAAQADAAMAAAACAAMAAQADAAMAAAABAAMAAQADAAMAAAD6/wEAAQADAAMAAAD6/wIAAQADAAMAAAD6/wMAAQADAAMAAAD6/wQAAQADAAMAAAD6/wUAAQADAAMAAAD7/wEAAQADAAMAAAD7/wIAAQADAAMAAAD7/wMAAQADAAMAAAD7/wQAAQADAAMAAAD7/wUAAQADAAMAAAD8/wEAAQADAAMAAAD8/wIAAQADAAMAAAD8/wMAAQADAAMAAAD8/wQAAQADAAMAAAD8/wUAAQADAAMAAAD9/wQAAQADAAMAAAD9/wUAAQADAAMAAAD+/wQAAQADAAMAAAD+/wUAAQADAAMAAAD//wQAAQADAAMAAAD//wUAAQADAAMAAAAAAAQAAQADAAMAAAAAAAUAAQADAAMAAAABAAQAAQADAAMAAAABAAUAAQADAAMAAAACAAQAAQADAAMAAAACAAUAAQADAAMAAAADAAQAAQADAAMAAAADAAUAAQADAAMAAAAEAAQAAQADAAMAAAAEAAUAAQADAAMAAAAFAAEAAQADAAMAAAAFAAIAAQADAAMAAAAFAAMAAQADAAMAAAAFAAQAAQADAAMAAAAFAAUAAQADAAMAAAAGAAEAAQADAAMAAAAGAAIAAQADAAMAAAAGAAMAAQADAAMAAAAGAAQAAQADAAMAAAAGAAUAAQADAAMAAAAHAAEAAQADAAMAAAAHAAIAAQADAAMAAAAHAAMAAQADAAMAAAAHAAQAAQADAAMAAAAHAAUAAQADAAMAAAAIAAEAAQADAAMAAAAIAAIAAQADAAMAAAAIAAMAAQADAAMAAAAIAAQAAQADAAMAAAAIAAUAAQADAAMAAAD6/wYAAQADAAMAAAD7/wYAAQADAAMAAAD8/wYAAQADAAMAAAD9/wYAAQADAAMAAAD+/wYAAQADAAMAAAD//wYAAQADAAMAAAAAAAYAAQADAAMAAAABAAYAAQADAAMAAAACAAYAAQADAAMAAAADAAYAAQADAAMAAAAEAAYAAQADAAMAAAAFAAYAAQADAAMAAAAGAAYAAQADAAMAAAAHAAYAAQADAAMAAAAIAAYAAQADAAMAAAD6/wcAAQADAAMAAAD7/wcAAQADAAMAAAD8/wcAAQADAAMAAAD9/wcAAQADAAMAAAD+/wcAAQADAAMAAAD//wcAAQADAAMAAAAAAAcAAQADAAMAAAABAAcAAQADAAMAAAACAAcAAQADAAMAAAADAAcAAQADAAMAAAAEAAcAAQADAAMAAAAFAAcAAQADAAMAAAAGAAcAAQADAAMAAAAHAAcAAQADAAMAAAAIAAcAAQADAAMAAAD5/wAAAQADAAUAAAD6/wAAAQADAAUAAAD7/wAAAQADAAUAAAD8/wAAAQADAAUAAAD5/wEAAQADAAUAAAD5/wIAAQADAAUAAAD5/wMAAQADAAUAAAD5/wQAAQADAAUAAAD5/wUAAQADAAUAAAD5/wYAAQADAAUAAAD5/wcAAQADAAUAAAD5/wgAAQADAAUAAAD6/wgAAQADAAUAAAD7/wgAAQADAAUAAAD8/wgAAQADAAUAAAD9/wgAAQADAAUAAAD+/wgAAQADAAUAAAD//wgAAQADAAUAAAAAAAgAAQADAAUAAAABAAgAAQADAAUAAAACAAgAAQADAAUAAAADAAgAAQADAAUAAAAEAAgAAQADAAUAAAAFAAgAAQADAAUAAAAGAAgAAQADAAUAAAAHAAgAAQADAAUAAAAIAAgAAQADAAUAAAAJAAgAAQADAAUAAAAJAAAAAQADAAUAAAAJAAEAAQADAAUAAAAJAAIAAQADAAUAAAAJAAMAAQADAAUAAAAJAAQAAQADAAUAAAAJAAUAAQADAAUAAAAJAAYAAQADAAUAAAAJAAcAAQADAAUAAAAFAAAAAQADAAUAAAAGAAAAAQADAAUAAAAHAAAAAQADAAUAAAAIAAAAAQADAAUAAAA="), ExtResource("7_heufa"), Vector2(80, 112), ExtResource("8_evs1o"), Vector2(208, 144), 1, Vector2(208, 208), Vector2(176, 80), Vector2(80, 176), Vector2(-144, 144), Vector2(-112, 48), ExtResource("9_necd2"), Vector2(16, 208), Vector2(80, 144), ExtResource("10_47isy"), Vector2(-16, 16), 1.5707964, Vector2(48, 16), Vector2(48, -48), -1.5707964, Vector2(-16, -48), -3.1415927, ExtResource("11_mcq55"), Vector2(-48, 144), Vector2(-48, 112), Vector2(-80, 144), ExtResource("2_sondv"), Vector2(16, 144)],
+"version": 3
+}
+
 [node name="LevelLvlSelector" type="Node2D" unique_id=663826680]
 script = ExtResource("1_y23ir")
 
 [node name="music_manager" type="Node" parent="." unique_id=600895651 node_paths=PackedStringArray("music")]
 script = ExtResource("2_y23ir")
 music = NodePath("../music")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=781459557]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
+
+[node name="music" type="FmodEventEmitter2D" parent="." unique_id=1225903399]
+event_name = "event:/track1"
+event_guid = "{bdaef4de-a77c-418e-8624-feb31732a654}"
+"fmod_parameters/difficulty slider/id" = -8424130764865637537
+"fmod_parameters/difficulty slider" = "120BPM"
+"fmod_parameters/difficulty slider/labels" = PackedStringArray("80BPM", "85BPM", "90BPM", "95BPM", "100BPM", "105BPM", "110BPM", "115BPM", "120BPM", "125BPM", "130BPM", "135BPM", "140BPM")
+"fmod_parameters/difficulty slider/variant_type" = 4
+fmod_parameters/bootup/id = -3685586378038700787
+fmod_parameters/bootup = 0
+fmod_parameters/bootup/variant_type = 2
+"fmod_parameters/next level/id" = 8289033740778483916
+"fmod_parameters/next level" = "off"
+"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
+"fmod_parameters/next level/variant_type" = 4
+"fmod_parameters/player condition/id" = -2119143983761922850
+"fmod_parameters/player condition" = "alive"
+"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
+"fmod_parameters/player condition/variant_type" = 4
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+fmod_parameters/reboot/id = 7082025585143961158
+fmod_parameters/reboot = "off"
+fmod_parameters/reboot/labels = PackedStringArray("off", "on")
+fmod_parameters/reboot/variant_type = 4
 
 [node name="FLOOR" type="TileMap" parent="." unique_id=353221410]
 position = Vector2(8, 8)
@@ -667,31 +719,6 @@ layer_0/tile_data = PackedInt32Array(786438, 262144, 7, 393220, 327680, 7, 2, 26
 [node name="Player" parent="." unique_id=1805821953 instance=ExtResource("2_sondv")]
 position = Vector2(16, 208)
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=781459557]
-bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
-
-[node name="music" type="FmodEventEmitter2D" parent="." unique_id=1225903399]
-event_name = "event:/track1"
-event_guid = "{bdaef4de-a77c-418e-8624-feb31732a654}"
-"fmod_parameters/difficulty slider/id" = -8424130764865637537
-"fmod_parameters/difficulty slider" = "120BPM"
-"fmod_parameters/difficulty slider/labels" = PackedStringArray("80BPM", "85BPM", "90BPM", "95BPM", "100BPM", "105BPM", "110BPM", "115BPM", "120BPM", "125BPM", "130BPM", "135BPM", "140BPM")
-"fmod_parameters/difficulty slider/variant_type" = 4
-fmod_parameters/bootup/id = -3685586378038700787
-fmod_parameters/bootup = 0
-fmod_parameters/bootup/variant_type = 2
-"fmod_parameters/next level/id" = 8289033740778483916
-"fmod_parameters/next level" = "off"
-"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
-"fmod_parameters/next level/variant_type" = 4
-"fmod_parameters/player condition/id" = -2119143983761922850
-"fmod_parameters/player condition" = "alive"
-"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
-"fmod_parameters/player condition/variant_type" = 4
-"fmod_parameters/combo chain/id" = 3414661205676469846
-"fmod_parameters/combo chain" = 0
-"fmod_parameters/combo chain/variant_type" = 2
-fmod_parameters/reboot/id = 7082025585143961158
-fmod_parameters/reboot = "off"
-fmod_parameters/reboot/labels = PackedStringArray("off", "on")
-fmod_parameters/reboot/variant_type = 4
+[node name="level_select_tile" parent="." unique_id=50867544 instance=ExtResource("5_bbb4i")]
+position = Vector2(-80, 112)
+scene_to_go = SubResource("PackedScene_fu3ag")
