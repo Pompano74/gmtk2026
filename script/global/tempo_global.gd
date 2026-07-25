@@ -11,6 +11,7 @@ signal beat_failed
 signal player_skipped_beat
 
 var game_progress: int = 0
+var int_level: int = 0
 
 #tempo
 @export var bpm: float = 120.0
@@ -69,6 +70,9 @@ func _ready() -> void:
 	combo_timer.wait_time = beat_inital_value + beat_inital_value / 10
 
 func _process(delta: float) -> void:
+	print("INT_OF_LEVEL", int_level)
+	print("GAME_PROGRESS", game_progress)
+	
 	if get_tree().current_scene.name == "level_select":
 		coutdown_value = 21
 	
@@ -80,7 +84,8 @@ func _process(delta: float) -> void:
 		#print("failed")
 		pass
 	if Input.is_anything_pressed() and can_transition == true:
-		game_progress += 1
+		if int_level > game_progress:
+			game_progress = int_level
 		get_tree().change_scene_to_file(level_select_win)
 #beat functions
 func _beat_failed():

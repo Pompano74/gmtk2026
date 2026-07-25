@@ -16,7 +16,7 @@ General/banks_path="res://assets/FMOD/banks/Desktop"
 [application]
 
 config/name="gmtk2026"
-run/main_scene="uid://csibf38tdx7bi"
+run/main_scene="uid://526xe3dcimrs"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/placeholders/icon_blue.svg"
 

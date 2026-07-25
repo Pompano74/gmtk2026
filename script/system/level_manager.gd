@@ -2,8 +2,12 @@ extends Node2D
 
 @export var tilemap: LevelTileMap
 
+
+
 @export var level_select_win: String = "res://scenes/levels/game_levels/level_select.tscn"
 @export var level_select_lose: String
+@export var int_level: int = 0
+
 
 @export var spawn_array: Array[Node2D]
 @export var layer_array: Array[LevelTileMap]
@@ -12,6 +16,7 @@ extends Node2D
 @onready var player: PlayerCharacter = $Player
 
 func _ready() -> void:
+	TempoGlobal.int_level = int_level
 	
 	if spawn_array != null and layer_array != null:
 		for x in spawn_array.size():
