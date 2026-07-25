@@ -25,11 +25,17 @@ var pressed_late: bool = false
 
 #coutdown system
 var coutdown_is_paused: bool = false
-var coutdown_value: int = 20
+var coutdown_value: int = 4
 
 #game objective
 var total_target: int = 0
 var current_target: int = 0
+
+const level_select = preload("uid://c0y1in3yfpic1")
+var level_is_switching: bool = false
+var level_is_restarting: bool = false 
+var can_beat: bool = false
+
 #===============================================================================================#
 #==========================================variable=============================================#
 #===============================================================================================#
@@ -87,13 +93,22 @@ func _beat_win():
 		beat_streak = 15 
 		coutdown_value += 2
 func _on_timer_timeout() -> void:
-	if coutdown_is_paused == false:
-		_beat()
+	_beat()
 func _on_combo_timer_timeout() -> void:
 	beat_streak = 0
 
 #win and loose call (called in _beat() when reach 0 of coutdown or current target
 func level_win():
-	print("WIN LEVEL")
+	if level_is_switching == false:
+		level_is_switching = true
+		await get_tree().create_timer(beat_inital_value * 4.5).timeout
+		get_tree().change_scene_to_packed(level_select)
 func level_failed():
-	print("FAILED LEVEL")
+	if level_is_restarting == false:
+		level_is_restarting = true
+		can_beat = false
+		#espace transition
+		await get_tree().create_timer(beat_inital_value * 4.5).timeout
+		coutdown_value = 20
+		get_tree().reload_current_scene()
+		print("FAILED LEVEL")
