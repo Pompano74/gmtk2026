@@ -8,33 +8,10 @@
 level_select_lose = "res://scenes/levels/game_levels/lvl_2.tscn"
 int_level = 2
 
-[node name="Music" parent="." index="2" unique_id=18373094]
-"fmod_parameters/difficulty slider/id" = -8424130764865637537
-"fmod_parameters/difficulty slider" = "120BPM"
-"fmod_parameters/difficulty slider/labels" = PackedStringArray("80BPM", "85BPM", "90BPM", "95BPM", "100BPM", "105BPM", "110BPM", "115BPM", "120BPM", "125BPM", "130BPM", "135BPM", "140BPM")
-"fmod_parameters/difficulty slider/variant_type" = 4
-fmod_parameters/bootup/id = -3685586378038700787
-fmod_parameters/bootup = 0
-fmod_parameters/bootup/variant_type = 2
-"fmod_parameters/next level/id" = 8289033740778483916
-"fmod_parameters/next level" = "off"
-"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
-"fmod_parameters/next level/variant_type" = 4
-"fmod_parameters/player condition/id" = -2119143983761922850
-"fmod_parameters/player condition" = "alive"
-"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
-"fmod_parameters/player condition/variant_type" = 4
-"fmod_parameters/combo chain/id" = 3414661205676469846
-"fmod_parameters/combo chain" = 0
-"fmod_parameters/combo chain/variant_type" = 2
-fmod_parameters/reboot/id = 7082025585143961158
-fmod_parameters/reboot = "off"
-fmod_parameters/reboot/labels = PackedStringArray("off", "on")
-fmod_parameters/reboot/variant_type = 4
-
-[node name="TileMapLayer" parent="." index="3" unique_id=1452209589]
+[node name="TileMapLayer" parent="." index="0" unique_id=1452209589 node_paths=PackedStringArray("player")]
 position = Vector2(-32, 0)
 tile_map_data = PackedByteArray("AAAAAP//AgADAAMAAAAAAAAAAgADAAUAAAAAAAEAAgADAAMAAAABAP//AgADAAMAAAABAAAAAgADAAMAAAABAAEAAgADAAMAAAD/////AgADAAMAAAD//wAAAgADAAMAAAD//wEAAgADAAMAAAACAP//AgADAAMAAAACAAEAAgADAAMAAAADAP//AgADAAMAAAADAAAAAgADAAMAAAADAAEAAgADAAMAAAACAP3/AgADAAMAAAACAP7/AgADAAMAAAADAP7/AgADAAUAAAD///v/AgADAAMAAAD///z/AgADAAMAAAD///3/AgADAAMAAAAAAPv/AgADAAMAAAAAAPz/AgADAAUAAAAAAP3/AgADAAMAAAABAPv/AgADAAMAAAABAPz/AgADAAMAAAABAP3/AgADAAMAAAACAPv/AgADAAMAAAADAPv/AgADAAMAAAADAPz/AgADAAMAAAAEAPv/AgADAAMAAAAEAPz/AgADAAUAAAAEAP3/AgADAAMAAAAEAP7/AgADAAMAAAAEAP//AgADAAMAAAAEAAAAAgADAAUAAAAEAAEAAgADAAMAAAD///7/AgADAAUAAAAAAP7/AgADAAMAAAABAP7/AgADAAUAAAAFAPv/AgADAAMAAAAFAPz/AgADAAMAAAAFAP3/AgADAAMAAAAFAP7/AgADAAUAAAAFAP//AgADAAMAAAAFAAAAAgADAAMAAAAFAAEAAgADAAMAAAD+//v/AgADAAUAAAD+//z/AgADAAUAAAD+//3/AgADAAUAAAD+//7/AgADAAUAAAD+////AgADAAUAAAD+/wAAAgADAAUAAAD+/wEAAgADAAUAAAD+/wIAAgADAAUAAAD//wIAAgADAAUAAAAAAAIAAgADAAUAAAABAAIAAgADAAUAAAACAAIAAgADAAUAAAADAAIAAgADAAUAAAAEAAIAAgADAAUAAAAFAAIAAgADAAUAAAD+//r/AgADAAUAAAD///r/AgADAAUAAAAAAPr/AgADAAUAAAABAPr/AgADAAUAAAACAPr/AgADAAUAAAADAPr/AgADAAUAAAAEAPr/AgADAAUAAAAFAPr/AgADAAUAAAAGAPr/AgADAAUAAAAGAPv/AgADAAUAAAAGAPz/AgADAAUAAAAGAP3/AgADAAUAAAAGAP7/AgADAAUAAAAGAP//AgADAAUAAAAGAAAAAgADAAUAAAAGAAEAAgADAAUAAAAGAAIAAgADAAUAAAADAP3/AgADAAMAAAACAAAAAgADAAMAAAACAPz/AgADAAMAAAA=")
+player = NodePath("../Player")
 
 [node name="Player" parent="." index="4" unique_id=1805821953 instance=ExtResource("2_ih5a0")]
 position = Vector2(16, 16)
