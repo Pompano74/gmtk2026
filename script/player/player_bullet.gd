@@ -26,7 +26,6 @@ func _ready() -> void:
 
 func on_beat_called():
 	
-	
 	#apply bullet direction
 	if dir == Vector2(0 , -1):
 		ray_dir = up

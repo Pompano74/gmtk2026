@@ -84,18 +84,6 @@ func _beat():
 	if coutdown_value < 1:
 		coutdown_value = 0
 		
-	#beet incremantion of 1-4
-	if beat_nbr < 4:
-		beat_nbr += 1
-	else:
-		beat_nbr = 1
-	
-	#beat_streak
-	if beat_streak >= 15:
-		infinite_mode = true
-	else:
-		infinite_mode = false
-		
 	#emit signal for other scripts
 	beat_signal.emit()
 func _beat_win():

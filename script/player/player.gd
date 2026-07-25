@@ -11,7 +11,7 @@ const tile_size: Vector2 = Vector2(32, 32)
 @export var player_action: FmodEventEmitter2D
 
 #beat_system_for_player
-var buffer_value: float = 0.15 #Buffer value used to determine the window in which the player can press a button
+var buffer_value: float = 0.1 #Buffer value used to determine the window in which the player can press a button
 var buffer_min: float
 var buffer_max: float
 var beat_inital_value
@@ -52,34 +52,33 @@ func _physics_process(delta: float) -> void:
 		
 func _unhandled_input(event: InputEvent) -> void:
 	
-	if TempoGlobal.can_beat == true:
-		#MOVEMENT
-		if event.is_action_pressed("move_up"):
-			player_direction = $up
-			_move(Vector2(0, -1))
-		elif event.is_action_pressed("move_down"):
-			player_direction = $down
-			_move(Vector2(0, 1))
-		elif event.is_action_pressed("move_left"):
-			player_direction = $left
-			_move(Vector2(-1, 0))
-		elif event.is_action_pressed("move_right"):
-			player_direction = $right
-			_move(Vector2(1, 0))
-		
-		#SHOOT
-		if Input.is_action_just_pressed("shoot_up"):
-			player_direction = $right
-			_shoot(Vector2(0, -1))
-		if Input.is_action_just_pressed("shoot_down"):
-			player_direction = $right
-			_shoot(Vector2(0, 1))
-		if Input.is_action_just_pressed("shoot_left"):
-			player_direction = $right
-			_shoot(Vector2(-1, 0))
-		if Input.is_action_just_pressed("shoot_right"):
-			player_direction = $right
-			_shoot(Vector2(1, 0))
+	#MOVEMENT
+	if event.is_action_pressed("move_up"):
+		player_direction = $up
+		_move(Vector2(0, -1))
+	elif event.is_action_pressed("move_down"):
+		player_direction = $down
+		_move(Vector2(0, 1))
+	elif event.is_action_pressed("move_left"):
+		player_direction = $left
+		_move(Vector2(-1, 0))
+	elif event.is_action_pressed("move_right"):
+		player_direction = $right
+		_move(Vector2(1, 0))
+	
+	#SHOOT
+	if Input.is_action_just_pressed("shoot_up"):
+		player_direction = $right
+		_shoot(Vector2(0, -1))
+	if Input.is_action_just_pressed("shoot_down"):
+		player_direction = $right
+		_shoot(Vector2(0, 1))
+	if Input.is_action_just_pressed("shoot_left"):
+		player_direction = $right
+		_shoot(Vector2(-1, 0))
+	if Input.is_action_just_pressed("shoot_right"):
+		player_direction = $right
+		_shoot(Vector2(1, 0))
 
 func _move(dir: Vector2):
 	if !player_direction.is_colliding() and action_check == false:

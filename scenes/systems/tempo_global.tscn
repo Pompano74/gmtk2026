@@ -7,6 +7,7 @@ script = ExtResource("1_muea5")
 
 [node name="Timer" type="Timer" parent="." unique_id=53055920]
 process_callback = 0
+autostart = true
 
 [node name="combo_timer" type="Timer" parent="." unique_id=716029263]
 

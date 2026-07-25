@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://c0y1in3yfpic1"]
 
 [ext_resource type="Texture2D" uid="uid://b5aak3r1t5rd0" path="res://assets/sprites/Tileset_3der_V06.png" id="1_bylnk"]
-[ext_resource type="Script" uid="uid://c6nwdgbobyr3a" path="res://script/system/level_manager.gd" id="1_sondv"]
-[ext_resource type="PackedScene" uid="uid://3086uwlemvco" path="res://scenes/level_tiles/player_spawn_tile.tscn" id="2_bylnk"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_sondv"]
-[ext_resource type="Script" uid="uid://ilwxgqjc7kbj" path="res://script/system/level_music_manager.gd" id="3_bbb4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sondv"]
 texture = ExtResource("1_bylnk")
@@ -178,9 +175,7 @@ texture_region_size = Vector2i(32, 32)
 6:8/0 = 0
 7:8/0 = 0
 8:8/0 = 0
-8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 9:8/0 = 0
-9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 10:8/0 = 0
 11:8/0 = 0
 12:8/0 = 0
@@ -201,7 +196,6 @@ texture_region_size = Vector2i(32, 32)
 7:9/0 = 0
 8:9/0 = 0
 9:9/0 = 0
-9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
 10:9/0 = 0
 11:9/0 = 0
 12:9/0 = 0
@@ -573,50 +567,13 @@ texture_region_size = Vector2i(32, 32)
 15:29/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ov0la"]
-physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sondv")
 
-[node name="LevelLvlSelector" type="Node2D" unique_id=663826680 node_paths=PackedStringArray("player_spawn")]
-script = ExtResource("1_sondv")
-player_scene = ExtResource("2_sondv")
-player_spawn = NodePath("PlayerSpawnTile")
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1703752889]
-bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
-
-[node name="music" type="FmodEventEmitter2D" parent="." unique_id=1459886305]
-event_name = "event:/track1"
-event_guid = "{bdaef4de-a77c-418e-8624-feb31732a654}"
-fmod_parameters/bootup/id = -3685586378038700787
-fmod_parameters/bootup = 0
-fmod_parameters/bootup/variant_type = 2
-"fmod_parameters/next level/id" = 8289033740778483916
-"fmod_parameters/next level" = "off"
-"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
-"fmod_parameters/next level/variant_type" = 4
-"fmod_parameters/player condition/id" = -2119143983761922850
-"fmod_parameters/player condition" = "alive"
-"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
-"fmod_parameters/player condition/variant_type" = 4
-"fmod_parameters/combo chain/id" = 3414661205676469846
-"fmod_parameters/combo chain" = 0
-"fmod_parameters/combo chain/variant_type" = 2
-fmod_parameters/reboot/id = 7082025585143961158
-fmod_parameters/reboot = "off"
-fmod_parameters/reboot/labels = PackedStringArray("off", "on")
-fmod_parameters/reboot/variant_type = 4
-
-[node name="music_manager" type="Node2D" parent="." unique_id=1379477165 node_paths=PackedStringArray("music")]
-script = ExtResource("3_bbb4i")
-music = NodePath("../music")
-
-[node name="PlayerSpawnTile" parent="." unique_id=787001746 instance=ExtResource("2_bylnk")]
-position = Vector2(16, 240)
+[node name="LevelLvlSelector" type="Node2D" unique_id=663826680]
 
 [node name="FLOOR" type="TileMap" parent="." unique_id=353221410]
 position = Vector2(8, 8)
 tile_set = SubResource("TileSet_ov0la")
-rendering_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(1114110, 196608, 3, 1114108, 196608, 3, 1048578, 196608, 3, 1048580, 196608, 3, 1048576, 589824, 9, 983034, 196608, 3, 983036, 196608, 7, 983038, 196608, 6, 917506, 196608, 6, 917508, 196608, 7, 917510, 196608, 3, 917504, 65536, 10, 851962, 196608, 6, 851964, 262144, 10, 851966, 458752, 10, 786432, 196608, 9, 786434, 327680, 10, 786436, 196608, 10, 786438, 196608, 6, 655366, 196608, 6, 655364, 65536, 10, 655362, 196608, 10, 655360, 327680, 9, 720894, 65536, 10, 720892, 393216, 9, 720890, 262144, 10, 589816, 589824, 9, 589818, 458752, 9, 589820, 327680, 10, 589822, 458752, 9, 524288, 458752, 10, 524290, 458752, 9, 524292, 458752, 9, 524294, 327680, 10, 393216, 65536, 10, 524296, 589824, 9, 393222, 196608, 7, 393220, 196608, 7, 393218, 196608, 3, 458750, 196608, 3, 458748, 196608, 7, 458746, 196608, 7, 262144, 65536, 10, 327676, 524288, 8, 262148, 524288, 8, 262146, 589824, 9, 327678, 589824, 9, 196606, 524288, 8, 131074, 524288, 8, 131072, 65536, 10, 0, 65536, 10, 196604, 196608, 3, 65532, 196608, 3, 131076, 196608, 3, 4, 196608, 3, 2, 196608, 6, 65534, 196608, 6, -131072, 393216, 10, -65538, 131072, 9, -65540, 196608, 3, -131068, 196608, 3, -262140, 196608, 7, -262142, 196608, 7, -196610, 196608, 7, -196612, 196608, 7, -262144, 65536, 10, -262138, 131072, 9, -262136, 196608, 10, -393208, 65536, 10, -393216, 0, 9, -327684, 589824, 9, -327688, 65536, 10, -196616, 65536, 9, -524280, 393216, 10, -524282, 327680, 10, -524284, 262144, 10, -524288, 393216, 10, -458754, 327680, 10, -458758, 327680, 10, -458760, 458752, 9, -458756, 196608, 9, -589828, 0, 10, -458762, 262144, 10, -655352, 65536, 10, -786424, 524288, 8, -655354, 196608, 10, -786426, 0, 9, -786428, 196608, 6, -655356, 458752, 9, -655358, 327680, 10, -655360, 262144, 9, -589834, 65536, 10, -720906, 65536, 10, -786432, 0, 9, -917498, 65536, 10, -917500, 196608, 3, -1048570, 393216, 9, -1048572, 524288, 8, -917504, 393216, 10, -851970, 131072, 9, -851974, 196608, 10, -851976, 327680, 10, -851978, 262144, 9, -983050, 524288, 8, -983046, 65536, 10, -1114118, 327680, 9, -131070, 196608, 3, -1114116, 327680, 10, -1114114, 327680, 10, -1179648, 393216, 9, -1048576, 65536, 10, 458740, 196608, 3, 589812, 196608, 3, 720884, 196608, 3, 458742, 524288, 8, 589814, 196608, 3, 720886, 524288, 8, 458744, 524288, 8, 720888, 589824, 9, 393224, 524288, 8, 655368, 589824, 9, 393226, 524288, 8, 524298, 196608, 3, 655370, 524288, 8, 393228, 196608, 3, 524300, 196608, 3, 655372, 196608, 3, -589832, 131072, 8)
 
@@ -696,3 +653,6 @@ position = Vector2(8, 8)
 tile_set = SubResource("TileSet_ov0la")
 format = 2
 layer_0/tile_data = PackedInt32Array(786438, 262144, 7, 393220, 327680, 7, 2, 262144, 7, 65534, 262144, 7, -262142, 327680, 7, -196610, 327680, 7, -786428, 196608, 6, 983038, 262144, 7, 917506, 262144, 7, 458748, 327680, 7, 851962, 262144, 7, -589832, 196608, 8)
+
+[node name="Player" parent="." unique_id=1805821953 instance=ExtResource("2_sondv")]
+position = Vector2(16, 208)
