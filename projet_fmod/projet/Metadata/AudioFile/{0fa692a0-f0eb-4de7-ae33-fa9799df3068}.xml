@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{0fa692a0-f0eb-4de7-ae33-fa9799df3068}">
 		<property name="assetPath">
-			<value>metronome2.wav</value>
+			<value>misc./metronome2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
