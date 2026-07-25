@@ -7,6 +7,8 @@ extends Node
 #===============================================================================================#
 signal beat_signal
 
+var game_progress: int = 0
+
 #tempo
 @export var bpm: float = 120.0
 @onready var timer: Timer = $Timer
@@ -51,6 +53,7 @@ var can_transition: bool = false
 #===============================================================================================#
 
 func _ready() -> void:
+	
 	ui.visible = false
 	ui_label.visible = false
 	label_start.visible = true
@@ -63,6 +66,9 @@ func _ready() -> void:
 	combo_timer.wait_time = beat_inital_value + beat_inital_value / 10
 
 func _process(delta: float) -> void:
+	if get_tree().current_scene.name == "level_select":
+		coutdown_value = 21
+	
 	
 	if get_tree().get_first_node_in_group("player") !=null:
 		ui.global_position = get_tree().get_first_node_in_group("player").global_position
@@ -71,6 +77,7 @@ func _process(delta: float) -> void:
 		#print("failed")
 		pass
 	if Input.is_anything_pressed() and can_transition == true:
+		game_progress += 1
 		get_tree().change_scene_to_file(level_select_win)
 #beat functions
 func _beat_failed():
