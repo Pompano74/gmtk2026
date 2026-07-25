@@ -1,6 +1,6 @@
 extends InteractionTile
 
-const OVERLAY_SCENE = preload("res://script/player/StartTransition.tscn")
+#const OVERLAY_SCENE = preload("res://script/player/StartTransition.tscn")
 
 var start_countdown: bool = false
 @export var count_down_max: int = 3
@@ -18,8 +18,8 @@ func _on_beat():
 	if (start_countdown):
 		if on_twos == true:
 			if (current_countdown_count == 0):
-				var transition_scene = OVERLAY_SCENE.instantiate()
-				player_ref.add_child(transition_scene)
+				#var transition_scene = OVERLAY_SCENE.instantiate()
+				#player_ref.add_child(transition_scene)
 				start_countdown = false
 			else:
 				current_countdown_count -= 1

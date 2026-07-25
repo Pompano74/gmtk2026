@@ -4,6 +4,8 @@ class_name PlayerCharacter
 @export var bullet_scene: PackedScene
 
 const tile_size: Vector2 = Vector2(32, 32)
+const MISS_PARTICLE_SCENE = preload("res://scenes/Particles/miss_particle.tscn")
+const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 
 @onready var coord_tracker: GridCoordTracker = $GridCoordTracker
 
@@ -104,11 +106,25 @@ func _move(dir: Vector2):
 			global_position += dir * tile_size
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
+			#Spawn particle when player good
+			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
+			add_child(good_particle)
+			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
+			await get_tree().create_timer(0.95).timeout
+			good_particle.queue_free()
+			good_particle_node.queue_free()
 		else:
 			player_action.set_parameter("player action", "miss")
 			player_action.play()
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_failed()
+			#Spawn particle when player misses 
+			var miss_particle: = MISS_PARTICLE_SCENE.instantiate()
+			add_child(miss_particle)
+			var miss_particle_node: CPUParticles2D = miss_particle.get_child(0)
+			await get_tree().create_timer(0.95).timeout
+			miss_particle.queue_free()
+			miss_particle_node.queue_free()
 	
 func _shoot(dir:Vector2):
 	if !player_direction.is_colliding() and action_check == false:
@@ -125,10 +141,24 @@ func _shoot(dir:Vector2):
 			bullet.add_to_group("bullets")
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
+			#Spawn particle when player good
+			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
+			add_child(good_particle)
+			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
+			await get_tree().create_timer(0.95).timeout
+			good_particle.queue_free()
+			good_particle_node.queue_free()
 		else:
 			player_action.set_parameter("player action", "miss")
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_failed()
+			#Spawn particle when player misses 
+			var miss_particle: = MISS_PARTICLE_SCENE.instantiate()
+			add_child(miss_particle)
+			var miss_particle_node: CPUParticles2D = miss_particle.get_child(0)
+			await get_tree().create_timer(0.95).timeout
+			miss_particle.queue_free()
+			miss_particle_node.queue_free()
 	
 
 func _getSurroundTileInfo():
