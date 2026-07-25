@@ -10,17 +10,21 @@ const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 @onready var coord_tracker: GridCoordTracker = $GridCoordTracker
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var camera: Camera2D = $Camera2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 #sounds
 @export var player_action: FmodEventEmitter2D
 
 #beat_system_for_player
+
+var beat_1: bool = true
 var buffer_value: float = 0.16 #Buffer value used to determine the window in which the player can press a button
 var buffer_min: float
 var buffer_max: float
 var beat_inital_value
 var timer
+var countdown_value : int 
 var beat_timer: float = 0.0
 var beat_streak: int = 0
 var check_next_beat_skipped: bool = false
@@ -61,9 +65,42 @@ func on_beat_called() -> void:
 		idle_check = true
 		idle_check = false
 	check_next_beat_skipped = true
+	
+	if beat_1:
+		beat_1 = false
+	else:
+		beat_1 = true
+	
+	if (countdown_value <= 20 and countdown_value >= 17):
+		if beat_1:
+			animated_sprite_2d.play("(1)Beat20-17")
+		else:
+			animated_sprite_2d.play("(2)Beat20-17")
+	elif (countdown_value <= 16 and countdown_value >= 13):
+		if beat_1:
+			animated_sprite_2d.play("(1)Beat16-13")
+		else:
+			animated_sprite_2d.play("(2)Beat16-13")
+	elif (countdown_value <= 12 and countdown_value >= 9):
+		if beat_1:
+			animated_sprite_2d.play("(1)Beat12-9")
+		else:
+			animated_sprite_2d.play("(2)Beat12-9")
+	elif (countdown_value <= 8 and countdown_value >= 5):
+		if beat_1:
+			animated_sprite_2d.play("(1)Beat8-5")
+		else:
+			animated_sprite_2d.play("(2)Beat-8-5")
+	elif (countdown_value <= 4 and countdown_value >= 1):
+		camera.shake(0.2, 1)
+		if beat_1:
+			animated_sprite_2d.play("(1)Beat4-1")
+		else:
+			animated_sprite_2d.play("(2)Beat4-1")
 
 func _physics_process(delta: float) -> void:
 	beat_timer = timer.get_time_left()
+	countdown_value = TempoGlobal.coutdown_value
 	
 	#block spam in the buffer zone
 	if action_check == true and beat_timer >= buffer_max and beat_timer <= buffer_min:
