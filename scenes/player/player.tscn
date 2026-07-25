@@ -276,7 +276,8 @@ texture = ExtResource("1_8afob")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246623880]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_75vfm")
-animation = &"Death"
+animation = &"(1)Beat20-17"
+autoplay = "(1)Beat20-17"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586598473]
 shape = SubResource("RectangleShape2D_dovo2")
