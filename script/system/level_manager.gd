@@ -14,7 +14,6 @@ extends Node2D
 @onready var layer_1: LevelTileMap = $level_progress/layer_1
 
 @onready var player: PlayerCharacter = $Player
-
 func _ready() -> void:
 	TempoGlobal.int_level = int_level
 	
@@ -24,6 +23,8 @@ func _ready() -> void:
 				TempoGlobal.ui.global_position = spawn_array[TempoGlobal.game_progress].global_position
 				player.global_position = spawn_array[TempoGlobal.game_progress].global_position
 				layer_array[TempoGlobal.game_progress].visible = true
+				if TempoGlobal.game_progress != 0:
+					layer_array[TempoGlobal.game_progress - 1].visible = false
 			else:
 				TempoGlobal.ui.global_position = spawn_array[spawn_array.size()].global_position
 				player.global_position = spawn_array[spawn_array.size()].global_position
