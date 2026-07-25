@@ -4,8 +4,101 @@
 [ext_resource type="Script" uid="uid://bcy7ei35qshf3" path="res://script/player/player.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://csablwjnkhkfn" path="res://script/player/camera_shake.gd" id="4_75vfm"]
 [ext_resource type="PackedScene" uid="uid://bfn6jfulmp2e7" path="res://scenes/player/player_bullet.tscn" id="4_lvxji"]
+[ext_resource type="Texture2D" uid="uid://dgnxh0flgv0a5" path="res://assets/sprites_only_final/Player/Player_12-9_Health_1.png" id="4_myrg7"]
 [ext_resource type="PackedScene" uid="uid://bigyx51eoknt4" path="res://scenes/player/player_ui.tscn" id="4_p47bc"]
+[ext_resource type="Texture2D" uid="uid://cu67h6upxhe4r" path="res://assets/sprites_only_final/Player/Player_16-13_Health_1.png" id="5_kvlxm"]
 [ext_resource type="Script" uid="uid://dsjfpudj1v373" path="res://script/level_grids/grid_coord_tracker.gd" id="5_p47bc"]
+[ext_resource type="Texture2D" uid="uid://cp5kgbp0kli0f" path="res://assets/sprites_only_final/Player/Player_20-17_Health_1.png" id="6_uf5tr"]
+[ext_resource type="Texture2D" uid="uid://dj5rodhmb8xu2" path="res://assets/sprites_only_final/Player/Player_4-1_Health_1.png" id="7_lgqa7"]
+[ext_resource type="Texture2D" uid="uid://dkwkp42lp8fic" path="res://assets/sprites_only_final/Player/Player_8-5_Health_1.png" id="8_8ydkj"]
+[ext_resource type="Texture2D" uid="uid://3fq4lf1tuycl" path="res://assets/sprites_only_final/Player/Player_12-9_Health_2.png" id="9_3j4b4"]
+[ext_resource type="Texture2D" uid="uid://bs8g24pjdkf61" path="res://assets/sprites_only_final/Player/Player_16-13_Health_2.png" id="10_yj68g"]
+[ext_resource type="Texture2D" uid="uid://bxpic71gnhh8o" path="res://assets/sprites_only_final/Player/Player_20-17_Health_2.png" id="11_ioxgp"]
+[ext_resource type="Texture2D" uid="uid://bjwop1mwoo617" path="res://assets/sprites_only_final/Player/Player_4-1_Health_2.png" id="12_cnsyf"]
+[ext_resource type="Texture2D" uid="uid://idxray12kprk" path="res://assets/sprites_only_final/Player/Player_8-5_Health_2.png" id="13_007i1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75vfm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_myrg7")
+}],
+"loop": 1,
+"name": &"(1)Beat12-9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kvlxm")
+}],
+"loop": 1,
+"name": &"(1)Beat16-13",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_uf5tr")
+}],
+"loop": 1,
+"name": &"(1)Beat20-17",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lgqa7")
+}],
+"loop": 1,
+"name": &"(1)Beat4-1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_8ydkj")
+}],
+"loop": 1,
+"name": &"(1)Beat8-5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_3j4b4")
+}],
+"loop": 1,
+"name": &"(2)Beat12-9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yj68g")
+}],
+"loop": 1,
+"name": &"(2)Beat16-13",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ioxgp")
+}],
+"loop": 1,
+"name": &"(2)Beat20-17",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_cnsyf")
+}],
+"loop": 1,
+"name": &"(2)Beat4-1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_007i1")
+}],
+"loop": 1,
+"name": &"(2)Beat8-5",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(16, 16)
@@ -122,9 +215,15 @@ player_action = NodePath("player_action")
 bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=885346133]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_8afob")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246623880]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_75vfm")
+animation = &"(2)Beat8-5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586598473]
 shape = SubResource("RectangleShape2D_dovo2")
