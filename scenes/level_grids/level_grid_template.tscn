@@ -533,18 +533,35 @@ tilemap = NodePath("TileMapLayer")
 level_select_lose = "res://scenes/levels/game_levels/lvl_1.tscn"
 int_level = 1
 
-[node name="MusicManager" type="Node" parent="." unique_id=1575283334 node_paths=PackedStringArray("music")]
-script = ExtResource("6_6yq7g")
-music = NodePath("../Music")
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=495366207]
-bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
-
-[node name="Music" type="FmodEventEmitter2D" parent="." unique_id=18373094]
-event_name = "event:/track1"
-event_guid = "{bdaef4de-a77c-418e-8624-feb31732a654}"
-volume = 0.25
-
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1452209589]
 tile_set = SubResource("TileSet_v00hk")
 script = ExtResource("2_gaoov")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=660978657]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
+
+[node name="music" type="FmodEventEmitter2D" parent="." unique_id=284526422]
+event_name = "event:/track1"
+event_guid = "{bdaef4de-a77c-418e-8624-feb31732a654}"
+fmod_parameters/bootup/id = -3685586378038700787
+fmod_parameters/bootup = 0
+fmod_parameters/bootup/variant_type = 2
+"fmod_parameters/next level/id" = 8289033740778483916
+"fmod_parameters/next level" = "off"
+"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
+"fmod_parameters/next level/variant_type" = 4
+"fmod_parameters/player condition/id" = -2119143983761922850
+"fmod_parameters/player condition" = "alive"
+"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
+"fmod_parameters/player condition/variant_type" = 4
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+fmod_parameters/reboot/id = 7082025585143961158
+fmod_parameters/reboot = "off"
+fmod_parameters/reboot/labels = PackedStringArray("off", "on")
+fmod_parameters/reboot/variant_type = 4
+
+[node name="MusicManager" type="Node" parent="." unique_id=1575283334 node_paths=PackedStringArray("music")]
+script = ExtResource("6_6yq7g")
+music = NodePath("../music")
