@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cltb36my32s2g"]
+
+[ext_resource type="Script" uid="uid://dt574jc30p2o8" path="res://script/level_tiles/disco_floor_manager.gd" id="1_df557"]
+
+[node name="disco_floor_manager" type="Node2D" unique_id=1720417041]
+script = ExtResource("1_df557")
