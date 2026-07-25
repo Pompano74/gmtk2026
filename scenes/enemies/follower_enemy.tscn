@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://boxq3k1d4a5bh"]
 
 [ext_resource type="PackedScene" uid="uid://6awh6ts5vvs1" path="res://scenes/enemies/base_enemy.tscn" id="1_clc2j"]
+[ext_resource type="Script" uid="uid://dysxelrxp2x02" path="res://script/enemies/follower_enemy.gd" id="2_ucgwf"]
 
-[node name="BaseEnemy" unique_id=1418937433 instance=ExtResource("1_clc2j")]
-script = null
+[node name="FollowerEnemy" unique_id=1418937433 instance=ExtResource("1_clc2j")]
+script = ExtResource("2_ucgwf")

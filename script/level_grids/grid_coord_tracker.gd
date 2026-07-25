@@ -24,10 +24,10 @@ func update_grid_coord() -> void:
 	snappedi(owner_node.position.y - (grid_cell_size / 2), grid_cell_size) / grid_cell_size)
 	#tilemap.dynamic_blocked_coords[grid_coord] = is_blocking_pathfinding
 
-func grid_coord_to_local_pos() -> Vector2i:
+func grid_coord_to_local_pos(coord: Vector2i) -> Vector2i:
 	@warning_ignore("integer_division")
-	return Vector2i(grid_coord.x * grid_cell_size + (grid_cell_size / 2), 
-	grid_coord.y * grid_cell_size + (grid_cell_size / 2))
+	return Vector2i(coord.x * grid_cell_size + (grid_cell_size / 2), 
+	coord.y * grid_cell_size + (grid_cell_size / 2))
 
 func pop_from_pathfinding_array() -> void:
 	is_blocking_pathfinding = false

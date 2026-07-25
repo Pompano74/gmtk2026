@@ -7,7 +7,7 @@ var dynamic_objects: Array[GridCoordTracker]
 var dynamic_blocked_coords: Dictionary[Vector2i, bool]
 var constant_blocked_coords: Array[Vector2i]
 
-var player: PlayerCharacter
+@export var player: PlayerCharacter
 
 
 func _ready() -> void:
