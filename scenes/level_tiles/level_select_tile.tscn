@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dn63pngnt6o0q"]
+
+[ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_58ms5"]
+[ext_resource type="Script" uid="uid://uujp2l44avhx" path="res://scenes/level_tiles/level_select_tileV2.gd" id="2_fkhga"]
+
+[node name="level_select_tile" unique_id=50867544 instance=ExtResource("1_58ms5")]
+script = ExtResource("2_fkhga")

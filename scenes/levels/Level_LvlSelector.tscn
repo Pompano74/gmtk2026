@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://c0y1in3yfpic1"]
 
 [ext_resource type="Texture2D" uid="uid://b5aak3r1t5rd0" path="res://assets/sprites/Tileset_3der_V06.png" id="1_bylnk"]
+[ext_resource type="Script" uid="uid://cbac5iby8d3sg" path="res://script/system/level_select_manager.gd" id="1_y23ir"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_sondv"]
+[ext_resource type="Script" uid="uid://ilwxgqjc7kbj" path="res://script/system/level_music_manager.gd" id="2_y23ir"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sondv"]
 texture = ExtResource("1_bylnk")
@@ -175,6 +177,7 @@ texture_region_size = Vector2i(32, 32)
 6:8/0 = 0
 7:8/0 = 0
 8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:8/0 = 0
 10:8/0 = 0
 11:8/0 = 0
@@ -196,6 +199,7 @@ texture_region_size = Vector2i(32, 32)
 7:9/0 = 0
 8:9/0 = 0
 9:9/0 = 0
+9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, -8)
 10:9/0 = 0
 11:9/0 = 0
 12:9/0 = 0
@@ -567,9 +571,15 @@ texture_region_size = Vector2i(32, 32)
 15:29/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ov0la"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sondv")
 
 [node name="LevelLvlSelector" type="Node2D" unique_id=663826680]
+script = ExtResource("1_y23ir")
+
+[node name="music_manager" type="Node" parent="." unique_id=600895651 node_paths=PackedStringArray("music")]
+script = ExtResource("2_y23ir")
+music = NodePath("../music")
 
 [node name="FLOOR" type="TileMap" parent="." unique_id=353221410]
 position = Vector2(8, 8)
@@ -656,3 +666,32 @@ layer_0/tile_data = PackedInt32Array(786438, 262144, 7, 393220, 327680, 7, 2, 26
 
 [node name="Player" parent="." unique_id=1805821953 instance=ExtResource("2_sondv")]
 position = Vector2(16, 208)
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=781459557]
+bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
+
+[node name="music" type="FmodEventEmitter2D" parent="." unique_id=1225903399]
+event_name = "event:/track1"
+event_guid = "{bdaef4de-a77c-418e-8624-feb31732a654}"
+"fmod_parameters/difficulty slider/id" = -8424130764865637537
+"fmod_parameters/difficulty slider" = "120BPM"
+"fmod_parameters/difficulty slider/labels" = PackedStringArray("80BPM", "85BPM", "90BPM", "95BPM", "100BPM", "105BPM", "110BPM", "115BPM", "120BPM", "125BPM", "130BPM", "135BPM", "140BPM")
+"fmod_parameters/difficulty slider/variant_type" = 4
+fmod_parameters/bootup/id = -3685586378038700787
+fmod_parameters/bootup = 0
+fmod_parameters/bootup/variant_type = 2
+"fmod_parameters/next level/id" = 8289033740778483916
+"fmod_parameters/next level" = "off"
+"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
+"fmod_parameters/next level/variant_type" = 4
+"fmod_parameters/player condition/id" = -2119143983761922850
+"fmod_parameters/player condition" = "alive"
+"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
+"fmod_parameters/player condition/variant_type" = 4
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+fmod_parameters/reboot/id = 7082025585143961158
+fmod_parameters/reboot = "off"
+fmod_parameters/reboot/labels = PackedStringArray("off", "on")
+fmod_parameters/reboot/variant_type = 4

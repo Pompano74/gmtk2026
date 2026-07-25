@@ -32,15 +32,27 @@ var total_target: int = 0
 var current_target: int = 0
 
 const level_select = preload("uid://c0y1in3yfpic1")
-var level_is_switching: bool = false
-var level_is_restarting: bool = false 
+var level_is_switching: bool = true
+var level_is_restarting: bool = true 
 var can_beat: bool = false
+var can_transition: bool = false
+
+#ui transition
+@onready var ui: Control = $Control
+@onready var ui_label: Label = $Control/Label
+@onready var label_start: Label = $Control/label_start
+@onready var label_reset: Label = $Control/label_reset
+
 
 #===============================================================================================#
 #==========================================variable=============================================#
 #===============================================================================================#
 
 func _ready() -> void:
+	ui.visible = false
+	ui_label.visible = false
+	label_start.visible = true
+	label_reset.visible = false
 	 #set beat tempo
 	beat_inital_value = 1.0 / (bpm / 60.0)
 	beat_timer = beat_inital_value
@@ -51,39 +63,40 @@ func _process(delta: float) -> void:
 	if coutdown_value <= 0:
 		#print("failed")
 		pass
-
+	if Input.is_anything_pressed() and can_transition == true:
+		get_tree().change_scene_to_packed(level_select)
 #beat functions
 func _beat_failed():
 	
+			
 	beat_streak = 0
-	
-	coutdown_value -= 1
-	if coutdown_value < 1:
-		coutdown_value = 0
 func _beat():
 	#win loose condition
-	if current_target == 0:
-		level_win()
-	if coutdown_value == 0:
-		level_failed()
+	if total_target != 0:
+		if current_target == 0:
+			level_win()
+		if coutdown_value == 0:
+			level_failed()
 	
-	#beet incremantion of 1-4
-	if beat_nbr < 4:
-		beat_nbr += 1
+		#beet incremantion of 1-4
+		if beat_nbr < 4:
+			beat_nbr += 1
+		else:
+			beat_nbr = 1
+
+		#beat_streak
+		if beat_streak >= 15:
+			infinite_mode = true
+		else:
+			infinite_mode = false
+
+		#coutdown
+		coutdown_value -= 1
+		if coutdown_value < 1:
+			coutdown_value = 0
 	else:
-		beat_nbr = 1
-	
-	#beat_streak
-	if beat_streak >= 15:
 		infinite_mode = true
-	else:
-		infinite_mode = false
-	
-	#coutdown
-	coutdown_value -= 1
-	if coutdown_value < 1:
-		coutdown_value = 0
-		
+			
 	#emit signal for other scripts
 	beat_signal.emit()
 func _beat_win():
@@ -100,13 +113,21 @@ func _on_combo_timer_timeout() -> void:
 #win and loose call (called in _beat() when reach 0 of coutdown or current target
 func level_win():
 	if level_is_switching == false:
+		timer.stop()
 		level_is_switching = true
-		await get_tree().create_timer(beat_inital_value * 4.5).timeout
-		get_tree().change_scene_to_packed(level_select)
+		ui.visible = true
+		ui_label.visible = true
+		await get_tree().create_timer(0.5).timeout
+		can_transition = true
+
+
 func level_failed():
 	if level_is_restarting == false:
+		timer.stop()
 		level_is_restarting = true
 		can_beat = false
+		ui.visible = true
+		label_reset.visible = true
 		#espace transition
 		await get_tree().create_timer(beat_inital_value * 4.5).timeout
 		coutdown_value = 20

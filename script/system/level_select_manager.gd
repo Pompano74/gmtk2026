@@ -9,7 +9,7 @@ func _ready() -> void:
 	TempoGlobal.can_transition = false
 	TempoGlobal.ui.visible = true
 	TempoGlobal.ui_label.visible = false
-	TempoGlobal.label_start.visible = true
+	TempoGlobal.label_start.visible = false
 	TempoGlobal.label_reset.visible = false
 	TempoGlobal.timer.stop()
 	TempoGlobal.timer.wait_time = TempoGlobal.beat_inital_value

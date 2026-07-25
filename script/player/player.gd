@@ -11,12 +11,12 @@ const tile_size: Vector2 = Vector2(32, 32)
 @export var player_action: FmodEventEmitter2D
 
 #beat_system_for_player
-var buffer_value: float = 0.1 #Buffer value used to determine the window in which the player can press a button
+var buffer_value: float = 0.15 #Buffer value used to determine the window in which the player can press a button
 var buffer_min: float
 var buffer_max: float
 var beat_inital_value
 var timer
-var beat_timer
+var beat_timer: float = 0.0
 var beat_streak: int = 0
 
 #player value
@@ -30,6 +30,7 @@ var action_check: bool = false:
 			action_check = false
 
 func _ready() -> void:
+	TempoGlobal.ui.global_position = global_position
 	
 	TempoGlobal.beat_signal.connect(on_beat_called)
 	timer = TempoGlobal.timer
@@ -38,11 +39,11 @@ func _ready() -> void:
 	buffer_max = buffer_value
 
 func on_beat_called() -> void:
+	TempoGlobal.ui.global_position = global_position
 	#should create a function to retrieve information (for instance current tile type)
 	_getSurroundTileInfo()
 
 func _physics_process(delta: float) -> void:
-	
 	beat_timer = timer.get_time_left()
 	
 	#block spam in the buffer zone
@@ -51,34 +52,34 @@ func _physics_process(delta: float) -> void:
 		#print(beat_timer)
 		
 func _unhandled_input(event: InputEvent) -> void:
-	
-	#MOVEMENT
-	if event.is_action_pressed("move_up"):
-		player_direction = $up
-		_move(Vector2(0, -1))
-	elif event.is_action_pressed("move_down"):
-		player_direction = $down
-		_move(Vector2(0, 1))
-	elif event.is_action_pressed("move_left"):
-		player_direction = $left
-		_move(Vector2(-1, 0))
-	elif event.is_action_pressed("move_right"):
-		player_direction = $right
-		_move(Vector2(1, 0))
-	
-	#SHOOT
-	if Input.is_action_just_pressed("shoot_up"):
-		player_direction = $right
-		_shoot(Vector2(0, -1))
-	if Input.is_action_just_pressed("shoot_down"):
-		player_direction = $right
-		_shoot(Vector2(0, 1))
-	if Input.is_action_just_pressed("shoot_left"):
-		player_direction = $right
-		_shoot(Vector2(-1, 0))
-	if Input.is_action_just_pressed("shoot_right"):
-		player_direction = $right
-		_shoot(Vector2(1, 0))
+	if TempoGlobal.level_is_restarting == false and TempoGlobal.level_is_switching == false:
+		#MOVEMENT
+		if event.is_action_pressed("move_up"):
+			player_direction = $up
+			_move(Vector2(0, -1))
+		elif event.is_action_pressed("move_down"):
+			player_direction = $down
+			_move(Vector2(0, 1))
+		elif event.is_action_pressed("move_left"):
+			player_direction = $left
+			_move(Vector2(-1, 0))
+		elif event.is_action_pressed("move_right"):
+			player_direction = $right
+			_move(Vector2(1, 0))
+		
+		#SHOOT
+		if Input.is_action_just_pressed("shoot_up"):
+			player_direction = $right
+			_shoot(Vector2(0, -1))
+		if Input.is_action_just_pressed("shoot_down"):
+			player_direction = $right
+			_shoot(Vector2(0, 1))
+		if Input.is_action_just_pressed("shoot_left"):
+			player_direction = $right
+			_shoot(Vector2(-1, 0))
+		if Input.is_action_just_pressed("shoot_right"):
+			player_direction = $right
+			_shoot(Vector2(1, 0))
 
 func _move(dir: Vector2):
 	if !player_direction.is_colliding() and action_check == false:
