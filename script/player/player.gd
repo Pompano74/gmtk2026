@@ -8,6 +8,9 @@ const MISS_PARTICLE_SCENE = preload("res://scenes/Particles/miss_particle.tscn")
 const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 
 @onready var coord_tracker: GridCoordTracker = $GridCoordTracker
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var camera: Camera2D = $Camera2D
+
 
 #sounds
 @export var player_action: FmodEventEmitter2D
@@ -119,6 +122,7 @@ func _move(dir: Vector2):
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_failed()
 			#Spawn particle when player misses 
+			#camera.shake(0.2 , 0.5)
 			var miss_particle: = MISS_PARTICLE_SCENE.instantiate()
 			add_child(miss_particle)
 			var miss_particle_node: CPUParticles2D = miss_particle.get_child(0)
