@@ -135,7 +135,7 @@ func _move(dir: Vector2):
 			miss_particle_node.queue_free()
 	
 func _shoot(dir:Vector2):
-	if !player_direction.is_colliding() and action_check == false:
+	if action_check == false:
 		action_check = true
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")

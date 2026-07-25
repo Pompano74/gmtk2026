@@ -37,7 +37,7 @@ func on_beat_called():
 		ray_dir = right
 	
 	#check if bullet it wall
-	if dir != null and ray_dir.get_collider() != null:
+	if dir != null and ray_dir != null:
 		if ray_dir.is_colliding() and ray_dir.get_collider().name == "Area2D":
 			#mettre comportement dans la tuile
 			#call function of comportement dans la tuile, ICI
@@ -64,8 +64,8 @@ func bullet_missed():
 	
 	#behavior
 	$Sprite2D.visible = false
-	$Area2D.monitoring = false
-	$Area2D.monitorable = false
+	$Area2D.set_collision_layer_value(2, false)
+	$Area2D.set_collision_mask_value(2, false)
 	
 	#destoyed after one beat
 	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
@@ -76,9 +76,8 @@ func bullet_death():
 	
 	#behavior
 	$Sprite2D.visible = false
-	$Area2D.monitoring = false
-	$Area2D.monitorable = false
-	
+	$Area2D.set_collision_layer_value(2, false)
+	$Area2D.set_collision_mask_value(2, false)
 	#destoyed after one beat
 	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 	queue_free()
@@ -87,12 +86,9 @@ func bullet_hit():
 	print("hit")
 	
 	
-	#behavior
-	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 	$Sprite2D.visible = false
-	$Area2D.monitoring = false
-	$Area2D.monitorable = false
-	
+	$Area2D.set_collision_layer_value(2, false)
+	$Area2D.set_collision_mask_value(2, false)
 	#destoyed after one beat
 	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 	queue_free()

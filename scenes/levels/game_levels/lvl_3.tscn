@@ -9,30 +9,30 @@
 level_select_lose = "res://scenes/levels/game_levels/lvl_2.tscn"
 int_level = 2
 
-[node name="Player" parent="." index="2" unique_id=1805821953 instance=ExtResource("2_gv65h")]
-position = Vector2(16, 16)
-
-[node name="Descructible_Wall" parent="." index="3" unique_id=50867544 instance=ExtResource("3_x63e7")]
-position = Vector2(112, -80)
-
-[node name="Descructible_Wall3" parent="." index="4" unique_id=1247824456 instance=ExtResource("3_x63e7")]
-position = Vector2(144, -144)
-
-[node name="Descructible_Wall2" parent="." index="5" unique_id=395983551 instance=ExtResource("3_x63e7")]
-position = Vector2(80, -16)
-
-[node name="immobile_target" parent="." index="6" unique_id=1815121211 instance=ExtResource("3_iv4yo")]
-position = Vector2(16, -176)
-
-[node name="immobile_target3" parent="." index="7" unique_id=83117500 instance=ExtResource("3_iv4yo")]
-position = Vector2(-16, -176)
-
-[node name="immobile_target4" parent="." index="8" unique_id=974368778 instance=ExtResource("3_iv4yo")]
-position = Vector2(-48, -176)
-
-[node name="immobile_target2" parent="." index="9" unique_id=1427992335 instance=ExtResource("3_iv4yo")]
-position = Vector2(48, -176)
-
-[node name="TileMapLayer" parent="." index="11" unique_id=1452209589]
+[node name="TileMapLayer" parent="." index="0" unique_id=1452209589]
 position = Vector2(-32, -32)
 tile_map_data = PackedByteArray("AAABAAAAAAADAAUAAAABAAEAAgADAAMAAAACAP//AAADAAUAAAACAAEAAgADAAMAAAADAP//AAADAAMAAAADAAAAAgADAAMAAAADAAEAAgADAAMAAAACAP3/AAADAAUAAAABAPv/AgADAAMAAAABAPz/AAADAAUAAAACAPv/AgADAAMAAAADAPv/AgADAAMAAAADAPz/AgADAAMAAAAEAPv/AgADAAMAAAAEAP3/AAADAAMAAAAEAP//AAADAAMAAAAEAAEAAgADAAMAAAAFAPv/AgADAAMAAAAFAPz/AgADAAMAAAAFAP3/AgADAAMAAAAFAP//AgADAAMAAAAFAAAAAgADAAMAAAAFAAEAAgADAAMAAAABAAIAAgADAAUAAAACAAIAAgADAAUAAAADAAIAAgADAAUAAAAEAAIAAgADAAUAAAAFAAIAAgADAAUAAAABAPr/AgADAAUAAAACAPr/AgADAAUAAAADAPr/AgADAAUAAAAEAPr/AgADAAUAAAAFAPr/AgADAAUAAAAGAPr/AgADAAUAAAAGAPv/AgADAAUAAAAGAPz/AgADAAUAAAAGAP3/AgADAAUAAAAGAP//AgADAAUAAAAGAAAAAgADAAUAAAAGAAEAAgADAAUAAAAGAAIAAgADAAUAAAADAP3/AAADAAMAAAACAAAAAAADAAUAAAACAPz/AAADAAUAAAAAAAAAAAADAAUAAAAAAAEAAAADAAUAAAAAAAIAAAADAAUAAAAAAPr/AAADAAUAAAAAAPz/AAADAAUAAAAEAAAAAAADAAMAAAAEAPz/AAADAAMAAAAEAP7/AAADAAMAAAACAP7/AAADAAUAAAADAP7/AAADAAUAAAAFAP7/AAADAAUAAAAGAP7/AAADAAUAAAD///r/AAADAAUAAAD+//v/AAADAAUAAAD+//z/AAADAAUAAAD///z/AAADAAUAAAD+//r/AAADAAUAAAAAAPv/AAADAAMAAAD///v/AAADAAMAAAA=")
+
+[node name="Descructible_Wall3" parent="FmodBankLoader" parent_id_path=PackedInt32Array(660978657) index="0" unique_id=1289154069 instance=ExtResource("3_x63e7")]
+position = Vector2(112, -144)
+
+[node name="Descructible_Wall" parent="FmodBankLoader" parent_id_path=PackedInt32Array(660978657) index="1" unique_id=50867544 instance=ExtResource("3_x63e7")]
+position = Vector2(112, -80)
+
+[node name="Descructible_Wall2" parent="FmodBankLoader" parent_id_path=PackedInt32Array(660978657) index="2" unique_id=395983551 instance=ExtResource("3_x63e7")]
+position = Vector2(80, -16)
+
+[node name="immobile_target" parent="FmodBankLoader" parent_id_path=PackedInt32Array(660978657) index="3" unique_id=1815121211 instance=ExtResource("3_iv4yo")]
+position = Vector2(16, -176)
+
+[node name="immobile_target3" parent="FmodBankLoader" parent_id_path=PackedInt32Array(660978657) index="4" unique_id=83117500 instance=ExtResource("3_iv4yo")]
+position = Vector2(-16, -176)
+
+[node name="immobile_target4" parent="FmodBankLoader" parent_id_path=PackedInt32Array(660978657) index="5" unique_id=974368778 instance=ExtResource("3_iv4yo")]
+position = Vector2(-48, -176)
+
+[node name="immobile_target2" parent="FmodBankLoader" parent_id_path=PackedInt32Array(660978657) index="6" unique_id=1427992335 instance=ExtResource("3_iv4yo")]
+position = Vector2(48, -176)
+
+[node name="Player" parent="." index="2" unique_id=1805821953 instance=ExtResource("2_gv65h")]
+position = Vector2(112, -176)
