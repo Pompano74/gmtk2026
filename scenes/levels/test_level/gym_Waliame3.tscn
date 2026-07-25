@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cupv06oj0c16e" path="res://scenes/level_tiles/glitch_tile.tscn" id="4_nbgwq"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="6_nbgwq"]
 [ext_resource type="PackedScene" uid="uid://bba0t1vpp2sy0" path="res://scenes/level_tiles/BoostTile.tscn" id="6_xcpob"]
+[ext_resource type="PackedScene" uid="uid://bliya3rmnd6ri" path="res://scenes/level_tiles/target_tile.tscn" id="7_nbgwq"]
 
 [node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_3c4ys")]
 
@@ -65,3 +66,6 @@ position = Vector2(48, 80)
 
 [node name="Player" parent="." index="7" unique_id=1805821953 instance=ExtResource("6_nbgwq")]
 position = Vector2(16, 16)
+
+[node name="TargetTile" parent="." index="8" unique_id=1079493711 instance=ExtResource("7_nbgwq")]
+position = Vector2(112, 16)

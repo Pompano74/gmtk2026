@@ -268,6 +268,7 @@ texture = ExtResource("1_8afob")
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_75vfm")
 animation = &"(1)Beat12-9"
+frame_progress = 0.20091037
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586598473]
 shape = SubResource("RectangleShape2D_dovo2")

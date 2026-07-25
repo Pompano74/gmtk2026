@@ -71,7 +71,7 @@ func on_beat_called() -> void:
 	else:
 		beat_1 = true
 	
-	if (countdown_value <= 20 and countdown_value >= 17):
+	if (countdown_value <= 25 and countdown_value >= 17):
 		if beat_1:
 			animated_sprite_2d.play("(1)Beat20-17")
 		else:
