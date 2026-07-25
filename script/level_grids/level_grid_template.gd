@@ -6,6 +6,8 @@ const is_solid = "is_solid"
 var dynamic_objects: Array[GridCoordTracker]
 var dynamic_blocked_coords: Dictionary[Vector2i, bool]
 var constant_blocked_coords: Array[Vector2i]
+var enemy_path_blocked_coords: Dictionary[BaseEnemy, Vector2i]
+var enemy_path_weighted_coords: Dictionary[BaseEnemy, Vector3i]
 
 @export var player: PlayerCharacter
 
@@ -15,11 +17,11 @@ func _ready() -> void:
 	TempoGlobal.beat_win.connect(on_player_beat_win)
 	TempoGlobal.player_skipped_beat.connect(on_player_skipped_beat)
 	setup_grid()
-	for o in dynamic_objects:
-		if o.is_blocking_pathfinding:
-			print(o.owner_node.name)
-			print(o.grid_coord)
-	print(dynamic_blocked_coords)
+	#for o in dynamic_objects:
+		#if o.is_blocking_pathfinding:
+			#print(o.owner_node.name)
+			#print(o.grid_coord)
+	#print(dynamic_blocked_coords)
 
 
 func on_beat_called() -> void:
@@ -28,11 +30,13 @@ func on_beat_called() -> void:
 func on_player_beat_win() -> void:
 	update_dynamic_coords()
 	update_pathfinding()
+	print(enemy_path_blocked_coords)
 	#print(dynamic_blocked_coords)
 
 func on_player_skipped_beat() -> void:
 	update_dynamic_coords()
 	update_pathfinding()
+	print(enemy_path_blocked_coords)
 	#print(dynamic_blocked_coords)
 
 func setup_grid():
@@ -63,6 +67,16 @@ func update_pathfinding() -> void:
 	for dynamic_coord in dynamic_blocked_coords:
 		if !constant_blocked_coords.has(dynamic_coord):
 			astargrid.set_point_solid(dynamic_coord, dynamic_blocked_coords[dynamic_coord])
+	for enemy_block_coord in enemy_path_blocked_coords:
+		var coord = enemy_path_blocked_coords[enemy_block_coord]
+		if !constant_blocked_coords.has(coord):
+			astargrid.set_point_solid(coord)
+	for enemy_weight_coord in enemy_path_weighted_coords:
+		var coord = Vector2i(enemy_path_weighted_coords[enemy_weight_coord].x,
+			enemy_path_weighted_coords[enemy_weight_coord].y)
+		var weight = enemy_path_weighted_coords[enemy_weight_coord].z
+		if !constant_blocked_coords.has(coord):
+			astargrid.set_point_weight_scale(coord, weight)
 
 func update_dynamic_coords() -> void:
 	for tracker in dynamic_objects:
