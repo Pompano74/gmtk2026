@@ -6,6 +6,9 @@ extends Node
 #==========================================variable=============================================#
 #===============================================================================================#
 signal beat_signal
+signal beat_win
+signal beat_failed
+signal player_skipped_beat
 
 var game_progress: int = 0
 
@@ -81,8 +84,9 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file(level_select_win)
 #beat functions
 func _beat_failed():
-	
 	beat_streak = 0
+	beat_win.emit()
+
 func _beat():
 	#win loose condition
 	if total_target != 0:
@@ -117,6 +121,8 @@ func _beat_win():
 	if beat_streak > 15:
 		beat_streak = 15 
 		coutdown_value += 2
+	beat_win.emit()
+
 func _on_timer_timeout() -> void:
 	_beat()
 func _on_combo_timer_timeout() -> void:

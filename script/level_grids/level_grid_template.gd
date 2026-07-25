@@ -11,12 +11,22 @@ var player: PlayerCharacter
 
 func _ready() -> void:
 	TempoGlobal.beat_signal.connect(on_beat_called)
+	TempoGlobal.beat_win.connect(on_player_beat_win)
+	TempoGlobal.player_skipped_beat.connect(on_player_skipped_beat)
 	setup_grid()
 
 func on_beat_called() -> void:
+	pass
+
+func on_player_beat_win() -> void:
 	update_dynamic_coords()
 	update_pathfinding()
-	print(dynamic_blocked_coords)
+	#print(dynamic_blocked_coords)
+
+func on_player_skipped_beat() -> void:
+	update_dynamic_coords()
+	update_pathfinding()
+	#print(dynamic_blocked_coords)
 
 func setup_grid():
 	astargrid.region = get_used_rect()
@@ -41,4 +51,5 @@ func update_pathfinding() -> void:
 			astargrid.set_point_solid(cell, is_cell_solid(cell))
 
 func update_dynamic_coords() -> void:
-	pass
+	for tracker in dynamic_objects:
+		dynamic_blocked_coords[tracker.grid_coord] = tracker.is_blocking_pathfinding
