@@ -1,0 +1,64 @@
+[gd_scene format=4 uid="uid://cpy1rkj7ug3qq"]
+
+[ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_x63e7"]
+[ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_gv65h"]
+[ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="3_iv4yo"]
+[ext_resource type="PackedScene" uid="uid://c032ipnc11wae" path="res://scenes/level_tiles/descructible_wall.tscn" id="3_x63e7"]
+
+[node name="lvl_2" unique_id=1574904214 instance=ExtResource("1_x63e7")]
+level_select_lose = "res://scenes/levels/game_levels/lvl_2.tscn"
+int_level = 2
+
+[node name="Music" parent="." index="2" unique_id=18373094]
+event_name = "event:/track7"
+event_guid = "{db928e2c-347f-41a6-a407-ccd01e3c8695}"
+fmod_parameters/reboot/id = 7082025585143961158
+fmod_parameters/reboot = "off"
+fmod_parameters/reboot/labels = PackedStringArray("off", "on")
+fmod_parameters/reboot/variant_type = 4
+"fmod_parameters/player condition/id" = -2119143983761922850
+"fmod_parameters/player condition" = "alive"
+"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
+"fmod_parameters/player condition/variant_type" = 4
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+"fmod_parameters/next level/id" = 8289033740778483916
+"fmod_parameters/next level" = "off"
+"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
+"fmod_parameters/next level/variant_type" = 4
+fmod_parameters/bootup/id = -3685586378038700787
+fmod_parameters/bootup = 0
+fmod_parameters/bootup/variant_type = 2
+"fmod_parameters/difficulty slider/id" = -8424130764865637537
+"fmod_parameters/difficulty slider" = "120BPM"
+"fmod_parameters/difficulty slider/labels" = PackedStringArray("80BPM", "85BPM", "90BPM", "95BPM", "100BPM", "105BPM", "110BPM", "115BPM", "120BPM", "125BPM", "130BPM", "135BPM", "140BPM")
+"fmod_parameters/difficulty slider/variant_type" = 4
+
+[node name="TileMapLayer" parent="." index="3" unique_id=1452209589]
+position = Vector2(-32, -32)
+tile_map_data = PackedByteArray("AAABAAAAAAADAAUAAAABAAEAAgADAAMAAAACAP//AAADAAUAAAACAAEAAgADAAMAAAADAP//AAADAAMAAAADAAAAAgADAAMAAAADAAEAAgADAAMAAAACAP3/AAADAAUAAAABAPv/AgADAAMAAAABAPz/AAADAAUAAAACAPv/AgADAAMAAAADAPv/AgADAAMAAAADAPz/AgADAAMAAAAEAPv/AgADAAMAAAAEAP3/AAADAAMAAAAEAP//AAADAAMAAAAEAAEAAgADAAMAAAAFAPv/AgADAAMAAAAFAPz/AgADAAMAAAAFAP3/AgADAAMAAAAFAP//AgADAAMAAAAFAAAAAgADAAMAAAAFAAEAAgADAAMAAAABAAIAAgADAAUAAAACAAIAAgADAAUAAAADAAIAAgADAAUAAAAEAAIAAgADAAUAAAAFAAIAAgADAAUAAAABAPr/AgADAAUAAAACAPr/AgADAAUAAAADAPr/AgADAAUAAAAEAPr/AgADAAUAAAAFAPr/AgADAAUAAAAGAPr/AgADAAUAAAAGAPv/AgADAAUAAAAGAPz/AgADAAUAAAAGAP3/AgADAAUAAAAGAP//AgADAAUAAAAGAAAAAgADAAUAAAAGAAEAAgADAAUAAAAGAAIAAgADAAUAAAADAP3/AAADAAMAAAACAAAAAAADAAUAAAACAPz/AAADAAUAAAAAAAAAAAADAAUAAAAAAAEAAAADAAUAAAAAAAIAAAADAAUAAAAAAPr/AAADAAUAAAAAAPz/AAADAAUAAAAEAAAAAAADAAMAAAAEAPz/AAADAAMAAAAEAP7/AAADAAMAAAACAP7/AAADAAUAAAADAP7/AAADAAUAAAAFAP7/AAADAAUAAAAGAP7/AAADAAUAAAD///r/AAADAAUAAAD+//v/AAADAAUAAAD+//z/AAADAAUAAAD///z/AAADAAUAAAD+//r/AAADAAUAAAAAAPv/AAADAAMAAAD///v/AAADAAMAAAA=")
+
+[node name="Player" parent="." index="4" unique_id=1805821953 instance=ExtResource("2_gv65h")]
+position = Vector2(16, 16)
+
+[node name="Descructible_Wall" parent="." index="5" unique_id=50867544 instance=ExtResource("3_x63e7")]
+position = Vector2(112, -80)
+
+[node name="Descructible_Wall3" parent="." index="6" unique_id=1247824456 instance=ExtResource("3_x63e7")]
+position = Vector2(144, -144)
+
+[node name="Descructible_Wall2" parent="." index="7" unique_id=395983551 instance=ExtResource("3_x63e7")]
+position = Vector2(80, -16)
+
+[node name="immobile_target" parent="." index="8" unique_id=1815121211 instance=ExtResource("3_iv4yo")]
+position = Vector2(16, -176)
+
+[node name="immobile_target3" parent="." index="9" unique_id=83117500 instance=ExtResource("3_iv4yo")]
+position = Vector2(-16, -176)
+
+[node name="immobile_target4" parent="." index="10" unique_id=974368778 instance=ExtResource("3_iv4yo")]
+position = Vector2(-48, -176)
+
+[node name="immobile_target2" parent="." index="11" unique_id=1427992335 instance=ExtResource("3_iv4yo")]
+position = Vector2(48, -176)

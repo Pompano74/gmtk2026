@@ -71,7 +71,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	if get_tree().current_scene.name == "level_select":
+	if get_tree().current_scene != null and get_tree().current_scene.name == "level_select":
 		coutdown_value = 21
 	
 	
