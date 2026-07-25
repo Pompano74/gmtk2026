@@ -70,8 +70,6 @@ func _ready() -> void:
 	combo_timer.wait_time = beat_inital_value + beat_inital_value / 10
 
 func _process(delta: float) -> void:
-	print("INT_OF_LEVEL", int_level)
-	print("GAME_PROGRESS", game_progress)
 	
 	if get_tree().current_scene.name == "level_select":
 		coutdown_value = 21
@@ -90,7 +88,7 @@ func _process(delta: float) -> void:
 #beat functions
 func _beat_failed():
 	beat_streak = 0
-	beat_win.emit()
+	beat_failed.emit()
 
 func _beat():
 	#win loose condition

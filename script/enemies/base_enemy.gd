@@ -21,14 +21,15 @@ var timer : Timer
 func _ready() -> void:
 	TempoGlobal.beat_signal.connect(on_beat_called)
 	TempoGlobal.beat_win.connect(on_player_beat_win)
-	TempoGlobal.beat_failed.connect(on_player_beat_failed)
+	TempoGlobal.player_skipped_beat.connect(on_player_skipped_beat)
 	timer = TempoGlobal.timer
-	coord_tracker.is_blocking_pathfinding = true
+	coord_tracker.is_blocking_pathfinding = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	var player = body as PlayerCharacter
 	if is_instance_valid(player):
-		TempoGlobal.beat_streak -= damage
+		TempoGlobal.coutdown_value -= damage
+		print("ouch")
 		health = 0
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -42,7 +43,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func on_player_beat_win() -> void:
 	perform_action()
 
-func on_player_beat_failed() -> void:
+func on_player_skipped_beat() -> void:
 	perform_action()
 
 func perform_action() -> void:
@@ -68,4 +69,4 @@ func on_death() -> void:
 		var target_array_index = TempoGlobal.target_array.find(self)
 		if target_array_index != -1:
 			TempoGlobal.target_array.pop_at(target_array_index)
-	print(TempoGlobal.target_array.size(), " targets left!")
+			print(TempoGlobal.target_array.size(), " targets left!")
