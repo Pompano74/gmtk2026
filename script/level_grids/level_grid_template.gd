@@ -15,6 +15,12 @@ func _ready() -> void:
 	TempoGlobal.beat_win.connect(on_player_beat_win)
 	TempoGlobal.player_skipped_beat.connect(on_player_skipped_beat)
 	setup_grid()
+	for o in dynamic_objects:
+		if o.is_blocking_pathfinding:
+			print(o.owner_node.name)
+			print(o.grid_coord)
+	print(dynamic_blocked_coords)
+
 
 func on_beat_called() -> void:
 	pass
@@ -41,6 +47,9 @@ func setup_grid():
 		if is_cell_solid(cell):
 			constant_blocked_coords.append(cell)
 			astargrid.set_point_solid(cell, is_cell_solid(cell))
+	
+	update_dynamic_coords()
+	update_pathfinding()
 
 #func show_path():
 	#var path_taken = astargrid.get_id_path(Vector2i(0,0), Vector2i(6,1))

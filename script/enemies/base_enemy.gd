@@ -33,8 +33,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		health = 0
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("PlayerBullet"):
-		var bullet = area
+	var bullet = area.owner as PlayerBullet
+	if is_instance_valid(bullet):
 		health -= 1
 		bullet.bullet_hit()
 	elif area.collision_layer == 1: # if enemy is in wall
