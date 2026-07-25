@@ -3,9 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_kyg5g"]
 [ext_resource type="Script" uid="uid://1r6mh3xsi5de" path="res://scenes/level_tiles/descructible_wall.gd" id="2_xcwb4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfd2r"]
+
 [node name="Descructible_Wall" unique_id=50867544 instance=ExtResource("1_kyg5g")]
 script = ExtResource("2_xcwb4")
 can_player_interact_by_shooting_tile = true
 
-[node name="CollisionShape2D" parent="Sprite2D/Area2D" parent_id_path=PackedInt32Array(1261708708) index="0" unique_id=1675323789]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0" unique_id=1037306576]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=785841503]
+shape = SubResource("RectangleShape2D_mfd2r")
+
+[node name="Area2D" parent="Sprite2D" parent_id_path=PackedInt32Array(384902394) index="0" unique_id=1261708708]
+collision_layer = 3
+collision_mask = 3
+input_pickable = false
+
+[node name="CollisionShape2D" parent="Sprite2D/Area2D" index="0" unique_id=1675323789]
 debug_color = Color(0.9712798, 0, 0.35995597, 0.41960785)
