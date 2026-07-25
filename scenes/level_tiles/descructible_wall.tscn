@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c032ipnc11wae"]
+
+[ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_kyg5g"]
+[ext_resource type="Script" uid="uid://1r6mh3xsi5de" path="res://scenes/level_tiles/descructible_wall.gd" id="2_xcwb4"]
+
+[node name="Descructible_Wall" unique_id=50867544 instance=ExtResource("1_kyg5g")]
+script = ExtResource("2_xcwb4")
+can_player_interact_by_shooting_tile = true
+
+[node name="CollisionShape2D" parent="Sprite2D/Area2D" parent_id_path=PackedInt32Array(1261708708) index="0" unique_id=1675323789]
+debug_color = Color(0.9712798, 0, 0.35995597, 0.41960785)
