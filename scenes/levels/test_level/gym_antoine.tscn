@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="3_0epch"]
 [ext_resource type="PackedScene" uid="uid://cupv06oj0c16e" path="res://scenes/level_tiles/glitch_tile.tscn" id="4_xip7k"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="5_hxukd"]
+[ext_resource type="PackedScene" uid="uid://bba0t1vpp2sy0" path="res://scenes/level_tiles/BoostTile.tscn" id="6_8jj4n"]
 
 [node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_r8dwr")]
 
@@ -74,5 +75,36 @@ position = Vector2(16, 208)
 [node name="glitch_tile2" parent="TileMapLayer" index="12" unique_id=83175544 instance=ExtResource("4_xip7k")]
 position = Vector2(80, 144)
 
+[node name="BaseInteractionTile6" parent="TileMapLayer" index="13" unique_id=1628562142 instance=ExtResource("6_8jj4n")]
+position = Vector2(-16, 16)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile7" parent="TileMapLayer" index="14" unique_id=580558132 instance=ExtResource("6_8jj4n")]
+position = Vector2(48, 16)
+
+[node name="BaseInteractionTile8" parent="TileMapLayer" index="15" unique_id=965793381 instance=ExtResource("6_8jj4n")]
+position = Vector2(48, -48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile9" parent="TileMapLayer" index="16" unique_id=1008521239 instance=ExtResource("6_8jj4n")]
+position = Vector2(-16, -48)
+rotation = -3.1415927
+
+[node name="BaseInteractionTile11" parent="TileMapLayer" index="17" unique_id=1092162420 instance=ExtResource("6_8jj4n")]
+position = Vector2(-48, 176)
+rotation = -3.1415927
+
+[node name="BaseInteractionTile14" parent="TileMapLayer" index="18" unique_id=691513115 instance=ExtResource("6_8jj4n")]
+position = Vector2(-48, 80)
+rotation = -3.1415927
+
+[node name="BaseInteractionTile15" parent="TileMapLayer" index="19" unique_id=681277534 instance=ExtResource("6_8jj4n")]
+position = Vector2(-48, 112)
+rotation = -3.1415927
+
+[node name="BaseInteractionTile2" parent="TileMapLayer" index="20" unique_id=1815288036 instance=ExtResource("6_8jj4n")]
+position = Vector2(-48, 144)
+rotation = -3.1415927
+
 [node name="Player" parent="." index="4" unique_id=1805821953 instance=ExtResource("5_hxukd")]
-position = Vector2(16, 16)
+position = Vector2(16, 144)

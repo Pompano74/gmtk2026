@@ -22,6 +22,7 @@ animations = [{
 [node name="BaseInteractionTile" unique_id=50867544 instance=ExtResource("1_xnbe8")]
 script = ExtResource("2_em0tm")
 can_player_interact_by_landing_on_tile = true
+can_player_interact_by_shooting_tile = true
 destroy_on_interaction = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=1760496051]

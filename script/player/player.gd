@@ -21,7 +21,6 @@ var beat_streak: int = 0
 
 #player value
 @onready var player_direction = $up
-@onready var player_ui: Control = $player_ui
 
 
 var action_check: bool = false:
@@ -31,7 +30,6 @@ var action_check: bool = false:
 			action_check = false
 
 func _ready() -> void:
-	player_ui.visible = true
 	
 	TempoGlobal.beat_signal.connect(on_beat_called)
 	timer = TempoGlobal.timer

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://d0dcoogboxps"]
 
 [ext_resource type="Script" uid="uid://dhmub2lw5e8v7" path="res://script/global/tempo_global.gd" id="1_muea5"]
-[ext_resource type="Texture2D" uid="uid://s6wh516u4ffn" path="res://assets/sprites/ScreenArtUI_V8.png" id="2_cn63s"]
 
 [node name="Node" type="Node" unique_id=1480582950]
 script = ExtResource("1_muea5")
@@ -10,15 +9,6 @@ script = ExtResource("1_muea5")
 process_callback = 0
 
 [node name="combo_timer" type="Timer" parent="." unique_id=716029263]
-
-[node name="ui_transition" type="Control" parent="." unique_id=1469486526]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Sprite2D" type="Sprite2D" parent="ui_transition" unique_id=1164711220]
-texture = ExtResource("2_cn63s")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="combo_timer" to="." method="_on_combo_timer_timeout"]

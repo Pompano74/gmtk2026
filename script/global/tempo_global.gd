@@ -25,7 +25,7 @@ var pressed_late: bool = false
 
 #coutdown system
 var coutdown_is_paused: bool = false
-var coutdown_value: int = 4
+var coutdown_value: int = 20
 
 #game objective
 var total_target: int = 0
@@ -62,10 +62,10 @@ func _beat_failed():
 		coutdown_value = 0
 func _beat():
 	#win loose condition
-	#if current_target == 0:
-		#level_win()
-	#if coutdown_value == 0:
-		#level_failed()
+	if current_target == 0:
+		level_win()
+	if coutdown_value == 0:
+		level_failed()
 	
 	#beet incremantion of 1-4
 	if beat_nbr < 4:
@@ -84,25 +84,20 @@ func _beat():
 	if coutdown_value < 1:
 		coutdown_value = 0
 		
-		#beet incremantion of 1-4
-		if beat_nbr < 4:
-			beat_nbr += 1
-		else:
-			beat_nbr = 1
+	#beet incremantion of 1-4
+	if beat_nbr < 4:
+		beat_nbr += 1
+	else:
+		beat_nbr = 1
+	
+	#beat_streak
+	if beat_streak >= 15:
+		infinite_mode = true
+	else:
+		infinite_mode = false
 		
-		#beat_streak
-		if beat_streak >= 15:
-			infinite_mode = true
-		else:
-			infinite_mode = false
-		
-		#coutdown
-		coutdown_value -= 1
-		if coutdown_value < 1:
-			coutdown_value = 0
-			
-		#emit signal for other scripts
-		beat_signal.emit()
+	#emit signal for other scripts
+	beat_signal.emit()
 func _beat_win():
 	combo_timer.start()
 	beat_streak += 1

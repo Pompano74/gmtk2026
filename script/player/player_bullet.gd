@@ -3,7 +3,7 @@ extends Node2D
 const tile_size: Vector2 = Vector2(32, 32)
 var move_time: float = TempoGlobal.beat_inital_value
 var dir: Vector2
-var life_span: int = 4
+var life_span: int = 100
 var on_twos: bool = true
 
 
@@ -16,6 +16,8 @@ var ray_dir
 
 #sound
 @onready var bullet_sound: FmodEventEmitter2D = $bullet_sound
+
+var can_move: bool = true
 
 
 func _ready() -> void:
@@ -36,18 +38,17 @@ func on_beat_called():
 		ray_dir = right
 	
 	#check if bullet it wall
-	if dir != null:
-		if ray_dir.get_collider().name != null:
-			print(ray_dir.get_collider().name == "Area2D")
+	if dir != null and ray_dir.get_collider() != null:
 		if ray_dir.is_colliding() and ray_dir.get_collider().name == "Area2D":
 			#mettre comportement dans la tuile
 			#call function of comportement dans la tuile, ICI
-			pass
+			print("bonjour")
 		elif ray_dir.is_colliding() and ray_dir.get_collider().name != "Area2D":
 			#hit wall
 			bullet_death()
-	else:
-		pass
+		else:
+			pass
+	
 	
 	#movement on twos
 	if on_twos == true:
