@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3ty0fmxxut36"
+path="res://.godot/imported/#3.wav-aca6ad00b0f8f3e0cbb953339cb5c263.sample"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/tracks/old tracks/track1(old)/#3.wav"
+dest_files=["res://.godot/imported/#3.wav-aca6ad00b0f8f3e0cbb953339cb5c263.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

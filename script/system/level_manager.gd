@@ -14,7 +14,15 @@ extends Node2D
 @onready var layer_1: LevelTileMap = $level_progress/layer_1
 
 @onready var player: PlayerCharacter = $Player
+
+@export_range(80, 140, 5) var bpm: int
+@onready var music: FmodEventEmitter2D = $Music
+
+
+
+
 func _ready() -> void:
+	music.set_parameter("difficulty slider", "80")
 	TempoGlobal.int_level = int_level
 	
 	if spawn_array != null and layer_array != null:

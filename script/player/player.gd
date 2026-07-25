@@ -13,7 +13,7 @@ const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 @export var player_action: FmodEventEmitter2D
 
 #beat_system_for_player
-var buffer_value: float = 0.14 #Buffer value used to determine the window in which the player can press a button
+var buffer_value: float = 0.16 #Buffer value used to determine the window in which the player can press a button
 var buffer_min: float
 var buffer_max: float
 var beat_inital_value
