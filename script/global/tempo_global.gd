@@ -25,7 +25,7 @@ var pressed_late: bool = false
 
 #coutdown system
 var coutdown_is_paused: bool = false
-var coutdown_value: int = 4
+var coutdown_value: int = 20
 
 #game objective
 var total_target: int = 0

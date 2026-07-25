@@ -30,6 +30,7 @@ var action_check: bool = false:
 			action_check = false
 
 func _ready() -> void:
+	
 	TempoGlobal.beat_signal.connect(on_beat_called)
 	timer = TempoGlobal.timer
 	
