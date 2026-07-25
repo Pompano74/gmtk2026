@@ -1,7 +1,7 @@
 extends Node2D
 class_name InteractionTile
 
-@onready var collision := $CollisionShape2D
+@onready var collision := $Sprite2D/Area2D/CollisionShape2D
 @onready var coord_tracker: GridCoordTracker = $GridCoordTracker
 @export var can_player_interact_by_landing_on_tile := false
 @export var can_player_interact_by_shooting_tile := false

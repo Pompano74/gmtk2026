@@ -530,6 +530,8 @@ sources/2 = SubResource("TileSetAtlasSource_e4q0u")
 [node name="LevelManager" type="Node2D" unique_id=1574904214 node_paths=PackedStringArray("tilemap")]
 script = ExtResource("1_ilkoo")
 tilemap = NodePath("TileMapLayer")
+level_select_lose = "res://scenes/levels/game_levels/lvl_1.tscn"
+int_level = 1
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=495366207]
 bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]

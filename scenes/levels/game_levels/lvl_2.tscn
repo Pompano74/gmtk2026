@@ -1,0 +1,49 @@
+[gd_scene format=4 uid="uid://dvv3ibqq5yyas"]
+
+[ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_ehup2"]
+[ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_ih5a0"]
+[ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="3_b82co"]
+
+[node name="lvl_2" unique_id=1574904214 instance=ExtResource("1_ehup2")]
+level_select_lose = "res://scenes/levels/game_levels/lvl_2.tscn"
+int_level = 2
+
+[node name="Music" parent="." index="1" unique_id=18373094]
+"fmod_parameters/difficulty slider/id" = -8424130764865637537
+"fmod_parameters/difficulty slider" = "120BPM"
+"fmod_parameters/difficulty slider/labels" = PackedStringArray("80BPM", "85BPM", "90BPM", "95BPM", "100BPM", "105BPM", "110BPM", "115BPM", "120BPM", "125BPM", "130BPM", "135BPM", "140BPM")
+"fmod_parameters/difficulty slider/variant_type" = 4
+fmod_parameters/bootup/id = -3685586378038700787
+fmod_parameters/bootup = 0
+fmod_parameters/bootup/variant_type = 2
+"fmod_parameters/next level/id" = 8289033740778483916
+"fmod_parameters/next level" = "off"
+"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
+"fmod_parameters/next level/variant_type" = 4
+"fmod_parameters/player condition/id" = -2119143983761922850
+"fmod_parameters/player condition" = "alive"
+"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
+"fmod_parameters/player condition/variant_type" = 4
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
+fmod_parameters/reboot/id = 7082025585143961158
+fmod_parameters/reboot = "off"
+fmod_parameters/reboot/labels = PackedStringArray("off", "on")
+fmod_parameters/reboot/variant_type = 4
+
+[node name="TileMapLayer" parent="." index="2" unique_id=1452209589]
+position = Vector2(-32, 0)
+tile_map_data = PackedByteArray("AAAAAP//AgADAAMAAAAAAAAAAgADAAUAAAAAAAEAAgADAAMAAAABAP//AgADAAMAAAABAAAAAgADAAMAAAABAAEAAgADAAMAAAD/////AgADAAMAAAD//wAAAgADAAMAAAD//wEAAgADAAMAAAACAP//AgADAAMAAAACAAEAAgADAAMAAAADAP//AgADAAMAAAADAAAAAgADAAMAAAADAAEAAgADAAMAAAACAP3/AgADAAMAAAACAP7/AgADAAMAAAADAP7/AgADAAUAAAD///v/AgADAAMAAAD///z/AgADAAMAAAD///3/AgADAAMAAAAAAPv/AgADAAMAAAAAAPz/AgADAAUAAAAAAP3/AgADAAMAAAABAPv/AgADAAMAAAABAPz/AgADAAMAAAABAP3/AgADAAMAAAACAPv/AgADAAMAAAADAPv/AgADAAMAAAADAPz/AgADAAMAAAAEAPv/AgADAAMAAAAEAPz/AgADAAUAAAAEAP3/AgADAAMAAAAEAP7/AgADAAMAAAAEAP//AgADAAMAAAAEAAAAAgADAAUAAAAEAAEAAgADAAMAAAD///7/AgADAAUAAAAAAP7/AgADAAMAAAABAP7/AgADAAUAAAAFAPv/AgADAAMAAAAFAPz/AgADAAMAAAAFAP3/AgADAAMAAAAFAP7/AgADAAUAAAAFAP//AgADAAMAAAAFAAAAAgADAAMAAAAFAAEAAgADAAMAAAD+//v/AgADAAUAAAD+//z/AgADAAUAAAD+//3/AgADAAUAAAD+//7/AgADAAUAAAD+////AgADAAUAAAD+/wAAAgADAAUAAAD+/wEAAgADAAUAAAD+/wIAAgADAAUAAAD//wIAAgADAAUAAAAAAAIAAgADAAUAAAABAAIAAgADAAUAAAACAAIAAgADAAUAAAADAAIAAgADAAUAAAAEAAIAAgADAAUAAAAFAAIAAgADAAUAAAD+//r/AgADAAUAAAD///r/AgADAAUAAAAAAPr/AgADAAUAAAABAPr/AgADAAUAAAACAPr/AgADAAUAAAADAPr/AgADAAUAAAAEAPr/AgADAAUAAAAFAPr/AgADAAUAAAAGAPr/AgADAAUAAAAGAPv/AgADAAUAAAAGAPz/AgADAAUAAAAGAP3/AgADAAUAAAAGAP7/AgADAAUAAAAGAP//AgADAAUAAAAGAAAAAgADAAUAAAAGAAEAAgADAAUAAAAGAAIAAgADAAUAAAADAP3/AgADAAMAAAACAAAAAgADAAMAAAACAPz/AgADAAMAAAA=")
+
+[node name="Player" parent="." index="4" unique_id=1805821953 instance=ExtResource("2_ih5a0")]
+position = Vector2(16, 16)
+
+[node name="immobile_target" parent="." index="5" unique_id=50867544 instance=ExtResource("3_b82co")]
+position = Vector2(144, 48)
+
+[node name="immobile_target2" parent="." index="6" unique_id=964447159 instance=ExtResource("3_b82co")]
+position = Vector2(80, -112)
+
+[node name="immobile_target3" parent="." index="7" unique_id=119057824 instance=ExtResource("3_b82co")]
+position = Vector2(-16, -48)
