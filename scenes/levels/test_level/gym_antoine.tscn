@@ -98,5 +98,5 @@ position = Vector2(-48, 112)
 [node name="Descructible_Wall3" parent="TileMapLayer" index="15" unique_id=1727808483 instance=ExtResource("6_wr6bl")]
 position = Vector2(-80, 144)
 
-[node name="Player" parent="." index="4" unique_id=1805821953 instance=ExtResource("5_hxukd")]
+[node name="Player" parent="TileMapLayer" index="16" unique_id=1805821953 instance=ExtResource("5_hxukd")]
 position = Vector2(16, 144)

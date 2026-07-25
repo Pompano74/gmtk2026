@@ -57,8 +57,7 @@ func update_current_path(start: Vector2i, goal: Vector2i) -> void:
 	current_path = get_a_star_path(start, goal)
 
 func get_a_star_path(start: Vector2i, goal: Vector2i) -> Array[Vector2i]:
-	
-	return [Vector2i(0,0)]
+	return tilemap.astargrid.get_id_path(start, goal)
 
 func on_beat_called() -> void:
 	pass
