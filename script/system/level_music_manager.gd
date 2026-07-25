@@ -4,9 +4,13 @@ var banks:= Array()
 @export var music: FmodEventEmitter2D = null
 var music_playing: bool = false
 
+
+
+
 func _ready() -> void:
+	
 	music.play()
-	print(FmodServer.get_system_dsp_buffer_length())
+	#print(FmodServer.get_system_dsp_buffer_length())
 	TempoGlobal.beat_signal.connect(on_beat_called)
 
 func on_beat_called():

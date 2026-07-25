@@ -100,8 +100,16 @@ position = Vector2(-48, 112)
 position = Vector2(-80, 144)
 
 [node name="Player" parent="TileMapLayer" index="16" unique_id=1805821953 instance=ExtResource("5_hxukd")]
-position = Vector2(16, 144)
+position = Vector2(-16, 144)
 
 [node name="FollowerEnemy" parent="TileMapLayer" index="17" unique_id=1418937433 node_paths=PackedStringArray("tilemap") instance=ExtResource("8_35r5t")]
 position = Vector2(16, -16)
+tilemap = NodePath("..")
+
+[node name="FollowerEnemy2" parent="TileMapLayer" index="18" unique_id=1550772597 node_paths=PackedStringArray("tilemap") instance=ExtResource("8_35r5t")]
+position = Vector2(-112, 144)
+tilemap = NodePath("..")
+
+[node name="FollowerEnemy3" parent="TileMapLayer" index="19" unique_id=271482504 node_paths=PackedStringArray("tilemap") instance=ExtResource("8_35r5t")]
+position = Vector2(-16, 48)
 tilemap = NodePath("..")

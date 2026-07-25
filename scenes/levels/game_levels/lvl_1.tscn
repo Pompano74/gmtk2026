@@ -6,44 +6,20 @@
 
 [node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_j3ipn")]
 
-[node name="Music" parent="." index="1" unique_id=18373094]
-"fmod_parameters/difficulty slider/id" = -8424130764865637537
-"fmod_parameters/difficulty slider" = "120BPM"
-"fmod_parameters/difficulty slider/labels" = PackedStringArray("80BPM", "85BPM", "90BPM", "95BPM", "100BPM", "105BPM", "110BPM", "115BPM", "120BPM", "125BPM", "130BPM", "135BPM", "140BPM")
-"fmod_parameters/difficulty slider/variant_type" = 4
-fmod_parameters/bootup/id = -3685586378038700787
-fmod_parameters/bootup = 0
-fmod_parameters/bootup/variant_type = 2
-"fmod_parameters/next level/id" = 8289033740778483916
-"fmod_parameters/next level" = "off"
-"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
-"fmod_parameters/next level/variant_type" = 4
-"fmod_parameters/player condition/id" = -2119143983761922850
-"fmod_parameters/player condition" = "alive"
-"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
-"fmod_parameters/player condition/variant_type" = 4
-"fmod_parameters/combo chain/id" = 3414661205676469846
-"fmod_parameters/combo chain" = 0
-"fmod_parameters/combo chain/variant_type" = 2
-fmod_parameters/reboot/id = 7082025585143961158
-fmod_parameters/reboot = "off"
-fmod_parameters/reboot/labels = PackedStringArray("off", "on")
-fmod_parameters/reboot/variant_type = 4
-
-[node name="TileMapLayer" parent="." index="2" unique_id=1452209589]
+[node name="TileMapLayer" parent="." index="0" unique_id=1452209589]
 tile_map_data = PackedByteArray("AAD+//7/AgADAAUAAAACAP7/AgADAAUAAAACAAIAAgADAAUAAAD+/wIAAgADAAUAAAD8//7/AgADAAUAAAD8////AgADAAUAAAD8/wAAAgADAAUAAAD8/wEAAgADAAUAAAD8/wIAAgADAAUAAAD9//7/AgADAAUAAAD9////AgADAAUAAAD9/wAAAgADAAUAAAD9/wEAAgADAAUAAAD9/wIAAgADAAUAAAD+//z/AgADAAUAAAD+//3/AgADAAUAAAD///z/AgADAAUAAAD///3/AgADAAUAAAAAAPz/AgADAAUAAAAAAP3/AgADAAUAAAABAPz/AgADAAUAAAABAP3/AgADAAUAAAACAPz/AgADAAUAAAACAP3/AgADAAUAAAADAP7/AgADAAUAAAADAP//AgADAAUAAAADAAAAAgADAAUAAAADAAEAAgADAAUAAAADAAIAAgADAAUAAAAEAP7/AgADAAUAAAAEAP//AgADAAUAAAAEAAAAAgADAAUAAAAEAAEAAgADAAUAAAAEAAIAAgADAAUAAAD+/wMAAgADAAUAAAD+/wQAAgADAAUAAAD//wMAAgADAAUAAAD//wQAAgADAAUAAAAAAAMAAgADAAUAAAAAAAQAAgADAAUAAAABAAMAAgADAAUAAAABAAQAAgADAAUAAAACAAMAAgADAAUAAAACAAQAAgADAAUAAAD///7/AgADAAMAAAD/////AgADAAMAAAD//wAAAgADAAMAAAD//wEAAgADAAMAAAD//wIAAgADAAMAAAAAAP7/AgADAAMAAAAAAP//AgADAAMAAAAAAAAAAgADAAMAAAAAAAEAAgADAAMAAAAAAAIAAgADAAMAAAABAP7/AgADAAMAAAABAP//AgADAAMAAAABAAAAAgADAAMAAAABAAEAAgADAAMAAAABAAIAAgADAAMAAAACAP//AgADAAMAAAACAAAAAgADAAMAAAACAAEAAgADAAMAAAD+////AgADAAMAAAD+/wAAAgADAAMAAAD+/wEAAgADAAMAAAADAAMAAgADAAUAAAADAAQAAgADAAUAAAAEAAMAAgADAAUAAAAEAAQAAgADAAUAAAD8/wMAAgADAAUAAAD8/wQAAgADAAUAAAD9/wMAAgADAAUAAAD9/wQAAgADAAUAAAD8//z/AgADAAUAAAD8//3/AgADAAUAAAD9//z/AgADAAUAAAD9//3/AgADAAUAAAADAPz/AgADAAUAAAADAP3/AgADAAUAAAAEAPz/AgADAAUAAAAEAP3/AgADAAUAAAA=")
 
-[node name="Player" parent="." index="4" unique_id=1805821953 instance=ExtResource("2_3od4r")]
+[node name="Player" parent="." index="2" unique_id=1805821953 instance=ExtResource("2_3od4r")]
 position = Vector2(16, 16)
 
-[node name="immobile_target" parent="." index="5" unique_id=50867544 instance=ExtResource("3_xdlxv")]
+[node name="immobile_target" parent="." index="3" unique_id=50867544 instance=ExtResource("3_xdlxv")]
 position = Vector2(80, 16)
 
-[node name="immobile_target2" parent="." index="6" unique_id=1063399384 instance=ExtResource("3_xdlxv")]
+[node name="immobile_target2" parent="." index="4" unique_id=1063399384 instance=ExtResource("3_xdlxv")]
 position = Vector2(16, 80)
 
-[node name="immobile_target3" parent="." index="7" unique_id=1292832716 instance=ExtResource("3_xdlxv")]
+[node name="immobile_target3" parent="." index="5" unique_id=1292832716 instance=ExtResource("3_xdlxv")]
 position = Vector2(-48, 16)
 
-[node name="immobile_target4" parent="." index="8" unique_id=1814726186 instance=ExtResource("3_xdlxv")]
+[node name="immobile_target4" parent="." index="6" unique_id=1814726186 instance=ExtResource("3_xdlxv")]
 position = Vector2(16, -48)

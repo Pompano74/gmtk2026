@@ -580,36 +580,7 @@ script = ExtResource("1_y23ir")
 
 [node name="music_manager" type="Node" parent="." unique_id=600895651 node_paths=PackedStringArray("music")]
 script = ExtResource("2_y23ir")
-music = NodePath("../music")
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=781459557]
-bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
-
-[node name="music" type="FmodEventEmitter2D" parent="." unique_id=1225903399]
-event_name = "event:/track1"
-event_guid = "{bdaef4de-a77c-418e-8624-feb31732a654}"
-"fmod_parameters/difficulty slider/id" = -8424130764865637537
-"fmod_parameters/difficulty slider" = "120BPM"
-"fmod_parameters/difficulty slider/labels" = PackedStringArray("80BPM", "85BPM", "90BPM", "95BPM", "100BPM", "105BPM", "110BPM", "115BPM", "120BPM", "125BPM", "130BPM", "135BPM", "140BPM")
-"fmod_parameters/difficulty slider/variant_type" = 4
-fmod_parameters/bootup/id = -3685586378038700787
-fmod_parameters/bootup = 0
-fmod_parameters/bootup/variant_type = 2
-"fmod_parameters/next level/id" = 8289033740778483916
-"fmod_parameters/next level" = "off"
-"fmod_parameters/next level/labels" = PackedStringArray("off", "on")
-"fmod_parameters/next level/variant_type" = 4
-"fmod_parameters/player condition/id" = -2119143983761922850
-"fmod_parameters/player condition" = "alive"
-"fmod_parameters/player condition/labels" = PackedStringArray("alive", "dead", "success")
-"fmod_parameters/player condition/variant_type" = 4
-"fmod_parameters/combo chain/id" = 3414661205676469846
-"fmod_parameters/combo chain" = 0
-"fmod_parameters/combo chain/variant_type" = 2
-fmod_parameters/reboot/id = 7082025585143961158
-fmod_parameters/reboot = "off"
-fmod_parameters/reboot/labels = PackedStringArray("off", "on")
-fmod_parameters/reboot/variant_type = 4
+music = NodePath("")
 
 [node name="FLOOR" type="TileMap" parent="." unique_id=353221410]
 position = Vector2(8, 8)

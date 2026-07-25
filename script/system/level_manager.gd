@@ -14,8 +14,8 @@ extends Node2D
 @onready var layer_1: LevelTileMap = $level_progress/layer_1
 
 @onready var player: PlayerCharacter = $Player
+
 func _ready() -> void:
-	TempoGlobal.int_level = int_level
 	
 	if spawn_array != null and layer_array != null:
 		for x in spawn_array.size():

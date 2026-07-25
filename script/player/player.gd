@@ -16,7 +16,7 @@ const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 @export var player_action: FmodEventEmitter2D
 
 #beat_system_for_player
-var buffer_value: float = 0.14 #Buffer value used to determine the window in which the player can press a button
+var buffer_value: float = 0.16 #Buffer value used to determine the window in which the player can press a button
 var buffer_min: float
 var buffer_max: float
 var beat_inital_value
@@ -107,12 +107,15 @@ func _move(dir: Vector2):
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			global_position += dir * tile_size
+			coord_tracker.update_grid_coord()
+			
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
 			#Spawn particle when player good
 			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
 			add_child(good_particle)
 			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
+			
 			await get_tree().create_timer(0.95).timeout
 			good_particle.queue_free()
 			good_particle_node.queue_free()
