@@ -74,7 +74,6 @@ func on_player_bullet_enters_tile(bullet: Node2D) -> void:
 	else:
 		print("ERROR BOOST TILE bullet")
 	super(bullet)
-	pass
 
 
 

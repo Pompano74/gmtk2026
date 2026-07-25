@@ -5,3 +5,7 @@
 
 [node name="level_select_tile" unique_id=50867544 instance=ExtResource("1_58ms5")]
 script = ExtResource("2_fkhga")
+can_player_interact_by_landing_on_tile = null
+can_player_interact_by_shooting_tile = null
+can_enemy_interact_by_landing_on_tile = null
+destroy_on_interaction = null
