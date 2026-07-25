@@ -1,4 +1,5 @@
 extends Node2D
+class_name PlayerBullet
 
 const tile_size: Vector2 = Vector2(32, 32)
 var move_time: float = TempoGlobal.beat_inital_value

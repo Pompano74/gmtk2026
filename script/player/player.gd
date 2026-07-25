@@ -104,12 +104,15 @@ func _move(dir: Vector2):
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			global_position += dir * tile_size
+			coord_tracker.update_grid_coord()
+			
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
 			#Spawn particle when player good
 			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
 			add_child(good_particle)
 			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
+			
 			await get_tree().create_timer(0.95).timeout
 			good_particle.queue_free()
 			good_particle_node.queue_free()
