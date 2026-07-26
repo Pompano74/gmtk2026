@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_0fsf0"]
 [ext_resource type="Script" uid="uid://bqwuqw338bu8s" path="res://script/level_tiles/count_plus.gd" id="2_mxnnt"]
-[ext_resource type="Texture2D" uid="uid://b3vg1b8vn84p6" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Plus_1_Tile_.png" id="3_oahih"]
-[ext_resource type="Texture2D" uid="uid://gpiyijd5ugpx" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Plus_2_Tile_.png" id="4_fklab"]
-[ext_resource type="Texture2D" uid="uid://glb2c37f06vo" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Plus_3_Tile_.png" id="5_dre1w"]
-[ext_resource type="Texture2D" uid="uid://cod542hj1fykn" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Plus_4_Tile_.png" id="6_o48g6"]
+[ext_resource type="Texture2D" uid="uid://cup7ccjt21eaf" path="res://assets/sprites_only_final/Interact_Tiles/Target_Plus_1.png" id="3_oahih"]
+[ext_resource type="Texture2D" uid="uid://c201x3g148yie" path="res://assets/sprites_only_final/Interact_Tiles/Target_Plus_2.png" id="4_fklab"]
+[ext_resource type="Texture2D" uid="uid://hrxxhv25pism" path="res://assets/sprites_only_final/Interact_Tiles/Target_Plus_3.png" id="5_dre1w"]
+[ext_resource type="Texture2D" uid="uid://ry2htpoi33th" path="res://assets/sprites_only_final/Interact_Tiles/Target_Plus_4.png" id="6_o48g6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mxnnt"]
 animations = [{
@@ -40,7 +40,8 @@ event_name = "event:/item pickup"
 event_guid = "{59dec171-d1e4-42d9-ac02-35accdbd7526}"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=129272335]
-modulate = Color(1, 1, 0, 1)
+modulate = Color(0.968798, 1, 0.47426343, 1)
+self_modulate = Color(1, 0.77254903, 0, 1)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_mxnnt")
 

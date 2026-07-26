@@ -6,9 +6,14 @@ extends Node
 #==========================================variable=============================================#
 #===============================================================================================#
 signal beat_signal
+signal half
 signal beat_win
 signal beat_failed
 signal player_skipped_beat
+
+
+@onready var halft_beat: Timer = $halft_beat
+
 
 var game_progress: int = 0
 var int_level: int = 0
@@ -150,3 +155,9 @@ func level_failed():
 		coutdown_value = 20
 		get_tree().change_scene_to_file(level_select_lose)
 		print("FAILED LEVEL")
+
+
+func _on_halft_beat_timeout() -> void:
+	_half() # Replace with function body.
+func _half():
+	half.emit()

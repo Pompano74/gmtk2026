@@ -101,6 +101,7 @@ autostart = true
 
 [node name="halft_beat" type="Timer" parent="." unique_id=750922145]
 wait_time = 0.25
+one_shot = true
 
 [node name="Control" type="Control" parent="." unique_id=1634257988]
 z_index = 105

@@ -63,6 +63,7 @@ func _ready() -> void:
 	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 	TempoGlobal.other_transition.frame = 2
 	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
+	TempoGlobal.halft_beat.start()
 	TempoGlobal.ui.visible = false
 	#
 	TempoGlobal.black_transition.visible = false

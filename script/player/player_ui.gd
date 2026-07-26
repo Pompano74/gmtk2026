@@ -28,6 +28,7 @@ func _ready() -> void:
 	visible = true
 	coutdown.frame = 20
 	TempoGlobal.beat_signal.connect(on_beat_called)
+	TempoGlobal.half.connect(half_called)
 	target_count.text = str(TempoGlobal.current_target) + "/" + str(TempoGlobal.total_target)
 	beats.frame = 0
 	ui_exist_button.stop()
@@ -36,18 +37,21 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	target_count.text = str(TempoGlobal.current_target) + "/" + str(TempoGlobal.total_target)
-
+	
+	
 func on_beat_called():
 	coutdown.frame = TempoGlobal.coutdown_value
-	
+func half_called():
 	if beat_int_loop == 0:
 		beat_int_loop = 1
-	elif beat_int_loop == 4:
+	elif beat_int_loop == 8:
 		beat_int_loop = 1
 	else:
 		beat_int_loop += 1
-	
 	beats.frame = beat_int_loop
+	
+	
+	
 
 func _input(event: InputEvent) -> void:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and are_you_sure_2.is_visible_in_tree():
