@@ -8,6 +8,16 @@ extends Control
 @onready var beats: AnimatedSprite2D = $beats
 var beat_int_loop: int = 0
 @onready var target_count: Label = $target_count
+@onready var w: AnimatedSprite2D = $WASD_Keys/w
+@onready var a: AnimatedSprite2D = $WASD_Keys/A
+@onready var s: AnimatedSprite2D = $WASD_Keys/S
+@onready var d: AnimatedSprite2D = $WASD_Keys/D
+@onready var arrow_up: AnimatedSprite2D = $ARROWS_Keys/ArrowUp
+@onready var arrow_left: AnimatedSprite2D = $ARROWS_Keys/ArrowLeft
+@onready var arrow_down: AnimatedSprite2D = $ARROWS_Keys/ArrowDown
+@onready var arrow_right: AnimatedSprite2D = $ARROWS_Keys/ArrowRight
+@onready var ui_pausing: AnimatedSprite2D = $UI_Pausing
+
 
 
 func _ready() -> void:
