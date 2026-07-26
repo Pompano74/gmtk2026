@@ -17,59 +17,59 @@ player = NodePath("Player")
 [node name="Player" parent="TileMapLayer" index="0" unique_id=1805821953 instance=ExtResource("2_ih5a0")]
 position = Vector2(-16, -16)
 
-[node name="immobile_target2" parent="." index="4" unique_id=964447159 instance=ExtResource("3_b82co")]
+[node name="immobile_target2" parent="." index="2" unique_id=964447159 instance=ExtResource("3_b82co")]
 position = Vector2(80, -112)
 
-[node name="immobile_target3" parent="." index="5" unique_id=119057824 instance=ExtResource("3_b82co")]
+[node name="immobile_target3" parent="." index="3" unique_id=119057824 instance=ExtResource("3_b82co")]
 position = Vector2(-16, -48)
 
-[node name="glitch_tile" parent="." index="6" unique_id=857492595 instance=ExtResource("4_b82co")]
+[node name="glitch_tile" parent="." index="4" unique_id=857492595 instance=ExtResource("4_b82co")]
 position = Vector2(16, 48)
 
-[node name="glitch_tile2" parent="." index="7" unique_id=1247779400 instance=ExtResource("4_b82co")]
+[node name="glitch_tile2" parent="." index="5" unique_id=1247779400 instance=ExtResource("4_b82co")]
 position = Vector2(-16, 48)
 
-[node name="glitch_tile3" parent="." index="8" unique_id=21797124 instance=ExtResource("4_b82co")]
+[node name="glitch_tile3" parent="." index="6" unique_id=21797124 instance=ExtResource("4_b82co")]
 position = Vector2(-16, 16)
 
-[node name="glitch_tile4" parent="." index="9" unique_id=1331371934 instance=ExtResource("4_b82co")]
+[node name="glitch_tile4" parent="." index="7" unique_id=1331371934 instance=ExtResource("4_b82co")]
 position = Vector2(176, -16)
 
-[node name="glitch_tile5" parent="." index="10" unique_id=366512174 instance=ExtResource("4_b82co")]
+[node name="glitch_tile5" parent="." index="8" unique_id=366512174 instance=ExtResource("4_b82co")]
 position = Vector2(16, -80)
 
-[node name="glitch_tile9" parent="." index="11" unique_id=1480006793 instance=ExtResource("4_b82co")]
+[node name="glitch_tile9" parent="." index="9" unique_id=1480006793 instance=ExtResource("4_b82co")]
 position = Vector2(144, -80)
 
-[node name="glitch_tile10" parent="." index="12" unique_id=101455406 instance=ExtResource("4_b82co")]
+[node name="glitch_tile10" parent="." index="10" unique_id=101455406 instance=ExtResource("4_b82co")]
 position = Vector2(48, -144)
 
-[node name="glitch_tile11" parent="." index="13" unique_id=1817872271 instance=ExtResource("4_b82co")]
+[node name="glitch_tile11" parent="." index="11" unique_id=1817872271 instance=ExtResource("4_b82co")]
 position = Vector2(112, -144)
 
-[node name="glitch_tile13" parent="." index="14" unique_id=1106229202 instance=ExtResource("4_b82co")]
+[node name="glitch_tile13" parent="." index="12" unique_id=1106229202 instance=ExtResource("4_b82co")]
 position = Vector2(176, -144)
 
-[node name="glitch_tile7" parent="." index="15" unique_id=1452132813 instance=ExtResource("4_b82co")]
+[node name="glitch_tile7" parent="." index="13" unique_id=1452132813 instance=ExtResource("4_b82co")]
 position = Vector2(16, -144)
 
-[node name="glitch_tile8" parent="." index="16" unique_id=936793658 instance=ExtResource("4_b82co")]
+[node name="glitch_tile8" parent="." index="14" unique_id=936793658 instance=ExtResource("4_b82co")]
 position = Vector2(80, -48)
 
-[node name="glitch_tile12" parent="." index="17" unique_id=50867544 instance=ExtResource("4_b82co")]
+[node name="glitch_tile12" parent="." index="15" unique_id=50867544 instance=ExtResource("4_b82co")]
 position = Vector2(112, 16)
 
-[node name="Descructible_Wall" parent="." index="18" unique_id=1483528345 instance=ExtResource("5_tx74k")]
+[node name="Descructible_Wall" parent="." index="16" unique_id=1483528345 instance=ExtResource("5_tx74k")]
 position = Vector2(80, -80)
 
-[node name="Descructible_Wall2" parent="." index="19" unique_id=1988734293 instance=ExtResource("5_tx74k")]
+[node name="Descructible_Wall2" parent="." index="17" unique_id=1988734293 instance=ExtResource("5_tx74k")]
 position = Vector2(48, -80)
 
-[node name="Descructible_Wall3" parent="." index="20" unique_id=1551308771 instance=ExtResource("5_tx74k")]
+[node name="Descructible_Wall3" parent="." index="18" unique_id=1551308771 instance=ExtResource("5_tx74k")]
 position = Vector2(112, -80)
 
-[node name="Descructible_Wall4" parent="." index="21" unique_id=998008519 instance=ExtResource("5_tx74k")]
+[node name="Descructible_Wall4" parent="." index="19" unique_id=998008519 instance=ExtResource("5_tx74k")]
 position = Vector2(80, 16)
 
-[node name="Descructible_Wall5" parent="." index="22" unique_id=1633805956 instance=ExtResource("5_tx74k")]
+[node name="Descructible_Wall5" parent="." index="20" unique_id=1633805956 instance=ExtResource("5_tx74k")]
 position = Vector2(112, -16)

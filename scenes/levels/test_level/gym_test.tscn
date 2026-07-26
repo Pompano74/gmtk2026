@@ -330,7 +330,7 @@ sources/1 = SubResource("TileSetAtlasSource_d4af6")
 
 [node name="gym_test" type="Node2D" unique_id=1549782045 node_paths=PackedStringArray("music")]
 script = ExtResource("1_1mok7")
-music = NodePath("music")
+music = NodePath("")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1506365378]
 tile_set = SubResource("TileSet_mfd2r")
@@ -340,12 +340,6 @@ layer_0/tile_data = PackedInt32Array(0, 196609, 3, 65535, 196609, 3, -1, 196609,
 [node name="Player" parent="." unique_id=1805821953 instance=ExtResource("2_d4af6")]
 visible = false
 position = Vector2(16, 16)
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=684716824]
-bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/tracks.bank"]
-
-[node name="music" type="FmodEventEmitter2D" parent="." unique_id=1372389400]
-event_guid = "{00000030-0030-0000-3000-00002e000000}"
 
 [node name="test_tag1" type="Node" parent="." unique_id=45948379 groups=["target_objectif"]]
 
