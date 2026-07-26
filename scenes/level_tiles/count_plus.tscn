@@ -30,6 +30,7 @@ animations = [{
 [node name="count_plus" unique_id=50867544 instance=ExtResource("1_0fsf0")]
 script = ExtResource("2_mxnnt")
 plus_value = 0
+volume = 0.0
 can_player_interact_by_landing_on_tile = true
 can_player_interact_by_shooting_tile = true
 destroy_on_interaction = false

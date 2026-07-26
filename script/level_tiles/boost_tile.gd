@@ -69,16 +69,20 @@ func on_player_bullet_enters_tile(bullet: Node2D) -> void:
 	print("tile_rotation:",round(global_rotation_degrees))
 	if global_rotation_degrees == 0: #up
 		bullet.get_parent().dir = Vector2(0 , -1)
+		bullet.get_parent().animated_sprite_2d.play("Up")
 		print("UP")
 	
 	elif global_rotation_degrees == -90: #left
 		bullet.get_parent().dir = Vector2(-1 , 0)
+		bullet.get_parent().animated_sprite_2d.play("Left")
 		print("LEFT")
 	elif global_rotation_degrees == 90: #right
 		bullet.get_parent().dir = Vector2(1 , 0)
+		bullet.get_parent().animated_sprite_2d.play("Right")
 		print("RIGHT")
 	else: #down
 		bullet.get_parent().dir = Vector2(0 , 1)
+		bullet.get_parent().animated_sprite_2d.play("Down")
 		print("DOWN")
 	print("new_dir:",bullet.get_parent().dir)
 	if is_wall:
