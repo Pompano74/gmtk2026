@@ -1241,6 +1241,7 @@ scene_to_go = "res://scenes/levels/game_levels/lvl_6.tscn"
 
 [node name="level_7" parent="." index="12" unique_id=234358249 instance=ExtResource("3_hjxda")]
 position = Vector2(-368, 144)
+scene_to_go = "res://scenes/levels/game_levels/lvl_7.tscn"
 
 [node name="level_8" parent="." index="13" unique_id=961310434 instance=ExtResource("3_hjxda")]
 position = Vector2(-240, 144)
