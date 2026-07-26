@@ -437,7 +437,6 @@ zoom = Vector2(2.25, 2.25)
 script = ExtResource("4_75vfm")
 
 [node name="player_ui" parent="AnimatedSprite2D/Camera2D" unique_id=1579424744 instance=ExtResource("4_p47bc")]
-visible = false
 offset_top = -6.0
 offset_bottom = -6.0
 

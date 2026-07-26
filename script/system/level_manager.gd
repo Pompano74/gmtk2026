@@ -17,7 +17,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	
+	TempoGlobal.other_transition.play("player_start")
 	print("AAAAAAAAA", TempoGlobal.game_progress)
 	TempoGlobal.int_level = int_level
 	print("AAAAAAAAA", TempoGlobal.int_level)
@@ -63,6 +63,7 @@ func _ready() -> void:
 	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 	TempoGlobal.other_transition.frame = 2
 	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
+	TempoGlobal.halft_beat.start()
 	TempoGlobal.ui.visible = false
 	#
 	TempoGlobal.black_transition.visible = false
