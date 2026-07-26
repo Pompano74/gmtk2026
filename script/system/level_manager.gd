@@ -13,7 +13,7 @@ extends Node2D
 @export var layer_array: Array[LevelTileMap]
 @onready var layer_1: LevelTileMap = $level_progress/layer_1
 
-@onready var player: PlayerCharacter = $Player
+@onready var player: PlayerCharacter = $TileMapLayer/Player
 
 func _ready() -> void:
 	

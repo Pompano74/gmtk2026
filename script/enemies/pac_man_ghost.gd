@@ -4,6 +4,7 @@ var returning_to_spawn := false
 var disable_follow_movement := false
 var path_increment := 1
 var contengency := 0
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	tilemap = get_parent() as LevelTileMap
@@ -16,6 +17,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func perform_action() -> void:
 	super()
+	if animated_sprite_2d.position == Vector2(0.0, -8.0):
+		animated_sprite_2d.position = Vector2(0.0, -14.0)
+	else:
+		animated_sprite_2d.position = Vector2(0.0, -8.0)
+	
 	if !is_on_cooldown and !returning_to_spawn:
 		update_current_path(coord_tracker.grid_coord, tilemap.player.coord_tracker.grid_coord)
 		if current_path.size() > 1:
@@ -40,6 +46,10 @@ func perform_action() -> void:
 				#print("Ghost ", name, " failed to return to spawn, help them!!!")
 
 func move_to_spawn(inc: int) -> void:
+	if animated_sprite_2d.position == Vector2(0.0, -8.0):
+		animated_sprite_2d.position = Vector2(0.0, -14.0)
+	else:
+		animated_sprite_2d.position = Vector2(0.0, -8.0)
 	position = coord_tracker.grid_coord_to_local_pos(current_path[inc])
 	coord_tracker.update_grid_coord()
 
@@ -48,7 +58,7 @@ func while_returning_to_spawn() -> void:
 	if coord_tracker.grid_coord != initial_coord and contengency < 100:
 		path_increment = clampi(path_increment + 1, 1, current_path.size() - 1)
 		contengency += 1
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(TempoGlobal.beat_inital_value / 4).timeout
 		move_to_spawn(path_increment)
 		while_returning_to_spawn()
 	elif coord_tracker.grid_coord == initial_coord:

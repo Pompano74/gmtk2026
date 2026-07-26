@@ -2,17 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_xnbe8"]
 [ext_resource type="Script" uid="uid://ctr4brjarwb12" path="res://script/level_tiles/boost_tile.gd" id="2_em0tm"]
-[ext_resource type="Texture2D" uid="uid://cfhf5bed551sn" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Boost_pads_Anim_1.png" id="3_riavx"]
-[ext_resource type="Texture2D" uid="uid://whu7y3ve27bi" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Boost_pads_Anim_2.png" id="4_ygjxj"]
+[ext_resource type="Texture2D" uid="uid://w5g2snhuoqi8" path="res://assets/sprites_only_final/Interact_Tiles/Boot_Pad_2.png" id="4_riavx"]
+[ext_resource type="Texture2D" uid="uid://b57bsr6fxk88g" path="res://assets/sprites_only_final/Interact_Tiles/Boot_Pad_1.png" id="5_ygjxj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_45ngr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_riavx")
+"texture": ExtResource("5_ygjxj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ygjxj")
+"texture": ExtResource("4_riavx")
 }],
 "loop": 1,
 "name": &"default",
@@ -28,11 +28,12 @@ destroy_on_interaction = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=1760496051]
 rotation = -1.5707964
 sprite_frames = SubResource("SpriteFrames_45ngr")
-frame_progress = 0.93350613
+frame = 1
+frame_progress = 0.5303833
 
 [node name="Sprite2D" parent="." index="1" unique_id=384902394]
 modulate = Color(1, 1, 1, 0)
-texture = ExtResource("3_riavx")
+texture = ExtResource("5_ygjxj")
 
 [node name="up" type="RayCast2D" parent="." index="3" unique_id=1704984831]
 position = Vector2(0, -17)
