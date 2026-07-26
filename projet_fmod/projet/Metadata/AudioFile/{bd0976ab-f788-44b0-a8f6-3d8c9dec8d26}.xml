@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{8ecc395a-7960-4e3b-89df-93272b25140e}">
+	<object class="AudioFile" id="{bd0976ab-f788-44b0-a8f6-3d8c9dec8d26}">
 		<property name="assetPath">
-			<value>5_1 punk ish 2-Aphex twin type beats_wav_041657984.mp3</value>
+			<value>track9#1.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>16.056000000000001</value>
+			<value>16.039183673469388</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{80b09167-6ad3-484e-a758-4ebde1ceb7b9}</destination>
