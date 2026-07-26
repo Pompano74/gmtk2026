@@ -21,6 +21,7 @@ script = ExtResource("1_t4483")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=170696556]
 z_index = 155
+emitting = false
 amount = 1
 texture = ExtResource("1_bjg2j")
 local_coords = true
