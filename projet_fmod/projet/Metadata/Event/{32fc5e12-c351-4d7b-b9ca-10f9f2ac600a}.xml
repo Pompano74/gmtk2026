@@ -116,7 +116,11 @@
 	</object>
 	<object class="MixerBusFader" id="{7990a22e-f3ae-4c16-905a-a885317eecc4}" />
 	<object class="MixerBusFader" id="{f13472eb-6b6d-4ab2-8ba8-bedff68dd795}" />
-	<object class="SpatialiserEffect" id="{d22f861b-a446-4c27-bae1-35715195f9ca}" />
+	<object class="SpatialiserEffect" id="{d22f861b-a446-4c27-bae1-35715195f9ca}">
+		<property name="panBlend">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{a52ed573-ec9f-466c-b06f-2429b362a869}">
 		<relationship name="audioFile">
 			<destination>{28922468-3aa3-40fa-9500-37a6a83defd6}</destination>
