@@ -1,0 +1,71 @@
+[gd_scene format=4 uid="uid://crd1c2iprw0vs"]
+
+[ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_8glra"]
+[ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_yp5ht"]
+[ext_resource type="PackedScene" uid="uid://cupv06oj0c16e" path="res://scenes/level_tiles/glitch_tile.tscn" id="3_l27ly"]
+[ext_resource type="PackedScene" uid="uid://bba0t1vpp2sy0" path="res://scenes/level_tiles/BoostTile.tscn" id="4_ai4l5"]
+[ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="5_sylse"]
+
+[node name="lvl_10" unique_id=1574904214 instance=ExtResource("1_8glra")]
+level_select_lose = "res://scenes/levels/game_levels/lvl_10.tscn"
+int_level = 10
+
+[node name="TileMapLayer" parent="." index="2" unique_id=1452209589 node_paths=PackedStringArray("player")]
+tile_map_data = PackedByteArray("AAADAPz/AAADAAUAAAADAPv/AAADAAMAAAAEAPv/AAADAAMAAAAEAPz/AAADAAMAAAACAPv/AAADAAMAAAACAPz/AAADAAMAAAACAP3/AAADAAMAAAADAP3/AAADAAMAAAAEAP3/AAADAAMAAAD///j/AAADAAUAAAD///n/AAADAAUAAAD///r/AAADAAUAAAD///v/AAADAAUAAAD///z/AAADAAUAAAAAAPj/AAADAAUAAAABAPj/AAADAAUAAAACAPj/AAADAAUAAAAEAPj/AAADAAUAAAAFAPj/AAADAAUAAAAGAPj/AAADAAUAAAAHAPj/AAADAAUAAAAHAPn/AAADAAUAAAAHAPr/AAADAAUAAAAHAPv/AAADAAUAAAAHAPz/AAADAAUAAAAHAP3/AAADAAUAAAAHAP7/AAADAAUAAAAHAP//AAADAAUAAAAHAAAAAAADAAUAAAD//wAAAAADAAUAAAAAAAAAAAADAAUAAAABAAAAAAADAAUAAAACAAAAAAADAAUAAAADAAAAAAADAAUAAAAEAAAAAAADAAUAAAAFAAAAAAADAAUAAAAGAAAAAAADAAUAAAD///3/AAADAAUAAAD///7/AAADAAUAAAD/////AAADAAUAAAACAPb/AAADAAUAAAADAPb/AAADAAUAAAAEAPb/AAADAAUAAAAFAPb/AAADAAUAAAAGAPb/AAADAAUAAAAHAPb/AAADAAUAAAAIAPb/AAADAAUAAAAJAPb/AAADAAUAAAAJAPf/AAADAAUAAAAJAPj/AAADAAUAAAAJAPn/AAADAAUAAAAJAPr/AAADAAUAAAAJAPv/AAADAAUAAAAJAPz/AAADAAUAAAAJAP3/AAADAAUAAAAJAP7/AAADAAUAAAAJAP//AAADAAUAAAAJAAAAAAADAAUAAAAJAAEAAAADAAUAAAAJAAIAAAADAAUAAAD+/wIAAAADAAUAAAD//wIAAAADAAUAAAAAAAIAAAADAAUAAAABAAIAAAADAAUAAAACAAIAAAADAAUAAAADAAIAAAADAAUAAAAEAAIAAAADAAUAAAAFAAIAAAADAAUAAAAGAAIAAAADAAUAAAAHAAIAAAADAAUAAAAIAAIAAAADAAUAAAD9//f/AAADAAUAAAD9//j/AAADAAUAAAD9//n/AAADAAUAAAD9//r/AAADAAUAAAD9//v/AAADAAUAAAD9//z/AAADAAUAAAD9//3/AAADAAUAAAD9//7/AAADAAUAAAD9////AAADAAUAAAD9/wAAAAADAAUAAAD9/wEAAAADAAUAAAD9/wIAAAADAAUAAAD9//b/AAADAAUAAAD+//b/AAADAAUAAAD///b/AAADAAUAAAAAAPb/AAADAAUAAAABAPb/AAADAAUAAAAAAP7/AAADAAMAAAAAAP//AAADAAMAAAABAP7/AAADAAMAAAABAP//AAADAAMAAAACAP7/AAADAAMAAAACAP//AAADAAMAAAADAP7/AAADAAMAAAADAP//AAADAAMAAAAEAP7/AAADAAMAAAAEAP//AAADAAMAAAAFAP7/AAADAAMAAAAFAP//AAADAAMAAAAGAP7/AAADAAMAAAAGAP//AAADAAMAAAAFAPn/AAADAAMAAAAFAPr/AAADAAMAAAAFAPv/AAADAAMAAAAFAPz/AAADAAMAAAAFAP3/AAADAAMAAAAGAPn/AAADAAMAAAAGAPr/AAADAAMAAAAGAPv/AAADAAMAAAAGAPz/AAADAAMAAAAGAP3/AAADAAMAAAAAAPn/AAADAAMAAAAAAPr/AAADAAMAAAABAPn/AAADAAMAAAABAPr/AAADAAMAAAACAPn/AAADAAMAAAACAPr/AAADAAMAAAADAPn/AAADAAMAAAADAPr/AAADAAMAAAAEAPn/AAADAAMAAAAEAPr/AAADAAMAAAAAAPv/AAADAAMAAAAAAPz/AAADAAMAAAAAAP3/AAADAAMAAAABAPv/AAADAAMAAAABAPz/AAADAAMAAAABAP3/AAADAAMAAAD+//f/AAADAAMAAAD+//j/AAADAAMAAAD+//n/AAADAAMAAAD+//r/AAADAAMAAAD+//v/AAADAAMAAAD+//z/AAADAAMAAAD+//3/AAADAAMAAAD+//7/AAADAAMAAAD+////AAADAAMAAAD+/wAAAAADAAMAAAD+/wEAAAADAAMAAAD///f/AAADAAUAAAAAAPf/AAADAAUAAAABAPf/AAADAAUAAAACAPf/AAADAAUAAAADAPf/AAADAAMAAAAEAPf/AAADAAMAAAAFAPf/AAADAAMAAAAGAPf/AAADAAMAAAAHAPf/AAADAAMAAAAIAPf/AAADAAMAAAADAPj/AAADAAMAAAAIAPj/AAADAAMAAAAIAPn/AAADAAMAAAAIAPr/AAADAAMAAAAIAPv/AAADAAMAAAAIAPz/AAADAAMAAAAIAP3/AAADAAMAAAAIAP7/AAADAAMAAAAIAP//AAADAAMAAAAIAAAAAAADAAMAAAAIAAEAAAADAAMAAAD//wEAAAADAAMAAAAAAAEAAAADAAMAAAABAAEAAAADAAMAAAACAAEAAAADAAMAAAADAAEAAAADAAMAAAAEAAEAAAADAAMAAAAFAAEAAAADAAMAAAAGAAEAAAADAAMAAAAHAAEAAAADAAMAAAA=")
+player = NodePath("Player")
+
+[node name="glitch_tile3" parent="TileMapLayer" index="0" unique_id=2017269871 instance=ExtResource("3_l27ly")]
+position = Vector2(112, -144)
+
+[node name="glitch_tile4" parent="TileMapLayer" index="1" unique_id=2124681903 instance=ExtResource("3_l27ly")]
+position = Vector2(80, -144)
+rotation = 1.5707964
+
+[node name="glitch_tile5" parent="TileMapLayer" index="2" unique_id=1275276899 instance=ExtResource("3_l27ly")]
+position = Vector2(80, -112)
+
+[node name="glitch_tile6" parent="TileMapLayer" index="3" unique_id=1632424295 instance=ExtResource("3_l27ly")]
+position = Vector2(80, -80)
+
+[node name="glitch_tile7" parent="TileMapLayer" index="4" unique_id=352956021 instance=ExtResource("3_l27ly")]
+position = Vector2(112, -80)
+
+[node name="glitch_tile8" parent="TileMapLayer" index="5" unique_id=581578246 instance=ExtResource("3_l27ly")]
+position = Vector2(112, -80)
+rotation = 1.5707964
+
+[node name="glitch_tile9" parent="TileMapLayer" index="6" unique_id=794412613 instance=ExtResource("3_l27ly")]
+position = Vector2(144, -80)
+rotation = 1.5707964
+
+[node name="glitch_tile10" parent="TileMapLayer" index="7" unique_id=657583363 instance=ExtResource("3_l27ly")]
+position = Vector2(144, -112)
+rotation = 1.5707964
+
+[node name="glitch_tile11" parent="TileMapLayer" index="8" unique_id=364463067 instance=ExtResource("3_l27ly")]
+position = Vector2(144, -144)
+rotation = -3.1415925
+
+[node name="glitch_tile" parent="TileMapLayer" index="9" unique_id=50867544 instance=ExtResource("3_l27ly")]
+position = Vector2(112, -240)
+
+[node name="BaseInteractionTile" parent="TileMapLayer" index="10" unique_id=832044099 instance=ExtResource("4_ai4l5")]
+position = Vector2(112, -272)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile2" parent="TileMapLayer" index="11" unique_id=1475991390 instance=ExtResource("4_ai4l5")]
+position = Vector2(272, -272)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile3" parent="TileMapLayer" index="12" unique_id=2034573225 instance=ExtResource("4_ai4l5")]
+position = Vector2(272, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile4" parent="TileMapLayer" index="13" unique_id=552341804 instance=ExtResource("4_ai4l5")]
+position = Vector2(-48, 48)
+
+[node name="immobile_target" parent="TileMapLayer" index="14" unique_id=1816896322 instance=ExtResource("5_sylse")]
+position = Vector2(-48, -240)
+
+[node name="Player" parent="TileMapLayer" index="15" unique_id=1805821953 instance=ExtResource("2_yp5ht")]
+position = Vector2(112, -176)

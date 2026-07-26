@@ -172,6 +172,9 @@
 		<relationship name="automationTracks">
 			<destination>{c295d145-4d6c-4228-b6de-ed26b5ef5eca}</destination>
 		</relationship>
+		<relationship name="modules">
+			<destination>{d640ec0e-213f-42c7-9643-9c8f0b146d4a}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{14a04f2f-8614-4cd6-802f-4f3273726a78}</destination>
 		</relationship>
@@ -242,6 +245,7 @@
 			<destination>{9570960e-b2d9-4ab3-a5d5-eda91bd191fb}</destination>
 			<destination>{dc44dde6-eb37-47c0-9361-302acaa4fa0c}</destination>
 			<destination>{2ddcd350-9e79-4da4-92b8-fa5d9e4b9a0e}</destination>
+			<destination>{d640ec0e-213f-42c7-9643-9c8f0b146d4a}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{0f232d4b-237e-4d95-a790-0c66a1ec9ced}</destination>
@@ -536,6 +540,17 @@
 	<object class="AutomationTrack" id="{c295d145-4d6c-4228-b6de-ed26b5ef5eca}">
 		<relationship name="automator">
 			<destination>{83191de5-d056-4bd6-a27e-e898116e2dec}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{d640ec0e-213f-42c7-9643-9c8f0b146d4a}">
+		<property name="start">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>16.06530612244898</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{6e31e6c0-9342-41fc-bf92-790bb85ac73c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{14a04f2f-8614-4cd6-802f-4f3273726a78}">
@@ -2412,7 +2427,7 @@
 			<value>15</value>
 		</property>
 		<property name="value">
-			<value>3</value>
+			<value>0</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{253546d5-d767-4416-8a11-de3dafca43c2}">

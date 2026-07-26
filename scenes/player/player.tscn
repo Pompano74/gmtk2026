@@ -412,6 +412,9 @@ fmod_parameters/YOUMISSED/variant_type = 2
 "fmod_parameters/player action" = "move"
 "fmod_parameters/player action/labels" = PackedStringArray("move", "shoot", "miss", "pickup item")
 "fmod_parameters/player action/variant_type" = 4
+"fmod_parameters/combo chain/id" = 3414661205676469846
+"fmod_parameters/combo chain" = 0
+"fmod_parameters/combo chain/variant_type" = 2
 
 [node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1689439561]
 

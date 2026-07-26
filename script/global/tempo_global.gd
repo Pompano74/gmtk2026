@@ -46,23 +46,15 @@ var can_transition: bool = false
 
 #ui transition
 @onready var ui: Control = $Control
-@onready var ui_label: Label = $Control/Label
-@onready var label_start: Label = $Control/label_start
-@onready var label_reset: Label = $Control/label_reset
-@onready var label_lvl_select_start: Label = $Control/label_lvl_select_start
-
+@onready var black_transition: AnimatedSprite2D = $black_transition
+@onready var other_animation: AnimatedSprite2D = $other_animation
 
 #===============================================================================================#
 #==========================================variable=============================================#
 #===============================================================================================#
 
 func _ready() -> void:
-	
 	ui.visible = false
-	ui_label.visible = false
-	label_start.visible = true
-	label_reset.visible = false
-	label_lvl_select_start.visible = false
 	 #set beat tempo
 	beat_inital_value = 1.0 / (bpm / 60.0)
 	beat_timer = beat_inital_value
@@ -141,7 +133,6 @@ func level_win():
 		level_is_switching = true
 		timer.stop()
 		ui.visible = true
-		ui_label.visible = true
 		await get_tree().create_timer(0.5).timeout
 		can_transition = true
 
@@ -152,7 +143,6 @@ func level_failed():
 		level_is_restarting = true
 		can_beat = false
 		ui.visible = true
-		label_reset.visible = true
 		#espace transition
 		await get_tree().create_timer(beat_inital_value * 4.5).timeout
 		coutdown_value = 20

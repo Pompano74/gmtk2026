@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{466f0d1c-af86-47ae-aeea-1c208ef3a3de}">
+		<property name="name">
+			<value>squid action</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9135df2c-820c-4c26-af60-97ad8697ec33}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e8902530-016f-489a-98c6-6230fe1aa321}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e8902530-016f-489a-98c6-6230fe1aa321}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>move</value>
+			<value>hit</value>
+			<value>run away</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

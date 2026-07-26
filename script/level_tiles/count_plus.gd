@@ -3,8 +3,10 @@ extends InteractionTile
 
 @export_range(1, 4) var plus_value: int = 1
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@export var volume: float = 1.0
 
 func _ready() -> void:
+	$pickup_sound.volume = volume
 	animated_sprite_2d.frame = plus_value - 1
 	
 	plus_value += 1

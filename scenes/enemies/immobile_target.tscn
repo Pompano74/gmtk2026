@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://dc0ld6cgcar0g" path="res://script/enemies/immobile_target.gd" id="2_hcv15"]
 [ext_resource type="Texture2D" uid="uid://b6c6co661g88" path="res://assets/sprites_only_final/Enemies/Enemy_LeTarget.png" id="3_hee61"]
 
-[node name="immobile_target" unique_id=50867544 groups=["target_objectif"] instance=ExtResource("1_mbl4m")]
+[node name="immobile_target" unique_id=50867544 groups=["target_objectif", "track_off_screen"] instance=ExtResource("1_mbl4m")]
 script = ExtResource("2_hcv15")
 can_player_interact_by_landing_on_tile = true
 
 [node name="Sprite2D" parent="." index="0" unique_id=384902394]
-z_index = 100
+z_index = 49
 texture = ExtResource("3_hee61")
 offset = Vector2(0, -9)

@@ -10,12 +10,15 @@
 script = ExtResource("2_xcwb4")
 can_player_interact_by_shooting_tile = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="0" unique_id=1037306576]
+[node name="sound" type="FmodEventEmitter2D" parent="." index="0" unique_id=954647850]
+event_guid = "{0000005f-006e-0000-6f00-000064000000}"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1" unique_id=1037306576]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=785841503]
 shape = SubResource("RectangleShape2D_mfd2r")
 
-[node name="Sprite2D" parent="." index="1" unique_id=384902394]
+[node name="Sprite2D" parent="." index="2" unique_id=384902394]
 texture = ExtResource("3_upan8")
 
 [node name="Area2D" parent="Sprite2D" index="0" unique_id=1261708708]

@@ -30,16 +30,21 @@ animations = [{
 [node name="count_plus" unique_id=50867544 instance=ExtResource("1_0fsf0")]
 script = ExtResource("2_mxnnt")
 plus_value = 0
+volume = 0.0
 can_player_interact_by_landing_on_tile = true
 can_player_interact_by_shooting_tile = true
 destroy_on_interaction = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=129272335]
+[node name="pickup_sound" type="FmodEventEmitter2D" parent="." index="0" unique_id=1483256745]
+event_name = "event:/item pickup"
+event_guid = "{59dec171-d1e4-42d9-ac02-35accdbd7526}"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=129272335]
 modulate = Color(1, 1, 0, 1)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_mxnnt")
 
-[node name="Sprite2D" parent="." index="1" unique_id=384902394]
+[node name="Sprite2D" parent="." index="2" unique_id=384902394]
 modulate = Color(1, 1, 0, 0)
 self_modulate = Color(1, 1, 0, 0)
 can_enemy_interact_by_landing_on_tile = true
