@@ -113,7 +113,7 @@ func _beat():
 			beat_nbr = 1
 
 		#beat_streak
-		if beat_streak >= 15:
+		if beat_streak >= 16:
 			infinite_mode = true
 		else:
 			infinite_mode = false
@@ -125,7 +125,7 @@ func _beat_win():
 	combo_timer.start()
 	beat_streak += 1
 	if beat_streak > 15:
-		beat_streak = 15 
+		beat_streak = 16
 		coutdown_value += 2
 	beat_win.emit()
 

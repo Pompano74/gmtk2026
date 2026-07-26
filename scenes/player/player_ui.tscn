@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://bur1hqj847kch" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim8.png" id="54_fh566"]
 [ext_resource type="Texture2D" uid="uid://ba6pbx6n5xbtl" path="res://assets/sprites/ui_Sprites/UI_Bits.png" id="55_t6veo"]
 [ext_resource type="Texture2D" uid="uid://csu18q6weybg" path="res://assets/sprites/ui_Sprites/UI_Skull.png" id="56_3bco6"]
+[ext_resource type="Texture2D" uid="uid://c3oybbppdirrm" path="res://assets/sprites_only_final/UI_Exit/Exiting_Game_Background.png" id="57_mxajy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m6sn8"]
 animations = [{
@@ -354,10 +355,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_45ngr"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_45ngr"]
 font_size = 12
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_c0w0k"]
 
 [node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right")]
 z_index = 50
@@ -485,49 +486,44 @@ vertical_alignment = 1
 [node name="SubViewport" type="SubViewport" parent="." unique_id=664170902]
 
 [node name="ExitMenu" type="Node2D" parent="." unique_id=795371408]
-visible = false
 
-[node name="AreYouSure" type="Sprite2D" parent="ExitMenu" unique_id=537291618]
-modulate = Color(0, 0, 0, 0.6862745)
-position = Vector2(0.50000376, -12.999999)
-scale = Vector2(3.0156248, 1.578125)
-texture = SubResource("DrawableTexture2D_45ngr")
-
-[node name="Label" type="Label" parent="ExitMenu" unique_id=1619208399]
-offset_left = -118.0
-offset_top = -60.0
-offset_right = 118.0
-offset_bottom = -23.0
-text = "Are you sure you
- want to quit?"
-label_settings = SubResource("LabelSettings_45ngr")
-horizontal_alignment = 1
+[node name="ExitingGameBackground" type="Sprite2D" parent="ExitMenu" unique_id=222550993]
+z_index = 5
+position = Vector2(0, -6)
+texture = ExtResource("57_mxajy")
 
 [node name="Label2" type="Label" parent="ExitMenu" unique_id=1170422307]
+z_index = 5
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 1.6220001
 anchor_right = 0.5
 anchor_bottom = 1.6220001
-offset_top = -2.0
-offset_right = 96.0
-offset_bottom = 35.0
+offset_left = 36.0
+offset_right = 132.0
+offset_bottom = 37.0
 text = "NO
 Press left mouse"
 label_settings = SubResource("LabelSettings_45ngr")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="ExitMenu" unique_id=1394174265]
+z_index = 5
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 1.6220001
 anchor_right = 0.5
 anchor_bottom = 1.6220001
-offset_left = -86.0
-offset_top = -3.0
-offset_right = -10.0
-offset_bottom = 34.0
+offset_left = -122.0
+offset_right = -46.0
+offset_bottom = 37.0
 text = "YES
 Press Escape"
 label_settings = SubResource("LabelSettings_45ngr")
 horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitMenu" unique_id=1531738841]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(7.6293945e-06, -5.000004)
+scale = Vector2(4.5000005, 2.625)
+texture = SubResource("DrawableTexture2D_c0w0k")
