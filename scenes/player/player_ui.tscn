@@ -597,7 +597,7 @@ anchor_bottom = 1.6220001
 offset_left = 36.0
 offset_right = 132.0
 offset_bottom = 37.0
-text = "NO
+text = "YES
 Press left mouse"
 label_settings = SubResource("LabelSettings_45ngr")
 horizontal_alignment = 1
@@ -612,7 +612,7 @@ anchor_bottom = 1.6220001
 offset_left = -122.0
 offset_right = -46.0
 offset_bottom = 37.0
-text = "YES
+text = "NO
 Press Escape"
 label_settings = SubResource("LabelSettings_45ngr")
 horizontal_alignment = 1
