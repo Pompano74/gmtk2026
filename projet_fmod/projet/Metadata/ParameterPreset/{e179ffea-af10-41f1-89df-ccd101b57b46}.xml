@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{e179ffea-af10-41f1-89df-ccd101b57b46}">
+		<property name="name">
+			<value>horse</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9135df2c-820c-4c26-af60-97ad8697ec33}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{58304274-3801-4204-a3a8-6b91220029dc}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{58304274-3801-4204-a3a8-6b91220029dc}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>move</value>
+			<value>place bomb</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

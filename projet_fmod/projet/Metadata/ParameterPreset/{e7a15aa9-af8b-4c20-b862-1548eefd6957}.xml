@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="ParameterPreset" id="{e7a15aa9-af8b-4c20-b862-1548eefd6957}">
 		<property name="name">
-			<value>Parameter 1</value>
+			<value>glitch tile</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9135df2c-820c-4c26-af60-97ad8697ec33}</destination>
@@ -16,18 +16,14 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>3</value>
+			<value>2</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>confirm</value>
-			<value>up</value>
-			<value>down</value>
-		</property>
-		<property name="isGlobal">
-			<value>true</value>
+			<value>off</value>
+			<value>on</value>
 		</property>
 		<property name="initialValue">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<property name="isExposedRecursively">
 			<value>false</value>
