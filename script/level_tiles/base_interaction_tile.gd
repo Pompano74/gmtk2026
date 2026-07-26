@@ -43,5 +43,11 @@ func on_tile_interacted() -> void:
 		can_enemy_interact_by_landing_on_tile = false
 		coord_tracker.pop_from_pathfinding_array()
 		
+		if is_in_group("track_off_screen"):
+			var tilemap: LevelTileMap = get_parent() as LevelTileMap
+			if tilemap:
+				tilemap.off_screen_indicators.erase(self)
+				tilemap.tracked_objects.erase(self)
+		
 		await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 		queue_free()
