@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="6_nbgwq"]
 [ext_resource type="PackedScene" uid="uid://bba0t1vpp2sy0" path="res://scenes/level_tiles/BoostTile.tscn" id="6_xcpob"]
 [ext_resource type="PackedScene" uid="uid://bliya3rmnd6ri" path="res://scenes/level_tiles/target_tile.tscn" id="7_nbgwq"]
+[ext_resource type="PackedScene" uid="uid://pyvnuqn7ve7x" path="res://scenes/Particles/perfect_particle.tscn" id="8_pdf35"]
 
 [node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_3c4ys")]
 
@@ -55,6 +56,10 @@ position = Vector2(16, 208)
 [node name="glitch_tile2" parent="TileMapLayer" index="11" unique_id=83175544 instance=ExtResource("4_nbgwq")]
 position = Vector2(80, 144)
 
+[node name="count_plus7" parent="TileMapLayer" index="12" unique_id=1825434661 instance=ExtResource("3_xcpob")]
+position = Vector2(-48, 48)
+plus_value = 4
+
 [node name="BaseInteractionTile2" parent="." index="4" unique_id=1721192903 instance=ExtResource("6_xcpob")]
 position = Vector2(-80, 48)
 
@@ -69,3 +74,6 @@ position = Vector2(16, 16)
 
 [node name="TargetTile" parent="." index="8" unique_id=1079493711 instance=ExtResource("7_nbgwq")]
 position = Vector2(112, 16)
+
+[node name="missParticle" parent="." index="9" unique_id=403171505 instance=ExtResource("8_pdf35")]
+position = Vector2(16, 16)

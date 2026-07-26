@@ -6,6 +6,7 @@ class_name PlayerCharacter
 const tile_size: Vector2 = Vector2(32, 32)
 const MISS_PARTICLE_SCENE = preload("res://scenes/Particles/miss_particle.tscn")
 const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
+const PERFECT_PARTICLE_SCENE = preload("res://scenes/Particles/perfect_particle.tscn")
 
 
 @onready var coord_tracker: GridCoordTracker = $GridCoordTracker
@@ -17,6 +18,7 @@ const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 @onready var player_ui: Control = $AnimatedSprite2D/Camera2D/player_ui
 var player_sprite_node_pos_tween: Tween
 
+var camera_rect_global_pos : Rect2
 
 #sounds
 @export var player_action: FmodEventEmitter2D
@@ -65,6 +67,14 @@ func _ready() -> void:
 func on_beat_called() -> void:
 	if TempoGlobal.beat_streak == 15:
 		Input.start_joy_vibration(0,0,1,buffer_value)
+		var perfect_particle: = PERFECT_PARTICLE_SCENE.instantiate()
+		add_child(perfect_particle)
+		var perfect_particle_node: CPUParticles2D = perfect_particle.get_child(0)
+		await get_tree().create_timer(1.95).timeout
+		perfect_particle.queue_free()
+		perfect_particle_node.queue_free()
+	elif TempoGlobal.beat_streak > 15:
+		pass
 	else:
 		Input.start_joy_vibration(0,0.25,0,buffer_value)
 	
@@ -119,6 +129,9 @@ func _physics_process(delta: float) -> void:
 	if action_check == true and beat_timer >= buffer_max and beat_timer <= buffer_min:
 		action_check = false
 		#print(beat_timer)
+
+func _process(delta: float) -> void:
+	camera_rect_global_pos = Rect2(global_position, Vector2(285.0, 167.0))
 
 func _input(event: InputEvent) -> void:
 	

@@ -19,7 +19,7 @@ var beat_int_loop: int = 0
 @onready var ui_pausing: AnimatedSprite2D = $UI_Pausing
 @onready var ui_exist_button: AnimatedSprite2D = $UI_Exist_Button
 
-@onready var are_you_sure_2: Node2D = $AreYouSure2
+@onready var are_you_sure_2: Node2D = $ExitMenu
 
 
 
@@ -31,6 +31,7 @@ func _ready() -> void:
 	target_count.text = str(TempoGlobal.current_target) + "/" + str(TempoGlobal.total_target)
 	beats.frame = 0
 	ui_exist_button.stop()
+	are_you_sure_2.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

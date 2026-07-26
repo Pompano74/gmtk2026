@@ -50,6 +50,7 @@ PlayerBullet=""
 TargetTile=""
 destruct_wall=""
 target_objectif=""
+track_off_screen=""
 
 [input]
 
