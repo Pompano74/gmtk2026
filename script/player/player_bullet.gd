@@ -47,8 +47,9 @@ func on_beat_called():
 		else:
 			pass
 	
-	_move(dir)
 	bullet_sound.play()
+	_move(dir)
+	
 		
 
 func _move(bullet_dir: Vector2):
