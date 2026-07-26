@@ -155,13 +155,18 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("29_mxajy")
-}, {
-"duration": 1.0,
 "texture": ExtResource("30_cbyn0")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_mxajy")
+}],
+"loop": 0,
+"name": &"Up",
 "speed": 5.0
 }]
 
@@ -169,13 +174,18 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("31_hpt0l")
-}, {
-"duration": 1.0,
 "texture": ExtResource("32_n2era")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_hpt0l")
+}],
+"loop": 0,
+"name": &"Up",
 "speed": 5.0
 }]
 
@@ -183,13 +193,18 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_cly0r")
-}, {
-"duration": 1.0,
 "texture": ExtResource("34_kbkmt")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_cly0r")
+}],
+"loop": 0,
+"name": &"Up",
 "speed": 5.0
 }]
 
@@ -197,13 +212,18 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("35_6fvk5")
-}, {
-"duration": 1.0,
 "texture": ExtResource("36_1h0yj")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_6fvk5")
+}],
+"loop": 0,
+"name": &"Up",
 "speed": 5.0
 }]
 
@@ -211,13 +231,18 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("37_w55d3")
-}, {
-"duration": 1.0,
 "texture": ExtResource("38_c0rfb")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_w55d3")
+}],
+"loop": 0,
+"name": &"Up",
 "speed": 5.0
 }]
 
@@ -225,13 +250,18 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("39_eb26a")
-}, {
-"duration": 1.0,
 "texture": ExtResource("40_frsas")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_eb26a")
+}],
+"loop": 0,
+"name": &"Up",
 "speed": 5.0
 }]
 
@@ -239,13 +269,18 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_jjtdx")
-}, {
-"duration": 1.0,
 "texture": ExtResource("42_65a06")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_jjtdx")
+}],
+"loop": 0,
+"name": &"Up",
 "speed": 5.0
 }]
 
@@ -253,27 +288,40 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("43_gn0xx")
-}, {
-"duration": 1.0,
 "texture": ExtResource("44_1cpv3")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_gn0xx")
+}],
+"loop": 0,
+"name": &"Up",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45ngr"]
+size = Vector2(146.66666, 93.33333)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1fw64"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("45_6bufg")
-}, {
-"duration": 1.0,
 "texture": ExtResource("46_f0qk1")
 }],
-"loop": 1,
-"name": &"default",
+"loop": 0,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_6bufg")
+}],
+"loop": 0,
+"name": &"Up",
 "speed": 5.0
 }]
 
@@ -339,52 +387,78 @@ frame = 1
 
 [node name="WASD_Keys" type="Node2D" parent="." unique_id=1544788014]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=1164414413]
+[node name="w" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=1164414413]
 position = Vector2(-189.3, 84.3)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_ov0la")
+animation = &"Down"
+autoplay = "Up"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=391724035]
+[node name="A" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=391724035]
 position = Vector2(-222.335, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_fguc3")
+animation = &"Down"
+autoplay = "Up"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=1535326835]
+[node name="S" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=1535326835]
 position = Vector2(-189.3, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_iadmu")
+animation = &"Down"
+autoplay = "Up"
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=2010697494]
+[node name="D" type="AnimatedSprite2D" parent="WASD_Keys" unique_id=2010697494]
 position = Vector2(-156.305, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_fc23l")
+animation = &"Down"
+autoplay = "Up"
 
 [node name="ARROWS_Keys" type="Node2D" parent="." unique_id=78642432]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=1587747614]
+[node name="ArrowUp" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=1587747614]
 position = Vector2(188.1, 84.3)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_jgoia")
+animation = &"Down"
+autoplay = "Up"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=2046886079]
+[node name="ArrowLeft" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=2046886079]
 position = Vector2(155.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_q88i0")
+animation = &"Down"
+autoplay = "Up"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=922251081]
+[node name="ArrowDown" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=922251081]
 position = Vector2(188.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_qgql8")
+animation = &"Down"
+autoplay = "Up"
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=1093121466]
+[node name="ArrowRight" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=1093121466]
 position = Vector2(221.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_ojjf3")
+animation = &"Down"
+autoplay = "Up"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1043514306]
+position = Vector2(-207.25, 34.8)
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=861857970]
+position = Vector2(18.75, 2.0000038)
+shape = SubResource("RectangleShape2D_45ngr")
 
 [node name="UI_Pausing" type="AnimatedSprite2D" parent="." unique_id=134335259]
 position = Vector2(88.2, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_1fw64")
+animation = &"Up"
+autoplay = "Up"
 
 [node name="UI_Exist_Button" type="AnimatedSprite2D" parent="." unique_id=547134085]
 position = Vector2(-207.25, 34.8)

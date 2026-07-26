@@ -1257,3 +1257,60 @@ position = Vector2(176, 400)
 
 [node name="level_12" parent="." index="17" unique_id=977137350 instance=ExtResource("3_hjxda")]
 position = Vector2(368, -16)
+
+[node name="Descructible_Wall" parent="." index="18" unique_id=1736874979 instance=ExtResource("9_5j3ex")]
+position = Vector2(80, -176)
+
+[node name="Descructible_Wall2" parent="." index="19" unique_id=1853947317 instance=ExtResource("9_5j3ex")]
+position = Vector2(176, -240)
+
+[node name="Descructible_Wall3" parent="." index="20" unique_id=1038956766 instance=ExtResource("9_5j3ex")]
+position = Vector2(16, -144)
+
+[node name="Descructible_Wall4" parent="." index="21" unique_id=1894008272 instance=ExtResource("9_5j3ex")]
+position = Vector2(48, -144)
+
+[node name="Descructible_Wall5" parent="." index="22" unique_id=2068805405 instance=ExtResource("9_5j3ex")]
+position = Vector2(-16, -144)
+
+[node name="Descructible_Wall6" parent="." index="23" unique_id=1683839553 instance=ExtResource("9_5j3ex")]
+position = Vector2(-16, -336)
+
+[node name="Descructible_Wall7" parent="." index="24" unique_id=83681013 instance=ExtResource("9_5j3ex")]
+position = Vector2(-144, -176)
+
+[node name="Descructible_Wall8" parent="." index="25" unique_id=1567650601 instance=ExtResource("9_5j3ex")]
+position = Vector2(-432, -208)
+
+[node name="Descructible_Wall9" parent="." index="26" unique_id=1713769223 instance=ExtResource("9_5j3ex")]
+position = Vector2(-464, 112)
+
+[node name="Descructible_Wall10" parent="." index="27" unique_id=1382332413 instance=ExtResource("9_5j3ex")]
+position = Vector2(-336, 112)
+
+[node name="Descructible_Wall11" parent="." index="28" unique_id=2018576068 instance=ExtResource("9_5j3ex")]
+position = Vector2(-272, 112)
+
+[node name="Descructible_Wall12" parent="." index="29" unique_id=215499554 instance=ExtResource("9_5j3ex")]
+position = Vector2(-240, 112)
+
+[node name="Descructible_Wall13" parent="." index="30" unique_id=2002919585 instance=ExtResource("9_5j3ex")]
+position = Vector2(-48, 48)
+
+[node name="Descructible_Wall14" parent="." index="31" unique_id=434434953 instance=ExtResource("9_5j3ex")]
+position = Vector2(-112, -48)
+
+[node name="Descructible_Wall15" parent="." index="32" unique_id=1159786078 instance=ExtResource("9_5j3ex")]
+position = Vector2(-80, -16)
+
+[node name="Descructible_Wall16" parent="." index="33" unique_id=762626912 instance=ExtResource("9_5j3ex")]
+position = Vector2(-112, 16)
+
+[node name="Descructible_Wall17" parent="." index="34" unique_id=1645320230 instance=ExtResource("9_5j3ex")]
+position = Vector2(-48, 16)
+
+[node name="Descructible_Wall18" parent="." index="35" unique_id=666083072 instance=ExtResource("9_5j3ex")]
+position = Vector2(-80, -48)
+
+[node name="Descructible_Wall19" parent="." index="36" unique_id=683687772 instance=ExtResource("9_5j3ex")]
+position = Vector2(-176, -48)

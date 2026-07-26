@@ -14,6 +14,7 @@ const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shadow: Sprite2D = $Sprite2D
 @onready var jump_manager: AnimationPlayer = $JumpManager
+@onready var player_ui: Control = $AnimatedSprite2D/Camera2D/player_ui
 var player_sprite_node_pos_tween: Tween
 
 
@@ -62,6 +63,11 @@ func _ready() -> void:
 	buffer_max = buffer_value
 
 func on_beat_called() -> void:
+	if TempoGlobal.beat_streak == 15:
+		Input.start_joy_vibration(0,0,1,buffer_value)
+	else:
+		Input.start_joy_vibration(0,1,0,buffer_value)
+	
 	TempoGlobal.ui.global_position = global_position
 	#should create a function to retrieve information (for instance current tile type)
 	_getSurroundTileInfo()
@@ -115,33 +121,69 @@ func _physics_process(delta: float) -> void:
 		#print(beat_timer)
 
 func _input(event: InputEvent) -> void:
+	
+	if event.is_action_released("move_up"):
+		player_ui.w.play("Up")
+	elif event.is_action_released("move_down"):
+		player_ui.s.play("Up")
+	elif event.is_action_released("move_left"):
+		player_ui.a.play("Up")
+	elif event.is_action_released("move_right"):
+		player_ui.d.play("Up")
+	
+	if event.is_action_released("shoot_up"):
+		player_ui.arrow_up.play("Up")
+	elif event.is_action_released("shoot_down"):
+		player_ui.arrow_down.play("Up")
+	elif event.is_action_released("shoot_left"):
+		player_ui.arrow_left.play("Up")
+	elif event.is_action_released("shoot_right"):
+		player_ui.arrow_right.play("Up")
+	
+	if  event.is_action_pressed("pause_game"):
+		player_ui.ui_pausing.play("Down")
+		await get_tree().create_timer(0.1).timeout
+		get_tree().change_scene_to_file(TempoGlobal.level_select_win)
+	 
+	
+	if event.is_action_released("pause_game"):
+		player_ui.ui_pausing.play("Up")
+	
 	if TempoGlobal.level_is_restarting == false and TempoGlobal.level_is_switching == false:
 		#MOVEMENT
 		if event.is_action_pressed("move_up"):
 			player_direction = $up
+			player_ui.w.play("Down")
 			_move(Vector2(0, -1))
 		elif event.is_action_pressed("move_down"):
 			player_direction = $down
+			player_ui.s.play("Down")
 			_move(Vector2(0, 1))
 		elif event.is_action_pressed("move_left"):
 			player_direction = $left
+			player_ui.a.play("Down")
 			_move(Vector2(-1, 0))
 		elif event.is_action_pressed("move_right"):
 			player_direction = $right
+			player_ui.d.play("Down")
 			_move(Vector2(1, 0))
 		
 		#SHOOT
 		if Input.is_action_just_pressed("shoot_up"):
 			player_direction = $right
+			player_ui.arrow_up.play("Down")
 			_shoot(Vector2(0, -1))
 		if Input.is_action_just_pressed("shoot_down"):
 			player_direction = $right
+			player_ui.arrow_down.play("Down")
 			_shoot(Vector2(0, 1))
 		if Input.is_action_just_pressed("shoot_left"):
 			player_direction = $right
+			player_ui.arrow_left.play("Down")
 			_shoot(Vector2(-1, 0))
 		if Input.is_action_just_pressed("shoot_right"):
 			player_direction = $right
+			player_ui.arrow_right.play("Down")
 			_shoot(Vector2(1, 0))
 
 func _move(dir: Vector2):
