@@ -141,6 +141,7 @@ func on_beat_called() -> void:
 			player_sprite.play("(2)Beat4-1")
 	elif (countdown_value <= 0):
 		player_sprite.play("Death")
+		position = position + Vector2(0, 8)
 
 
 func _physics_process(delta: float) -> void:
