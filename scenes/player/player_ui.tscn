@@ -457,6 +457,7 @@ font_size = 12
 [sub_resource type="DrawableTexture2D" id="DrawableTexture2D_c0w0k"]
 
 [node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right")]
+visible = false
 z_index = 50
 layout_mode = 3
 anchors_preset = 0
@@ -581,6 +582,7 @@ vertical_alignment = 1
 [node name="SubViewport" type="SubViewport" parent="." unique_id=664170902]
 
 [node name="ExitMenu" type="Node2D" parent="." unique_id=795371408]
+visible = false
 
 [node name="ExitingGameBackground" type="Sprite2D" parent="ExitMenu" unique_id=222550993]
 z_index = 5
