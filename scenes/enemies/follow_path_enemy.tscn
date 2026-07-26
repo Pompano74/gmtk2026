@@ -5,4 +5,7 @@
 
 [node name="FollowPathEnemy" unique_id=1418937433 instance=ExtResource("1_ahkh6")]
 script = ExtResource("2_deo32")
+path = Array[Vector2i]([])
+path_increment = 1
+beats_to_wait_at_end = 0
 invincible = true

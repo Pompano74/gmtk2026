@@ -55,11 +55,8 @@ func on_beat_called():
 		
 
 func _move(bullet_dir: Vector2):
-	if life_span == 0:
-		bullet_missed()
-	else:
-		global_position += bullet_dir * tile_size
-		life_span = life_span - 1
+	global_position += bullet_dir * tile_size
+	life_span = life_span - 1
 
 func bullet_missed():
 	print("miss")

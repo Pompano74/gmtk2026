@@ -303,9 +303,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_45ngr"]
-size = Vector2(146.66666, 93.33333)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_1fw64"]
 animations = [{
 "frames": [{
@@ -352,10 +349,15 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("54_fh566")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_45ngr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_45ngr"]
+font_size = 12
 
 [node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right")]
 z_index = 50
@@ -363,6 +365,8 @@ layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
+mouse_behavior_recursive = 1
 script = ExtResource("1_m6sn8")
 beat_left = [null, null, null]
 beat_right = [null, null, null]
@@ -445,14 +449,6 @@ sprite_frames = SubResource("SpriteFrames_ojjf3")
 animation = &"Down"
 autoplay = "Up"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1043514306]
-position = Vector2(-207.25, 34.8)
-scale = Vector2(0.6, 0.6)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=861857970]
-position = Vector2(18.75, 2.0000038)
-shape = SubResource("RectangleShape2D_45ngr")
-
 [node name="UI_Pausing" type="AnimatedSprite2D" parent="." unique_id=134335259]
 position = Vector2(88.2, 121.5)
 scale = Vector2(0.6, 0.6)
@@ -487,3 +483,51 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=664170902]
+
+[node name="ExitMenu" type="Node2D" parent="." unique_id=795371408]
+visible = false
+
+[node name="AreYouSure" type="Sprite2D" parent="ExitMenu" unique_id=537291618]
+modulate = Color(0, 0, 0, 0.6862745)
+position = Vector2(0.50000376, -12.999999)
+scale = Vector2(3.0156248, 1.578125)
+texture = SubResource("DrawableTexture2D_45ngr")
+
+[node name="Label" type="Label" parent="ExitMenu" unique_id=1619208399]
+offset_left = -118.0
+offset_top = -60.0
+offset_right = 118.0
+offset_bottom = -23.0
+text = "Are you sure you
+ want to quit?"
+label_settings = SubResource("LabelSettings_45ngr")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ExitMenu" unique_id=1170422307]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.6220001
+anchor_right = 0.5
+anchor_bottom = 1.6220001
+offset_top = -2.0
+offset_right = 96.0
+offset_bottom = 35.0
+text = "NO
+Press left mouse"
+label_settings = SubResource("LabelSettings_45ngr")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ExitMenu" unique_id=1394174265]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.6220001
+anchor_right = 0.5
+anchor_bottom = 1.6220001
+offset_left = -86.0
+offset_top = -3.0
+offset_right = -10.0
+offset_bottom = 34.0
+text = "YES
+Press Escape"
+label_settings = SubResource("LabelSettings_45ngr")
+horizontal_alignment = 1
