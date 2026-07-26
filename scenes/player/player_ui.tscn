@@ -36,15 +36,21 @@
 [ext_resource type="Texture2D" uid="uid://cvbfsl1km5agh" path="res://assets/sprites/ui_Sprites/Keys/S_key2.png" id="34_kbkmt"]
 [ext_resource type="Texture2D" uid="uid://bxx7aqygtuvoq" path="res://assets/sprites/ui_Sprites/Keys/D_key1.png" id="35_6fvk5"]
 [ext_resource type="Texture2D" uid="uid://be23i7nelbown" path="res://assets/sprites/ui_Sprites/Keys/D_key2.png" id="36_1h0yj"]
+[ext_resource type="Texture2D" uid="uid://djei5e8hqedtf" path="res://assets/sprites_only_final/UI_Keys/I_key_2.png" id="37_hpt0l"]
 [ext_resource type="Texture2D" uid="uid://8a1mygr64ua0" path="res://assets/sprites/ui_Sprites/Keys/Up_key1.png" id="37_w55d3"]
 [ext_resource type="Texture2D" uid="uid://bfqu3g47rth07" path="res://assets/sprites/ui_Sprites/Keys/Up_key2.png" id="38_c0rfb"]
+[ext_resource type="Texture2D" uid="uid://cd5pu8ti35yne" path="res://assets/sprites_only_final/UI_Keys/I_key_1.png" id="38_n2era"]
 [ext_resource type="Texture2D" uid="uid://dcd34hli4pvgf" path="res://assets/sprites/ui_Sprites/Keys/Left_key1.png" id="39_eb26a"]
 [ext_resource type="Texture2D" uid="uid://ba8rleqgviwrb" path="res://assets/sprites/ui_Sprites/Keys/Left_key2.png" id="40_frsas"]
+[ext_resource type="Texture2D" uid="uid://bbndxm28s02ew" path="res://assets/sprites_only_final/UI_Keys/J_key_2.png" id="41_6fvk5"]
 [ext_resource type="Texture2D" uid="uid://fjx7qfuq33v" path="res://assets/sprites/ui_Sprites/Keys/Down_key1.png" id="41_jjtdx"]
+[ext_resource type="Texture2D" uid="uid://bby5kw65f1svc" path="res://assets/sprites_only_final/UI_Keys/J_key_1.png" id="42_1h0yj"]
 [ext_resource type="Texture2D" uid="uid://cpx38dbwvem5d" path="res://assets/sprites/ui_Sprites/Keys/Down_key2.png" id="42_65a06"]
 [ext_resource type="Texture2D" uid="uid://ov7u68234luh" path="res://assets/sprites/ui_Sprites/Keys/Right_key1.png" id="43_gn0xx"]
 [ext_resource type="Texture2D" uid="uid://b5sp4x13yoxby" path="res://assets/sprites/ui_Sprites/Keys/Right_key2.png" id="44_1cpv3"]
 [ext_resource type="Texture2D" uid="uid://cu6u3tg1ujqk4" path="res://assets/sprites/ui_Sprites/Pausing_Bar/Pausing_Anim1.png" id="45_6bufg"]
+[ext_resource type="Texture2D" uid="uid://cckf0ndi07t74" path="res://assets/sprites_only_final/UI_Keys/K_key_2.png" id="45_w55d3"]
+[ext_resource type="Texture2D" uid="uid://dbuu04ay5eo3q" path="res://assets/sprites_only_final/UI_Keys/K_key_1.png" id="46_c0rfb"]
 [ext_resource type="Texture2D" uid="uid://boywogtme3jdq" path="res://assets/sprites/ui_Sprites/Pausing_Bar/Pausing_Anim2.png" id="46_f0qk1"]
 [ext_resource type="Texture2D" uid="uid://dvfbslxgm7lh5" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim1.png" id="47_yfxy6"]
 [ext_resource type="Texture2D" uid="uid://da4be83733y5k" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim2.png" id="48_g5kmk"]
@@ -232,6 +238,22 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("37_hpt0l")
+}],
+"loop": 0,
+"name": &"(IJKL)Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_n2era")
+}],
+"loop": 0,
+"name": &"(IJKL)Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("38_c0rfb")
 }],
 "loop": 0,
@@ -249,6 +271,22 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q88i0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_6fvk5")
+}],
+"loop": 0,
+"name": &"(IJKL)Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_1h0yj")
+}],
+"loop": 0,
+"name": &"(IJKL)Up",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("40_frsas")
@@ -270,6 +308,22 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("45_w55d3")
+}],
+"loop": 0,
+"name": &"(IJKL)Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_c0rfb")
+}],
+"loop": 0,
+"name": &"(IJKL)Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("42_65a06")
 }],
 "loop": 0,
@@ -287,6 +341,22 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ojjf3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_w55d3")
+}],
+"loop": 0,
+"name": &"(IJKL)Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_c0rfb")
+}],
+"loop": 0,
+"name": &"(IJKL)Up",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("44_1cpv3")
@@ -426,28 +496,28 @@ autoplay = "Up"
 position = Vector2(188.1, 84.3)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_jgoia")
-animation = &"Down"
+animation = &"(IJKL)Down"
 autoplay = "Up"
 
 [node name="ArrowLeft" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=2046886079]
 position = Vector2(155.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_q88i0")
-animation = &"Down"
+animation = &"(IJKL)Up"
 autoplay = "Up"
 
 [node name="ArrowDown" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=922251081]
 position = Vector2(188.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_qgql8")
-animation = &"Down"
+animation = &"(IJKL)Down"
 autoplay = "Up"
 
 [node name="ArrowRight" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=1093121466]
 position = Vector2(221.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_ojjf3")
-animation = &"Down"
+animation = &"(IJKL)Down"
 autoplay = "Up"
 
 [node name="UI_Pausing" type="AnimatedSprite2D" parent="." unique_id=134335259]
@@ -486,6 +556,7 @@ vertical_alignment = 1
 [node name="SubViewport" type="SubViewport" parent="." unique_id=664170902]
 
 [node name="ExitMenu" type="Node2D" parent="." unique_id=795371408]
+visible = false
 
 [node name="ExitingGameBackground" type="Sprite2D" parent="ExitMenu" unique_id=222550993]
 z_index = 5
