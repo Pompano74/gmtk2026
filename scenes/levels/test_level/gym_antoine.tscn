@@ -75,11 +75,11 @@ position = Vector2(-48, 112)
 position = Vector2(-80, 144)
 
 [node name="Player" parent="TileMapLayer" index="16" unique_id=1805821953 instance=ExtResource("5_hxukd")]
-position = Vector2(16, 144)
+position = Vector2(144, 208)
 
-[node name="FollowPathEnemy" parent="TileMapLayer" index="17" unique_id=1827378644 instance=ExtResource("9_241y1")]
+[node name="FollowPathEnemy" parent="TileMapLayer" index="17" unique_id=1827378644 groups=["track_off_screen"] instance=ExtResource("9_241y1")]
 position = Vector2(16, 16)
-path = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(-1, 1), Vector2i(-1, 2), Vector2i(-1, 3)])
+path = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(-1, 1)])
 path_increment = 0
 beats_to_wait_at_end = 3
 dir = true
