@@ -137,6 +137,9 @@ func _on_combo_timer_timeout() -> void:
 #win and loose call (called in _beat() when reach 0 of coutdown or current target
 func level_win():
 	if level_is_switching == false:
+		other_transition.visible = true
+		black_transition.visible = true
+		other_transition.play("changing_scene")
 		level_is_switching = true
 		timer.stop()
 		ui.visible = true
@@ -146,6 +149,8 @@ func level_win():
 
 func level_failed():
 	if level_is_restarting == false:
+		other_transition.visible = true
+		other_transition.play("player_death")
 		timer.stop()
 		level_is_restarting = true
 		can_beat = false

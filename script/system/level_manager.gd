@@ -17,7 +17,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	
+	TempoGlobal.other_transition.play("player_start")
 	print("AAAAAAAAA", TempoGlobal.game_progress)
 	TempoGlobal.int_level = int_level
 	print("AAAAAAAAA", TempoGlobal.int_level)
