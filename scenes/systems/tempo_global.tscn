@@ -124,6 +124,7 @@ offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cn63s")
 
 [node name="black_transition" type="AnimatedSprite2D" parent="Control" unique_id=397818557]
+visible = false
 position = Vector2(60.000023, -4)
 scale = Vector2(0.92913383, 0.7483871)
 sprite_frames = SubResource("SpriteFrames_cn63s")
@@ -137,6 +138,7 @@ texture = ExtResource("7_opx1p")
 
 [node name="other_animation" type="AnimatedSprite2D" parent="Control" unique_id=1196153272]
 visible = false
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_gbdb2")
 animation = &"player_start"
 
