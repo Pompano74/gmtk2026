@@ -14,8 +14,9 @@ var target: Vector2
 
 # Called when the node enters the scene tree for the first time. 
 func _ready() -> void:
-	TempoGlobal.beat_signal.connect(_on_beat)
 	
+	coord_tracker.is_blocking_pathfinding = true
+	TempoGlobal.beat_signal.connect(_on_beat)
 	await get_tree().create_timer(0.1).timeout
 	if boost_pad_checked == false:
 		boost_pad_checked = true 

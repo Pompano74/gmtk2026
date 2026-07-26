@@ -3,6 +3,7 @@ class_name BaseEnemy
 
 @export var tilemap: LevelTileMap
 @onready var coord_tracker: GridCoordTracker = $GridCoordTracker
+var initial_coord : Vector2i
 
 @export var health: int = 1:
 	set(new_health):
@@ -27,6 +28,7 @@ func _ready() -> void:
 	TempoGlobal.player_skipped_beat.connect(on_player_skipped_beat)
 	timer = TempoGlobal.timer
 	coord_tracker.is_blocking_pathfinding = false
+	initial_coord = coord_tracker.grid_coord
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	var player = body as PlayerCharacter
