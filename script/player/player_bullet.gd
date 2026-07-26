@@ -7,6 +7,8 @@ var dir: Vector2
 var life_span: int = 5
 var on_twos: bool = true
 
+var near_wall: bool
+
 
 #bullet direction check next tile
 @onready var up: RayCast2D = $up
@@ -40,12 +42,7 @@ func on_beat_called():
 	
 	#check if bullet it wall
 	if dir != null and ray_dir != null:
-		if ray_dir.is_colliding() and ray_dir.get_collider().name == "Area2D":
-			#mettre comportement dans la tuile
-			#call function of comportement dans la tuile, ICI
-			print("bonjour")
-		elif ray_dir.is_colliding() and ray_dir.get_collider().name != "Area2D":
-			#hit wall
+		if ray_dir.is_colliding() and ray_dir.get_collider().name != "Area2D":
 			bullet_death()
 		else:
 			pass
@@ -55,39 +52,44 @@ func on_beat_called():
 		
 
 func _move(bullet_dir: Vector2):
-	global_position += bullet_dir * tile_size
-	life_span = life_span - 1
+	if near_wall == false:
+		global_position += bullet_dir * tile_size
+		life_span = life_span - 1
+	else:
+		pass
 
 func bullet_missed():
-	print("miss")
 	
 	#behavior
-	$Sprite2D.visible = false
 	$Area2D.set_collision_layer_value(2, false)
 	$Area2D.set_collision_mask_value(2, false)
 	
 	#destoyed after one beat
-	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
+	await TempoGlobal.timer.timeout
+	near_wall = true
 	queue_free()
 
 func bullet_death():
+	
+	animated_sprite_2d.frame = 2
 	print("death")
 	
 	#behavior
-	$Sprite2D.visible = false
 	$Area2D.set_collision_layer_value(2, false)
 	$Area2D.set_collision_mask_value(2, false)
 	#destoyed after one beat
-	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
+	await TempoGlobal.timer.timeout
+	near_wall = true
 	queue_free()
 
 func bullet_hit():
+	animated_sprite_2d.frame = 1
 	print("hit")
 	
 	
-	$Sprite2D.visible = false
 	$Area2D.set_collision_layer_value(2, false)
 	$Area2D.set_collision_mask_value(2, false)
 	#destoyed after one beat
-	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
+	await TempoGlobal.timer.timeout
+	near_wall = true
 	queue_free()

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bfn6jfulmp2e7"]
 
 [ext_resource type="Script" uid="uid://co8m0iml26y32" path="res://script/player/player_bullet.gd" id="1_2kcj1"]
-[ext_resource type="Texture2D" uid="uid://yg22u44vv4hg" path="res://assets/placeholders/icon_red.svg" id="1_altju"]
 [ext_resource type="Texture2D" uid="uid://dg85cn4iwk5sb" path="res://assets/sprites_only_final/Player/Player_Shoot_Down_Dir.png" id="2_nv0me"]
 [ext_resource type="Texture2D" uid="uid://dlhtruq8fx5rp" path="res://assets/sprites_only_final/Player/Player_Shoot_Left_Dir.png" id="3_mmhpf"]
+[ext_resource type="Texture2D" uid="uid://cw4he10vbv4ls" path="res://assets/sprites_only_final/Player/Bullet_X_Green.png" id="3_xyxnp"]
+[ext_resource type="Texture2D" uid="uid://bcdo6g2gb1bqx" path="res://assets/sprites_only_final/Player/Bullet_X_Red.png" id="4_t2tun"]
 [ext_resource type="Texture2D" uid="uid://dspb7xrljrcct" path="res://assets/sprites_only_final/Player/Player_Shoot_Right_Dir.png" id="4_xyxnp"]
 [ext_resource type="Texture2D" uid="uid://car4no6kpf0wo" path="res://assets/sprites_only_final/Player/Player_Shoot_Up_Dir.png" id="5_t2tun"]
 
@@ -12,14 +13,26 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_nv0me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xyxnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2tun")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Down",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_mmhpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xyxnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2tun")
 }],
 "loop": 1,
 "name": &"Left",
@@ -28,6 +41,12 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_xyxnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xyxnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2tun")
 }],
 "loop": 1,
 "name": &"Right",
@@ -36,6 +55,12 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_t2tun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xyxnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2tun")
 }],
 "loop": 1,
 "name": &"Up",
@@ -62,14 +87,8 @@ event_guid = "{0eb68af1-d621-4b72-841b-2a7959a8b88d}"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=454532861]
 sprite_frames = SubResource("SpriteFrames_45ngr")
-animation = &"Down"
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=366234091]
-modulate = Color(1, 0, 0, 0)
-self_modulate = Color(1, 0, 0, 1)
-texture_filter = 1
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_altju")
+animation = &"Up"
+speed_scale = 0.0
 
 [node name="up" type="RayCast2D" parent="." unique_id=1658409316]
 position = Vector2(0, -16)
