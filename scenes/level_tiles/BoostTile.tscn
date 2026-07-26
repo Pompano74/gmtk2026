@@ -41,3 +41,11 @@ target_position = Vector2(0, -15)
 collision_mask = 3
 hit_from_inside = true
 collide_with_areas = true
+
+[node name="sound" type="FmodEventEmitter2D" parent="." index="4" unique_id=1989710364]
+event_name = "event:/boost pad"
+event_guid = "{076ab4f4-e877-4369-8bf7-4168ef404ea7}"
+"fmod_parameters/boost pad/id" = -6620765746294444414
+"fmod_parameters/boost pad" = "on"
+"fmod_parameters/boost pad/labels" = PackedStringArray("off", "on")
+"fmod_parameters/boost pad/variant_type" = 4

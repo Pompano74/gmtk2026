@@ -20,11 +20,19 @@ script = ExtResource("2_2urlo")
 damage = 5
 invincible = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=754006820]
+[node name="sound" type="FmodEventEmitter2D" parent="." index="0" unique_id=819808161]
+event_name = "event:/squid"
+event_guid = "{fa3e1671-7c30-43dd-b844-83f41d293868}"
+"fmod_parameters/squid action/id" = 2556448338983296188
+"fmod_parameters/squid action" = "move"
+"fmod_parameters/squid action/labels" = PackedStringArray("move", "hit", "run away")
+"fmod_parameters/squid action/variant_type" = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=754006820]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_xlywy")
 
-[node name="Sprite2D" parent="." index="1" unique_id=1638563704]
+[node name="Sprite2D" parent="." index="2" unique_id=1638563704]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -3)

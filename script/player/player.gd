@@ -69,6 +69,9 @@ func _ready() -> void:
 	buffer_max = buffer_value
 
 func on_beat_called() -> void:
+	$player_action.set_parameter("youmissed", TempoGlobal.beat_streak / 2)
+	$player_action.set_parameter("combo chain", TempoGlobal.beat_streak)
+	
 	if TempoGlobal.beat_streak == 15:
 		Input.start_joy_vibration(0,0,1,buffer_value)
 		var perfect_particle: = PERFECT_PARTICLE_SCENE.instantiate()

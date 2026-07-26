@@ -22,11 +22,20 @@ animations = [{
 [node name="glitch_tile" unique_id=50867544 instance=ExtResource("1_4e34e")]
 script = ExtResource("2_c6fk1")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=1262022274]
+[node name="sound" type="FmodEventEmitter2D" parent="." index="0" unique_id=2020545126]
+event_name = "event:/glitch tile"
+event_guid = "{c7530ae0-526d-4f02-be06-9f08a0a3a32c}"
+volume = 8.0
+"fmod_parameters/glitch tile/id" = 6746757315327691365
+"fmod_parameters/glitch tile" = "on"
+"fmod_parameters/glitch tile/labels" = PackedStringArray("off", "on")
+"fmod_parameters/glitch tile/variant_type" = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1262022274]
 sprite_frames = SubResource("SpriteFrames_4e34e")
 animation = &"glitch animation"
 frame_progress = 0.7067425
 
-[node name="Sprite2D" parent="." index="1" unique_id=384902394]
+[node name="Sprite2D" parent="." index="2" unique_id=384902394]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)

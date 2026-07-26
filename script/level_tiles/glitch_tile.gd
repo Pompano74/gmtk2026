@@ -11,6 +11,7 @@ func _ready() -> void:
 	can_player_interact_by_shooting_tile = true
 	
 func on_player_enters_tile(player: PlayerCharacter) -> void:
+	$sound.play()
 	TempoGlobal.ui.global_position = player.global_position
 	player.set_process_input(false)
 	check = true
