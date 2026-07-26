@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://prtkvut75025" path="res://assets/sprites_only_final/Transitions/Levels_Transition_Press_Any_Key_3.png" id="12_41jpg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn63s"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.13725491, 0.28627452, 0.45882353, 1)
 corner_detail = 1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cn63s"]
@@ -141,6 +141,14 @@ visible = false
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_gbdb2")
 animation = &"player_start"
+
+[node name="blue" type="Panel" parent="Control" unique_id=730477444]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 6.0
+offset_right = 219.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cn63s")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="combo_timer" to="." method="_on_combo_timer_timeout"]

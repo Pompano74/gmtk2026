@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_mbl4m"]
 [ext_resource type="Script" uid="uid://dc0ld6cgcar0g" path="res://script/enemies/immobile_target.gd" id="2_hcv15"]
-[ext_resource type="Texture2D" uid="uid://b6c6co661g88" path="res://assets/sprites_only_final/Enemies/Enemy_LeTarget.png" id="3_hee61"]
+[ext_resource type="Texture2D" uid="uid://bx5238esmoxwd" path="res://assets/sprites_only_final/Enemies/Enemy_Death.png" id="3_hee61"]
 
 [node name="immobile_target" unique_id=50867544 groups=["target_objectif", "track_off_screen"] instance=ExtResource("1_mbl4m")]
 script = ExtResource("2_hcv15")
@@ -10,5 +10,9 @@ can_player_interact_by_landing_on_tile = true
 
 [node name="Sprite2D" parent="." index="0" unique_id=384902394]
 z_index = 49
+position = Vector2(0, 8)
 texture = ExtResource("3_hee61")
 offset = Vector2(0, -9)
+
+[node name="Area2D" parent="Sprite2D" index="0" unique_id=1261708708]
+position = Vector2(0, -8)

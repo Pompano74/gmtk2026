@@ -21,7 +21,7 @@ var beat_int_loop: int = 0
 
 @onready var are_you_sure_2: Node2D = $ExitMenu
 
-
+var switch_bool: bool = false
 
 
 func _ready() -> void:
@@ -40,9 +40,11 @@ func _process(delta: float) -> void:
 	
 	
 func on_beat_called():
+	
 	coutdown.frame = TempoGlobal.coutdown_value
 func half_called():
 	if beat_int_loop == 0:
+		
 		beat_int_loop = 1
 	elif beat_int_loop == 8:
 		beat_int_loop = 1

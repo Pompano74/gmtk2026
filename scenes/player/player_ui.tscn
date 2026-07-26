@@ -447,7 +447,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_jdxha"]
 font = ExtResource("63_w55d3")
-font_size = 13
+font_size = 14
 font_color = Color(1, 0, 0, 1)
 outline_size = 7
 
@@ -457,7 +457,6 @@ font_size = 12
 [sub_resource type="DrawableTexture2D" id="DrawableTexture2D_c0w0k"]
 
 [node name="player_ui" type="Control" unique_id=1579424744 node_paths=PackedStringArray("beat_left", "beat_right")]
-visible = false
 z_index = 50
 layout_mode = 3
 anchors_preset = 0
@@ -569,10 +568,10 @@ texture = ExtResource("56_3bco6")
 
 [node name="target_count" type="Label" parent="." unique_id=591247945]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 31.0
-offset_right = 222.0
-offset_bottom = 55.0
+offset_left = 175.0
+offset_top = 30.0
+offset_right = 223.0
+offset_bottom = 54.0
 theme_override_font_sizes/font_size = 10
 text = "10/10"
 label_settings = SubResource("LabelSettings_jdxha")

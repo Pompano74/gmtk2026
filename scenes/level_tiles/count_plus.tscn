@@ -40,9 +40,7 @@ event_name = "event:/item pickup"
 event_guid = "{59dec171-d1e4-42d9-ac02-35accdbd7526}"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=129272335]
-modulate = Color(0.968798, 1, 0.47426343, 1)
-self_modulate = Color(1, 0.77254903, 0, 1)
-scale = Vector2(0.6, 0.6)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_mxnnt")
 
 [node name="Sprite2D" parent="." index="2" unique_id=384902394]
