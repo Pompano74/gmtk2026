@@ -7,10 +7,14 @@ const tile_size: Vector2 = Vector2(32, 32)
 const MISS_PARTICLE_SCENE = preload("res://scenes/Particles/miss_particle.tscn")
 const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 
+
 @onready var coord_tracker: GridCoordTracker = $GridCoordTracker
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var camera: Camera2D = $Camera2D
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var camera: Camera2D = $AnimatedSprite2D/Camera2D
+@onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var shadow: Sprite2D = $Sprite2D
+@onready var jump_manager: AnimationPlayer = $JumpManager
+var player_sprite_node_pos_tween: Tween
 
 
 #sounds
@@ -73,32 +77,32 @@ func on_beat_called() -> void:
 	
 	if (countdown_value <= 25 and countdown_value >= 17):
 		if beat_1:
-			animated_sprite_2d.play("(1)Beat20-17")
+			player_sprite.play("(1)Beat20-17")
 		else:
-			animated_sprite_2d.play("(2)Beat20-17")
+			player_sprite.play("(2)Beat20-17")
 	elif (countdown_value <= 16 and countdown_value >= 13):
 		if beat_1:
-			animated_sprite_2d.play("(1)Beat16-13")
+			player_sprite.play("(1)Beat16-13")
 		else:
-			animated_sprite_2d.play("(2)Beat16-13")
+			player_sprite.play("(2)Beat16-13")
 	elif (countdown_value <= 12 and countdown_value >= 9):
 		if beat_1:
-			animated_sprite_2d.play("(1)Beat12-9")
+			player_sprite.play("(1)Beat12-9")
 		else:
-			animated_sprite_2d.play("(2)Beat12-9")
+			player_sprite.play("(2)Beat12-9")
 	elif (countdown_value <= 8 and countdown_value >= 5):
 		if beat_1:
-			animated_sprite_2d.play("(1)Beat8-5")
+			player_sprite.play("(1)Beat8-5")
 		else:
-			animated_sprite_2d.play("(2)Beat-8-5")
+			player_sprite.play("(2)Beat8-5")
 	elif (countdown_value <= 4 and countdown_value >= 1):
-		camera.shake(0.2, 1)
+		camera.shake(0.2, 1.5)
 		if beat_1:
-			animated_sprite_2d.play("(1)Beat4-1")
+			player_sprite.play("(1)Beat4-1")
 		else:
-			animated_sprite_2d.play("(2)Beat4-1")
+			player_sprite.play("(2)Beat4-1")
 	elif (countdown_value <= 0):
-		animated_sprite_2d.play("Death")
+		player_sprite.play("Death")
 
 
 func _physics_process(delta: float) -> void:
@@ -147,15 +151,31 @@ func _move(dir: Vector2):
 			player_action.set_parameter("player action", "move")
 			player_action.play()
 			global_position += dir * tile_size
+			player_sprite.global_position -= dir * tile_size
+			if player_sprite_node_pos_tween:
+				player_sprite_node_pos_tween.kill()
+			player_sprite_node_pos_tween = create_tween()
+			player_sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+			player_sprite_node_pos_tween.tween_property(player_sprite, "global_position", global_position + Vector2(0, -8), 0.25).set_trans(Tween.TRANS_SINE)
 			coord_tracker.update_grid_coord()
-			
+			if (dir == (Vector2(0, -1))):
+				jump_manager.play("Jump_Up")
+				print("up")
+			if (dir == (Vector2(0, 1))):
+				jump_manager.play("Jump_Up")
+				print("down")
+			if (dir == (Vector2(-1, 0))):
+				jump_manager.play("Jump_Up")
+				print("left")
+			if (dir == (Vector2(1, 0))):
+				jump_manager.play("Jump_Up")
+				print("right")
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
 			#Spawn particle when player good
 			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
-			add_child(good_particle)
+			player_sprite.add_child(good_particle)
 			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
-			
 			await get_tree().create_timer(0.95).timeout
 			good_particle.queue_free()
 			good_particle_node.queue_free()
@@ -168,7 +188,7 @@ func _move(dir: Vector2):
 			#camera.shake(0.2 , 0.5)
 			animation_player.play("flash red")
 			var miss_particle: = MISS_PARTICLE_SCENE.instantiate()
-			add_child(miss_particle)
+			player_sprite.add_child(miss_particle)
 			var miss_particle_node: CPUParticles2D = miss_particle.get_child(0)
 			await get_tree().create_timer(0.95).timeout
 			miss_particle.queue_free()
@@ -204,7 +224,7 @@ func _shoot(dir:Vector2):
 			TempoGlobal._beat_win()
 			#Spawn particle when player good
 			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
-			add_child(good_particle)
+			player_sprite.add_child(good_particle)
 			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
 			await get_tree().create_timer(0.95).timeout
 			good_particle.queue_free()
@@ -216,7 +236,7 @@ func _shoot(dir:Vector2):
 			TempoGlobal._beat_failed()
 			#Spawn particle when player misses 
 			var miss_particle: = MISS_PARTICLE_SCENE.instantiate()
-			add_child(miss_particle)
+			player_sprite.add_child(miss_particle)
 			var miss_particle_node: CPUParticles2D = miss_particle.get_child(0)
 			await get_tree().create_timer(0.95).timeout
 			miss_particle.queue_free()
