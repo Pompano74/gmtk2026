@@ -9,6 +9,9 @@ var constant_blocked_coords: Array[Vector2i]
 var enemy_path_blocked_coords: Dictionary[BaseEnemy, Vector2i]
 var enemy_path_weighted_coords: Dictionary[BaseEnemy, Vector3i]
 
+var tracked_objects: Array[Node2D]
+var off_screen_indicators: Dictionary[Node2D, Sprite2D]
+
 @export var player: PlayerCharacter
 
 
@@ -17,12 +20,26 @@ func _ready() -> void:
 	TempoGlobal.beat_win.connect(on_player_beat_win)
 	TempoGlobal.player_skipped_beat.connect(on_player_skipped_beat)
 	setup_grid()
-	#for o in dynamic_objects:
-		#if o.is_blocking_pathfinding:
-			#print(o.owner_node.name)
-			#print(o.grid_coord)
-	#print(dynamic_blocked_coords)
+	
+	for child in get_children():
+		if child.is_in_group("track_off_screen"):
+			tracked_objects.append(child)
+	for o in tracked_objects:
+		var arrow_sprite = Sprite2D.new()
+		arrow_sprite.texture = load("res://assets/sprites_only_final/Effects/Enemy_Arrow_Up.png")
+		player.camera.add_child(arrow_sprite)
+		off_screen_indicators[o] = arrow_sprite
+		arrow_sprite.hide()
 
+func _process(delta: float) -> void:
+	for o in tracked_objects:
+		var screen_rect := player.camera_rect_global_pos
+		var o_relative_to_cam := to_local(screen_rect.position)
+		if o_relative_to_cam.x > screen_rect.size.x or o_relative_to_cam.y > screen_rect.size.y:
+			var sprite := off_screen_indicators[o]
+			var padding := 20.0
+			sprite.show()
+			
 
 func on_beat_called() -> void:
 	pass
