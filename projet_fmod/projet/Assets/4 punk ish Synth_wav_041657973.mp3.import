@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://f7rdxvwuv6k7"
+path="res://.godot/imported/4 punk ish Synth_wav_041657973.mp3-aeb2b7d4cee352d575cdf26e2ae1706d.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/4 punk ish Synth_wav_041657973.mp3"
+dest_files=["res://.godot/imported/4 punk ish Synth_wav_041657973.mp3-aeb2b7d4cee352d575cdf26e2ae1706d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
