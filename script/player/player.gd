@@ -19,7 +19,7 @@ const PERFECT_PARTICLE_SCENE = preload("res://scenes/Particles/perfect_particle.
 var player_sprite_node_pos_tween: Tween
 
 var camera_rect_global_pos : Rect2
-
+var is_IJKL: bool = false
 #sounds
 @export var player_action: FmodEventEmitter2D
 
@@ -144,14 +144,39 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_released("move_right"):
 		player_ui.d.play("Up")
 	
-	if event.is_action_released("shoot_up"):
+	if (Input.is_key_pressed(KEY_I) or Input.is_key_pressed(KEY_J) or Input.is_key_pressed(KEY_K) or Input.is_key_pressed(KEY_L)):
+		is_IJKL = true
+		player_ui.arrow_up.play("(IJKL)Up")
+		player_ui.arrow_down.play("(IJKL)Up")
+		player_ui.arrow_left.play("(IJKL)Up")
+		player_ui.arrow_right.play("(IJKL)Up")
+	elif (Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_RIGHT)):
+		is_IJKL = false
 		player_ui.arrow_up.play("Up")
-	elif event.is_action_released("shoot_down"):
 		player_ui.arrow_down.play("Up")
-	elif event.is_action_released("shoot_left"):
 		player_ui.arrow_left.play("Up")
-	elif event.is_action_released("shoot_right"):
 		player_ui.arrow_right.play("Up")
+	
+	if event.is_action_released("shoot_up"):
+		if !is_IJKL:
+			player_ui.arrow_up.play("Up")
+		elif is_IJKL:
+			player_ui.arrow_up.play("(IJKL)Up")
+	elif event.is_action_released("shoot_down"):
+		if !is_IJKL:
+			player_ui.arrow_down.play("Up")
+		elif is_IJKL:
+			player_ui.arrow_down.play("(IJKL)Up")
+	elif event.is_action_released("shoot_left"):
+		if !is_IJKL:
+			player_ui.arrow_left.play("Up")
+		elif is_IJKL:
+			player_ui.arrow_left.play("(IJKL)Up")
+	elif event.is_action_released("shoot_right"):
+		if !is_IJKL:
+			player_ui.arrow_right.play("Up")
+		elif is_IJKL:
+			player_ui.arrow_right.play("(IJKL)Up")
 	
 	if  event.is_action_pressed("pause_game"):
 		player_ui.ui_pausing.play("Down")
@@ -184,19 +209,31 @@ func _input(event: InputEvent) -> void:
 		#SHOOT
 		if Input.is_action_just_pressed("shoot_up"):
 			player_direction = $right
-			player_ui.arrow_up.play("Down")
+			if !is_IJKL:
+				player_ui.arrow_up.play("Down")
+			elif is_IJKL:
+				player_ui.arrow_up.play("(IJKL)Down")
 			_shoot(Vector2(0, -1))
 		if Input.is_action_just_pressed("shoot_down"):
 			player_direction = $right
-			player_ui.arrow_down.play("Down")
+			if !is_IJKL:
+				player_ui.arrow_down.play("Down")
+			elif is_IJKL:
+				player_ui.arrow_down.play("(IJKL)Down")
 			_shoot(Vector2(0, 1))
 		if Input.is_action_just_pressed("shoot_left"):
 			player_direction = $right
-			player_ui.arrow_left.play("Down")
+			if !is_IJKL:
+				player_ui.arrow_left.play("Down")
+			elif is_IJKL:
+				player_ui.arrow_left.play("(IJKL)Down")
 			_shoot(Vector2(-1, 0))
 		if Input.is_action_just_pressed("shoot_right"):
 			player_direction = $right
-			player_ui.arrow_right.play("Down")
+			if !is_IJKL:
+				player_ui.arrow_right.play("Down")
+			elif is_IJKL:
+				player_ui.arrow_right.play("(IJKL)Down")
 			_shoot(Vector2(1, 0))
 
 func _move(dir: Vector2):
