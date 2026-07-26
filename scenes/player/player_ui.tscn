@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bigyx51eoknt4"]
 
 [ext_resource type="Script" uid="uid://dbd1omaeefwo8" path="res://script/player/player_ui.gd" id="1_m6sn8"]
-[ext_resource type="Texture2D" uid="uid://0mcq8srn1pqd" path="res://assets/sprites/ui_Sprites/UI_Indiv_Background.png" id="2_bpel8"]
+[ext_resource type="Texture2D" uid="uid://cb6j5c01m15aa" path="res://assets/sprites_only_final/UI_Screen_Templates/UI_Indiv_Background_Final.png" id="2_jjtdx"]
 [ext_resource type="Texture2D" uid="uid://dbch6pm1k5bj1" path="res://assets/sprites_only_final/UI_Stamina/Stamina_Color_Switch_1.png" id="3_w55d3"]
 [ext_resource type="Texture2D" uid="uid://bjafjv4dr54b8" path="res://assets/sprites_only_final/UI_Stamina/Stamina_Color_Switch_2.png" id="4_c0rfb"]
 [ext_resource type="Texture2D" uid="uid://ca2mepact8vkm" path="res://assets/sprites_only_final/UI_Stamina/Stamina_Color_Switch_3.png" id="5_eb26a"]
@@ -62,7 +62,9 @@
 [ext_resource type="Texture2D" uid="uid://bm3vwri2dl6p1" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim4.png" id="50_30i6o"]
 [ext_resource type="Texture2D" uid="uid://bk41qx2fbfrcj" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim5.png" id="51_4qnp6"]
 [ext_resource type="Texture2D" uid="uid://dbqrwwtw7mr67" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim6.png" id="52_emgiu"]
+[ext_resource type="Texture2D" uid="uid://dphgn03it81tw" path="res://assets/sprites_only_final/UI_Keys/L_key_1.png" id="53_gn0xx"]
 [ext_resource type="Texture2D" uid="uid://cs6ri6tralaw0" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim7.png" id="53_ojo7c"]
+[ext_resource type="Texture2D" uid="uid://djn5l53u1evih" path="res://assets/sprites_only_final/UI_Keys/L_key_2.png" id="54_1cpv3"]
 [ext_resource type="Texture2D" uid="uid://bur1hqj847kch" path="res://assets/sprites/ui_Sprites/Exit_Button/Exit_Button_Anim8.png" id="54_fh566"]
 [ext_resource type="Texture2D" uid="uid://ba6pbx6n5xbtl" path="res://assets/sprites/ui_Sprites/UI_Bits.png" id="55_t6veo"]
 [ext_resource type="Texture2D" uid="uid://csu18q6weybg" path="res://assets/sprites/ui_Sprites/UI_Skull.png" id="56_3bco6"]
@@ -361,7 +363,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("45_w55d3")
+"texture": ExtResource("53_gn0xx")
 }],
 "loop": 0,
 "name": &"(IJKL)Down",
@@ -369,7 +371,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("46_c0rfb")
+"texture": ExtResource("54_1cpv3")
 }],
 "loop": 0,
 "name": &"(IJKL)Up",
@@ -468,7 +470,7 @@ beat_right = [null, null, null]
 
 [node name="UI_Background" type="Sprite2D" parent="." unique_id=80195207]
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_bpel8")
+texture = ExtResource("2_jjtdx")
 
 [node name="coutdown" type="AnimatedSprite2D" parent="." unique_id=1666394046]
 position = Vector2(-0.6, -64.5)
@@ -539,7 +541,7 @@ autoplay = "Up"
 position = Vector2(221.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_ojjf3")
-animation = &"(IJKL)Down"
+animation = &"(IJKL)Up"
 autoplay = "Up"
 
 [node name="UI_Pausing" type="AnimatedSprite2D" parent="." unique_id=134335259]
