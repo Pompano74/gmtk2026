@@ -84,7 +84,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_7nytc")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"player_start",
 "speed": 5.0
 }]
@@ -121,6 +121,7 @@ offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cn63s")
 
 [node name="black_transition" type="AnimatedSprite2D" parent="Control" unique_id=397818557]
+visible = false
 position = Vector2(-8.000001, -4)
 scale = Vector2(0.66141725, 0.7483871)
 sprite_frames = SubResource("SpriteFrames_cn63s")
@@ -133,10 +134,9 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_cn63s")
 
 [node name="other_animation" type="AnimatedSprite2D" parent="Control" unique_id=1196153272]
+visible = false
 sprite_frames = SubResource("SpriteFrames_gbdb2")
-animation = &"changing_scene"
-frame = 1
-frame_progress = 0.24547888
+animation = &"player_start"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="combo_timer" to="." method="_on_combo_timer_timeout"]

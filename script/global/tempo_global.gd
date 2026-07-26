@@ -46,8 +46,8 @@ var can_transition: bool = false
 
 #ui transition
 @onready var ui: Control = $Control
-@onready var black_transition: AnimatedSprite2D = $black_transition
-@onready var other_animation: AnimatedSprite2D = $other_animation
+@onready var black_transition: AnimatedSprite2D = $Control/black_transition
+@onready var other_transition: AnimatedSprite2D = $Control/other_animation
 
 #===============================================================================================#
 #==========================================variable=============================================#
@@ -55,6 +55,7 @@ var can_transition: bool = false
 
 func _ready() -> void:
 	ui.visible = false
+	
 	 #set beat tempo
 	beat_inital_value = 1.0 / (bpm / 60.0)
 	beat_timer = beat_inital_value
@@ -85,6 +86,7 @@ func _beat_failed():
 	beat_failed.emit()
 
 func _beat():
+	
 	print("BEAT:", beat_streak)
 	#win loose condition
 	if total_target != 0:
