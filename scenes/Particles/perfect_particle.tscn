@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://pyvnuqn7ve7x"]
+
+[ext_resource type="Texture2D" uid="uid://dcm8004ky3tqm" path="res://assets/sprites_only_final/Player/Player_Hover_Perfect.png" id="1_qrgia"]
+
+[sub_resource type="GDScript" id="GDScript_qrgia"]
+script/source = "extends Node2D
+@onready var cpu_particles_2d_2: CPUParticles2D = $CPUParticles2D2
+"
+
+[sub_resource type="Curve" id="Curve_s3j8a"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 7.6923065), 0.0, 0.0, 0, 0, Vector2(0.16976127, -12.820526), 0.0, 0.0, 0, 0, Vector2(0.5013262, -200), 70.13958, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_j6ek3"]
+_data = [Vector2(0, 0.49358976), 0.0, 0.0, 0, 0, Vector2(0.111405835, 1), 0.0, 0.0, 0, 0, Vector2(0.17241378, 0.8666667), 0.0, 0.0, 0, 0, Vector2(0.2281167, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_mg06b"]
+offsets = PackedFloat32Array(0.6780627, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="missParticle" type="Node2D" unique_id=403171505]
+script = SubResource("GDScript_qrgia")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=170696556]
+z_index = 155
+position = Vector2(0, -16)
+amount = 1
+texture = ExtResource("1_qrgia")
+lifetime = 2.0
+local_coords = true
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -150)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+linear_accel_min = 5.0
+linear_accel_max = 10.0
+linear_accel_curve = SubResource("Curve_s3j8a")
+radial_accel_min = -8.21
+radial_accel_max = 8.21
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_j6ek3")
+color_ramp = SubResource("Gradient_mg06b")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1671222731]
+position = Vector2(0, -16)
+amount = 64
+lifetime = 2.0
+explosiveness = 1.0
+use_fixed_seed = true
+seed = 102890095
+spread = 180.0
+gravity = Vector2(0, -300)
+initial_velocity_min = 80.0
+initial_velocity_max = 90.0
+linear_accel_min = 40.05
+linear_accel_max = 60.25
+linear_accel_curve = SubResource("Curve_s3j8a")
+radial_accel_min = -0.5
+radial_accel_max = 1.7
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_j6ek3")
