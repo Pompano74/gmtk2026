@@ -397,7 +397,23 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_dovo2")
 bullet_scene = ExtResource("4_lvxji")
-player_action = NodePath("")
+player_action = NodePath("player_action")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1726852015]
+bank_paths = ["res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
+
+[node name="player_action" type="FmodEventEmitter2D" parent="." unique_id=1846804193]
+event_name = "event:/player action"
+event_guid = "{2584fcb6-bc8d-4183-b8d0-992cd0bbab48}"
+fmod_parameters/YOUMISSED/id = 1639130881498081622
+fmod_parameters/YOUMISSED = 0
+fmod_parameters/YOUMISSED/variant_type = 2
+"fmod_parameters/player action/id" = 3026149045964357792
+"fmod_parameters/player action" = "move"
+"fmod_parameters/player action/labels" = PackedStringArray("move", "shoot", "miss", "pickup item")
+"fmod_parameters/player action/variant_type" = 4
+
+[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1689439561]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=885346133]
 modulate = Color(0.5686275, 0.5686275, 0.5686275, 0)

@@ -312,7 +312,6 @@ func _shoot(dir:Vector2):
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
-			_shoot(dir)
 			var bullet = bullet_scene.instantiate()
 			bullet.dir = dir
 			bullet.ray_dir = player_direction
@@ -322,26 +321,22 @@ func _shoot(dir:Vector2):
 				bullet.animated_sprite_2d.frame = 2
 			#bullet sprite animation direction
 			if (dir == (Vector2(0, -1))):
-				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
-				bullet_sprite.play("Up")
+				bullet.animated_sprite_2d.play("Up")
 				if player_direction.is_colliding():
 					bullet.animated_sprite_2d.frame = 2
 					bullet.near_wall = true
 			if (dir == (Vector2(0, 1))):
-				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
-				bullet_sprite.play("Down")
+				bullet.animated_sprite_2d.play("Up")
 				if player_direction.is_colliding():
 					bullet.animated_sprite_2d.frame = 2
 					bullet.near_wall = true
 			if (dir == (Vector2(-1, 0))):
-				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
-				bullet_sprite.play("Left")
+				bullet.animated_sprite_2d.play("Up")
 				if player_direction.is_colliding():
 					bullet.animated_sprite_2d.frame = 2
 					bullet.near_wall = true
 			if (dir == (Vector2(1, 0))):
-				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
-				bullet_sprite.play("Right")
+				bullet.animated_sprite_2d.play("Up")
 				if player_direction.is_colliding():
 					bullet.animated_sprite_2d.frame = 2
 					bullet.near_wall = true
