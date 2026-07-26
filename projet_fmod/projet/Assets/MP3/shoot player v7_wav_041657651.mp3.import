@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hwgstktvw7qo"
+path="res://.godot/imported/shoot player v7_wav_041657651.mp3-f4ca6c71a3bc38db111b06a9347ce85e.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/shoot player v7_wav_041657651.mp3"
+dest_files=["res://.godot/imported/shoot player v7_wav_041657651.mp3-f4ca6c71a3bc38db111b06a9347ce85e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

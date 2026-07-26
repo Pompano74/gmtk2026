@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpu5wkeskm82v"
+path="res://.godot/imported/bullet move 5_wav_041657841.mp3-f9f42d16ab2735f5cd4e64a8ae48895b.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/bullet move 5_wav_041657841.mp3"
+dest_files=["res://.godot/imported/bullet move 5_wav_041657841.mp3-f9f42d16ab2735f5cd4e64a8ae48895b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

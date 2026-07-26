@@ -15,10 +15,14 @@ General/banks_path="res://assets/FMOD/banks/Desktop"
 
 [application]
 
-config/name="gmtk2026"
+config/name="ram cram"
 run/main_scene="uid://526xe3dcimrs"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://assets/placeholders/icon_blue.svg"
+run/max_fps=165
+run/load_shell_environment=true
+boot_splash/bg_color=Color(0.0142752165, 0.014275218, 0.014275218, 1)
+boot_splash/image="uid://c2hegs5pq1f31"
+config/icon="uid://c2hegs5pq1f31"
 
 [autoload]
 
@@ -43,6 +47,11 @@ folder_colors={
 "res://script/": "green",
 "res://scripts/": "green"
 }
+
+[filesystem]
+
+import/fbx2gltf/enabled.web=true
+import/blender/enabled.web=true
 
 [global_group]
 

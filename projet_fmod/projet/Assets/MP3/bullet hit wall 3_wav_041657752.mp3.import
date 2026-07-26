@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfqd1c2jc28lq"
+path="res://.godot/imported/bullet hit wall 3_wav_041657752.mp3-9110d77cd809b0484b830ab310a884e5.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/bullet hit wall 3_wav_041657752.mp3"
+dest_files=["res://.godot/imported/bullet hit wall 3_wav_041657752.mp3-9110d77cd809b0484b830ab310a884e5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
