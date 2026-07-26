@@ -397,10 +397,7 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_dovo2")
 bullet_scene = ExtResource("4_lvxji")
-player_action = NodePath("player_action")
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1707515665]
-bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
+player_action = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=885346133]
 modulate = Color(0.5686275, 0.5686275, 0.5686275, 0)
@@ -450,20 +447,6 @@ position = Vector2(16, 0)
 rotation = -4.712389
 target_position = Vector2(0, -16)
 hit_from_inside = true
-
-[node name="player_action" type="FmodEventEmitter2D" parent="." unique_id=201022238]
-event_name = "event:/player action"
-event_guid = "{2584fcb6-bc8d-4183-b8d0-992cd0bbab48}"
-volume = 2.0
-fmod_parameters/YOUMISSED/id = 1639130881498081622
-fmod_parameters/YOUMISSED = 0
-fmod_parameters/YOUMISSED/variant_type = 2
-"fmod_parameters/player action/id" = 3026149045964357792
-"fmod_parameters/player action" = "move"
-"fmod_parameters/player action/labels" = PackedStringArray("move", "shoot")
-"fmod_parameters/player action/variant_type" = 4
-
-[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1943224875]
 
 [node name="GridCoordTracker" type="Node" parent="." unique_id=15007792]
 script = ExtResource("5_p47bc")

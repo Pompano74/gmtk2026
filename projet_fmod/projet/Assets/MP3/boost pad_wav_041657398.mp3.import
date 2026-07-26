@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://db00l5ijnf3f"
+path="res://.godot/imported/boost pad_wav_041657398.mp3-a64ffc0b6c712b3d84c3aa63e97387a3.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/boost pad_wav_041657398.mp3"
+dest_files=["res://.godot/imported/boost pad_wav_041657398.mp3-a64ffc0b6c712b3d84c3aa63e97387a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

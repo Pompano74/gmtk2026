@@ -12,6 +12,7 @@ var enemy_path_weighted_coords: Dictionary[BaseEnemy, Vector3i]
 var tracked_objects: Array[Node2D]
 var off_screen_indicators: Dictionary[Node2D, Sprite2D]
 
+
 @export var player: PlayerCharacter
 
 
@@ -26,7 +27,7 @@ func _ready() -> void:
 			tracked_objects.append(child)
 	for o in tracked_objects:
 		var arrow_sprite = Sprite2D.new()
-		arrow_sprite.texture = load("res://assets/sprites_only_final/Effects/Enemy_Arrow_Up.png")
+		arrow_sprite.texture = load("res://assets/sprites_only_final/Effects/Enemy_Arrow_Left.png")
 		arrow_sprite.z_index = 40
 		player.camera.add_child(arrow_sprite)
 		off_screen_indicators[o] = arrow_sprite
@@ -37,23 +38,48 @@ func _process(delta: float) -> void:
 		var screen_rect := player.camera_rect_global_pos
 		var o_relative_to_cam := o.to_local(screen_rect.position)
 		var sprite := off_screen_indicators[o]
-		if o_relative_to_cam.x > screen_rect.size.x / 2 or o_relative_to_cam.y > screen_rect.size.y / 2:
-			var padding := 20
+		
+		var x_padding := 20
+		var y_padding := 20
+		
+		var sprite_target_pos = Vector2(
+			clampf(o_relative_to_cam.x, -screen_rect.size.x / 2, screen_rect.size.x / 2)
+			+ x_padding * signf(-o_relative_to_cam.x),
+			clampf(o_relative_to_cam.y, -screen_rect.size.y / 2, screen_rect.size.y / 2)
+			+ y_padding * signf(-o_relative_to_cam.y)
+			)
+		sprite_target_pos = Vector2(-sprite_target_pos.x,-sprite_target_pos.y)
+		
+		var sprite_pos: Vector2 = lerp(sprite.position, sprite_target_pos, 0.5)
+		#sprite.position = Vector2(pow(sprite_pos.x, 2), pow(sprite_pos.y, 2))
+		var pos_ease := ease(0.5, 2.5)
+		sprite.position = sprite.position.lerp(sprite_target_pos, pos_ease)
+		
+		var dir := (o_relative_to_cam - sprite.position).normalized()
+		sprite.rotation = dir.angle()
+		
+		var distance := o_relative_to_cam.length()
+		
+		var min_distance := screen_rect.size.length() * 0.5
+		var max_distance := 500.0
+		
+		var t := inverse_lerp(min_distance, max_distance, distance)
+		t = clampf(t, 0.0, 1.0)
+		
+		var min_scale := 2.2
+		var max_scale := 1.0
+		
+		var scale_factor := lerpf(min_scale, max_scale, t)
+		sprite.scale = Vector2.ONE * scale_factor
+		
+		#print("target: ", sprite_target_pos)
+		#print("current: ", sprite_pos)
+		#print("-------")
+		
+		if abs(o_relative_to_cam.x) > screen_rect.size.x / 2 or abs(o_relative_to_cam.y) > screen_rect.size.y / 2:
 			sprite.show()
-			
-			sprite.position = Vector2(
-				clampf(o_relative_to_cam.x, -screen_rect.size.x / 2, screen_rect.size.x / 2)
-				+ padding * signf(-o_relative_to_cam.x),
-				clampf(o_relative_to_cam.y, -screen_rect.size.y / 2, screen_rect.size.y / 2)
-				+ padding * signf(-o_relative_to_cam.y)
-				)
-			
-			
 		else:
 			sprite.hide()
-		print("rel_pos: ", o_relative_to_cam)
-		print("-------")
-		print("pos: ", sprite.position)
 
 func on_beat_called() -> void:
 	pass

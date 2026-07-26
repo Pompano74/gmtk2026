@@ -74,17 +74,6 @@ size = Vector2(16, 16)
 z_index = 1
 script = ExtResource("1_2kcj1")
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=913899837]
-bank_paths = ["res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
-
-[node name="bullet_sound" type="FmodEventEmitter2D" parent="." unique_id=1659330285]
-event_name = "event:/shoot movement"
-event_guid = "{0eb68af1-d621-4b72-841b-2a7959a8b88d}"
-"fmod_parameters/increment ball move/id" = 1900033767421280527
-"fmod_parameters/increment ball move" = "ball move"
-"fmod_parameters/increment ball move/labels" = PackedStringArray("ball stay", "ball move")
-"fmod_parameters/increment ball move/variant_type" = 4
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=454532861]
 sprite_frames = SubResource("SpriteFrames_45ngr")
 animation = &"Up"

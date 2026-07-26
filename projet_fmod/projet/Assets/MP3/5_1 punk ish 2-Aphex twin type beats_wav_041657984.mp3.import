@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hy6mmg5qfs8u"
+path="res://.godot/imported/5_1 punk ish 2-Aphex twin type beats_wav_041657984.mp3-18bb0719220f17d606ab7c0a7aaec1e6.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/5_1 punk ish 2-Aphex twin type beats_wav_041657984.mp3"
+dest_files=["res://.godot/imported/5_1 punk ish 2-Aphex twin type beats_wav_041657984.mp3-18bb0719220f17d606ab7c0a7aaec1e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

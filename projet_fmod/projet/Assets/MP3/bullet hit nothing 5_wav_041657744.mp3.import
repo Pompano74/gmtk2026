@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5stmpi87o3f7"
+path="res://.godot/imported/bullet hit nothing 5_wav_041657744.mp3-33e898c8bc02cb68b60c60b54060304e.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/bullet hit nothing 5_wav_041657744.mp3"
+dest_files=["res://.godot/imported/bullet hit nothing 5_wav_041657744.mp3-33e898c8bc02cb68b60c60b54060304e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

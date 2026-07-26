@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cc0nncgsf1gnm"
+path="res://.godot/imported/death playerv2_wav_041657885.mp3-0f3315df05c5a02ce036bed2d578e465.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/death playerv2_wav_041657885.mp3"
+dest_files=["res://.godot/imported/death playerv2_wav_041657885.mp3-0f3315df05c5a02ce036bed2d578e465.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c25wo8vs6hwp2"
+path="res://.godot/imported/squid run4 _wav_041657498.mp3-b61f0f75023af86dd249cd84761a222a.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/squid run4 _wav_041657498.mp3"
+dest_files=["res://.godot/imported/squid run4 _wav_041657498.mp3-b61f0f75023af86dd249cd84761a222a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cevlsmbru4d2b"
+path="res://.godot/imported/squid run5_wav_041657505.mp3-8afd7390e9ec1029a2b28e51f943a6c8.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/squid run5_wav_041657505.mp3"
+dest_files=["res://.godot/imported/squid run5_wav_041657505.mp3-8afd7390e9ec1029a2b28e51f943a6c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

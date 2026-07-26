@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjkccsrs63udt"
+path="res://.godot/imported/successful! loop_wav_041657908.mp3-29d76285cec677b475416ec1c9aa40ff.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/successful! loop_wav_041657908.mp3"
+dest_files=["res://.godot/imported/successful! loop_wav_041657908.mp3-29d76285cec677b475416ec1c9aa40ff.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
