@@ -7,6 +7,9 @@ const tile_size: Vector2 = Vector2(32, 32)
 const MISS_PARTICLE_SCENE = preload("res://scenes/Particles/miss_particle.tscn")
 const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 const PERFECT_PARTICLE_SCENE = preload("res://scenes/Particles/perfect_particle.tscn")
+const RAM_PARTICLE_SCENE = preload("res://scenes/Particles/ram_particle.tscn")
+const CRAM_PARTICLE_SCENE = preload("res://scenes/Particles/Cram_particle.tscn")
+
 
 
 @onready var coord_tracker: GridCoordTracker = $GridCoordTracker
@@ -19,7 +22,8 @@ const PERFECT_PARTICLE_SCENE = preload("res://scenes/Particles/perfect_particle.
 var player_sprite_node_pos_tween: Tween
 
 var camera_rect_global_pos : Rect2
-
+var is_IJKL: bool = false
+var is_ram: bool = true
 #sounds
 @export var player_action: FmodEventEmitter2D
 
@@ -73,8 +77,23 @@ func on_beat_called() -> void:
 		await get_tree().create_timer(1.95).timeout
 		perfect_particle.queue_free()
 		perfect_particle_node.queue_free()
-	elif TempoGlobal.beat_streak > 15:
-		pass
+	elif TempoGlobal.beat_streak == 16:
+		if is_ram:
+			is_ram = false
+			var ram_particle: = RAM_PARTICLE_SCENE.instantiate()
+			player_sprite.add_child(ram_particle)
+			var ram_particle_node: CPUParticles2D = ram_particle.get_child(0)
+			await get_tree().create_timer(0.95).timeout
+			ram_particle.queue_free()
+			ram_particle_node.queue_free()
+		elif !is_ram:
+			is_ram = true
+			var cram_particle: = CRAM_PARTICLE_SCENE.instantiate()
+			player_sprite.add_child(cram_particle)
+			var cram_particle_node: CPUParticles2D = cram_particle.get_child(0)
+			await get_tree().create_timer(0.95).timeout
+			cram_particle.queue_free()
+			cram_particle_node.queue_free()
 	else:
 		Input.start_joy_vibration(0,0.25,0,buffer_value)
 	
@@ -144,14 +163,39 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_released("move_right"):
 		player_ui.d.play("Up")
 	
-	if event.is_action_released("shoot_up"):
+	if (Input.is_key_pressed(KEY_I) or Input.is_key_pressed(KEY_J) or Input.is_key_pressed(KEY_K) or Input.is_key_pressed(KEY_L)):
+		is_IJKL = true
+		player_ui.arrow_up.play("(IJKL)Up")
+		player_ui.arrow_down.play("(IJKL)Up")
+		player_ui.arrow_left.play("(IJKL)Up")
+		player_ui.arrow_right.play("(IJKL)Up")
+	elif (Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_RIGHT)):
+		is_IJKL = false
 		player_ui.arrow_up.play("Up")
-	elif event.is_action_released("shoot_down"):
 		player_ui.arrow_down.play("Up")
-	elif event.is_action_released("shoot_left"):
 		player_ui.arrow_left.play("Up")
-	elif event.is_action_released("shoot_right"):
 		player_ui.arrow_right.play("Up")
+	
+	if event.is_action_released("shoot_up"):
+		if !is_IJKL:
+			player_ui.arrow_up.play("Up")
+		elif is_IJKL:
+			player_ui.arrow_up.play("(IJKL)Up")
+	elif event.is_action_released("shoot_down"):
+		if !is_IJKL:
+			player_ui.arrow_down.play("Up")
+		elif is_IJKL:
+			player_ui.arrow_down.play("(IJKL)Up")
+	elif event.is_action_released("shoot_left"):
+		if !is_IJKL:
+			player_ui.arrow_left.play("Up")
+		elif is_IJKL:
+			player_ui.arrow_left.play("(IJKL)Up")
+	elif event.is_action_released("shoot_right"):
+		if !is_IJKL:
+			player_ui.arrow_right.play("Up")
+		elif is_IJKL:
+			player_ui.arrow_right.play("(IJKL)Up")
 	
 	if  event.is_action_pressed("pause_game"):
 		player_ui.ui_pausing.play("Down")
@@ -184,19 +228,31 @@ func _input(event: InputEvent) -> void:
 		#SHOOT
 		if Input.is_action_just_pressed("shoot_up"):
 			player_direction = $right
-			player_ui.arrow_up.play("Down")
+			if !is_IJKL:
+				player_ui.arrow_up.play("Down")
+			elif is_IJKL:
+				player_ui.arrow_up.play("(IJKL)Down")
 			_shoot(Vector2(0, -1))
 		if Input.is_action_just_pressed("shoot_down"):
 			player_direction = $right
-			player_ui.arrow_down.play("Down")
+			if !is_IJKL:
+				player_ui.arrow_down.play("Down")
+			elif is_IJKL:
+				player_ui.arrow_down.play("(IJKL)Down")
 			_shoot(Vector2(0, 1))
 		if Input.is_action_just_pressed("shoot_left"):
 			player_direction = $right
-			player_ui.arrow_left.play("Down")
+			if !is_IJKL:
+				player_ui.arrow_left.play("Down")
+			elif is_IJKL:
+				player_ui.arrow_left.play("(IJKL)Down")
 			_shoot(Vector2(-1, 0))
 		if Input.is_action_just_pressed("shoot_right"):
 			player_direction = $right
-			player_ui.arrow_right.play("Down")
+			if !is_IJKL:
+				player_ui.arrow_right.play("Down")
+			elif is_IJKL:
+				player_ui.arrow_right.play("(IJKL)Down")
 			_shoot(Vector2(1, 0))
 
 func _move(dir: Vector2):
@@ -228,12 +284,13 @@ func _move(dir: Vector2):
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
 			#Spawn particle when player good
-			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
-			player_sprite.add_child(good_particle)
-			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
-			await get_tree().create_timer(0.95).timeout
-			good_particle.queue_free()
-			good_particle_node.queue_free()
+			if (TempoGlobal.beat_streak < 15):
+				var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
+				player_sprite.add_child(good_particle)
+				var good_particle_node: CPUParticles2D = good_particle.get_child(0)
+				await get_tree().create_timer(0.95).timeout
+				good_particle.queue_free()
+				good_particle_node.queue_free()
 		else:
 			player_action.set_parameter("player action", "miss")
 			player_action.play()
@@ -260,30 +317,46 @@ func _shoot(dir:Vector2):
 			bullet.dir = dir
 			bullet.ray_dir = player_direction
 			add_sibling(bullet)
+			if player_direction.is_colliding():
+				print("COLLIDING")
+				bullet.animated_sprite_2d.frame = 2
 			#bullet sprite animation direction
 			if (dir == (Vector2(0, -1))):
 				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
 				bullet_sprite.play("Up")
+				if player_direction.is_colliding():
+					bullet.animated_sprite_2d.frame = 2
+					bullet.near_wall = true
 			if (dir == (Vector2(0, 1))):
 				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
 				bullet_sprite.play("Down")
+				if player_direction.is_colliding():
+					bullet.animated_sprite_2d.frame = 2
+					bullet.near_wall = true
 			if (dir == (Vector2(-1, 0))):
 				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
 				bullet_sprite.play("Left")
+				if player_direction.is_colliding():
+					bullet.animated_sprite_2d.frame = 2
+					bullet.near_wall = true
 			if (dir == (Vector2(1, 0))):
 				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
 				bullet_sprite.play("Right")
+				if player_direction.is_colliding():
+					bullet.animated_sprite_2d.frame = 2
+					bullet.near_wall = true
 			bullet.global_position = position + (dir * 32)
 			bullet.add_to_group("bullets")
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
 			#Spawn particle when player good
-			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
-			player_sprite.add_child(good_particle)
-			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
-			await get_tree().create_timer(0.95).timeout
-			good_particle.queue_free()
-			good_particle_node.queue_free()
+			if (TempoGlobal.beat_streak < 15):
+				var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
+				player_sprite.add_child(good_particle)
+				var good_particle_node: CPUParticles2D = good_particle.get_child(0)
+				await get_tree().create_timer(0.95).timeout
+				good_particle.queue_free()
+				good_particle_node.queue_free()
 		else:
 			animation_player.play("flash red")
 			player_action.set_parameter("player action", "miss")

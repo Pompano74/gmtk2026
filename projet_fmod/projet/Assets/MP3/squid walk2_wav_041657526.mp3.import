@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cftdl7a4mcorj"
+path="res://.godot/imported/squid walk2_wav_041657526.mp3-89c650b073a5c7d4c809dfee3b53ca76.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/squid walk2_wav_041657526.mp3"
+dest_files=["res://.godot/imported/squid walk2_wav_041657526.mp3-89c650b073a5c7d4c809dfee3b53ca76.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

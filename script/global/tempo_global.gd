@@ -67,7 +67,7 @@ func _ready() -> void:
 	beat_inital_value = 1.0 / (bpm / 60.0)
 	beat_timer = beat_inital_value
 	timer.wait_time = beat_inital_value
-	combo_timer.wait_time = beat_inital_value + beat_inital_value / 10
+	combo_timer.wait_time = beat_inital_value + beat_inital_value / 5
 
 func _process(delta: float) -> void:
 
@@ -92,7 +92,7 @@ func _beat_failed():
 	beat_failed.emit()
 
 func _beat():
-	
+	print("BEAT:", beat_streak)
 	#win loose condition
 	if total_target != 0:
 		if current_target == 0:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://12jpj0fme2q8"
+path="res://.godot/imported/glitch tile_wav_041657344.mp3-87d04a0d9ba3cd1fc6e739abfcca8048.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/glitch tile_wav_041657344.mp3"
+dest_files=["res://.godot/imported/glitch tile_wav_041657344.mp3-87d04a0d9ba3cd1fc6e739abfcca8048.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

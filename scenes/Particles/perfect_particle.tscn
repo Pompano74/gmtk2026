@@ -20,6 +20,10 @@ point_count = 4
 offsets = PackedFloat32Array(0.6780627, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="Gradient" id="Gradient_v4sdb"]
+offsets = PackedFloat32Array(0.64102566, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="missParticle" type="Node2D" unique_id=403171505]
 script = SubResource("GDScript_qrgia")
 
@@ -47,14 +51,13 @@ scale_amount_curve = SubResource("Curve_j6ek3")
 color_ramp = SubResource("Gradient_mg06b")
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1671222731]
-position = Vector2(0, -16)
 amount = 64
 lifetime = 2.0
 explosiveness = 1.0
 use_fixed_seed = true
 seed = 102890095
 spread = 180.0
-gravity = Vector2(0, -300)
+gravity = Vector2(0, -10)
 initial_velocity_min = 80.0
 initial_velocity_max = 90.0
 linear_accel_min = 40.05
@@ -64,3 +67,4 @@ radial_accel_min = -0.5
 radial_accel_max = 1.7
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_j6ek3")
+color_ramp = SubResource("Gradient_v4sdb")

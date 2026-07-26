@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cy8v7i5kkb55"
+path="res://.godot/imported/bullet hit enemy3_wav_041657701.mp3-94370d7f62c8d222fe66803a404d6184.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/bullet hit enemy3_wav_041657701.mp3"
+dest_files=["res://.godot/imported/bullet hit enemy3_wav_041657701.mp3-94370d7f62c8d222fe66803a404d6184.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
