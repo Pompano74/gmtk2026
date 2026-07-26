@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://l4cjoubtalh8"]
+
+[ext_resource type="PackedScene" uid="uid://6awh6ts5vvs1" path="res://scenes/enemies/base_enemy.tscn" id="1_xm4p0"]
+[ext_resource type="Script" uid="uid://dcftpb30o384o" path="res://script/enemies/pac_man_ghost.gd" id="2_2urlo"]
+
+[node name="PacManGhost" unique_id=1418937433 instance=ExtResource("1_xm4p0")]
+script = ExtResource("2_2urlo")
+damage = 5
+invincible = true
