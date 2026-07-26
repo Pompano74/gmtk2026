@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="5_hxukd"]
 [ext_resource type="PackedScene" uid="uid://bba0t1vpp2sy0" path="res://scenes/level_tiles/BoostTile.tscn" id="6_8jj4n"]
 [ext_resource type="PackedScene" uid="uid://c032ipnc11wae" path="res://scenes/level_tiles/descructible_wall.tscn" id="6_wr6bl"]
-[ext_resource type="PackedScene" uid="uid://boxq3k1d4a5bh" path="res://scenes/enemies/follower_enemy.tscn" id="8_35r5t"]
+[ext_resource type="PackedScene" uid="uid://cfyvd83pm0dv8" path="res://scenes/enemies/follow_path_enemy.tscn" id="9_241y1"]
 
 [node name="LevelManager" unique_id=1574904214 instance=ExtResource("1_r8dwr")]
 level_select_lose = "res://scenes/levels/test_level/gym_antoine.tscn"
@@ -75,16 +75,11 @@ position = Vector2(-48, 112)
 position = Vector2(-80, 144)
 
 [node name="Player" parent="TileMapLayer" index="16" unique_id=1805821953 instance=ExtResource("5_hxukd")]
-position = Vector2(-16, 144)
+position = Vector2(16, 144)
 
-[node name="FollowerEnemy" parent="TileMapLayer" index="17" unique_id=1418937433 node_paths=PackedStringArray("tilemap") instance=ExtResource("8_35r5t")]
-position = Vector2(-16, 16)
-tilemap = NodePath("..")
-
-[node name="FollowerEnemy2" parent="TileMapLayer" index="18" unique_id=1550772597 node_paths=PackedStringArray("tilemap") instance=ExtResource("8_35r5t")]
-position = Vector2(-112, 144)
-tilemap = NodePath("..")
-
-[node name="FollowerEnemy3" parent="TileMapLayer" index="19" unique_id=271482504 node_paths=PackedStringArray("tilemap") instance=ExtResource("8_35r5t")]
-position = Vector2(-80, 80)
-tilemap = NodePath("..")
+[node name="FollowPathEnemy" parent="TileMapLayer" index="17" unique_id=1827378644 instance=ExtResource("9_241y1")]
+position = Vector2(16, 16)
+path = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(-1, 1), Vector2i(-1, 2), Vector2i(-1, 3)])
+path_increment = 0
+beats_to_wait_at_end = 3
+dir = true

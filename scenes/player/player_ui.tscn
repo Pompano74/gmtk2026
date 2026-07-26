@@ -303,6 +303,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45ngr"]
+size = Vector2(146.66666, 93.33333)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1fw64"]
 animations = [{
 "frames": [{
@@ -442,6 +445,14 @@ sprite_frames = SubResource("SpriteFrames_ojjf3")
 animation = &"Down"
 autoplay = "Up"
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1043514306]
+position = Vector2(-207.25, 34.8)
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=861857970]
+position = Vector2(18.75, 2.0000038)
+shape = SubResource("RectangleShape2D_45ngr")
+
 [node name="UI_Pausing" type="AnimatedSprite2D" parent="." unique_id=134335259]
 position = Vector2(88.2, 121.5)
 scale = Vector2(0.6, 0.6)
@@ -453,8 +464,6 @@ autoplay = "Up"
 position = Vector2(-207.25, 34.8)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_ace5p")
-frame = 6
-frame_progress = 0.74891865
 
 [node name="UI_Background_Bits" type="Sprite2D" parent="." unique_id=921896834]
 position = Vector2(-0.6, -69)
