@@ -1299,6 +1299,7 @@ scene_to_go = "res://scenes/levels/game_levels/lvl_7.tscn"
 
 [node name="level_8" parent="TileMapLayer" index="178" unique_id=961310434 instance=ExtResource("3_hjxda")]
 position = Vector2(-240, 144)
+scene_to_go = "res://scenes/levels/game_levels/lvl_8.tscn"
 
 [node name="level_9" parent="TileMapLayer" index="179" unique_id=1870038975 instance=ExtResource("3_hjxda")]
 position = Vector2(-400, 400)
@@ -1306,12 +1307,15 @@ scene_to_go = "res://scenes/levels/game_levels/lvl_9.tscn"
 
 [node name="level_10" parent="TileMapLayer" index="180" unique_id=206149773 instance=ExtResource("3_hjxda")]
 position = Vector2(-80, 144)
+scene_to_go = "res://scenes/levels/game_levels/lvl_10.tscn"
 
 [node name="level_11" parent="TileMapLayer" index="181" unique_id=1305397398 instance=ExtResource("3_hjxda")]
 position = Vector2(176, 400)
+scene_to_go = "res://scenes/levels/game_levels/lvl_11.tscn"
 
 [node name="level_12" parent="TileMapLayer" index="182" unique_id=977137350 instance=ExtResource("3_hjxda")]
 position = Vector2(368, -16)
+scene_to_go = "res://scenes/levels/game_levels/lvl_12.tscn"
 
 [node name="Habillage_Color_1" type="TileMapLayer" parent="TileMapLayer" index="183" unique_id=210834832]
 tile_map_data = PackedByteArray("AAD0//7/AAADAAYAAAD0////AAAEAAcAAAD0/wAAAAADAAYAAAD1/wAAAAAFAAgAAAD1//7/AAAFAAgAAAD4//7/AAADAAcAAAD//wEAAAAEAAYAAAD+//3/AAAEAAgAAAACAP7/AAAEAAYAAAACAAAAAAAEAAgAAAABAAAAAAAEAAYAAAAIAPz/AAAFAAYAAAAIAP7/AAADAAcAAAAJAP7/AAAFAAcAAAAKAP7/AAADAAcAAAAKAP3/AAAFAAcAAAAKAPz/AAADAAcAAAAOAP7/AAADAAcAAAAOAPz/AAADAAcAAAAOAP3/AAAFAAcAAAANAPz/AAAFAAcAAAAOAAIAAAAFAAcAAAAMAAIAAAADAAcAAAAKAAIAAAAFAAcAAAAIAAIAAAADAAcAAAAFAPr/AAAEAAcAAADx//n/AAAEAAYAAADq//j/AAAEAAgAAADu//r/AAAEAAcAAADt//r/AAADAAYAAADt//7/AAAFAAYAAADq/wEAAAAFAAgAAADv/wMAAAAFAAcAAADu/wYAAAADAAcAAADz/wMAAAADAAYAAAD6/wMAAAAFAAgAAAD8/wUAAAADAAcAAAADAAgAAAAEAAYAAAACAAoAAAAEAAgAAAAFAAgAAAAEAAgAAAA=")

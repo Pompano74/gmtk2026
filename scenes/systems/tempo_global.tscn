@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://d0dcoogboxps"]
 
 [ext_resource type="Script" uid="uid://dhmub2lw5e8v7" path="res://script/global/tempo_global.gd" id="1_muea5"]
-[ext_resource type="Texture2D" uid="uid://s6wh516u4ffn" path="res://assets/sprites/ScreenArtUI_V8.png" id="2_cn63s"]
 [ext_resource type="Texture2D" uid="uid://b8xqm8obk4j0m" path="res://assets/sprites_only_final/Transitions/Levels_Transition_1.png" id="3_gbdb2"]
 [ext_resource type="Texture2D" uid="uid://k42xib6v6v27" path="res://assets/sprites_only_final/Transitions/Levels_Transition_2.png" id="4_q1tbp"]
 [ext_resource type="Texture2D" uid="uid://dh685uh70pl03" path="res://assets/sprites_only_final/Transitions/Levels_Transition_3.png" id="5_flsg8"]
 [ext_resource type="Texture2D" uid="uid://bs2ugriyggsa1" path="res://assets/sprites_only_final/Transitions/Levels_Transition_4.png" id="6_gfkpx"]
 [ext_resource type="Texture2D" uid="uid://h3ra8kks7ye6" path="res://assets/sprites_only_final/Transitions/Levels_Transition_Branch_Reset_1.png" id="7_4empo"]
 [ext_resource type="Texture2D" uid="uid://3rvorncpbfb8" path="res://assets/sprites_only_final/Transitions/Levels_Transition_5.png" id="7_gwqqr"]
+[ext_resource type="Texture2D" uid="uid://bhm1cgso1ptrr" path="res://assets/sprites_only_final/UI_Screen_Templates/Screen_UI_Art_Template_V2.png" id="7_opx1p"]
 [ext_resource type="Texture2D" uid="uid://bswy704yda1ke" path="res://assets/sprites_only_final/Transitions/Levels_Transition_Branch_Reset_2.png" id="8_8r0gx"]
 [ext_resource type="Texture2D" uid="uid://bdc65fvpyik0c" path="res://assets/sprites_only_final/Transitions/Levels_Transition_Branch_Reset_3.png" id="9_utfkv"]
 [ext_resource type="Texture2D" uid="uid://bcxldobir0emi" path="res://assets/sprites_only_final/Transitions/Levels_Transition_Press_Any_Key_1.png" id="10_nns4o"]
@@ -25,16 +25,16 @@ corner_detail = 1
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_gbdb2")
+"texture": ExtResource("6_gfkpx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_q1tbp")
+"texture": ExtResource("3_gbdb2")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_flsg8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_gfkpx")
+"texture": ExtResource("4_q1tbp")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_gwqqr")
@@ -99,6 +99,9 @@ autostart = true
 
 [node name="combo_timer" type="Timer" parent="." unique_id=716029263]
 
+[node name="halft_beat" type="Timer" parent="." unique_id=750922145]
+wait_time = 0.25
+
 [node name="Control" type="Control" parent="." unique_id=1634257988]
 z_index = 105
 layout_mode = 3
@@ -121,9 +124,8 @@ offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cn63s")
 
 [node name="black_transition" type="AnimatedSprite2D" parent="Control" unique_id=397818557]
-visible = false
-position = Vector2(-8.000001, -4)
-scale = Vector2(0.66141725, 0.7483871)
+position = Vector2(60.000023, -4)
+scale = Vector2(0.92913383, 0.7483871)
 sprite_frames = SubResource("SpriteFrames_cn63s")
 animation = &"black"
 frame_progress = 0.9467109
@@ -131,7 +133,7 @@ frame_progress = 0.9467109
 [node name="ScreenArtUiV8" type="Sprite2D" parent="Control" unique_id=1747160033]
 position = Vector2(0, -6)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_cn63s")
+texture = ExtResource("7_opx1p")
 
 [node name="other_animation" type="AnimatedSprite2D" parent="Control" unique_id=1196153272]
 visible = false
@@ -140,3 +142,4 @@ animation = &"player_start"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="combo_timer" to="." method="_on_combo_timer_timeout"]
+[connection signal="timeout" from="halft_beat" to="." method="_on_halft_beat_timeout"]

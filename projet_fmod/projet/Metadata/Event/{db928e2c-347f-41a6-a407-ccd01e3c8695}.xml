@@ -351,6 +351,9 @@
 		<property name="length">
 			<value>32.052244897959184</value>
 		</property>
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{5b45f875-fb07-41a2-a9fe-38581c3f54ac}</destination>
 		</relationship>
@@ -1039,6 +1042,7 @@
 	<object class="MixerBusEffectChain" id="{5ee7952e-a175-4795-8b6f-cfb3c1b3ef58}">
 		<relationship name="effects">
 			<destination>{472c07e0-6f92-42b3-a2b0-7c3dc24a1e1f}</destination>
+			<destination>{f56ed6b4-4fd5-44fd-b1ea-217fdff5b61f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c9ea4af2-6cae-4b45-b818-8b0a9eb7c1ee}" />
@@ -1261,6 +1265,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{472c07e0-6f92-42b3-a2b0-7c3dc24a1e1f}" />
+	<object class="MultibandEqEffect" id="{f56ed6b4-4fd5-44fd-b1ea-217fdff5b61f}">
+		<property name="frequencyA">
+			<value>1948.19666</value>
+		</property>
+		<property name="qualityA">
+			<value>0.423557937</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{9f8e2b0c-9f04-4a69-ab6c-04f4e52bf583}">
 		<relationship name="parameter">
 			<destination>{a9830c54-4387-42ee-b2ae-e2fcda2e18d1}</destination>
