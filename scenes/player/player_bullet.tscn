@@ -126,4 +126,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=648807588]
 shape = SubResource("RectangleShape2D_mfd2r")
 
+[node name="sound_hit" type="FmodEventEmitter2D" parent="." unique_id=1963403944]
+event_name = "event:/destructible wall"
+event_guid = "{32fc5e12-c351-4d7b-b9ca-10f9f2ac600a}"
+volume = 8.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

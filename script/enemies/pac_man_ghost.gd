@@ -18,11 +18,15 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	super(body)
+	$sound.set_parameter("squid action", "hit")
+	$sound.play()
 	returning_to_spawn = true
 	$Area2D/CollisionShape2D.disabled = true
 
 func perform_action() -> void:
 	super()
+	$sound.set_parameter("squid action", "move")
+	$sound.play()
 	#if animated_sprite_2d.position == Vector2(0.0, -8.0):
 		#animated_sprite_2d.position = Vector2(0.0, -14.0)
 	#else:
@@ -79,11 +83,14 @@ func move_to_spawn(inc: int) -> void:
 	coord_tracker.update_grid_coord()
 
 func while_returning_to_spawn() -> void:
+	
 	move_to_spawn(path_increment)
 	if coord_tracker.grid_coord != initial_coord and contengency < 100:
 		path_increment = clampi(path_increment + 1, 1, current_path.size() - 1)
 		contengency += 1
 		await get_tree().create_timer(TempoGlobal.beat_inital_value / 4).timeout
+		$sound.set_parameter("squid action", "run away")
+		$sound.play()
 		move_to_spawn(path_increment)
 		while_returning_to_spawn()
 	elif coord_tracker.grid_coord == initial_coord:

@@ -38,6 +38,7 @@ func _ready() -> void:
 	
 
 func on_player_enters_tile(player: PlayerCharacter) -> void:
+	$sound.play()
 	animated_sprite_2d.frame = 1
 	if is_wall:
 		player.global_position = target
@@ -62,6 +63,7 @@ func on_player_enters_tile(player: PlayerCharacter) -> void:
 		print("ERROR BOOST TILE player")
 	super(player)
 func on_player_bullet_enters_tile(bullet: Node2D) -> void:
+	$sound.play()
 	animated_sprite_2d.frame = 1
 	print("before_dir:",bullet.get_parent().dir)
 	print("tile_rotation:",round(global_rotation_degrees))

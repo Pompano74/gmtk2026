@@ -60,7 +60,7 @@ func _move(bullet_dir: Vector2):
 		pass
 
 func bullet_missed():
-	
+	$sound_hit.play()
 	#behavior
 	$Area2D.set_collision_layer_value(2, false)
 	$Area2D.set_collision_mask_value(2, false)
@@ -71,7 +71,7 @@ func bullet_missed():
 	queue_free()
 
 func bullet_death():
-	
+	$sound_hit.play()
 	animated_sprite_2d.frame = 2
 	print("death")
 	
@@ -84,6 +84,7 @@ func bullet_death():
 	queue_free()
 
 func bullet_hit():
+	$sound_hit.play()
 	animated_sprite_2d.frame = 1
 	print("hit")
 	
