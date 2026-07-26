@@ -15,6 +15,7 @@ extends Node2D
 
 @onready var player: PlayerCharacter = $TileMapLayer/Player
 
+
 func _ready() -> void:
 	
 	print("AAAAAAAAA", TempoGlobal.game_progress)
@@ -39,7 +40,11 @@ func _ready() -> void:
 	TempoGlobal.level_select_lose = level_select_lose
 	TempoGlobal.coutdown_value = 20
 	TempoGlobal.can_transition = false
+	#
 	TempoGlobal.ui.visible = true
+	TempoGlobal.other_transition.visible = true
+	
+	#
 	TempoGlobal.timer.stop()
 	TempoGlobal.timer.wait_time = TempoGlobal.beat_inital_value
 	TempoGlobal.total_target = 0
@@ -52,9 +57,17 @@ func _ready() -> void:
 	
 	#await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 	#spawn_player()
-	
-	await get_tree().create_timer(TempoGlobal.beat_inital_value * 3).timeout
+	TempoGlobal.other_transition.frame = 0
+	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
+	TempoGlobal.other_transition.frame = 1
+	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
+	TempoGlobal.other_transition.frame = 2
+	await get_tree().create_timer(TempoGlobal.beat_inital_value).timeout
 	TempoGlobal.ui.visible = false
+	#
+	TempoGlobal.black_transition.visible = false
+	TempoGlobal.other_transition.visible = false
+	#
 	TempoGlobal.level_is_restarting = false
 	TempoGlobal.level_is_switching = false
 	TempoGlobal.timer.start()
