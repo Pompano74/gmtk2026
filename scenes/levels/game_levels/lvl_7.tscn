@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_ip3k0"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_ipf7m"]
-[ext_resource type="PackedScene" uid="uid://boxq3k1d4a5bh" path="res://scenes/enemies/follower_enemy.tscn" id="3_sfuf5"]
+[ext_resource type="PackedScene" uid="uid://l4cjoubtalh8" path="res://scenes/enemies/pac_man_ghost.tscn" id="4_ip3k0"]
 [ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="4_n57o6"]
 [ext_resource type="PackedScene" uid="uid://bba0t1vpp2sy0" path="res://scenes/level_tiles/BoostTile.tscn" id="5_7kfmh"]
 [ext_resource type="PackedScene" uid="uid://bnw6wwwfirb2d" path="res://scenes/level_tiles/count_plus.tscn" id="6_ypyr4"]
@@ -19,12 +19,12 @@ player = NodePath("Player")
 [node name="Player" parent="TileMapLayer" index="0" unique_id=1805821953 instance=ExtResource("2_ipf7m")]
 position = Vector2(112, -176)
 
-[node name="FollowerEnemy" parent="TileMapLayer" index="1" unique_id=1418937433 node_paths=PackedStringArray("tilemap") instance=ExtResource("3_sfuf5")]
-position = Vector2(48, -240)
+[node name="PacManGhost" parent="TileMapLayer" index="1" unique_id=1007794888 node_paths=PackedStringArray("tilemap") instance=ExtResource("4_ip3k0")]
+position = Vector2(144, -240)
 tilemap = NodePath("..")
 
-[node name="FollowerEnemy2" parent="TileMapLayer" index="2" unique_id=1907575138 node_paths=PackedStringArray("tilemap") instance=ExtResource("3_sfuf5")]
-position = Vector2(144, -240)
+[node name="PacManGhost2" parent="TileMapLayer" index="2" unique_id=1418937433 node_paths=PackedStringArray("tilemap") instance=ExtResource("4_ip3k0")]
+position = Vector2(48, -240)
 tilemap = NodePath("..")
 
 [node name="immobile_target8" parent="TileMapLayer" index="3" unique_id=18587106 instance=ExtResource("4_n57o6")]
