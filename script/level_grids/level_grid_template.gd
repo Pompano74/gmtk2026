@@ -30,13 +30,13 @@ func on_beat_called() -> void:
 func on_player_beat_win() -> void:
 	update_dynamic_coords()
 	update_pathfinding()
-	print(enemy_path_blocked_coords)
+	#print(enemy_path_blocked_coords)
 	#print(dynamic_blocked_coords)
 
 func on_player_skipped_beat() -> void:
 	update_dynamic_coords()
 	update_pathfinding()
-	print(enemy_path_blocked_coords)
+	#print(enemy_path_blocked_coords)
 	#print(dynamic_blocked_coords)
 
 func setup_grid():
