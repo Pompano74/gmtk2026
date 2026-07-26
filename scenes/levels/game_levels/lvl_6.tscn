@@ -15,6 +15,10 @@
 level_select_lose = "res://scenes/levels/game_levels/lvl_6.tscn"
 int_level = 6
 
+[node name="music" parent="." index="1" unique_id=1731143360]
+event_name = "event:/track6"
+event_guid = "{323b14d2-33fa-4669-ba30-299cef8ff189}"
+
 [node name="disco_floor_manager" parent="." index="2" unique_id=1720417041 node_paths=PackedStringArray("layer1", "layer2") instance=ExtResource("9_42o6t")]
 layer1 = NodePath("../TileMapLayer/Habillage_Color_1")
 layer2 = NodePath("../TileMapLayer/Habillage_Color_2")
