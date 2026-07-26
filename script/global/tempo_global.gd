@@ -89,7 +89,6 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file(level_select_win)
 #beat functions
 func _beat_failed():
-	beat_streak = 0
 	beat_failed.emit()
 
 func _beat():
