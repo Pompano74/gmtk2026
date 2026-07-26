@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_j3ipn"]
 [ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_3od4r"]
 [ext_resource type="TileSet" uid="uid://svayg0mv0cx7" path="res://assets/Habillage_Tileset/new_tile_set.tres" id="2_833jn"]
+[ext_resource type="TileSet" uid="uid://cym2nmhk5wj02" path="res://assets/Habillage_Tileset/walls.tres" id="3_8rt0q"]
 [ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="3_xdlxv"]
 [ext_resource type="PackedScene" uid="uid://cupv06oj0c16e" path="res://scenes/level_tiles/glitch_tile.tscn" id="4_ygax6"]
 [ext_resource type="PackedScene" uid="uid://cltb36my32s2g" path="res://scenes/level_tiles/disco_floor_manager.tscn" id="6_8rt0q"]
@@ -14,26 +15,29 @@ tile_map_data = PackedByteArray("AAD+//7/AgADAAUAAAACAP7/AgADAAUAAAACAAIAAgADAAU
 player = NodePath("Player")
 
 [node name="Habillage_Color_1" type="TileMapLayer" parent="TileMapLayer" index="0" unique_id=1216750704]
-tile_map_data = PackedByteArray("AAABAP//AAAEAAcAAAD//wAAAAACAAgAAAABAAEAAAADAAYAAAABAAMAAAAEAAcAAAAAAAIAAAADAAcAAAD9/wEAAAAFAAYAAAAAAAEAAAAFAAgAAAD8/wMAAAAEAAgAAAD9/wMAAAAEAAYAAAD8/wIAAAADAAcAAAD8////AAAFAAYAAAD/////AAAEAAYAAAA=")
+tile_map_data = PackedByteArray("AAABAP//AAAEAAcAAAD//wAAAAACAAgAAAABAAEAAAADAAYAAAABAAMAAAAEAAcAAAAAAAIAAAADAAcAAAD9/wEAAAAFAAYAAAAAAAEAAAADAAgAAAD8/wMAAAAEAAgAAAD9/wMAAAAEAAYAAAD8/wIAAAADAAcAAAD8////AAAFAAYAAAD/////AAADAAYAAAD//wIAAAAEAAgAAAA=")
 tile_set = ExtResource("2_833jn")
 
 [node name="Habillage_Color_2" type="TileMapLayer" parent="TileMapLayer" index="1" unique_id=161991069]
-tile_map_data = PackedByteArray("AAABAP//AAADAAYAAAD//wAAAAACAAgAAAABAAEAAAAEAAcAAAABAAMAAAADAAYAAAAAAAIAAAAFAAcAAAD9/wEAAAAFAAgAAAAAAAEAAAAFAAYAAAD8/wMAAAAEAAYAAAD9/wMAAAAEAAgAAAD8/wIAAAAFAAcAAAD8////AAAFAAgAAAD/////AAAEAAgAAAA=")
+tile_map_data = PackedByteArray("AAABAP//AAADAAYAAAD//wAAAAACAAgAAAABAAEAAAAEAAcAAAABAAMAAAADAAYAAAAAAAIAAAAFAAcAAAD9/wEAAAAFAAgAAAAAAAEAAAACAAgAAAD8/wMAAAAEAAYAAAD9/wMAAAAEAAgAAAD8/wIAAAAFAAcAAAD8////AAAFAAgAAAD/////AAAEAAcAAAD//wIAAAAEAAYAAAA=")
 tile_set = ExtResource("2_833jn")
 
-[node name="Player" parent="TileMapLayer" index="2" unique_id=1805821953 instance=ExtResource("2_3od4r")]
+[node name="Habillage_Walls" type="TileMapLayer" parent="TileMapLayer" index="2" unique_id=1043704741]
+tile_set = ExtResource("3_8rt0q")
+
+[node name="Player" parent="TileMapLayer" index="3" unique_id=1805821953 instance=ExtResource("2_3od4r")]
 position = Vector2(-16, 16)
 
-[node name="immobile_target3" parent="TileMapLayer" index="3" unique_id=1292832716 instance=ExtResource("3_xdlxv")]
+[node name="immobile_target3" parent="TileMapLayer" index="4" unique_id=1292832716 instance=ExtResource("3_xdlxv")]
 position = Vector2(-80, 16)
 
-[node name="glitch_tile" parent="TileMapLayer" index="4" unique_id=50867544 instance=ExtResource("4_ygax6")]
+[node name="glitch_tile" parent="TileMapLayer" index="5" unique_id=50867544 instance=ExtResource("4_ygax6")]
 position = Vector2(-48, 48)
 
-[node name="glitch_tile2" parent="TileMapLayer" index="5" unique_id=1257679393 instance=ExtResource("4_ygax6")]
+[node name="glitch_tile2" parent="TileMapLayer" index="6" unique_id=1257679393 instance=ExtResource("4_ygax6")]
 position = Vector2(-16, 48)
 
-[node name="glitch_tile3" parent="TileMapLayer" index="6" unique_id=1862665697 instance=ExtResource("4_ygax6")]
+[node name="glitch_tile3" parent="TileMapLayer" index="7" unique_id=1862665697 instance=ExtResource("4_ygax6")]
 position = Vector2(-80, -16)
 
 [node name="disco_floor_manager" parent="." index="1" unique_id=1720417041 node_paths=PackedStringArray("layer1", "layer2") instance=ExtResource("6_8rt0q")]
