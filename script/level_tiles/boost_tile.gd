@@ -3,6 +3,7 @@ extends InteractionTile
 @onready var boost_dir: RayCast2D = $up
 var ray_dir_vector
 var ray_dir
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 var boost_pad_checked : bool = false
@@ -14,7 +15,7 @@ var target: Vector2
 
 # Called when the node enters the scene tree for the first time. 
 func _ready() -> void:
-	
+	animated_sprite_2d.frame = 0
 	coord_tracker.is_blocking_pathfinding = true
 	TempoGlobal.beat_signal.connect(_on_beat)
 	await get_tree().create_timer(0.1).timeout
@@ -37,7 +38,7 @@ func _ready() -> void:
 	
 
 func on_player_enters_tile(player: PlayerCharacter) -> void:
-	
+	animated_sprite_2d.frame = 1
 	if is_wall:
 		player.global_position = target
 		TempoGlobal.level_failed()
@@ -61,6 +62,7 @@ func on_player_enters_tile(player: PlayerCharacter) -> void:
 		print("ERROR BOOST TILE player")
 	super(player)
 func on_player_bullet_enters_tile(bullet: Node2D) -> void:
+	animated_sprite_2d.frame = 1
 	print("before_dir:",bullet.get_parent().dir)
 	print("tile_rotation:",round(global_rotation_degrees))
 	if global_rotation_degrees == 0: #up
@@ -90,6 +92,8 @@ func on_player_bullet_enters_tile(bullet: Node2D) -> void:
 
 
 func _on_beat():
+	if animated_sprite_2d.frame == 1:
+		animated_sprite_2d.frame = 0
 	pass
 	#if !boost_pad_checked :
 		

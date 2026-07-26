@@ -2,17 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_4e34e"]
 [ext_resource type="Script" uid="uid://b3fxa628743wq" path="res://script/level_tiles/glitch_tile.gd" id="2_c6fk1"]
-[ext_resource type="Texture2D" uid="uid://bbq6bvjd2pa77" path="res://assets/sprites/enemies_Sprites/Corrupted_Tile1.png" id="2_dx3xv"]
-[ext_resource type="Texture2D" uid="uid://cx6v07tflmgn1" path="res://assets/sprites/enemies_Sprites/Corrupted_Tile2.png" id="3_c6fk1"]
+[ext_resource type="Texture2D" uid="uid://bbck3j0axty0" path="res://assets/sprites_only_final/Enemies/Enemy_LeCorruption_1.png" id="3_c6fk1"]
+[ext_resource type="Texture2D" uid="uid://iwpxyq8g0o68" path="res://assets/sprites_only_final/Enemies/Enemy_LeCorruption_2.png" id="4_7crqm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4e34e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dx3xv")
+"texture": ExtResource("3_c6fk1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_c6fk1")
+"texture": ExtResource("4_7crqm")
 }],
 "loop": 1,
 "name": &"glitch animation",
