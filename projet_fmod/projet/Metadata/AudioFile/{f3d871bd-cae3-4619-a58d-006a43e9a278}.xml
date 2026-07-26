@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f3d871bd-cae3-4619-a58d-006a43e9a278}">
+		<property name="assetPath">
+			<value>MP3/bullet hit wall 5_wav_041657768.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.31346938775510202</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{80b09167-6ad3-484e-a758-4ebde1ceb7b9}</destination>
+		</relationship>
+	</object>
+</objects>

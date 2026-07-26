@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1f5v4kkg4jpb"
+path="res://.godot/imported/2 punk ish 18-Granulator III_wav_041657946.mp3-f1ab3e1db19b1355386a32d675992399.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/2 punk ish 18-Granulator III_wav_041657946.mp3"
+dest_files=["res://.godot/imported/2 punk ish 18-Granulator III_wav_041657946.mp3-f1ab3e1db19b1355386a32d675992399.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

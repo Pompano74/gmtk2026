@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6bn5gf30j6u"
+path="res://.godot/imported/countdownOS bootfx_wav_041657874.mp3-5f1e22ab44cab2c8ff3a0ea01091f3b1.mp3str"
+
+[deps]
+
+source_file="res://projet_fmod/projet/Assets/MP3/countdownOS bootfx_wav_041657874.mp3"
+dest_files=["res://.godot/imported/countdownOS bootfx_wav_041657874.mp3-5f1e22ab44cab2c8ff3a0ea01091f3b1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

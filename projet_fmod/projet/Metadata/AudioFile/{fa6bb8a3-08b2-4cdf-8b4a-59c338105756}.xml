@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{fa6bb8a3-08b2-4cdf-8b4a-59c338105756}">
+		<property name="assetPath">
+			<value>MP3/squid run5_wav_041657505.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.44408163265306122</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{80b09167-6ad3-484e-a758-4ebde1ceb7b9}</destination>
+		</relationship>
+	</object>
+</objects>
