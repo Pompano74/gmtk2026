@@ -74,9 +74,17 @@ size = Vector2(16, 16)
 z_index = 1
 script = ExtResource("1_2kcj1")
 
+[node name="bullet_sound" type="FmodEventEmitter2D" parent="." unique_id=1966489558]
+event_name = "event:/shoot movement"
+event_guid = "{0eb68af1-d621-4b72-841b-2a7959a8b88d}"
+"fmod_parameters/increment ball move/id" = 1900033767421280527
+"fmod_parameters/increment ball move" = "ball stay"
+"fmod_parameters/increment ball move/labels" = PackedStringArray("ball stay", "ball move", "ball hit enemy", "ball hit wall", "ball hit nothing")
+"fmod_parameters/increment ball move/variant_type" = 4
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=454532861]
 sprite_frames = SubResource("SpriteFrames_45ngr")
-animation = &"Up"
+animation = &"Left"
 speed_scale = 0.0
 
 [node name="up" type="RayCast2D" parent="." unique_id=1658409316]

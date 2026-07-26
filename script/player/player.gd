@@ -183,17 +183,17 @@ func _input(event: InputEvent) -> void:
 			player_ui.arrow_up.play("(IJKL)Up")
 	elif event.is_action_released("shoot_down"):
 		if !is_IJKL:
-			player_ui.arrow_down.play("Up")
+			player_ui.arrow_down.play("Down")
 		elif is_IJKL:
 			player_ui.arrow_down.play("(IJKL)Up")
 	elif event.is_action_released("shoot_left"):
 		if !is_IJKL:
-			player_ui.arrow_left.play("Up")
+			player_ui.arrow_left.play("Left")
 		elif is_IJKL:
 			player_ui.arrow_left.play("(IJKL)Up")
 	elif event.is_action_released("shoot_right"):
 		if !is_IJKL:
-			player_ui.arrow_right.play("Up")
+			player_ui.arrow_right.play("Right")
 		elif is_IJKL:
 			player_ui.arrow_right.play("(IJKL)Up")
 	
@@ -227,30 +227,30 @@ func _input(event: InputEvent) -> void:
 		
 		#SHOOT
 		if Input.is_action_just_pressed("shoot_up"):
-			player_direction = $right
+			player_direction = $up
 			if !is_IJKL:
-				player_ui.arrow_up.play("Down")
+				player_ui.arrow_up.play("Up")
 			elif is_IJKL:
 				player_ui.arrow_up.play("(IJKL)Down")
 			_shoot(Vector2(0, -1))
 		if Input.is_action_just_pressed("shoot_down"):
-			player_direction = $right
+			player_direction = $down
 			if !is_IJKL:
 				player_ui.arrow_down.play("Down")
 			elif is_IJKL:
 				player_ui.arrow_down.play("(IJKL)Down")
 			_shoot(Vector2(0, 1))
 		if Input.is_action_just_pressed("shoot_left"):
-			player_direction = $right
+			player_direction = $left
 			if !is_IJKL:
-				player_ui.arrow_left.play("Down")
+				player_ui.arrow_left.play("Left")
 			elif is_IJKL:
 				player_ui.arrow_left.play("(IJKL)Down")
 			_shoot(Vector2(-1, 0))
 		if Input.is_action_just_pressed("shoot_right"):
 			player_direction = $right
 			if !is_IJKL:
-				player_ui.arrow_right.play("Down")
+				player_ui.arrow_right.play("Right")
 			elif is_IJKL:
 				player_ui.arrow_right.play("(IJKL)Down")
 			_shoot(Vector2(1, 0))
@@ -312,7 +312,6 @@ func _shoot(dir:Vector2):
 		if beat_timer > buffer_min or beat_timer < buffer_max:
 			player_action.set_parameter("player action", "shoot")
 			player_action.play()
-			_shoot(dir)
 			var bullet = bullet_scene.instantiate()
 			bullet.dir = dir
 			bullet.ray_dir = player_direction
@@ -322,26 +321,22 @@ func _shoot(dir:Vector2):
 				bullet.animated_sprite_2d.frame = 2
 			#bullet sprite animation direction
 			if (dir == (Vector2(0, -1))):
-				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
-				bullet_sprite.play("Up")
+				bullet.animated_sprite_2d.play("Up")
 				if player_direction.is_colliding():
 					bullet.animated_sprite_2d.frame = 2
 					bullet.near_wall = true
 			if (dir == (Vector2(0, 1))):
-				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
-				bullet_sprite.play("Down")
+				bullet.animated_sprite_2d.play("Down")
 				if player_direction.is_colliding():
 					bullet.animated_sprite_2d.frame = 2
 					bullet.near_wall = true
 			if (dir == (Vector2(-1, 0))):
-				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
-				bullet_sprite.play("Left")
+				bullet.animated_sprite_2d.play("Left")
 				if player_direction.is_colliding():
 					bullet.animated_sprite_2d.frame = 2
 					bullet.near_wall = true
 			if (dir == (Vector2(1, 0))):
-				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
-				bullet_sprite.play("Right")
+				bullet.animated_sprite_2d.play("Right")
 				if player_direction.is_colliding():
 					bullet.animated_sprite_2d.frame = 2
 					bullet.near_wall = true
