@@ -75,7 +75,7 @@ position = Vector2(-48, 112)
 position = Vector2(-80, 144)
 
 [node name="Player" parent="TileMapLayer" index="16" unique_id=1805821953 instance=ExtResource("5_hxukd")]
-position = Vector2(-112, 208)
+position = Vector2(-112, 240)
 
 [node name="FollowPathEnemy" parent="TileMapLayer" index="17" unique_id=1827378644 groups=["track_off_screen"] instance=ExtResource("9_241y1")]
 position = Vector2(-112, 48)

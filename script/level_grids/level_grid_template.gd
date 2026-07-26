@@ -35,19 +35,25 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	for o in tracked_objects:
 		var screen_rect := player.camera_rect_global_pos
-		var o_relative_to_cam := to_local(screen_rect.position)
+		var o_relative_to_cam := o.to_local(screen_rect.position)
 		var sprite := off_screen_indicators[o]
-		if o_relative_to_cam.x > screen_rect.size.x or o_relative_to_cam.y > screen_rect.size.y:
+		if o_relative_to_cam.x > screen_rect.size.x / 2 or o_relative_to_cam.y > screen_rect.size.y / 2:
 			var padding := 20
 			sprite.show()
-			#sprite.position = Vector2(
-				#clampf(o_relative_to_cam.x, -screen_rect.size.x / 2, screen_rect.size.x / 2) + padding * signf(-o_relative_to_cam.x),
-				#clampf(o_relative_to_cam.y, -screen_rect.size.y / 2, screen_rect.size.y / 2) + padding * signf(-o_relative_to_cam.y)
-				#)
-				
-			print(o_relative_to_cam)
+			
+			sprite.position = Vector2(
+				clampf(o_relative_to_cam.x, -screen_rect.size.x / 2, screen_rect.size.x / 2)
+				+ padding * signf(-o_relative_to_cam.x),
+				clampf(o_relative_to_cam.y, -screen_rect.size.y / 2, screen_rect.size.y / 2)
+				+ padding * signf(-o_relative_to_cam.y)
+				)
+			
+			
 		else:
 			sprite.hide()
+		print("rel_pos: ", o_relative_to_cam)
+		print("-------")
+		print("pos: ", sprite.position)
 
 func on_beat_called() -> void:
 	pass
