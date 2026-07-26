@@ -260,19 +260,34 @@ func _shoot(dir:Vector2):
 			bullet.dir = dir
 			bullet.ray_dir = player_direction
 			add_sibling(bullet)
+			if player_direction.is_colliding():
+				print("COLLIDING")
+				bullet.animated_sprite_2d.frame = 2
 			#bullet sprite animation direction
 			if (dir == (Vector2(0, -1))):
 				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
 				bullet_sprite.play("Up")
+				if player_direction.is_colliding():
+					bullet.animated_sprite_2d.frame = 2
+					bullet.near_wall = true
 			if (dir == (Vector2(0, 1))):
 				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
 				bullet_sprite.play("Down")
+				if player_direction.is_colliding():
+					bullet.animated_sprite_2d.frame = 2
+					bullet.near_wall = true
 			if (dir == (Vector2(-1, 0))):
 				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
 				bullet_sprite.play("Left")
+				if player_direction.is_colliding():
+					bullet.animated_sprite_2d.frame = 2
+					bullet.near_wall = true
 			if (dir == (Vector2(1, 0))):
 				var bullet_sprite: AnimatedSprite2D = bullet.get_child(2)
 				bullet_sprite.play("Right")
+				if player_direction.is_colliding():
+					bullet.animated_sprite_2d.frame = 2
+					bullet.near_wall = true
 			bullet.global_position = position + (dir * 32)
 			bullet.add_to_group("bullets")
 			await get_tree().create_timer(0.1).timeout

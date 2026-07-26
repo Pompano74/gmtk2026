@@ -13,10 +13,12 @@ func _ready() -> void:
 	can_player_interact_by_shooting_tile = true
 	
 func on_player_enters_tile(player: PlayerCharacter) -> void:
+	$pickup_sound.play()
 	TempoGlobal.coutdown_value += plus_value
 	super(player)
 
 func on_player_bullet_enters_tile(bullet: Node2D) -> void:
+	$pickup_sound.play()
 	TempoGlobal.coutdown_value += plus_value
 	bullet.get_parent().bullet_hit()
 	super(bullet)
