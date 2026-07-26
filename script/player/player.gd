@@ -7,6 +7,9 @@ const tile_size: Vector2 = Vector2(32, 32)
 const MISS_PARTICLE_SCENE = preload("res://scenes/Particles/miss_particle.tscn")
 const GOOD_PARTICLE_SCENE = preload("res://scenes/Particles/good_particle.tscn")
 const PERFECT_PARTICLE_SCENE = preload("res://scenes/Particles/perfect_particle.tscn")
+const RAM_PARTICLE_SCENE = preload("res://scenes/Particles/ram_particle.tscn")
+const CRAM_PARTICLE_SCENE = preload("res://scenes/Particles/Cram_particle.tscn")
+
 
 
 @onready var coord_tracker: GridCoordTracker = $GridCoordTracker
@@ -20,6 +23,7 @@ var player_sprite_node_pos_tween: Tween
 
 var camera_rect_global_pos : Rect2
 var is_IJKL: bool = false
+var is_ram: bool = true
 #sounds
 @export var player_action: FmodEventEmitter2D
 
@@ -73,8 +77,23 @@ func on_beat_called() -> void:
 		await get_tree().create_timer(1.95).timeout
 		perfect_particle.queue_free()
 		perfect_particle_node.queue_free()
-	elif TempoGlobal.beat_streak > 15:
-		pass
+	elif TempoGlobal.beat_streak == 16:
+		if is_ram:
+			is_ram = false
+			var ram_particle: = RAM_PARTICLE_SCENE.instantiate()
+			player_sprite.add_child(ram_particle)
+			var ram_particle_node: CPUParticles2D = ram_particle.get_child(0)
+			await get_tree().create_timer(0.95).timeout
+			ram_particle.queue_free()
+			ram_particle_node.queue_free()
+		elif !is_ram:
+			is_ram = true
+			var cram_particle: = CRAM_PARTICLE_SCENE.instantiate()
+			player_sprite.add_child(cram_particle)
+			var cram_particle_node: CPUParticles2D = cram_particle.get_child(0)
+			await get_tree().create_timer(0.95).timeout
+			cram_particle.queue_free()
+			cram_particle_node.queue_free()
 	else:
 		Input.start_joy_vibration(0,0.25,0,buffer_value)
 	
@@ -265,12 +284,13 @@ func _move(dir: Vector2):
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
 			#Spawn particle when player good
-			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
-			player_sprite.add_child(good_particle)
-			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
-			await get_tree().create_timer(0.95).timeout
-			good_particle.queue_free()
-			good_particle_node.queue_free()
+			if (TempoGlobal.beat_streak < 15):
+				var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
+				player_sprite.add_child(good_particle)
+				var good_particle_node: CPUParticles2D = good_particle.get_child(0)
+				await get_tree().create_timer(0.95).timeout
+				good_particle.queue_free()
+				good_particle_node.queue_free()
 		else:
 			player_action.set_parameter("player action", "miss")
 			player_action.play()
@@ -330,12 +350,13 @@ func _shoot(dir:Vector2):
 			await get_tree().create_timer(0.1).timeout
 			TempoGlobal._beat_win()
 			#Spawn particle when player good
-			var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
-			player_sprite.add_child(good_particle)
-			var good_particle_node: CPUParticles2D = good_particle.get_child(0)
-			await get_tree().create_timer(0.95).timeout
-			good_particle.queue_free()
-			good_particle_node.queue_free()
+			if (TempoGlobal.beat_streak < 15):
+				var good_particle: = GOOD_PARTICLE_SCENE.instantiate()
+				player_sprite.add_child(good_particle)
+				var good_particle_node: CPUParticles2D = good_particle.get_child(0)
+				await get_tree().create_timer(0.95).timeout
+				good_particle.queue_free()
+				good_particle_node.queue_free()
 		else:
 			animation_player.play("flash red")
 			player_action.set_parameter("player action", "miss")

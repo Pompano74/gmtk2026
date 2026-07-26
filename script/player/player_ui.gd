@@ -50,12 +50,13 @@ func on_beat_called():
 	beats.frame = beat_int_loop
 
 func _input(event: InputEvent) -> void:
-		if Input.is_key_pressed(KEY_ESCAPE) and are_you_sure_2.is_visible_in_tree():
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and are_you_sure_2.is_visible_in_tree():
 			get_tree().quit()
-		elif Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if Input.is_key_pressed(KEY_ESCAPE) and are_you_sure_2.is_visible_in_tree() :
 			are_you_sure_2.visible = false
 			Engine.time_scale = 1.0
-		if Input.is_key_pressed(KEY_ESCAPE):
+			ui_exist_button.play_backwards("default")
+		elif Input.is_key_pressed(KEY_ESCAPE) and !are_you_sure_2.is_visible_in_tree() :
 				ui_exist_button.play("default")
 				await ui_exist_button.animation_finished
 				Engine.time_scale = 0.1
