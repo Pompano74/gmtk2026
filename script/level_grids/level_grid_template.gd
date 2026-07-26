@@ -27,6 +27,7 @@ func _ready() -> void:
 	for o in tracked_objects:
 		var arrow_sprite = Sprite2D.new()
 		arrow_sprite.texture = load("res://assets/sprites_only_final/Effects/Enemy_Arrow_Up.png")
+		arrow_sprite.z_index = 40
 		player.camera.add_child(arrow_sprite)
 		off_screen_indicators[o] = arrow_sprite
 		arrow_sprite.hide()
@@ -35,11 +36,18 @@ func _process(delta: float) -> void:
 	for o in tracked_objects:
 		var screen_rect := player.camera_rect_global_pos
 		var o_relative_to_cam := to_local(screen_rect.position)
+		var sprite := off_screen_indicators[o]
 		if o_relative_to_cam.x > screen_rect.size.x or o_relative_to_cam.y > screen_rect.size.y:
-			var sprite := off_screen_indicators[o]
-			var padding := 20.0
+			var padding := 20
 			sprite.show()
-			
+			#sprite.position = Vector2(
+				#clampf(o_relative_to_cam.x, -screen_rect.size.x / 2, screen_rect.size.x / 2) + padding * signf(-o_relative_to_cam.x),
+				#clampf(o_relative_to_cam.y, -screen_rect.size.y / 2, screen_rect.size.y / 2) + padding * signf(-o_relative_to_cam.y)
+				#)
+				
+			print(o_relative_to_cam)
+		else:
+			sprite.hide()
 
 func on_beat_called() -> void:
 	pass

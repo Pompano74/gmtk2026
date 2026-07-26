@@ -41,7 +41,7 @@ position = Vector2(-144, 144)
 plus_value = 1
 
 [node name="count_plus6" parent="TileMapLayer" index="6" unique_id=1195976615 instance=ExtResource("2_h50gv")]
-position = Vector2(-112, 48)
+position = Vector2(-144, 48)
 plus_value = 2
 
 [node name="glitch_tile" parent="TileMapLayer" index="7" unique_id=636087188 instance=ExtResource("4_xip7k")]
@@ -75,11 +75,11 @@ position = Vector2(-48, 112)
 position = Vector2(-80, 144)
 
 [node name="Player" parent="TileMapLayer" index="16" unique_id=1805821953 instance=ExtResource("5_hxukd")]
-position = Vector2(144, 208)
+position = Vector2(-112, 208)
 
 [node name="FollowPathEnemy" parent="TileMapLayer" index="17" unique_id=1827378644 groups=["track_off_screen"] instance=ExtResource("9_241y1")]
-position = Vector2(16, 16)
-path = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(-1, 1)])
+position = Vector2(-112, 48)
+path = Array[Vector2i]([Vector2i(0, 0)])
 path_increment = 0
 beats_to_wait_at_end = 3
 dir = true
