@@ -18,6 +18,7 @@ const PERFECT_PARTICLE_SCENE = preload("res://scenes/Particles/perfect_particle.
 @onready var player_ui: Control = $AnimatedSprite2D/Camera2D/player_ui
 var player_sprite_node_pos_tween: Tween
 
+var camera_rect_global_pos : Rect2
 
 #sounds
 @export var player_action: FmodEventEmitter2D
@@ -128,6 +129,9 @@ func _physics_process(delta: float) -> void:
 	if action_check == true and beat_timer >= buffer_max and beat_timer <= buffer_min:
 		action_check = false
 		#print(beat_timer)
+
+func _process(delta: float) -> void:
+	camera_rect_global_pos = Rect2(global_position, Vector2(285.0, 167.0))
 
 func _input(event: InputEvent) -> void:
 	
