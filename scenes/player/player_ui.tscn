@@ -363,7 +363,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("53_gn0xx")
+"texture": ExtResource("54_1cpv3")
 }],
 "loop": 0,
 "name": &"(IJKL)Down",
@@ -371,7 +371,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("54_1cpv3")
+"texture": ExtResource("53_gn0xx")
 }],
 "loop": 0,
 "name": &"(IJKL)Up",
@@ -521,28 +521,28 @@ autoplay = "Up"
 position = Vector2(188.1, 84.3)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_jgoia")
-animation = &"(IJKL)Down"
+animation = &"Up"
 autoplay = "Up"
 
 [node name="ArrowLeft" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=2046886079]
 position = Vector2(155.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_q88i0")
-animation = &"(IJKL)Up"
+animation = &"Up"
 autoplay = "Up"
 
 [node name="ArrowDown" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=922251081]
 position = Vector2(188.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_qgql8")
-animation = &"(IJKL)Down"
+animation = &"(IJKL)Up"
 autoplay = "Up"
 
 [node name="ArrowRight" type="AnimatedSprite2D" parent="ARROWS_Keys" unique_id=1093121466]
 position = Vector2(221.1, 121.5)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_ojjf3")
-animation = &"(IJKL)Up"
+animation = &"(IJKL)Down"
 autoplay = "Up"
 
 [node name="UI_Pausing" type="AnimatedSprite2D" parent="." unique_id=134335259]

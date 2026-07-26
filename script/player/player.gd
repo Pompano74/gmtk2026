@@ -141,6 +141,7 @@ func on_beat_called() -> void:
 			player_sprite.play("(2)Beat4-1")
 	elif (countdown_value <= 0):
 		player_sprite.play("Death")
+		position = position + Vector2(0, 8)
 
 
 func _physics_process(delta: float) -> void:
@@ -186,17 +187,17 @@ func _input(event: InputEvent) -> void:
 			player_ui.arrow_up.play("(IJKL)Up")
 	elif event.is_action_released("shoot_down"):
 		if !is_IJKL:
-			player_ui.arrow_down.play("Down")
+			player_ui.arrow_down.play("Up")
 		elif is_IJKL:
 			player_ui.arrow_down.play("(IJKL)Up")
 	elif event.is_action_released("shoot_left"):
 		if !is_IJKL:
-			player_ui.arrow_left.play("Left")
+			player_ui.arrow_left.play("Up")
 		elif is_IJKL:
 			player_ui.arrow_left.play("(IJKL)Up")
 	elif event.is_action_released("shoot_right"):
 		if !is_IJKL:
-			player_ui.arrow_right.play("Right")
+			player_ui.arrow_right.play("Up")
 		elif is_IJKL:
 			player_ui.arrow_right.play("(IJKL)Up")
 	
@@ -232,7 +233,7 @@ func _input(event: InputEvent) -> void:
 		if Input.is_action_just_pressed("shoot_up"):
 			player_direction = $up
 			if !is_IJKL:
-				player_ui.arrow_up.play("Up")
+				player_ui.arrow_up.play("Down")
 			elif is_IJKL:
 				player_ui.arrow_up.play("(IJKL)Down")
 			_shoot(Vector2(0, -1))
@@ -246,14 +247,14 @@ func _input(event: InputEvent) -> void:
 		if Input.is_action_just_pressed("shoot_left"):
 			player_direction = $left
 			if !is_IJKL:
-				player_ui.arrow_left.play("Left")
+				player_ui.arrow_left.play("Down")
 			elif is_IJKL:
 				player_ui.arrow_left.play("(IJKL)Down")
 			_shoot(Vector2(-1, 0))
 		if Input.is_action_just_pressed("shoot_right"):
 			player_direction = $right
 			if !is_IJKL:
-				player_ui.arrow_right.play("Right")
+				player_ui.arrow_right.play("Down")
 			elif is_IJKL:
 				player_ui.arrow_right.play("(IJKL)Down")
 			_shoot(Vector2(1, 0))
