@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{4c7e6346-e042-4f98-a210-14e15baf322a}">
+		<property name="name">
+			<value>boost pad</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9135df2c-820c-4c26-af60-97ad8697ec33}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{375ec4ca-4738-43b7-bb14-c4b2edc8a523}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{375ec4ca-4738-43b7-bb14-c4b2edc8a523}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>off</value>
+			<value>on</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

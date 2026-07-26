@@ -4,9 +4,6 @@
 		<property name="assetPath">
 			<value>MP3/track7#7_wav_041658655.mp3</value>
 		</property>
-		<property name="isStreaming">
-			<value>true</value>
-		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
 		</property>
