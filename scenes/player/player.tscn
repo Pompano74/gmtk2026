@@ -257,6 +257,141 @@ _data = {
 &"flash red": SubResource("Animation_qek5x")
 }
 
+[sub_resource type="Animation" id="Animation_kvlxm"]
+resource_name = "Jump_Down"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+
+[sub_resource type="Animation" id="Animation_uf5tr"]
+resource_name = "Jump_Left"
+
+[sub_resource type="Animation" id="Animation_lgqa7"]
+resource_name = "Jump_Right"
+
+[sub_resource type="Animation" id="Animation_8ydkj"]
+resource_name = "Jump_Up"
+length = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 2),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0, 0, -0.033333335, 0, 0.008333333, 0, 0, -0.041666668, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.16666667, 0.25)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:offset:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 2),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0, -10, -0.033333335, 0, 0.008333333, 0, 0, -0.041666668, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.16666667, 0.25)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 2),
+"points": PackedFloat32Array(0.2, -0.125, 0, 0.125, 0, 0.15, -0.033333335, 0.008333333, 0, 0, 0.2, -0.008333333, -0.008333333, 0, 0),
+"times": PackedFloat32Array(0, 0.16666667, 0.25)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0, 2),
+"points": PackedFloat32Array(0.05, -0.125, 0, 0.125, 0, 0.02, -0.033333335, 0.0050000004, 0, 0, 0.05, -0.008333333, -0.0050000004, 0, 0),
+"times": PackedFloat32Array(0, 0.16666667, 0.25)
+}
+
+[sub_resource type="Animation" id="Animation_3j4b4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:offset:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.05, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3j4b4"]
+_data = {
+&"Jump_Down": SubResource("Animation_kvlxm"),
+&"Jump_Left": SubResource("Animation_uf5tr"),
+&"Jump_Right": SubResource("Animation_lgqa7"),
+&"Jump_Up": SubResource("Animation_8ydkj"),
+&"RESET": SubResource("Animation_3j4b4")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=1805821953 node_paths=PackedStringArray("player_action")]
 collision_layer = 3
 collision_mask = 3
@@ -268,16 +403,27 @@ player_action = NodePath("player_action")
 bank_paths = ["res://assets/FMOD/banks/Desktop/Master.strings.bank", "res://assets/FMOD/banks/Desktop/Master.bank", "res://assets/FMOD/banks/Desktop/sfx joueur.bank"]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=885346133]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(0.5686275, 0.5686275, 0.5686275, 0)
 texture_filter = 1
-scale = Vector2(0.25, 0.25)
+position = Vector2(0, 8)
+scale = Vector2(0.2, 0.05)
 texture = ExtResource("1_8afob")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246623880]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_75vfm")
-animation = &"(1)Beat20-17"
+animation = &"(2)Beat8-5"
 autoplay = "(1)Beat20-17"
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" unique_id=1945438465]
+position = Vector2(0, 9)
+zoom = Vector2(2.25, 2.25)
+script = ExtResource("4_75vfm")
+
+[node name="player_ui" parent="AnimatedSprite2D/Camera2D" unique_id=1579424744 instance=ExtResource("4_p47bc")]
+visible = false
+offset_top = -6.0
+offset_bottom = -6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586598473]
 shape = SubResource("RectangleShape2D_dovo2")
@@ -305,15 +451,6 @@ rotation = -4.712389
 target_position = Vector2(0, -16)
 hit_from_inside = true
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1945438465]
-zoom = Vector2(2.25, 2.25)
-script = ExtResource("4_75vfm")
-
-[node name="player_ui" parent="." unique_id=1579424744 instance=ExtResource("4_p47bc")]
-visible = false
-offset_top = -6.0
-offset_bottom = -6.0
-
 [node name="player_action" type="FmodEventEmitter2D" parent="." unique_id=201022238]
 event_name = "event:/player action"
 event_guid = "{2584fcb6-bc8d-4183-b8d0-992cd0bbab48}"
@@ -334,3 +471,6 @@ metadata/_custom_type_script = "uid://dsjfpudj1v373"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=134254239]
 libraries/ = SubResource("AnimationLibrary_5gtgg")
+
+[node name="JumpManager" type="AnimationPlayer" parent="." unique_id=1058336328]
+libraries/ = SubResource("AnimationLibrary_3j4b4")

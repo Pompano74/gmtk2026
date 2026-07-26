@@ -14,8 +14,9 @@ var target: Vector2
 
 # Called when the node enters the scene tree for the first time. 
 func _ready() -> void:
-	TempoGlobal.beat_signal.connect(_on_beat)
 	
+	coord_tracker.is_blocking_pathfinding = true
+	TempoGlobal.beat_signal.connect(_on_beat)
 	await get_tree().create_timer(0.1).timeout
 	if boost_pad_checked == false:
 		boost_pad_checked = true 
@@ -41,10 +42,21 @@ func on_player_enters_tile(player: PlayerCharacter) -> void:
 		player.global_position = target
 		TempoGlobal.level_failed()
 	elif is_boost:
+		player.player_sprite.global_position = player.global_position
 		player.global_position = target
-		pass
+		if player.player_sprite_node_pos_tween:
+				player.player_sprite_node_pos_tween.kill()
+		player.player_sprite_node_pos_tween = create_tween()
+		player.player_sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		player.player_sprite_node_pos_tween.tween_property(player.player_sprite, "global_position", target + Vector2(0, -8), 0.4).set_trans(Tween.TRANS_SINE)
 	elif is_floor:
+		player.player_sprite.global_position = player.global_position
 		player.global_position = target
+		if player.player_sprite_node_pos_tween:
+				player.player_sprite_node_pos_tween.kill()
+		player.player_sprite_node_pos_tween = create_tween()
+		player.player_sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		player.player_sprite_node_pos_tween.tween_property(player.player_sprite, "global_position", target + Vector2(0, -8), 0.4).set_trans(Tween.TRANS_SINE)
 	else:
 		print("ERROR BOOST TILE player")
 	super(player)

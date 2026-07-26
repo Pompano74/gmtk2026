@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bba0t1vpp2sy0"]
 
 [ext_resource type="PackedScene" uid="uid://c5cuyqkakuis3" path="res://scenes/level_tiles/base_interaction_tile.tscn" id="1_xnbe8"]
-[ext_resource type="Script" uid="uid://ba0r36tgx3vs5" path="res://script/level_tiles/boost_tile.gd" id="2_em0tm"]
+[ext_resource type="Script" uid="uid://ctr4brjarwb12" path="res://script/level_tiles/boost_tile.gd" id="2_em0tm"]
 [ext_resource type="Texture2D" uid="uid://cfhf5bed551sn" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Boost_pads_Anim_1.png" id="3_riavx"]
 [ext_resource type="Texture2D" uid="uid://whu7y3ve27bi" path="res://assets/sprites/ui_Sprites/Placeable_Tiles/Boost_pads_Anim_2.png" id="4_ygjxj"]
 

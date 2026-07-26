@@ -1,0 +1,610 @@
+[gd_scene format=4 uid="uid://bwo77imrf53p6"]
+
+[ext_resource type="PackedScene" uid="uid://dt8peqm0xmbbd" path="res://scenes/level_grids/level_grid_template.tscn" id="1_ip3k0"]
+[ext_resource type="PackedScene" uid="uid://ch8ojui22ve4n" path="res://scenes/player/player.tscn" id="2_ipf7m"]
+[ext_resource type="PackedScene" uid="uid://boxq3k1d4a5bh" path="res://scenes/enemies/follower_enemy.tscn" id="3_sfuf5"]
+[ext_resource type="PackedScene" uid="uid://q3tufos2vjit" path="res://scenes/enemies/immobile_target.tscn" id="4_n57o6"]
+[ext_resource type="PackedScene" uid="uid://bba0t1vpp2sy0" path="res://scenes/level_tiles/BoostTile.tscn" id="5_7kfmh"]
+[ext_resource type="PackedScene" uid="uid://bnw6wwwfirb2d" path="res://scenes/level_tiles/count_plus.tscn" id="6_ypyr4"]
+
+[node name="lvl_7" unique_id=1574904214 instance=ExtResource("1_ip3k0")]
+level_select_lose = "res://scenes/levels/game_levels/lvl_7.tscn"
+int_level = 7
+
+[node name="TileMapLayer" parent="." index="0" unique_id=1452209589 node_paths=PackedStringArray("player")]
+position = Vector2(-64, -64)
+tile_map_data = PackedByteArray("AAAAAPn/AgADAAUAAAAAAPr/AgADAAMAAAAAAPv/AgADAAUAAAAAAPz/AgADAAMAAAAAAP3/AgADAAUAAAAAAP7/AgADAAUAAAAAAP//AgADAAMAAAABAPn/AgADAAUAAAABAPv/AgADAAUAAAABAPz/AgADAAMAAAABAP3/AgADAAMAAAABAP7/AgADAAMAAAABAP//AgADAAMAAAACAPn/AgADAAUAAAACAPr/AgADAAMAAAACAPv/AgADAAUAAAACAPz/AgADAAUAAAACAP3/AgADAAUAAAACAP7/AgADAAUAAAACAP//AgADAAMAAAADAPr/AgADAAMAAAADAPv/AgADAAUAAAADAPz/AgADAAUAAAADAP3/AgADAAUAAAADAP7/AgADAAUAAAADAP//AgADAAMAAAAEAPr/AgADAAMAAAAEAPz/AgADAAMAAAAEAP3/AgADAAMAAAAEAP7/AgADAAMAAAAEAP//AgADAAMAAAAFAPn/AgADAAUAAAAFAPr/AgADAAMAAAAFAPz/AgADAAMAAAAFAP3/AgADAAUAAAAFAP7/AgADAAUAAAAFAP//AgADAAMAAAAGAPn/AgADAAMAAAAGAPr/AgADAAMAAAAGAPz/AgADAAMAAAAGAP3/AgADAAUAAAAGAP7/AgADAAUAAAAGAP//AgADAAMAAAAHAPn/AgADAAUAAAAHAPz/AgADAAMAAAAHAP3/AgADAAMAAAAHAP7/AgADAAMAAAAHAP//AgADAAMAAAAIAPn/AgADAAUAAAAIAPz/AgADAAMAAAAIAP3/AgADAAUAAAAIAP7/AgADAAUAAAAIAP//AgADAAMAAAAJAPn/AgADAAMAAAAJAPr/AgADAAMAAAAJAPv/AgADAAMAAAAJAPz/AgADAAMAAAAJAP3/AgADAAUAAAAJAP7/AgADAAMAAAAJAP//AgADAAMAAAAAAPj/AgADAAUAAAABAPj/AgADAAMAAAACAPj/AgADAAMAAAADAPj/AgADAAMAAAAEAPj/AgADAAMAAAAFAPj/AgADAAUAAAAGAPj/AgADAAMAAAAHAPj/AgADAAMAAAAIAPj/AgADAAMAAAAJAPj/AgADAAMAAAAAAPf/AgADAAMAAAABAPf/AgADAAUAAAACAPf/AgADAAMAAAADAPf/AgADAAMAAAAFAPf/AgADAAMAAAAGAPf/AgADAAMAAAAHAPf/AgADAAUAAAAIAPf/AgADAAUAAAAJAPf/AgADAAMAAAD///r/AgADAAMAAAD///v/AgADAAMAAAD///z/AgADAAMAAAD///3/AgADAAUAAAD///7/AgADAAUAAAD/////AgADAAMAAAABAPX/AgADAAMAAAAHAPX/AgADAAMAAAAHAPb/AgADAAMAAAABAPT/AgADAAMAAAACAPT/AgADAAUAAAADAPT/AgADAAUAAAAEAPT/AgADAAMAAAAFAPT/AgADAAUAAAAGAPT/AgADAAUAAAAHAPT/AgADAAMAAAACAPX/AgADAAUAAAACAPb/AgADAAMAAAADAPX/AgADAAUAAAADAPb/AgADAAMAAAAEAPX/AgADAAMAAAAEAPb/AgADAAMAAAAFAPX/AgADAAUAAAAFAPb/AgADAAMAAAAGAPX/AgADAAUAAAAGAPb/AgADAAMAAAAEAPn/AgADAAUAAAAEAPf/AgADAAUAAAAAAPX/AgADAAUAAAAAAPb/AgADAAMAAAD///X/AgADAAUAAAD///b/AgADAAMAAAABAPr/AgADAAMAAAABAPb/AgADAAMAAAD9//b/AgADAAMAAAD+//b/AgADAAMAAAD8//r/AgADAAMAAAD9//r/AgADAAUAAAD+//r/AgADAAUAAAD8//b/AgADAAMAAAD8//f/AgADAAMAAAD8//j/AgADAAMAAAD8//n/AgADAAMAAAD9//f/AgADAAUAAAD+//f/AgADAAUAAAD+//n/AgADAAUAAAD///f/AgADAAMAAAD///n/AgADAAMAAAD8//v/AgADAAMAAAD8//z/AgADAAMAAAD8//3/AgADAAUAAAD8//7/AgADAAMAAAD8////AgADAAMAAAD9//v/AgADAAMAAAD9//z/AgADAAMAAAD9//3/AgADAAUAAAD9//7/AgADAAUAAAD9////AgADAAMAAAD+//v/AgADAAMAAAD+//z/AgADAAMAAAD+//3/AgADAAMAAAD+//7/AgADAAMAAAD+////AgADAAMAAAAKAPf/AAADAAUAAAAKAPj/AAADAAMAAAAKAPn/AAADAAMAAAAKAPr/AAADAAMAAAAKAPv/AAADAAUAAAAKAPz/AgADAAMAAAAKAP3/AgADAAMAAAAKAP7/AgADAAMAAAAKAP//AgADAAMAAAALAPf/AAADAAUAAAALAPj/AAADAAMAAAALAPn/AgADAAMAAAALAPr/AAADAAMAAAALAPv/AAADAAUAAAALAPz/AAADAAUAAAALAP3/AAADAAUAAAALAP7/AAADAAUAAAALAP//AAADAAUAAAAIAPT/AgADAAUAAAAIAPX/AgADAAUAAAAIAPb/AgADAAMAAAAJAPT/AgADAAMAAAAJAPX/AgADAAUAAAAJAPb/AgADAAMAAAAKAPT/AgADAAMAAAAKAPX/AgADAAMAAAAKAPb/AgADAAMAAAALAPT/AAADAAUAAAALAPX/AAADAAUAAAALAPb/AAADAAUAAAD8//T/AgADAAMAAAD9//T/AgADAAUAAAD+//T/AgADAAMAAAD///T/AgADAAUAAAAAAPT/AgADAAUAAAD9//X/AgADAAUAAAD+//X/AgADAAMAAAD8//X/AgADAAUAAAAHAPr/AgADAAUAAAAHAPv/AgADAAMAAAAIAPr/AgADAAUAAAAIAPv/AgADAAMAAAALAAAAAgADAAUAAAAKAAAAAgADAAUAAAAJAAAAAgADAAUAAAAIAAAAAgADAAUAAAAHAAAAAgADAAUAAAAGAAAAAgADAAUAAAAFAAAAAgADAAUAAAAEAAAAAgADAAUAAAADAAAAAgADAAUAAAACAAAAAgADAAUAAAABAAAAAgADAAUAAAAAAAAAAgADAAUAAAD//wAAAgADAAUAAAD+/wAAAgADAAUAAAD9/wAAAgADAAUAAAD8/wAAAgADAAUAAAD9//n/AgADAAUAAAADAPn/AgADAAUAAAAGAPv/AgADAAMAAAAFAPv/AgADAAUAAAAEAPv/AgADAAUAAAD6//T/AgADAAUAAAD6//X/AgADAAUAAAD6//b/AgADAAUAAAD6//f/AgADAAUAAAD6//j/AAADAAMAAAD6//n/AgADAAMAAAD6//r/AAADAAMAAAD6//v/AgADAAUAAAD6//z/AgADAAUAAAD6//3/AgADAAUAAAD6//7/AgADAAUAAAD6////AgADAAUAAAD6/wAAAgADAAUAAAD7//T/AgADAAMAAAD7//X/AgADAAMAAAD7//b/AgADAAMAAAD7//f/AAADAAUAAAD7//j/AAADAAMAAAD7//n/AgADAAMAAAD7//r/AAADAAMAAAD7//v/AAADAAUAAAD7//z/AgADAAMAAAD7//3/AgADAAMAAAD7//7/AgADAAMAAAD7////AgADAAMAAAD7/wAAAgADAAUAAAD6//L/AgADAAUAAAD6//P/AgADAAUAAAD7//L/AgADAAUAAAD7//P/AgADAAMAAAD8//L/AgADAAUAAAD8//P/AgADAAMAAAD9//L/AgADAAUAAAD9//P/AgADAAMAAAD+//L/AgADAAUAAAD+//P/AgADAAMAAAD///L/AgADAAUAAAD///P/AgADAAMAAAAAAPL/AgADAAUAAAAAAPP/AgADAAMAAAABAPL/AgADAAUAAAABAPP/AgADAAMAAAACAPL/AgADAAUAAAACAPP/AgADAAUAAAADAPL/AgADAAUAAAADAPP/AgADAAUAAAAEAPL/AgADAAUAAAAEAPP/AgADAAMAAAAFAPL/AgADAAUAAAAFAPP/AgADAAMAAAAGAPL/AgADAAUAAAAGAPP/AgADAAMAAAAHAPL/AgADAAUAAAAHAPP/AgADAAMAAAAIAPL/AgADAAUAAAAIAPP/AgADAAMAAAAJAPL/AgADAAUAAAAJAPP/AgADAAMAAAAKAPL/AgADAAUAAAAKAPP/AgADAAMAAAALAPL/AgADAAUAAAALAPP/AgADAAUAAAD4//D/AgADAAUAAAD5//D/AgADAAUAAAD6//D/AgADAAUAAAD7//D/AgADAAUAAAD8//D/AgADAAUAAAD9//D/AgADAAUAAAD+//D/AgADAAUAAAD///D/AgADAAUAAAAAAPD/AgADAAUAAAABAPD/AgADAAUAAAACAPD/AgADAAUAAAADAPD/AgADAAUAAAAEAPD/AgADAAUAAAAFAPD/AgADAAUAAAAGAPD/AgADAAUAAAAHAPD/AgADAAUAAAAIAPD/AgADAAUAAAAJAPD/AgADAAUAAAAKAPD/AgADAAUAAAALAPD/AgADAAUAAAAMAPD/AgADAAUAAAANAPD/AgADAAUAAAANAPH/AgADAAUAAAANAPL/AgADAAUAAAANAPP/AgADAAUAAAANAPT/AgADAAUAAAANAPX/AgADAAUAAAANAPb/AgADAAUAAAANAPf/AgADAAUAAAANAPj/AgADAAUAAAANAPn/AgADAAUAAAANAPr/AgADAAUAAAANAPv/AgADAAUAAAANAPz/AgADAAUAAAANAP3/AgADAAUAAAANAP7/AgADAAUAAAANAP//AgADAAUAAAANAAAAAgADAAUAAAANAAEAAgADAAUAAAANAAIAAgADAAUAAAD4/wIAAgADAAUAAAD5/wIAAgADAAUAAAD6/wIAAgADAAUAAAD7/wIAAgADAAUAAAD8/wIAAgADAAUAAAD9/wIAAgADAAUAAAD+/wIAAgADAAUAAAD//wIAAgADAAUAAAAAAAIAAgADAAUAAAABAAIAAgADAAUAAAACAAIAAgADAAUAAAADAAIAAgADAAUAAAAEAAIAAgADAAUAAAAFAAIAAgADAAUAAAAGAAIAAgADAAUAAAAHAAIAAgADAAUAAAAIAAIAAgADAAUAAAAJAAIAAgADAAUAAAAKAAIAAgADAAUAAAALAAIAAgADAAUAAAAMAAIAAgADAAUAAAD4//H/AgADAAUAAAD4//L/AgADAAUAAAD4//P/AgADAAUAAAD4//T/AgADAAUAAAD4//X/AgADAAUAAAD4//b/AgADAAUAAAD4//f/AgADAAUAAAD4//j/AgADAAUAAAD4//n/AgADAAUAAAD4//r/AgADAAUAAAD4//v/AgADAAUAAAD4//z/AgADAAUAAAD4//3/AgADAAUAAAD4//7/AgADAAUAAAD4////AgADAAUAAAD4/wAAAgADAAUAAAD4/wEAAgADAAUAAAD9//j/AgADAAMAAAD+//j/AgADAAMAAAD///j/AgADAAMAAAD5//H/AAADAAMAAAD5//L/AAADAAMAAAD5//P/AAADAAMAAAD5//T/AAADAAMAAAD5//X/AAADAAMAAAD5//b/AAADAAMAAAD5//f/AAADAAMAAAD5//j/AAADAAMAAAD5//n/AAADAAMAAAD5//r/AAADAAMAAAD5//v/AAADAAMAAAD5//z/AAADAAMAAAD5//3/AAADAAMAAAD5//7/AAADAAMAAAD5////AAADAAMAAAD5/wAAAAADAAMAAAD5/wEAAAADAAMAAAD6/wEAAAADAAMAAAD7/wEAAAADAAMAAAD8/wEAAAADAAMAAAD9/wEAAAADAAMAAAD+/wEAAAADAAMAAAD//wEAAAADAAMAAAAAAAEAAAADAAMAAAABAAEAAAADAAMAAAACAAEAAAADAAMAAAADAAEAAAADAAMAAAAEAAEAAAADAAMAAAAFAAEAAAADAAMAAAAGAAEAAAADAAMAAAAHAAEAAAADAAMAAAAIAAEAAAADAAMAAAAJAAEAAAADAAMAAAAKAAEAAAADAAMAAAALAAEAAAADAAMAAAAMAAEAAAADAAMAAAAMAAAAAAADAAMAAAAMAP//AAADAAMAAAAMAP7/AAADAAMAAAAMAP3/AAADAAMAAAAMAPz/AAADAAMAAAAMAPv/AAADAAMAAAAMAPr/AAADAAMAAAAMAPn/AAADAAMAAAAMAPj/AAADAAMAAAAMAPf/AAADAAMAAAAMAPb/AAADAAMAAAAMAPX/AAADAAMAAAAMAPT/AAADAAMAAAAMAPP/AAADAAMAAAAMAPL/AAADAAMAAAAMAPH/AAADAAMAAAALAPH/AAADAAMAAAAKAPH/AAADAAMAAAAJAPH/AAADAAMAAAAIAPH/AAADAAMAAAAHAPH/AAADAAMAAAAGAPH/AAADAAMAAAAFAPH/AAADAAMAAAAEAPH/AAADAAMAAAADAPH/AAADAAMAAAACAPH/AAADAAMAAAABAPH/AAADAAMAAAAAAPH/AAADAAMAAAD///H/AAADAAMAAAD+//H/AAADAAMAAAD9//H/AAADAAMAAAD8//H/AAADAAMAAAD7//H/AAADAAMAAAD6//H/AAADAAMAAAA=")
+player = NodePath("Player")
+
+[node name="Player" parent="TileMapLayer" index="0" unique_id=1805821953 instance=ExtResource("2_ipf7m")]
+position = Vector2(112, -176)
+
+[node name="FollowerEnemy" parent="TileMapLayer" index="1" unique_id=1418937433 node_paths=PackedStringArray("tilemap") instance=ExtResource("3_sfuf5")]
+position = Vector2(48, -240)
+tilemap = NodePath("..")
+
+[node name="FollowerEnemy2" parent="TileMapLayer" index="2" unique_id=1907575138 node_paths=PackedStringArray("tilemap") instance=ExtResource("3_sfuf5")]
+position = Vector2(144, -240)
+tilemap = NodePath("..")
+
+[node name="immobile_target8" parent="TileMapLayer" index="3" unique_id=18587106 instance=ExtResource("4_n57o6")]
+position = Vector2(-112, -48)
+
+[node name="immobile_target9" parent="TileMapLayer" index="4" unique_id=413290984 instance=ExtResource("4_n57o6")]
+position = Vector2(-48, -16)
+
+[node name="immobile_target10" parent="TileMapLayer" index="5" unique_id=1465316287 instance=ExtResource("4_n57o6")]
+position = Vector2(240, -16)
+
+[node name="immobile_target11" parent="TileMapLayer" index="6" unique_id=1857338354 instance=ExtResource("4_n57o6")]
+position = Vector2(48, -304)
+
+[node name="immobile_target12" parent="TileMapLayer" index="7" unique_id=484256392 instance=ExtResource("4_n57o6")]
+position = Vector2(144, -304)
+
+[node name="immobile_target13" parent="TileMapLayer" index="8" unique_id=265381756 instance=ExtResource("4_n57o6")]
+position = Vector2(144, -400)
+
+[node name="immobile_target14" parent="TileMapLayer" index="9" unique_id=449333768 instance=ExtResource("4_n57o6")]
+position = Vector2(48, -400)
+
+[node name="immobile_target15" parent="TileMapLayer" index="10" unique_id=1171419342 instance=ExtResource("4_n57o6")]
+position = Vector2(-48, -400)
+
+[node name="immobile_target16" parent="TileMapLayer" index="11" unique_id=1499205254 instance=ExtResource("4_n57o6")]
+position = Vector2(240, -400)
+
+[node name="immobile_target2" parent="TileMapLayer" index="12" unique_id=127972611 instance=ExtResource("4_n57o6")]
+position = Vector2(304, -48)
+
+[node name="immobile_target3" parent="TileMapLayer" index="13" unique_id=70464002 instance=ExtResource("4_n57o6")]
+position = Vector2(304, -368)
+
+[node name="immobile_target4" parent="TileMapLayer" index="14" unique_id=1870230776 instance=ExtResource("4_n57o6")]
+position = Vector2(-112, -368)
+
+[node name="BaseInteractionTile2" parent="TileMapLayer" index="15" unique_id=453292380 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -240)
+
+[node name="BaseInteractionTile3" parent="TileMapLayer" index="16" unique_id=2081527506 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -272)
+
+[node name="BaseInteractionTile4" parent="TileMapLayer" index="17" unique_id=1277926932 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -304)
+
+[node name="BaseInteractionTile5" parent="TileMapLayer" index="18" unique_id=1355726366 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -336)
+
+[node name="BaseInteractionTile6" parent="TileMapLayer" index="19" unique_id=1854198349 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -368)
+
+[node name="BaseInteractionTile7" parent="TileMapLayer" index="20" unique_id=1636939017 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -400)
+
+[node name="BaseInteractionTile8" parent="TileMapLayer" index="21" unique_id=1235726640 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -432)
+
+[node name="BaseInteractionTile40" parent="TileMapLayer" index="22" unique_id=1800133005 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -368)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile41" parent="TileMapLayer" index="23" unique_id=40528278 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -336)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile42" parent="TileMapLayer" index="24" unique_id=657139170 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -304)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile43" parent="TileMapLayer" index="25" unique_id=352026640 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -272)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile44" parent="TileMapLayer" index="26" unique_id=572377645 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -240)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile45" parent="TileMapLayer" index="27" unique_id=453553380 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -176)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile46" parent="TileMapLayer" index="28" unique_id=1192452450 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -144)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile47" parent="TileMapLayer" index="29" unique_id=102398822 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -112)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile48" parent="TileMapLayer" index="30" unique_id=528286684 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -80)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile49" parent="TileMapLayer" index="31" unique_id=1086299611 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -48)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile50" parent="TileMapLayer" index="32" unique_id=1770487648 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -16)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile51" parent="TileMapLayer" index="33" unique_id=790624295 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, 16)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile52" parent="TileMapLayer" index="34" unique_id=1659821819 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, 16)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile53" parent="TileMapLayer" index="35" unique_id=876125588 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile54" parent="TileMapLayer" index="36" unique_id=390168855 instance=ExtResource("5_7kfmh")]
+position = Vector2(368, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile55" parent="TileMapLayer" index="37" unique_id=1965234361 instance=ExtResource("5_7kfmh")]
+position = Vector2(336, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile56" parent="TileMapLayer" index="38" unique_id=1924462255 instance=ExtResource("5_7kfmh")]
+position = Vector2(304, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile57" parent="TileMapLayer" index="39" unique_id=363543366 instance=ExtResource("5_7kfmh")]
+position = Vector2(272, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile58" parent="TileMapLayer" index="40" unique_id=1584374027 instance=ExtResource("5_7kfmh")]
+position = Vector2(240, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile59" parent="TileMapLayer" index="41" unique_id=1739657401 instance=ExtResource("5_7kfmh")]
+position = Vector2(208, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile60" parent="TileMapLayer" index="42" unique_id=945612629 instance=ExtResource("5_7kfmh")]
+position = Vector2(176, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile61" parent="TileMapLayer" index="43" unique_id=1263574184 instance=ExtResource("5_7kfmh")]
+position = Vector2(144, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile62" parent="TileMapLayer" index="44" unique_id=864437081 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile63" parent="TileMapLayer" index="45" unique_id=1111104419 instance=ExtResource("5_7kfmh")]
+position = Vector2(368, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile64" parent="TileMapLayer" index="46" unique_id=197975365 instance=ExtResource("5_7kfmh")]
+position = Vector2(336, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile65" parent="TileMapLayer" index="47" unique_id=1931773706 instance=ExtResource("5_7kfmh")]
+position = Vector2(304, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile66" parent="TileMapLayer" index="48" unique_id=63067586 instance=ExtResource("5_7kfmh")]
+position = Vector2(272, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile67" parent="TileMapLayer" index="49" unique_id=1947980498 instance=ExtResource("5_7kfmh")]
+position = Vector2(240, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile68" parent="TileMapLayer" index="50" unique_id=364022285 instance=ExtResource("5_7kfmh")]
+position = Vector2(208, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile69" parent="TileMapLayer" index="51" unique_id=1477351803 instance=ExtResource("5_7kfmh")]
+position = Vector2(176, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile70" parent="TileMapLayer" index="52" unique_id=840237988 instance=ExtResource("5_7kfmh")]
+position = Vector2(144, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile71" parent="TileMapLayer" index="53" unique_id=936145922 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile72" parent="TileMapLayer" index="54" unique_id=1328305566 instance=ExtResource("5_7kfmh")]
+position = Vector2(368, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile73" parent="TileMapLayer" index="55" unique_id=1619333074 instance=ExtResource("5_7kfmh")]
+position = Vector2(336, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile74" parent="TileMapLayer" index="56" unique_id=563101734 instance=ExtResource("5_7kfmh")]
+position = Vector2(304, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile75" parent="TileMapLayer" index="57" unique_id=1677849338 instance=ExtResource("5_7kfmh")]
+position = Vector2(272, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile76" parent="TileMapLayer" index="58" unique_id=45285986 instance=ExtResource("5_7kfmh")]
+position = Vector2(240, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile77" parent="TileMapLayer" index="59" unique_id=884812854 instance=ExtResource("5_7kfmh")]
+position = Vector2(208, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile78" parent="TileMapLayer" index="60" unique_id=57519924 instance=ExtResource("5_7kfmh")]
+position = Vector2(176, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile79" parent="TileMapLayer" index="61" unique_id=451299338 instance=ExtResource("5_7kfmh")]
+position = Vector2(144, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile80" parent="TileMapLayer" index="62" unique_id=1211005838 instance=ExtResource("5_7kfmh")]
+position = Vector2(112, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile81" parent="TileMapLayer" index="63" unique_id=1632170666 instance=ExtResource("5_7kfmh")]
+position = Vector2(80, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile82" parent="TileMapLayer" index="64" unique_id=1571813566 instance=ExtResource("5_7kfmh")]
+position = Vector2(48, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile83" parent="TileMapLayer" index="65" unique_id=29547353 instance=ExtResource("5_7kfmh")]
+position = Vector2(16, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile84" parent="TileMapLayer" index="66" unique_id=1076135473 instance=ExtResource("5_7kfmh")]
+position = Vector2(-16, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile85" parent="TileMapLayer" index="67" unique_id=1757272083 instance=ExtResource("5_7kfmh")]
+position = Vector2(-48, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile86" parent="TileMapLayer" index="68" unique_id=588149424 instance=ExtResource("5_7kfmh")]
+position = Vector2(-80, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile87" parent="TileMapLayer" index="69" unique_id=244481258 instance=ExtResource("5_7kfmh")]
+position = Vector2(-112, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile88" parent="TileMapLayer" index="70" unique_id=1152445007 instance=ExtResource("5_7kfmh")]
+position = Vector2(-144, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile92" parent="TileMapLayer" index="71" unique_id=1482276895 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -16)
+
+[node name="BaseInteractionTile93" parent="TileMapLayer" index="72" unique_id=1336803855 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -48)
+
+[node name="BaseInteractionTile94" parent="TileMapLayer" index="73" unique_id=32140120 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -80)
+
+[node name="BaseInteractionTile95" parent="TileMapLayer" index="74" unique_id=401847705 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -112)
+
+[node name="BaseInteractionTile96" parent="TileMapLayer" index="75" unique_id=1977448482 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -144)
+
+[node name="BaseInteractionTile97" parent="TileMapLayer" index="76" unique_id=191164495 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -176)
+
+[node name="BaseInteractionTile89" parent="TileMapLayer" index="77" unique_id=2074220176 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, 16)
+
+[node name="BaseInteractionTile90" parent="TileMapLayer" index="78" unique_id=473160860 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, 48)
+
+[node name="BaseInteractionTile91" parent="TileMapLayer" index="79" unique_id=712029968 instance=ExtResource("5_7kfmh")]
+position = Vector2(-176, 48)
+rotation = -1.5707964
+
+[node name="BaseInteractionTile11" parent="TileMapLayer" index="80" unique_id=299520783 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -240)
+
+[node name="BaseInteractionTile12" parent="TileMapLayer" index="81" unique_id=1143341013 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -272)
+
+[node name="BaseInteractionTile13" parent="TileMapLayer" index="82" unique_id=691434106 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -304)
+
+[node name="BaseInteractionTile14" parent="TileMapLayer" index="83" unique_id=267573107 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -336)
+
+[node name="BaseInteractionTile15" parent="TileMapLayer" index="84" unique_id=1374009363 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -368)
+
+[node name="BaseInteractionTile16" parent="TileMapLayer" index="85" unique_id=634806378 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -400)
+
+[node name="BaseInteractionTile17" parent="TileMapLayer" index="86" unique_id=1534900612 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -432)
+
+[node name="BaseInteractionTile9" parent="TileMapLayer" index="87" unique_id=1825286202 instance=ExtResource("5_7kfmh")]
+position = Vector2(-208, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile18" parent="TileMapLayer" index="88" unique_id=1996198519 instance=ExtResource("5_7kfmh")]
+position = Vector2(-176, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile19" parent="TileMapLayer" index="89" unique_id=819862127 instance=ExtResource("5_7kfmh")]
+position = Vector2(-144, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile20" parent="TileMapLayer" index="90" unique_id=2032023558 instance=ExtResource("5_7kfmh")]
+position = Vector2(-112, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile21" parent="TileMapLayer" index="91" unique_id=574815514 instance=ExtResource("5_7kfmh")]
+position = Vector2(-80, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile22" parent="TileMapLayer" index="92" unique_id=1405240046 instance=ExtResource("5_7kfmh")]
+position = Vector2(-48, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile23" parent="TileMapLayer" index="93" unique_id=1397684490 instance=ExtResource("5_7kfmh")]
+position = Vector2(-16, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile24" parent="TileMapLayer" index="94" unique_id=460237866 instance=ExtResource("5_7kfmh")]
+position = Vector2(16, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile25" parent="TileMapLayer" index="95" unique_id=471526775 instance=ExtResource("5_7kfmh")]
+position = Vector2(48, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile26" parent="TileMapLayer" index="96" unique_id=692825571 instance=ExtResource("5_7kfmh")]
+position = Vector2(80, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile27" parent="TileMapLayer" index="97" unique_id=1975412011 instance=ExtResource("5_7kfmh")]
+position = Vector2(112, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile28" parent="TileMapLayer" index="98" unique_id=575661833 instance=ExtResource("5_7kfmh")]
+position = Vector2(144, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile29" parent="TileMapLayer" index="99" unique_id=1568506669 instance=ExtResource("5_7kfmh")]
+position = Vector2(176, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile30" parent="TileMapLayer" index="100" unique_id=2131102667 instance=ExtResource("5_7kfmh")]
+position = Vector2(208, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile31" parent="TileMapLayer" index="101" unique_id=1951006321 instance=ExtResource("5_7kfmh")]
+position = Vector2(240, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile32" parent="TileMapLayer" index="102" unique_id=233811177 instance=ExtResource("5_7kfmh")]
+position = Vector2(272, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile33" parent="TileMapLayer" index="103" unique_id=54341394 instance=ExtResource("5_7kfmh")]
+position = Vector2(304, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile34" parent="TileMapLayer" index="104" unique_id=796363400 instance=ExtResource("5_7kfmh")]
+position = Vector2(336, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile35" parent="TileMapLayer" index="105" unique_id=1100605376 instance=ExtResource("5_7kfmh")]
+position = Vector2(368, -464)
+rotation = 1.5707964
+
+[node name="BaseInteractionTile36" parent="TileMapLayer" index="106" unique_id=415878376 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -464)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile37" parent="TileMapLayer" index="107" unique_id=810962507 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -432)
+rotation = -3.1415925
+
+[node name="BaseInteractionTile38" parent="TileMapLayer" index="108" unique_id=479890120 instance=ExtResource("5_7kfmh")]
+position = Vector2(400, -400)
+rotation = -3.1415925
+
+[node name="count_plus" parent="TileMapLayer" index="109" unique_id=40145697 instance=ExtResource("6_ypyr4")]
+position = Vector2(-48, -144)
+plus_value = 4
+
+[node name="count_plus2" parent="TileMapLayer" index="110" unique_id=782814627 instance=ExtResource("6_ypyr4")]
+position = Vector2(-80, -144)
+plus_value = 4
+
+[node name="count_plus5" parent="TileMapLayer" index="111" unique_id=797122435 instance=ExtResource("6_ypyr4")]
+position = Vector2(-48, -240)
+plus_value = 4
+
+[node name="count_plus6" parent="TileMapLayer" index="112" unique_id=621948011 instance=ExtResource("6_ypyr4")]
+position = Vector2(-80, -240)
+plus_value = 4
+
+[node name="count_plus7" parent="TileMapLayer" index="113" unique_id=547926992 instance=ExtResource("6_ypyr4")]
+position = Vector2(-80, -304)
+plus_value = 4
+
+[node name="count_plus8" parent="TileMapLayer" index="114" unique_id=1916744555 instance=ExtResource("6_ypyr4")]
+position = Vector2(-48, -304)
+plus_value = 4
+
+[node name="count_plus9" parent="TileMapLayer" index="115" unique_id=939238261 instance=ExtResource("6_ypyr4")]
+position = Vector2(-16, -208)
+plus_value = 4
+
+[node name="count_plus10" parent="TileMapLayer" index="116" unique_id=1734803773 instance=ExtResource("6_ypyr4")]
+position = Vector2(-16, -176)
+plus_value = 4
+
+[node name="count_plus11" parent="TileMapLayer" index="117" unique_id=1400488903 instance=ExtResource("6_ypyr4")]
+position = Vector2(-112, -176)
+plus_value = 4
+
+[node name="count_plus12" parent="TileMapLayer" index="118" unique_id=869412956 instance=ExtResource("6_ypyr4")]
+position = Vector2(-112, -208)
+plus_value = 4
+
+[node name="count_plus13" parent="TileMapLayer" index="119" unique_id=1258989188 instance=ExtResource("6_ypyr4")]
+position = Vector2(208, -208)
+plus_value = 4
+
+[node name="count_plus14" parent="TileMapLayer" index="120" unique_id=197650093 instance=ExtResource("6_ypyr4")]
+position = Vector2(208, -176)
+plus_value = 4
+
+[node name="count_plus15" parent="TileMapLayer" index="121" unique_id=649365198 instance=ExtResource("6_ypyr4")]
+position = Vector2(240, -144)
+plus_value = 4
+
+[node name="count_plus16" parent="TileMapLayer" index="122" unique_id=960354801 instance=ExtResource("6_ypyr4")]
+position = Vector2(272, -144)
+plus_value = 4
+
+[node name="count_plus19" parent="TileMapLayer" index="123" unique_id=408278337 instance=ExtResource("6_ypyr4")]
+position = Vector2(304, -176)
+plus_value = 4
+
+[node name="count_plus20" parent="TileMapLayer" index="124" unique_id=496718550 instance=ExtResource("6_ypyr4")]
+position = Vector2(304, -208)
+plus_value = 4
+
+[node name="count_plus21" parent="TileMapLayer" index="125" unique_id=2105883345 instance=ExtResource("6_ypyr4")]
+position = Vector2(272, -240)
+plus_value = 4
+
+[node name="count_plus22" parent="TileMapLayer" index="126" unique_id=1033766614 instance=ExtResource("6_ypyr4")]
+position = Vector2(240, -240)
+plus_value = 4
+
+[node name="count_plus23" parent="TileMapLayer" index="127" unique_id=1175390648 instance=ExtResource("6_ypyr4")]
+position = Vector2(240, -304)
+plus_value = 4
+
+[node name="count_plus24" parent="TileMapLayer" index="128" unique_id=1323889487 instance=ExtResource("6_ypyr4")]
+position = Vector2(272, -304)
+plus_value = 4
+
+[node name="count_plus25" parent="TileMapLayer" index="129" unique_id=1927762381 instance=ExtResource("6_ypyr4")]
+position = Vector2(144, -368)
+plus_value = 4
+
+[node name="count_plus26" parent="TileMapLayer" index="130" unique_id=2127500460 instance=ExtResource("6_ypyr4")]
+position = Vector2(144, -336)
+plus_value = 4
+
+[node name="count_plus27" parent="TileMapLayer" index="131" unique_id=1861790963 instance=ExtResource("6_ypyr4")]
+position = Vector2(48, -336)
+plus_value = 4
+
+[node name="count_plus28" parent="TileMapLayer" index="132" unique_id=924354579 instance=ExtResource("6_ypyr4")]
+position = Vector2(48, -368)
+plus_value = 4
+
+[node name="count_plus29" parent="TileMapLayer" index="133" unique_id=245156603 instance=ExtResource("6_ypyr4")]
+position = Vector2(-144, -368)
+plus_value = 4
+
+[node name="count_plus30" parent="TileMapLayer" index="134" unique_id=1731130287 instance=ExtResource("6_ypyr4")]
+position = Vector2(-144, -336)
+plus_value = 4
+
+[node name="count_plus31" parent="TileMapLayer" index="135" unique_id=722714180 instance=ExtResource("6_ypyr4")]
+position = Vector2(336, -336)
+plus_value = 4
+
+[node name="count_plus32" parent="TileMapLayer" index="136" unique_id=360013407 instance=ExtResource("6_ypyr4")]
+position = Vector2(336, -368)
+plus_value = 4
+
+[node name="count_plus33" parent="TileMapLayer" index="137" unique_id=1961800621 instance=ExtResource("6_ypyr4")]
+position = Vector2(336, -80)
+plus_value = 4
+
+[node name="count_plus34" parent="TileMapLayer" index="138" unique_id=2005583660 instance=ExtResource("6_ypyr4")]
+position = Vector2(336, -48)
+plus_value = 4
+
+[node name="count_plus35" parent="TileMapLayer" index="139" unique_id=178134791 instance=ExtResource("6_ypyr4")]
+position = Vector2(-144, -48)
+plus_value = 4
+
+[node name="count_plus36" parent="TileMapLayer" index="140" unique_id=1869323670 instance=ExtResource("6_ypyr4")]
+position = Vector2(-144, -80)
+plus_value = 4
+
+[node name="count_plus37" parent="TileMapLayer" index="141" unique_id=886791758 instance=ExtResource("6_ypyr4")]
+position = Vector2(48, -80)
+plus_value = 4
+
+[node name="count_plus38" parent="TileMapLayer" index="142" unique_id=514544727 instance=ExtResource("6_ypyr4")]
+position = Vector2(144, -80)
+plus_value = 4
+
+[node name="count_plus39" parent="TileMapLayer" index="143" unique_id=1683509368 instance=ExtResource("6_ypyr4")]
+position = Vector2(144, -16)
+plus_value = 4
+
+[node name="count_plus40" parent="TileMapLayer" index="144" unique_id=2028001151 instance=ExtResource("6_ypyr4")]
+position = Vector2(48, -16)
+plus_value = 4
+
+[node name="count_plus41" parent="TileMapLayer" index="145" unique_id=1365012511 instance=ExtResource("6_ypyr4")]
+position = Vector2(-16, -400)
+plus_value = 4
+
+[node name="count_plus42" parent="TileMapLayer" index="146" unique_id=1841466690 instance=ExtResource("6_ypyr4")]
+position = Vector2(208, -400)
+plus_value = 4
+
+[node name="count_plus43" parent="TileMapLayer" index="147" unique_id=1478993178 instance=ExtResource("6_ypyr4")]
+position = Vector2(-80, -400)
+plus_value = 4
+
+[node name="count_plus44" parent="TileMapLayer" index="148" unique_id=962452994 instance=ExtResource("6_ypyr4")]
+position = Vector2(272, -400)
+plus_value = 4
+
+[node name="count_plus45" parent="TileMapLayer" index="149" unique_id=1454519615 instance=ExtResource("6_ypyr4")]
+position = Vector2(80, -176)
+plus_value = 4
+
+[node name="count_plus46" parent="TileMapLayer" index="150" unique_id=1716629806 instance=ExtResource("6_ypyr4")]
+position = Vector2(80, -240)
+plus_value = 4
+
+[node name="count_plus47" parent="TileMapLayer" index="151" unique_id=1874489221 instance=ExtResource("6_ypyr4")]
+position = Vector2(112, -240)
+plus_value = 4
+
+[node name="count_plus48" parent="TileMapLayer" index="152" unique_id=2123361384 instance=ExtResource("6_ypyr4")]
+position = Vector2(112, -272)
+plus_value = 4
+
+[node name="count_plus49" parent="TileMapLayer" index="153" unique_id=1083336904 instance=ExtResource("6_ypyr4")]
+position = Vector2(80, -272)
+plus_value = 4
+
+[node name="count_plus50" parent="TileMapLayer" index="154" unique_id=419661409 instance=ExtResource("6_ypyr4")]
+position = Vector2(80, -304)
+plus_value = 4
+
+[node name="count_plus51" parent="TileMapLayer" index="155" unique_id=1378991709 instance=ExtResource("6_ypyr4")]
+position = Vector2(112, -304)
+plus_value = 4
+
+[node name="music" parent="." index="2" unique_id=284526422]
+event_name = "event:/track7"
+event_guid = "{db928e2c-347f-41a6-a407-ccd01e3c8695}"
