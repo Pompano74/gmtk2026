@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cltb36my32s2g" path="res://scenes/level_tiles/disco_floor_manager.tscn" id="6_ft45c"]
 
 [node name="lvl_3" unique_id=1574904214 instance=ExtResource("1_x63e7")]
-level_select_lose = "res://scenes/levels/game_levels/lvl_3.tscn"
-int_level = 3
+level_select_lose = "res://scenes/levels/game_levels/lvl_2.tscn"
+int_level = 2
 
 [node name="disco_floor_manager" parent="." index="1" unique_id=1720417041 node_paths=PackedStringArray("layer1", "layer2") instance=ExtResource("6_ft45c")]
 layer1 = NodePath("../TileMapLayer/Habillage_Color_1")

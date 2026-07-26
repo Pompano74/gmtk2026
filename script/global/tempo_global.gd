@@ -6,9 +6,14 @@ extends Node
 #==========================================variable=============================================#
 #===============================================================================================#
 signal beat_signal
+signal half
 signal beat_win
 signal beat_failed
 signal player_skipped_beat
+
+
+@onready var halft_beat: Timer = $halft_beat
+
 
 var game_progress: int = 0
 var int_level: int = 0
@@ -132,6 +137,9 @@ func _on_combo_timer_timeout() -> void:
 #win and loose call (called in _beat() when reach 0 of coutdown or current target
 func level_win():
 	if level_is_switching == false:
+		other_transition.visible = true
+		black_transition.visible = true
+		other_transition.play("changing_scene")
 		level_is_switching = true
 		timer.stop()
 		ui.visible = true
@@ -141,6 +149,8 @@ func level_win():
 
 func level_failed():
 	if level_is_restarting == false:
+		other_transition.visible = true
+		other_transition.play("player_death")
 		timer.stop()
 		level_is_restarting = true
 		can_beat = false
@@ -150,3 +160,9 @@ func level_failed():
 		coutdown_value = 20
 		get_tree().change_scene_to_file(level_select_lose)
 		print("FAILED LEVEL")
+
+
+func _on_halft_beat_timeout() -> void:
+	_half() # Replace with function body.
+func _half():
+	half.emit()
