@@ -2,8 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://6awh6ts5vvs1" path="res://scenes/enemies/base_enemy.tscn" id="1_xm4p0"]
 [ext_resource type="Script" uid="uid://dcftpb30o384o" path="res://script/enemies/pac_man_ghost.gd" id="2_2urlo"]
+[ext_resource type="Texture2D" uid="uid://dihyn5pht3b3n" path="res://assets/sprites_only_final/Enemies/Enemy_LePoulpe.png" id="3_xlywy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlywy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xlywy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="PacManGhost" unique_id=1418937433 instance=ExtResource("1_xm4p0")]
 script = ExtResource("2_2urlo")
 damage = 5
 invincible = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=754006820]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_xlywy")
+
+[node name="Sprite2D" parent="." index="1" unique_id=1638563704]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -3)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_xlywy")
