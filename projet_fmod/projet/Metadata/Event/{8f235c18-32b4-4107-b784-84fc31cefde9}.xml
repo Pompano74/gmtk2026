@@ -37,7 +37,7 @@
 	</object>
 	<object class="MasterTrack" id="{74b7557d-0c92-4347-877b-1e550373cd05}">
 		<relationship name="modules">
-			<destination>{e5405082-52c7-4225-95ec-01e4f525d050}</destination>
+			<destination>{2ff4b355-bdfd-4337-b343-c7379ca56a9a}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{e6564750-1d80-4861-9623-b0bc8617af58}</destination>
@@ -59,7 +59,7 @@
 	<object class="MarkerTrack" id="{b2661510-c2a3-4a4a-94af-ad4e9fa73dca}" />
 	<object class="Timeline" id="{51eec267-e7d6-4b0a-990a-8a82144d9882}">
 		<relationship name="modules">
-			<destination>{e5405082-52c7-4225-95ec-01e4f525d050}</destination>
+			<destination>{2ff4b355-bdfd-4337-b343-c7379ca56a9a}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{98552ac5-beb4-47c9-96f9-ce3defdfbff0}</destination>
@@ -77,7 +77,7 @@
 			<destination>{99aa56db-1cdb-4bfc-a27c-55bbdc110b75}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{e5405082-52c7-4225-95ec-01e4f525d050}">
+	<object class="SingleSound" id="{2ff4b355-bdfd-4337-b343-c7379ca56a9a}">
 		<property name="length">
 			<value>2</value>
 		</property>
