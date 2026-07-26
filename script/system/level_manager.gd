@@ -40,9 +40,6 @@ func _ready() -> void:
 	TempoGlobal.coutdown_value = 20
 	TempoGlobal.can_transition = false
 	TempoGlobal.ui.visible = true
-	TempoGlobal.ui_label.visible = false
-	TempoGlobal.label_start.visible = true
-	TempoGlobal.label_reset.visible = false
 	TempoGlobal.timer.stop()
 	TempoGlobal.timer.wait_time = TempoGlobal.beat_inital_value
 	TempoGlobal.total_target = 0
@@ -58,7 +55,6 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(TempoGlobal.beat_inital_value * 3).timeout
 	TempoGlobal.ui.visible = false
-	TempoGlobal.label_start.visible = false
 	TempoGlobal.level_is_restarting = false
 	TempoGlobal.level_is_switching = false
 	TempoGlobal.timer.start()
