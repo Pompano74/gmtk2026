@@ -63,6 +63,11 @@ func _ready() -> void:
 	buffer_max = buffer_value
 
 func on_beat_called() -> void:
+	if TempoGlobal.beat_streak == 15:
+		Input.start_joy_vibration(0,0,1,buffer_value)
+	else:
+		Input.start_joy_vibration(0,1,0,buffer_value)
+	
 	TempoGlobal.ui.global_position = global_position
 	#should create a function to retrieve information (for instance current tile type)
 	_getSurroundTileInfo()
